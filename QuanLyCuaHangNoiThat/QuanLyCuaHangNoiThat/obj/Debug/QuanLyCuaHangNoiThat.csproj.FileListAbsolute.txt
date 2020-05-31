@@ -1,0 +1,46 @@
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe.config
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.pdb
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\FontAwesome.Sharp.dll
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csprojAssemblyReference.cache
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Properties.Resources.resources
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.GenerateResource.cache
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CoreCompileInputs.cache
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CopyComplete
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmDangNhap.resources
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmMenu.resources
+D:\Học tập\Đồ Án Tốt Nghiệp\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmKhachHang.resources
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe.config
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.pdb
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csprojAssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmDangNhap.resources
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmKhachHang.resources
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmMenu.resources
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Properties.Resources.resources
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.GenerateResource.cache
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CopyComplete
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
+C:\Users\ACER\Documents\GitHub\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe.config
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.exe
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\QuanLyCuaHangNoiThat.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csprojAssemblyReference.cache
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmDangNhap.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmKhachHang.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmMenu.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmSanPham.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Properties.Resources.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.GenerateResource.cache
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CoreCompileInputs.cache
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CopyComplete
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmCongNo.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmHoaDon.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmNhanVien.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmNhaPhanPhoi.resources
