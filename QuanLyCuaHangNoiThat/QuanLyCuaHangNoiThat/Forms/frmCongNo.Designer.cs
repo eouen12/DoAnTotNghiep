@@ -34,6 +34,7 @@
             this.dgvCongNo = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSoTienTraHomNay = new System.Windows.Forms.TextBox();
+            this.btnXacNhanThanhToan = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.imgThanhToanHetNo = new FontAwesome.Sharp.IconPictureBox();
             this.lblTienDaTra = new System.Windows.Forms.Label();
@@ -52,11 +53,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnXacNhanThanhToan = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongNo)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgThanhToanHetNo)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,9 +67,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.dgvCongNo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 537);
+            this.groupBox1.Size = new System.Drawing.Size(459, 546);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách công nợ khách hàng";
@@ -100,6 +102,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtSoTienTraHomNay);
+            this.groupBox2.Controls.Add(this.btnXacNhanThanhToan);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.imgThanhToanHetNo);
             this.groupBox2.Controls.Add(this.lblTienDaTra);
@@ -118,9 +121,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(477, 12);
+            this.groupBox2.Location = new System.Drawing.Point(477, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(465, 442);
+            this.groupBox2.Size = new System.Drawing.Size(465, 546);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết công nợ";
@@ -131,6 +134,27 @@
             this.txtSoTienTraHomNay.Name = "txtSoTienTraHomNay";
             this.txtSoTienTraHomNay.Size = new System.Drawing.Size(234, 29);
             this.txtSoTienTraHomNay.TabIndex = 17;
+            // 
+            // btnXacNhanThanhToan
+            // 
+            this.btnXacNhanThanhToan.BackColor = System.Drawing.Color.Lime;
+            this.btnXacNhanThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnXacNhanThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhanThanhToan.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhanThanhToan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnXacNhanThanhToan.IconColor = System.Drawing.Color.White;
+            this.btnXacNhanThanhToan.IconSize = 48;
+            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(0, 448);
+            this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
+            this.btnXacNhanThanhToan.Rotation = 0D;
+            this.btnXacNhanThanhToan.Size = new System.Drawing.Size(465, 83);
+            this.btnXacNhanThanhToan.TabIndex = 2;
+            this.btnXacNhanThanhToan.Text = "Xác nhận thanh toán";
+            this.btnXacNhanThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacNhanThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXacNhanThanhToan.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -162,7 +186,7 @@
             this.lblTienDaTra.AutoSize = true;
             this.lblTienDaTra.Location = new System.Drawing.Point(146, 250);
             this.lblTienDaTra.Name = "lblTienDaTra";
-            this.lblTienDaTra.Size = new System.Drawing.Size(0, 24);
+            this.lblTienDaTra.Size = new System.Drawing.Size(68, 24);
             this.lblTienDaTra.TabIndex = 14;
             this.lblTienDaTra.Text = "Test...";
             // 
@@ -171,7 +195,7 @@
             this.lblNgayTra.AutoSize = true;
             this.lblNgayTra.Location = new System.Drawing.Point(122, 330);
             this.lblNgayTra.Name = "lblNgayTra";
-            this.lblNgayTra.Size = new System.Drawing.Size(0, 24);
+            this.lblNgayTra.Size = new System.Drawing.Size(68, 24);
             this.lblNgayTra.TabIndex = 13;
             this.lblNgayTra.Text = "Test...";
             // 
@@ -197,7 +221,7 @@
             this.lblTienConNo.AutoSize = true;
             this.lblTienConNo.Location = new System.Drawing.Point(158, 290);
             this.lblTienConNo.Name = "lblTienConNo";
-            this.lblTienConNo.Size = new System.Drawing.Size(0, 24);
+            this.lblTienConNo.Size = new System.Drawing.Size(68, 24);
             this.lblTienConNo.TabIndex = 10;
             this.lblTienConNo.Text = "Test...";
             // 
@@ -214,7 +238,7 @@
             this.lblCMND.AutoSize = true;
             this.lblCMND.Location = new System.Drawing.Point(105, 130);
             this.lblCMND.Name = "lblCMND";
-            this.lblCMND.Size = new System.Drawing.Size(0, 24);
+            this.lblCMND.Size = new System.Drawing.Size(68, 24);
             this.lblCMND.TabIndex = 8;
             this.lblCMND.Text = "Test...";
             // 
@@ -223,7 +247,7 @@
             this.lblSDT.AutoSize = true;
             this.lblSDT.Location = new System.Drawing.Point(168, 86);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(0, 24);
+            this.lblSDT.Size = new System.Drawing.Size(68, 24);
             this.lblSDT.TabIndex = 7;
             this.lblSDT.Text = "Test...";
             // 
@@ -232,7 +256,7 @@
             this.lblTenKH.AutoSize = true;
             this.lblTenKH.Location = new System.Drawing.Point(168, 42);
             this.lblTenKH.Name = "lblTenKH";
-            this.lblTenKH.Size = new System.Drawing.Size(0, 24);
+            this.lblTenKH.Size = new System.Drawing.Size(68, 24);
             this.lblTenKH.TabIndex = 6;
             this.lblTenKH.Text = "Test...";
             // 
@@ -290,26 +314,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên KH:";
             // 
-            // btnXacNhanThanhToan
+            // panel2
             // 
-            this.btnXacNhanThanhToan.BackColor = System.Drawing.Color.Lime;
-            this.btnXacNhanThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnXacNhanThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhanThanhToan.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnXacNhanThanhToan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btnXacNhanThanhToan.IconColor = System.Drawing.Color.White;
-            this.btnXacNhanThanhToan.IconSize = 48;
-            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(477, 460);
-            this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
-            this.btnXacNhanThanhToan.Rotation = 0D;
-            this.btnXacNhanThanhToan.Size = new System.Drawing.Size(465, 83);
-            this.btnXacNhanThanhToan.TabIndex = 2;
-            this.btnXacNhanThanhToan.Text = "Xác nhận thanh toán";
-            this.btnXacNhanThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXacNhanThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXacNhanThanhToan.UseVisualStyleBackColor = false;
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(954, 561);
+            this.panel2.TabIndex = 3;
             // 
             // frmCongNo
             // 
@@ -317,9 +330,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(954, 561);
-            this.Controls.Add(this.btnXacNhanThanhToan);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel2);
             this.Name = "frmCongNo";
             this.Text = "frmCongNo";
             this.groupBox1.ResumeLayout(false);
@@ -328,6 +339,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgThanhToanHetNo)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,5 +371,6 @@
         private System.Windows.Forms.TextBox txtSoTienTraHomNay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
