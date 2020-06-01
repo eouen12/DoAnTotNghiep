@@ -46,18 +46,20 @@
             this.btnStatusMenu = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelStatus.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(240, 799);
             this.panelMenu.TabIndex = 0;
@@ -92,7 +94,7 @@
             this.btnMenuDangXuat.IconSize = 32;
             this.btnMenuDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 702);
-            this.btnMenuDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuDangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuDangXuat.Name = "btnMenuDangXuat";
             this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDangXuat.Rotation = 0D;
@@ -115,7 +117,7 @@
             this.btnMenuDoiDonVi.IconSize = 32;
             this.btnMenuDoiDonVi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 628);
-            this.btnMenuDoiDonVi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuDoiDonVi.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuDoiDonVi.Name = "btnMenuDoiDonVi";
             this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDoiDonVi.Rotation = 0D;
@@ -138,7 +140,7 @@
             this.btnMenuNhanVien.IconSize = 32;
             this.btnMenuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 554);
-            this.btnMenuNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuNhanVien.Name = "btnMenuNhanVien";
             this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhanVien.Rotation = 0D;
@@ -161,7 +163,7 @@
             this.btnMenuNhaPhanPhoi.IconSize = 32;
             this.btnMenuNhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 480);
-            this.btnMenuNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
             this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
@@ -185,7 +187,7 @@
             this.btnMenuKhachHang.IconSize = 32;
             this.btnMenuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 333);
-            this.btnMenuKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuKhachHang.Name = "btnMenuKhachHang";
             this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuKhachHang.Rotation = 0D;
@@ -209,7 +211,7 @@
             this.btnMenuSanPham.IconSize = 32;
             this.btnMenuSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuSanPham.Location = new System.Drawing.Point(0, 259);
-            this.btnMenuSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuSanPham.Name = "btnMenuSanPham";
             this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuSanPham.Rotation = 0D;
@@ -234,7 +236,7 @@
             this.btnMenuHoaDon.IconSize = 32;
             this.btnMenuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 185);
-            this.btnMenuHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuHoaDon.Name = "btnMenuHoaDon";
             this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuHoaDon.Rotation = 0D;
@@ -257,7 +259,7 @@
             this.btnMenuCongNo.IconSize = 32;
             this.btnMenuCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCongNo.Location = new System.Drawing.Point(0, 406);
-            this.btnMenuCongNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuCongNo.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuCongNo.Name = "btnMenuCongNo";
             this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuCongNo.Rotation = 0D;
@@ -273,7 +275,7 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(240, 185);
             this.panelLogo.TabIndex = 0;
@@ -283,7 +285,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 185);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -297,7 +299,7 @@
             this.panelStatus.Controls.Add(this.btnStatusMenu);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelStatus.Location = new System.Drawing.Point(240, 0);
-            this.panelStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelStatus.Margin = new System.Windows.Forms.Padding(4);
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(1076, 130);
             this.panelStatus.TabIndex = 1;
@@ -326,7 +328,7 @@
             this.btnStatusMenu.IconSize = 40;
             this.btnStatusMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStatusMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnStatusMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusMenu.Name = "btnStatusMenu";
             this.btnStatusMenu.Rotation = 0D;
             this.btnStatusMenu.Size = new System.Drawing.Size(279, 130);
@@ -344,33 +346,26 @@
             // 
             // panel5
             // 
+            this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel5.Controls.Add(this.listBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(931, 130);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(1042, 130);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(385, 669);
+            this.panel5.Size = new System.Drawing.Size(274, 669);
             this.panel5.TabIndex = 6;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(11, 0);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(361, 356);
-            this.listBox1.TabIndex = 0;
             // 
             // panel6
             // 
+            this.panel6.AutoSize = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(240, 599);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(240, 674);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(691, 200);
+            this.panel6.Size = new System.Drawing.Size(802, 125);
             this.panel6.TabIndex = 7;
             // 
             // panelDesktop
@@ -381,9 +376,9 @@
             this.panelDesktop.Controls.Add(this.panel1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(240, 130);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(691, 469);
+            this.panelDesktop.Size = new System.Drawing.Size(802, 544);
             this.panelDesktop.TabIndex = 8;
             // 
             // panel2
@@ -391,29 +386,29 @@
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(4, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(683, 4);
+            this.panel2.Size = new System.Drawing.Size(794, 4);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(4, 465);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(4, 540);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(683, 4);
+            this.panel3.Size = new System.Drawing.Size(794, 4);
             this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(687, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(798, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(4, 469);
+            this.panel4.Size = new System.Drawing.Size(4, 544);
             this.panel4.TabIndex = 1;
             // 
             // panel1
@@ -421,10 +416,28 @@
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(4, 469);
+            this.panel1.Size = new System.Drawing.Size(4, 544);
             this.panel1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(37, 8);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(233, 356);
+            this.listBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(802, 125);
+            this.label1.TabIndex = 0;
             // 
             // frmMenu
             // 
@@ -449,8 +462,10 @@
             this.panelStatus.ResumeLayout(false);
             this.panelStatus.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -479,5 +494,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
