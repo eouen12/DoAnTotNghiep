@@ -125,5 +125,10 @@ namespace QuanLyCuaHangNoiThat
             lblTimer.Text = System.DateTime.Now.ToString("dd/MM/yyyy") + " " + System.DateTime.Now.ToLongTimeString();
         }
 
+        private void lblTenNhanVien_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhauNV frm = new frmDoiMatKhauNV();
+            frm.ShowDialog();
+        }
     }
 }

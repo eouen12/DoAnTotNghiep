@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangNoiThat.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace QuanLyCuaHangNoiThat
         public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void btnLapHD_Click(object sender, EventArgs e)
+        {
+            frmLapHoaDon frm = new frmLapHoaDon();
+            frm.ShowDialog();
         }
     }
 }

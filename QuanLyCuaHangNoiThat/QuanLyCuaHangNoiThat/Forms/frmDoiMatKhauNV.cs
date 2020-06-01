@@ -1,5 +1,4 @@
-﻿using QuanLyCuaHangNoiThat.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangNoiThat
 {
-    public partial class frmHoaDon : Form
+    public partial class frmDoiMatKhauNV : Form
     {
-        public frmHoaDon()
+        public frmDoiMatKhauNV()
         {
             InitializeComponent();
-        }
-
-        private void btnSuaHD_Click(object sender, EventArgs e)
-        {
-            frmLapHoaDon frm = new frmLapHoaDon();
-            frm.ShowDialog();
         }
     }
 }

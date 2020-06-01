@@ -30,6 +30,7 @@
         {
             this.tabControlSanPham = new System.Windows.Forms.TabControl();
             this.tabPageDsSanPham = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,9 +70,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.imgSanPham = new FontAwesome.Sharp.IconPictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControlSanPham.SuspendLayout();
             this.tabPageDsSanPham.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.tabPageQlSanPham.SuspendLayout();
@@ -81,7 +82,6 @@
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSanPham
@@ -89,10 +89,10 @@
             this.tabControlSanPham.Controls.Add(this.tabPageDsSanPham);
             this.tabControlSanPham.Controls.Add(this.tabPageQlSanPham);
             this.tabControlSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlSanPham.ItemSize = new System.Drawing.Size(250, 29);
+            this.tabControlSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlSanPham.ItemSize = new System.Drawing.Size(300, 29);
             this.tabControlSanPham.Location = new System.Drawing.Point(0, 0);
-            this.tabControlSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControlSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlSanPham.Name = "tabControlSanPham";
             this.tabControlSanPham.SelectedIndex = 0;
             this.tabControlSanPham.Size = new System.Drawing.Size(1272, 690);
@@ -105,13 +105,24 @@
             this.tabPageDsSanPham.Controls.Add(this.groupBox1);
             this.tabPageDsSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageDsSanPham.Location = new System.Drawing.Point(4, 33);
-            this.tabPageDsSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageDsSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageDsSanPham.Name = "tabPageDsSanPham";
-            this.tabPageDsSanPham.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageDsSanPham.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageDsSanPham.Size = new System.Drawing.Size(1264, 653);
             this.tabPageDsSanPham.TabIndex = 0;
             this.tabPageDsSanPham.Text = "Danh sách sản phẩm";
             this.tabPageDsSanPham.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 125);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1256, 524);
+            this.dataGridView1.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -123,9 +134,9 @@
             this.groupBox1.Controls.Add(this.txtTimKiemDSSP);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1256, 121);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -139,7 +150,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconSize = 37;
             this.iconPictureBox1.Location = new System.Drawing.Point(29, 57);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(43, 37);
             this.iconPictureBox1.TabIndex = 5;
@@ -169,7 +180,7 @@
             // 
             this.cbDSNPP.FormattingEnabled = true;
             this.cbDSNPP.Location = new System.Drawing.Point(855, 54);
-            this.cbDSNPP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDSNPP.Margin = new System.Windows.Forms.Padding(4);
             this.cbDSNPP.Name = "cbDSNPP";
             this.cbDSNPP.Size = new System.Drawing.Size(372, 38);
             this.cbDSNPP.TabIndex = 2;
@@ -178,7 +189,7 @@
             // 
             this.cbDSLoaiSP.FormattingEnabled = true;
             this.cbDSLoaiSP.Location = new System.Drawing.Point(408, 54);
-            this.cbDSLoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDSLoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cbDSLoaiSP.Name = "cbDSLoaiSP";
             this.cbDSLoaiSP.Size = new System.Drawing.Size(372, 38);
             this.cbDSLoaiSP.TabIndex = 1;
@@ -186,7 +197,7 @@
             // txtTimKiemDSSP
             // 
             this.txtTimKiemDSSP.Location = new System.Drawing.Point(73, 57);
-            this.txtTimKiemDSSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiemDSSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiemDSSP.Name = "txtTimKiemDSSP";
             this.txtTimKiemDSSP.Size = new System.Drawing.Size(264, 37);
             this.txtTimKiemDSSP.TabIndex = 0;
@@ -198,9 +209,9 @@
             this.tabPageQlSanPham.Controls.Add(this.panel1);
             this.tabPageQlSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageQlSanPham.Location = new System.Drawing.Point(4, 33);
-            this.tabPageQlSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageQlSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageQlSanPham.Name = "tabPageQlSanPham";
-            this.tabPageQlSanPham.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageQlSanPham.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageQlSanPham.Size = new System.Drawing.Size(1264, 653);
             this.tabPageQlSanPham.TabIndex = 1;
             this.tabPageQlSanPham.Text = "Quản lí sản phẩm";
@@ -218,7 +229,7 @@
             this.panel2.Controls.Add(this.dgvQLSanPham);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(667, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(593, 645);
             this.panel2.TabIndex = 1;
@@ -227,7 +238,7 @@
             // 
             this.cbQLTimKiemNPP.FormattingEnabled = true;
             this.cbQLTimKiemNPP.Location = new System.Drawing.Point(223, 217);
-            this.cbQLTimKiemNPP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbQLTimKiemNPP.Margin = new System.Windows.Forms.Padding(4);
             this.cbQLTimKiemNPP.Name = "cbQLTimKiemNPP";
             this.cbQLTimKiemNPP.Size = new System.Drawing.Size(332, 38);
             this.cbQLTimKiemNPP.TabIndex = 15;
@@ -246,7 +257,7 @@
             // 
             this.cbQLTimKiemLoaiSP.FormattingEnabled = true;
             this.cbQLTimKiemLoaiSP.Location = new System.Drawing.Point(223, 162);
-            this.cbQLTimKiemLoaiSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbQLTimKiemLoaiSP.Margin = new System.Windows.Forms.Padding(4);
             this.cbQLTimKiemLoaiSP.Name = "cbQLTimKiemLoaiSP";
             this.cbQLTimKiemLoaiSP.Size = new System.Drawing.Size(332, 38);
             this.cbQLTimKiemLoaiSP.TabIndex = 14;
@@ -254,7 +265,7 @@
             // txtTimKiemQLSP
             // 
             this.txtTimKiemQLSP.Location = new System.Drawing.Point(223, 111);
-            this.txtTimKiemQLSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiemQLSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiemQLSP.Name = "txtTimKiemQLSP";
             this.txtTimKiemQLSP.Size = new System.Drawing.Size(332, 37);
             this.txtTimKiemQLSP.TabIndex = 12;
@@ -276,9 +287,9 @@
             this.groupBox3.Controls.Add(this.btnModeThem);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(593, 105);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -294,7 +305,7 @@
             this.btnModeXoa.IconColor = System.Drawing.Color.Black;
             this.btnModeXoa.IconSize = 24;
             this.btnModeXoa.Location = new System.Drawing.Point(416, 37);
-            this.btnModeXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModeXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnModeXoa.Name = "btnModeXoa";
             this.btnModeXoa.Rotation = 0D;
             this.btnModeXoa.Size = new System.Drawing.Size(140, 49);
@@ -314,7 +325,7 @@
             this.btnModeSua.IconColor = System.Drawing.Color.Black;
             this.btnModeSua.IconSize = 24;
             this.btnModeSua.Location = new System.Drawing.Point(228, 37);
-            this.btnModeSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModeSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnModeSua.Name = "btnModeSua";
             this.btnModeSua.Rotation = 0D;
             this.btnModeSua.Size = new System.Drawing.Size(140, 49);
@@ -335,7 +346,7 @@
             this.btnModeThem.IconSize = 24;
             this.btnModeThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModeThem.Location = new System.Drawing.Point(35, 37);
-            this.btnModeThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModeThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnModeThem.Name = "btnModeThem";
             this.btnModeThem.Rotation = 0D;
             this.btnModeThem.Size = new System.Drawing.Size(140, 49);
@@ -374,7 +385,7 @@
             this.panel1.Controls.Add(this.imgSanPham);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(663, 645);
             this.panel1.TabIndex = 0;
@@ -389,7 +400,7 @@
             this.btnChonAnhMHSP.IconSize = 40;
             this.btnChonAnhMHSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChonAnhMHSP.Location = new System.Drawing.Point(4, 234);
-            this.btnChonAnhMHSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChonAnhMHSP.Margin = new System.Windows.Forms.Padding(4);
             this.btnChonAnhMHSP.Name = "btnChonAnhMHSP";
             this.btnChonAnhMHSP.Rotation = 0D;
             this.btnChonAnhMHSP.Size = new System.Drawing.Size(171, 57);
@@ -419,7 +430,7 @@
             this.btnHuyBo.IconColor = System.Drawing.Color.Black;
             this.btnHuyBo.IconSize = 40;
             this.btnHuyBo.Location = new System.Drawing.Point(441, 549);
-            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Rotation = 0D;
             this.btnHuyBo.Size = new System.Drawing.Size(213, 71);
@@ -438,7 +449,7 @@
             this.btnXacNhan.IconColor = System.Drawing.Color.Black;
             this.btnXacNhan.IconSize = 40;
             this.btnXacNhan.Location = new System.Drawing.Point(184, 549);
-            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Rotation = 0D;
             this.btnXacNhan.Size = new System.Drawing.Size(213, 71);
@@ -463,9 +474,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(184, 54);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(471, 475);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -474,7 +485,7 @@
             // txtSLTonSp
             // 
             this.txtSLTonSp.Location = new System.Drawing.Point(223, 234);
-            this.txtSLTonSp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSLTonSp.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLTonSp.Name = "txtSLTonSp";
             this.txtSLTonSp.Size = new System.Drawing.Size(228, 37);
             this.txtSLTonSp.TabIndex = 11;
@@ -482,7 +493,7 @@
             // txtGiaBanSp
             // 
             this.txtGiaBanSp.Location = new System.Drawing.Point(223, 172);
-            this.txtGiaBanSp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGiaBanSp.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaBanSp.Name = "txtGiaBanSp";
             this.txtGiaBanSp.Size = new System.Drawing.Size(228, 37);
             this.txtGiaBanSp.TabIndex = 10;
@@ -490,7 +501,7 @@
             // txtTenSP
             // 
             this.txtTenSP.Location = new System.Drawing.Point(223, 111);
-            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(228, 37);
             this.txtTenSP.TabIndex = 9;
@@ -498,7 +509,7 @@
             // txtMaSp
             // 
             this.txtMaSp.Location = new System.Drawing.Point(223, 49);
-            this.txtMaSp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaSp.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSp.Name = "txtMaSp";
             this.txtMaSp.Size = new System.Drawing.Size(228, 37);
             this.txtMaSp.TabIndex = 8;
@@ -507,7 +518,7 @@
             // 
             this.cbNPPSp.FormattingEnabled = true;
             this.cbNPPSp.Location = new System.Drawing.Point(223, 357);
-            this.cbNPPSp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNPPSp.Margin = new System.Windows.Forms.Padding(4);
             this.cbNPPSp.Name = "cbNPPSp";
             this.cbNPPSp.Size = new System.Drawing.Size(228, 38);
             this.cbNPPSp.TabIndex = 7;
@@ -516,7 +527,7 @@
             // 
             this.cbLoaiSp.FormattingEnabled = true;
             this.cbLoaiSp.Location = new System.Drawing.Point(223, 295);
-            this.cbLoaiSp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLoaiSp.Margin = new System.Windows.Forms.Padding(4);
             this.cbLoaiSp.Name = "cbLoaiSp";
             this.cbLoaiSp.Size = new System.Drawing.Size(228, 38);
             this.cbLoaiSp.TabIndex = 6;
@@ -590,23 +601,12 @@
             this.imgSanPham.IconColor = System.Drawing.SystemColors.ControlText;
             this.imgSanPham.IconSize = 168;
             this.imgSanPham.Location = new System.Drawing.Point(4, 65);
-            this.imgSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.imgSanPham.Name = "imgSanPham";
             this.imgSanPham.Size = new System.Drawing.Size(171, 168);
             this.imgSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgSanPham.TabIndex = 0;
             this.imgSanPham.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1256, 524);
-            this.dataGridView1.TabIndex = 2;
             // 
             // frmSanPham
             // 
@@ -614,11 +614,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 690);
             this.Controls.Add(this.tabControlSanPham);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSanPham";
             this.Text = "frmSanPham";
             this.tabControlSanPham.ResumeLayout(false);
             this.tabPageDsSanPham.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
@@ -632,7 +633,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -62,3 +62,5 @@ C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\ob
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.csproj.CopyComplete
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
+C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmLapHoaDon.resources
+C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmDoiMatKhauNV.resources
