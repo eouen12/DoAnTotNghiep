@@ -52,10 +52,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelStatus.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +81,7 @@
             // 
             // btnMenuDangXuat
             // 
+            this.btnMenuDangXuat.AutoSize = true;
             this.btnMenuDangXuat.FlatAppearance.BorderSize = 0;
             this.btnMenuDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuDangXuat.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -100,6 +103,7 @@
             // 
             // btnMenuDoiDonVi
             // 
+            this.btnMenuDoiDonVi.AutoSize = true;
             this.btnMenuDoiDonVi.FlatAppearance.BorderSize = 0;
             this.btnMenuDoiDonVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuDoiDonVi.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -121,6 +125,7 @@
             // 
             // btnMenuNhanVien
             // 
+            this.btnMenuNhanVien.AutoSize = true;
             this.btnMenuNhanVien.FlatAppearance.BorderSize = 0;
             this.btnMenuNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuNhanVien.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -142,6 +147,7 @@
             // 
             // btnMenuNhaPhanPhoi
             // 
+            this.btnMenuNhaPhanPhoi.AutoSize = true;
             this.btnMenuNhaPhanPhoi.FlatAppearance.BorderSize = 0;
             this.btnMenuNhaPhanPhoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuNhaPhanPhoi.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -154,7 +160,7 @@
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
             this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
-            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(185, 60);
+            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(187, 60);
             this.btnMenuNhaPhanPhoi.TabIndex = 7;
             this.btnMenuNhaPhanPhoi.Text = "Nhà phân phối";
             this.btnMenuNhaPhanPhoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,6 +169,7 @@
             // 
             // btnMenuKhachHang
             // 
+            this.btnMenuKhachHang.AutoSize = true;
             this.btnMenuKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenuKhachHang.FlatAppearance.BorderSize = 0;
             this.btnMenuKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -185,6 +192,7 @@
             // 
             // btnMenuSanPham
             // 
+            this.btnMenuSanPham.AutoSize = true;
             this.btnMenuSanPham.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenuSanPham.FlatAppearance.BorderSize = 0;
             this.btnMenuSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -207,6 +215,7 @@
             // 
             // btnMenuHoaDon
             // 
+            this.btnMenuHoaDon.AutoSize = true;
             this.btnMenuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnMenuHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenuHoaDon.FlatAppearance.BorderSize = 0;
@@ -230,6 +239,7 @@
             // 
             // btnMenuCongNo
             // 
+            this.btnMenuCongNo.AutoSize = true;
             this.btnMenuCongNo.FlatAppearance.BorderSize = 0;
             this.btnMenuCongNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuCongNo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -271,13 +281,14 @@
             // 
             // panelStatus
             // 
+            this.panelStatus.AutoSize = true;
             this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelStatus.Controls.Add(this.lblTimer);
             this.panelStatus.Controls.Add(this.btnStatusMenu);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelStatus.Location = new System.Drawing.Point(180, 0);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(807, 85);
+            this.panelStatus.Size = new System.Drawing.Size(807, 75);
             this.panelStatus.TabIndex = 1;
             // 
             // lblTimer
@@ -286,7 +297,7 @@
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.Location = new System.Drawing.Point(584, 0);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(223, 85);
+            this.lblTimer.Size = new System.Drawing.Size(223, 75);
             this.lblTimer.TabIndex = 1;
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -319,11 +330,13 @@
             // 
             // panel5
             // 
+            this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel5.Controls.Add(this.listBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(768, 85);
+            this.panel5.Location = new System.Drawing.Point(779, 75);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(219, 564);
+            this.panel5.Size = new System.Drawing.Size(208, 574);
             this.panel5.TabIndex = 6;
             // 
             // panel6
@@ -332,7 +345,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(180, 549);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(588, 100);
+            this.panel6.Size = new System.Drawing.Size(599, 100);
             this.panel6.TabIndex = 7;
             // 
             // panelDesktop
@@ -342,9 +355,9 @@
             this.panelDesktop.Controls.Add(this.panel4);
             this.panelDesktop.Controls.Add(this.panel1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(180, 85);
+            this.panelDesktop.Location = new System.Drawing.Point(180, 75);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(588, 464);
+            this.panelDesktop.Size = new System.Drawing.Size(599, 474);
             this.panelDesktop.TabIndex = 8;
             // 
             // panel2
@@ -353,25 +366,25 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(582, 3);
+            this.panel2.Size = new System.Drawing.Size(593, 3);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 461);
+            this.panel3.Location = new System.Drawing.Point(3, 471);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(582, 3);
+            this.panel3.Size = new System.Drawing.Size(593, 3);
             this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(585, 0);
+            this.panel4.Location = new System.Drawing.Point(596, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 464);
+            this.panel4.Size = new System.Drawing.Size(3, 474);
             this.panel4.TabIndex = 1;
             // 
             // panel1
@@ -380,8 +393,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 464);
+            this.panel1.Size = new System.Drawing.Size(3, 474);
             this.panel1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(8, 25);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(190, 290);
+            this.listBox1.TabIndex = 0;
             // 
             // frmMenu
             // 
@@ -400,12 +422,15 @@
             this.Text = "frmHome";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelStatus.ResumeLayout(false);
             this.panelStatus.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -433,5 +458,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

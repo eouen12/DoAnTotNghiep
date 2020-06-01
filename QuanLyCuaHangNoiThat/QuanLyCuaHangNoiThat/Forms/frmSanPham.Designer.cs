@@ -40,10 +40,16 @@
             this.dgvDSSP = new System.Windows.Forms.DataGridView();
             this.tabPageQlSanPham = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbQLTimKiemNPP = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbQLTimKiemLoaiSP = new System.Windows.Forms.ComboBox();
+            this.txtTimKiemQLSP = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnModeXoa = new FontAwesome.Sharp.IconButton();
             this.btnModeSua = new FontAwesome.Sharp.IconButton();
             this.btnModeThem = new FontAwesome.Sharp.IconButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.dgvQLSanPham = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChonAnhMHSP = new FontAwesome.Sharp.IconButton();
@@ -64,12 +70,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.imgSanPham = new FontAwesome.Sharp.IconPictureBox();
-            this.txtTimKiemQLSP = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbQLTimKiemNPP = new System.Windows.Forms.ComboBox();
-            this.cbQLTimKiemLoaiSP = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControlSanPham.SuspendLayout();
             this.tabPageDsSanPham.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -220,6 +220,47 @@
             this.panel2.Size = new System.Drawing.Size(443, 518);
             this.panel2.TabIndex = 1;
             // 
+            // cbQLTimKiemNPP
+            // 
+            this.cbQLTimKiemNPP.FormattingEnabled = true;
+            this.cbQLTimKiemNPP.Location = new System.Drawing.Point(167, 176);
+            this.cbQLTimKiemNPP.Name = "cbQLTimKiemNPP";
+            this.cbQLTimKiemNPP.Size = new System.Drawing.Size(250, 33);
+            this.cbQLTimKiemNPP.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 25);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Tìm kiếm:";
+            // 
+            // cbQLTimKiemLoaiSP
+            // 
+            this.cbQLTimKiemLoaiSP.FormattingEnabled = true;
+            this.cbQLTimKiemLoaiSP.Location = new System.Drawing.Point(167, 132);
+            this.cbQLTimKiemLoaiSP.Name = "cbQLTimKiemLoaiSP";
+            this.cbQLTimKiemLoaiSP.Size = new System.Drawing.Size(250, 33);
+            this.cbQLTimKiemLoaiSP.TabIndex = 14;
+            // 
+            // txtTimKiemQLSP
+            // 
+            this.txtTimKiemQLSP.Location = new System.Drawing.Point(167, 90);
+            this.txtTimKiemQLSP.Name = "txtTimKiemQLSP";
+            this.txtTimKiemQLSP.Size = new System.Drawing.Size(250, 31);
+            this.txtTimKiemQLSP.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 25);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Nhà phân phối:";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnModeXoa);
@@ -289,6 +330,15 @@
             this.btnModeThem.Text = "Thêm";
             this.btnModeThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModeThem.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(159, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Loại sản phẩm:";
             // 
             // dgvQLSanPham
             // 
@@ -511,56 +561,6 @@
             this.imgSanPham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgSanPham.TabIndex = 0;
             this.imgSanPham.TabStop = false;
-            // 
-            // txtTimKiemQLSP
-            // 
-            this.txtTimKiemQLSP.Location = new System.Drawing.Point(167, 90);
-            this.txtTimKiemQLSP.Name = "txtTimKiemQLSP";
-            this.txtTimKiemQLSP.Size = new System.Drawing.Size(250, 31);
-            this.txtTimKiemQLSP.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 25);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Tìm kiếm:";
-            // 
-            // cbQLTimKiemNPP
-            // 
-            this.cbQLTimKiemNPP.FormattingEnabled = true;
-            this.cbQLTimKiemNPP.Location = new System.Drawing.Point(167, 176);
-            this.cbQLTimKiemNPP.Name = "cbQLTimKiemNPP";
-            this.cbQLTimKiemNPP.Size = new System.Drawing.Size(250, 33);
-            this.cbQLTimKiemNPP.TabIndex = 15;
-            // 
-            // cbQLTimKiemLoaiSP
-            // 
-            this.cbQLTimKiemLoaiSP.FormattingEnabled = true;
-            this.cbQLTimKiemLoaiSP.Location = new System.Drawing.Point(167, 132);
-            this.cbQLTimKiemLoaiSP.Name = "cbQLTimKiemLoaiSP";
-            this.cbQLTimKiemLoaiSP.Size = new System.Drawing.Size(250, 33);
-            this.cbQLTimKiemLoaiSP.TabIndex = 14;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(158, 25);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Nhà phân phối:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 140);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 25);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Loại sản phẩm:";
             // 
             // frmSanPham
             // 

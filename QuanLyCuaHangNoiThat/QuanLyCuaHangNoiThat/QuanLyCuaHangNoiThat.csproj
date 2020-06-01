@@ -49,79 +49,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCongNo.cs">
+    <Compile Include="Forms\frmCongNo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCongNo.Designer.cs">
+    <Compile Include="Forms\frmCongNo.Designer.cs">
       <DependentUpon>frmCongNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="Forms\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="Forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDon.cs">
+    <Compile Include="Forms\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHoaDon.Designer.cs">
+    <Compile Include="Forms\frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKhachHang.cs">
+    <Compile Include="Forms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhachHang.Designer.cs">
+    <Compile Include="Forms\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="Forms\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
+    <Compile Include="Forms\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanVien.cs">
+    <Compile Include="Forms\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanVien.Designer.cs">
+    <Compile Include="Forms\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhaPhanPhoi.cs">
+    <Compile Include="Forms\frmNhaPhanPhoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhaPhanPhoi.Designer.cs">
+    <Compile Include="Forms\frmNhaPhanPhoi.Designer.cs">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSanPham.cs">
+    <Compile Include="Forms\frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSanPham.Designer.cs">
+    <Compile Include="Forms\frmSanPham.Designer.cs">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="KetNoiCSDL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCongNo.resx">
+    <EmbeddedResource Include="Forms\frmCongNo.resx">
       <DependentUpon>frmCongNo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="Forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDon.resx">
+    <EmbeddedResource Include="Forms\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachHang.resx">
+    <EmbeddedResource Include="Forms\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="Forms\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanVien.resx">
+    <EmbeddedResource Include="Forms\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhaPhanPhoi.resx">
+    <EmbeddedResource Include="Forms\frmNhaPhanPhoi.resx">
       <DependentUpon>frmNhaPhanPhoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSanPham.resx">
+    <EmbeddedResource Include="Forms\frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

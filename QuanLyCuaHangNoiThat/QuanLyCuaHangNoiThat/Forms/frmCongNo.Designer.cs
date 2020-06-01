@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvCongNo = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtSoTienTraHomNay = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.imgThanhToanHetNo = new FontAwesome.Sharp.IconPictureBox();
             this.lblTienDaTra = new System.Windows.Forms.Label();
@@ -50,11 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnXacNhanThanhToan = new FontAwesome.Sharp.IconButton();
-            this.txtSoTienTraHomNay = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongNo)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgThanhToanHetNo)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvCongNo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -72,13 +72,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách công nợ khách hàng";
             // 
-            // dataGridView1
+            // label9
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(447, 464);
-            this.dataGridView1.TabIndex = 0;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 24);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Tìm kiếm:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(113, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 29);
+            this.textBox1.TabIndex = 1;
+            // 
+            // dgvCongNo
+            // 
+            this.dgvCongNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCongNo.Location = new System.Drawing.Point(6, 67);
+            this.dgvCongNo.Name = "dgvCongNo";
+            this.dgvCongNo.Size = new System.Drawing.Size(447, 464);
+            this.dgvCongNo.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -107,6 +124,13 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết công nợ";
+            // 
+            // txtSoTienTraHomNay
+            // 
+            this.txtSoTienTraHomNay.Location = new System.Drawing.Point(225, 365);
+            this.txtSoTienTraHomNay.Name = "txtSoTienTraHomNay";
+            this.txtSoTienTraHomNay.Size = new System.Drawing.Size(234, 29);
+            this.txtSoTienTraHomNay.TabIndex = 17;
             // 
             // label8
             // 
@@ -140,6 +164,7 @@
             this.lblTienDaTra.Name = "lblTienDaTra";
             this.lblTienDaTra.Size = new System.Drawing.Size(0, 24);
             this.lblTienDaTra.TabIndex = 14;
+            this.lblTienDaTra.Text = "Test...";
             // 
             // lblNgayTra
             // 
@@ -148,6 +173,7 @@
             this.lblNgayTra.Name = "lblNgayTra";
             this.lblNgayTra.Size = new System.Drawing.Size(0, 24);
             this.lblNgayTra.TabIndex = 13;
+            this.lblNgayTra.Text = "Test...";
             // 
             // panel1
             // 
@@ -173,6 +199,7 @@
             this.lblTienConNo.Name = "lblTienConNo";
             this.lblTienConNo.Size = new System.Drawing.Size(0, 24);
             this.lblTienConNo.TabIndex = 10;
+            this.lblTienConNo.Text = "Test...";
             // 
             // lblDiaChi
             // 
@@ -180,6 +207,7 @@
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(354, 52);
             this.lblDiaChi.TabIndex = 9;
+            this.lblDiaChi.Text = "Test...";
             // 
             // lblCMND
             // 
@@ -188,6 +216,7 @@
             this.lblCMND.Name = "lblCMND";
             this.lblCMND.Size = new System.Drawing.Size(0, 24);
             this.lblCMND.TabIndex = 8;
+            this.lblCMND.Text = "Test...";
             // 
             // lblSDT
             // 
@@ -196,6 +225,7 @@
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(0, 24);
             this.lblSDT.TabIndex = 7;
+            this.lblSDT.Text = "Test...";
             // 
             // lblTenKH
             // 
@@ -204,6 +234,7 @@
             this.lblTenKH.Name = "lblTenKH";
             this.lblTenKH.Size = new System.Drawing.Size(0, 24);
             this.lblTenKH.TabIndex = 6;
+            this.lblTenKH.Text = "Test...";
             // 
             // label6
             // 
@@ -280,30 +311,6 @@
             this.btnXacNhanThanhToan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXacNhanThanhToan.UseVisualStyleBackColor = false;
             // 
-            // txtSoTienTraHomNay
-            // 
-            this.txtSoTienTraHomNay.Location = new System.Drawing.Point(225, 365);
-            this.txtSoTienTraHomNay.Name = "txtSoTienTraHomNay";
-            this.txtSoTienTraHomNay.Size = new System.Drawing.Size(234, 29);
-            this.txtSoTienTraHomNay.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(113, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 29);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 24);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Tìm kiếm:";
-            // 
             // frmCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,7 +324,7 @@
             this.Text = "frmCongNo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongNo)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgThanhToanHetNo)).EndInit();
@@ -328,7 +335,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCongNo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblTienDaTra;
