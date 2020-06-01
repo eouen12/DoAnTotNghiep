@@ -46,13 +46,13 @@
             this.btnStatusMenu = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,8 +75,9 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 649);
+            this.panelMenu.Size = new System.Drawing.Size(240, 799);
             this.panelMenu.TabIndex = 0;
             // 
             // btnMenuDangXuat
@@ -90,11 +91,12 @@
             this.btnMenuDangXuat.IconColor = System.Drawing.Color.Black;
             this.btnMenuDangXuat.IconSize = 32;
             this.btnMenuDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 570);
+            this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 702);
+            this.btnMenuDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuDangXuat.Name = "btnMenuDangXuat";
-            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDangXuat.Rotation = 0D;
-            this.btnMenuDangXuat.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuDangXuat.Size = new System.Drawing.Size(240, 74);
             this.btnMenuDangXuat.TabIndex = 5;
             this.btnMenuDangXuat.Text = "Đăng xuất";
             this.btnMenuDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -112,11 +114,12 @@
             this.btnMenuDoiDonVi.IconColor = System.Drawing.Color.Black;
             this.btnMenuDoiDonVi.IconSize = 32;
             this.btnMenuDoiDonVi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 510);
+            this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 628);
+            this.btnMenuDoiDonVi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuDoiDonVi.Name = "btnMenuDoiDonVi";
-            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDoiDonVi.Rotation = 0D;
-            this.btnMenuDoiDonVi.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuDoiDonVi.Size = new System.Drawing.Size(240, 74);
             this.btnMenuDoiDonVi.TabIndex = 6;
             this.btnMenuDoiDonVi.Text = "Đổi đơn vị";
             this.btnMenuDoiDonVi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -134,11 +137,12 @@
             this.btnMenuNhanVien.IconColor = System.Drawing.Color.Black;
             this.btnMenuNhanVien.IconSize = 32;
             this.btnMenuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 450);
+            this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 554);
+            this.btnMenuNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuNhanVien.Name = "btnMenuNhanVien";
-            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhanVien.Rotation = 0D;
-            this.btnMenuNhanVien.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuNhanVien.Size = new System.Drawing.Size(240, 74);
             this.btnMenuNhanVien.TabIndex = 8;
             this.btnMenuNhanVien.Text = "Nhân viên";
             this.btnMenuNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -156,11 +160,12 @@
             this.btnMenuNhaPhanPhoi.IconColor = System.Drawing.Color.Black;
             this.btnMenuNhaPhanPhoi.IconSize = 32;
             this.btnMenuNhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 390);
+            this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 480);
+            this.btnMenuNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
-            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
-            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(187, 60);
+            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(285, 74);
             this.btnMenuNhaPhanPhoi.TabIndex = 7;
             this.btnMenuNhaPhanPhoi.Text = "Nhà phân phối";
             this.btnMenuNhaPhanPhoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -179,11 +184,12 @@
             this.btnMenuKhachHang.IconColor = System.Drawing.Color.Black;
             this.btnMenuKhachHang.IconSize = 32;
             this.btnMenuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 270);
+            this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 333);
+            this.btnMenuKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuKhachHang.Name = "btnMenuKhachHang";
-            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuKhachHang.Rotation = 0D;
-            this.btnMenuKhachHang.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuKhachHang.Size = new System.Drawing.Size(240, 74);
             this.btnMenuKhachHang.TabIndex = 4;
             this.btnMenuKhachHang.Text = "Khách hàng";
             this.btnMenuKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -202,11 +208,12 @@
             this.btnMenuSanPham.IconColor = System.Drawing.Color.Black;
             this.btnMenuSanPham.IconSize = 32;
             this.btnMenuSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuSanPham.Location = new System.Drawing.Point(0, 210);
+            this.btnMenuSanPham.Location = new System.Drawing.Point(0, 259);
+            this.btnMenuSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuSanPham.Name = "btnMenuSanPham";
-            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuSanPham.Rotation = 0D;
-            this.btnMenuSanPham.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuSanPham.Size = new System.Drawing.Size(240, 74);
             this.btnMenuSanPham.TabIndex = 3;
             this.btnMenuSanPham.Text = "Sản phẩm";
             this.btnMenuSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -226,11 +233,12 @@
             this.btnMenuHoaDon.IconColor = System.Drawing.Color.Black;
             this.btnMenuHoaDon.IconSize = 32;
             this.btnMenuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 150);
+            this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 185);
+            this.btnMenuHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuHoaDon.Name = "btnMenuHoaDon";
-            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuHoaDon.Rotation = 0D;
-            this.btnMenuHoaDon.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuHoaDon.Size = new System.Drawing.Size(240, 74);
             this.btnMenuHoaDon.TabIndex = 2;
             this.btnMenuHoaDon.Text = "Hóa đơn";
             this.btnMenuHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -248,11 +256,12 @@
             this.btnMenuCongNo.IconColor = System.Drawing.Color.Black;
             this.btnMenuCongNo.IconSize = 32;
             this.btnMenuCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuCongNo.Location = new System.Drawing.Point(0, 330);
+            this.btnMenuCongNo.Location = new System.Drawing.Point(0, 406);
+            this.btnMenuCongNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMenuCongNo.Name = "btnMenuCongNo";
-            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(10);
+            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuCongNo.Rotation = 0D;
-            this.btnMenuCongNo.Size = new System.Drawing.Size(180, 60);
+            this.btnMenuCongNo.Size = new System.Drawing.Size(240, 74);
             this.btnMenuCongNo.TabIndex = 6;
             this.btnMenuCongNo.Text = "Công nợ";
             this.btnMenuCongNo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -264,8 +273,9 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(180, 150);
+            this.panelLogo.Size = new System.Drawing.Size(240, 185);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -273,37 +283,40 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 185);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panelStatus
             // 
-            this.panelStatus.AutoSize = true;
             this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelStatus.Controls.Add(this.lblTimer);
             this.panelStatus.Controls.Add(this.btnStatusMenu);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatus.Location = new System.Drawing.Point(180, 0);
+            this.panelStatus.Location = new System.Drawing.Point(240, 0);
+            this.panelStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(807, 75);
+            this.panelStatus.Size = new System.Drawing.Size(1076, 130);
             this.panelStatus.TabIndex = 1;
             // 
             // lblTimer
             // 
             this.lblTimer.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(584, 0);
+            this.lblTimer.Location = new System.Drawing.Point(779, 0);
+            this.lblTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(223, 75);
+            this.lblTimer.Size = new System.Drawing.Size(297, 130);
             this.lblTimer.TabIndex = 1;
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStatusMenu
             // 
             this.btnStatusMenu.AutoSize = true;
+            this.btnStatusMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnStatusMenu.FlatAppearance.BorderSize = 0;
             this.btnStatusMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatusMenu.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -311,11 +324,12 @@
             this.btnStatusMenu.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.btnStatusMenu.IconColor = System.Drawing.Color.Black;
             this.btnStatusMenu.IconSize = 40;
-            this.btnStatusMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatusMenu.Location = new System.Drawing.Point(6, 12);
+            this.btnStatusMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStatusMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnStatusMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStatusMenu.Name = "btnStatusMenu";
             this.btnStatusMenu.Rotation = 0D;
-            this.btnStatusMenu.Size = new System.Drawing.Size(203, 60);
+            this.btnStatusMenu.Size = new System.Drawing.Size(279, 130);
             this.btnStatusMenu.TabIndex = 0;
             this.btnStatusMenu.Text = "Trang chủ";
             this.btnStatusMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -330,22 +344,33 @@
             // 
             // panel5
             // 
-            this.panel5.AutoSize = true;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel5.Controls.Add(this.listBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(779, 75);
+            this.panel5.Location = new System.Drawing.Point(931, 130);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(208, 574);
+            this.panel5.Size = new System.Drawing.Size(385, 669);
             this.panel5.TabIndex = 6;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(11, 0);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(361, 356);
+            this.listBox1.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(180, 549);
+            this.panel6.Location = new System.Drawing.Point(240, 599);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(599, 100);
+            this.panel6.Size = new System.Drawing.Size(691, 200);
             this.panel6.TabIndex = 7;
             // 
             // panelDesktop
@@ -355,36 +380,40 @@
             this.panelDesktop.Controls.Add(this.panel4);
             this.panelDesktop.Controls.Add(this.panel1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(180, 75);
+            this.panelDesktop.Location = new System.Drawing.Point(240, 130);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(599, 474);
+            this.panelDesktop.Size = new System.Drawing.Size(691, 469);
             this.panelDesktop.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 0);
+            this.panel2.Location = new System.Drawing.Point(4, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(593, 3);
+            this.panel2.Size = new System.Drawing.Size(683, 4);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 471);
+            this.panel3.Location = new System.Drawing.Point(4, 465);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(593, 3);
+            this.panel3.Size = new System.Drawing.Size(683, 4);
             this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(596, 0);
+            this.panel4.Location = new System.Drawing.Point(687, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 474);
+            this.panel4.Size = new System.Drawing.Size(4, 469);
             this.panel4.TabIndex = 1;
             // 
             // panel1
@@ -392,30 +421,22 @@
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 474);
+            this.panel1.Size = new System.Drawing.Size(4, 469);
             this.panel1.TabIndex = 0;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(8, 25);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(190, 290);
-            this.listBox1.TabIndex = 0;
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 649);
+            this.ClientSize = new System.Drawing.Size(1316, 799);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -430,7 +451,6 @@
             this.panel5.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

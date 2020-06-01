@@ -21,7 +21,7 @@ namespace QuanLyCuaHangNoiThat
             InitializeComponent();
             this.currentIconBtn = new IconButton();
             this.currentPanel = new Panel();
-            this.currentPanel.Size = new Size(5, 60);
+            this.currentPanel.Size = new Size(5, btnMenuCongNo.Size.Height);
             panelMenu.Controls.Add(this.currentPanel);
 
             this.currentfrmDesktop = new Form();
