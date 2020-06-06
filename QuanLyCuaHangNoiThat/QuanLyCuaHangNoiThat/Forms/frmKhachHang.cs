@@ -1,4 +1,5 @@
-﻿using QuanLyCuaHangNoiThat.Forms;
+﻿using BUS;
+using QuanLyCuaHangNoiThat.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,11 @@ namespace QuanLyCuaHangNoiThat
         {
             frmLapHoaDon frm = new frmLapHoaDon();
             frm.ShowDialog();
+        }
+
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+            dgvDSKH.DataSource = KhachHangBUS.LayDanhSachKhachHang();
         }
     }
 }

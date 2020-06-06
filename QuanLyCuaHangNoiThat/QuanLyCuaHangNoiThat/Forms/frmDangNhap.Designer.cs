@@ -114,9 +114,11 @@
             this.txtMatKhau.Size = new System.Drawing.Size(165, 26);
             this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // txtTenDangNhap
             // 
+            this.txtTenDangNhap.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTenDangNhap.Location = new System.Drawing.Point(143, 29);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(165, 26);
@@ -153,6 +155,7 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống quản lý cửa hàng nội thất";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

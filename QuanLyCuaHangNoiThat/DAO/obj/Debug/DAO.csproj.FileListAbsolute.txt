@@ -1,0 +1,15 @@
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DAO.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DAO.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DTO.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\EntityFramework.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DTO.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DTO.dll.config
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\EntityFramework.xml
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\obj\Debug\DAO.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\obj\Debug\DAO.pdb
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\DAO.dll.config
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DAO\bin\Debug\EntityFramework.SqlServer.xml
