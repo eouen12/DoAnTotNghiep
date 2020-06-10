@@ -4,38 +4,111 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="796ad5f288b644bd975cefe5e8e69505" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.ANHMINHHOASP" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CONGNO" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTHOADONBANHANG" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONBANHANG" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONNHAPHANG" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHAPHANPHOI" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.QUYENHAN" Width="1.5" PointX="1.5" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.SANPHAM" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.sysdiagram" Width="1.5" PointX="8.75" PointY="4" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__59063A47" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__5812160E" ManuallyRouted="false" />
+      <Diagram DiagramId="a3256b46a4f142ba860dfb5adebc122f" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.ANHMINHHOASP" Width="1.5" PointX="6.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CONGNO" Width="1.5" PointX="9.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTHOADONBANHANG" Width="1.5" PointX="11.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONBANHANG" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONNHAPHANG" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="6.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="2.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="12" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LOAISANPHAM" Width="1.5" PointX="6.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="1.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHAPHANPHOI" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.QUYENHAN" Width="1.5" PointX="1.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.SANPHAM" Width="1.5" PointX="9" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MAANH__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__2EDAF651" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__30C33EC3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__55009F39" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__2DE6D218" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__5E8A0973" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__5F7E2DAC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__7D439ABD" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

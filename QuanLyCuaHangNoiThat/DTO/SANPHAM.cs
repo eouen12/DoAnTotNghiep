@@ -14,13 +14,6 @@ namespace DTO
     
     public partial class SANPHAM
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SANPHAM()
-        {
-            this.CHITIETNHAPHANGs = new HashSet<CHITIETNHAPHANG>();
-            this.CTHOADONBANHANGs = new HashSet<CTHOADONBANHANG>();
-        }
-    
         public string MASP { get; set; }
         public string TENSP { get; set; }
         public Nullable<int> GIABAN { get; set; }
@@ -29,13 +22,5 @@ namespace DTO
         public string MAANH { get; set; }
         public string MALOAI { get; set; }
         public bool TRANGTHAI { get; set; }
-    
-        public virtual ANHMINHHOASP ANHMINHHOASP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANGs { get; set; }
-        public virtual LOAISANPHAM LOAISANPHAM { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI { get; set; }
     }
 }

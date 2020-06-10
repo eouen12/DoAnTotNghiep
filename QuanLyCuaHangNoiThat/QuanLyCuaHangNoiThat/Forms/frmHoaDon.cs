@@ -23,5 +23,10 @@ namespace QuanLyCuaHangNoiThat
             frmLapHoaDon frm = new frmLapHoaDon();
             frm.ShowDialog();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

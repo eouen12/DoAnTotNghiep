@@ -17,9 +17,24 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHAPHANPHOI()
         {
-            this.CHITIETNHAPHANGs = new HashSet<CHITIETNHAPHANG>();
-            this.CTNHAPHANGTUNPPs = new HashSet<CTNHAPHANGTUNPP>();
-            this.SANPHAMs = new HashSet<SANPHAM>();
+            this.CTNHAPHANGTUNPP = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP1 = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP2 = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP3 = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP4 = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP5 = new HashSet<CTNHAPHANGTUNPP>();
+            this.CHITIETNHAPHANG = new HashSet<CHITIETNHAPHANG>();
+            this.CHITIETNHAPHANG1 = new HashSet<CHITIETNHAPHANG>();
+            this.CHITIETNHAPHANG2 = new HashSet<CHITIETNHAPHANG>();
+            this.CHITIETNHAPHANG3 = new HashSet<CHITIETNHAPHANG>();
+            this.CHITIETNHAPHANG4 = new HashSet<CHITIETNHAPHANG>();
+            this.CHITIETNHAPHANG5 = new HashSet<CHITIETNHAPHANG>();
+            this.SANPHAM = new HashSet<SANPHAM>();
+            this.SANPHAM1 = new HashSet<SANPHAM>();
+            this.SANPHAM2 = new HashSet<SANPHAM>();
+            this.SANPHAM3 = new HashSet<SANPHAM>();
+            this.SANPHAM4 = new HashSet<SANPHAM>();
+            this.SANPHAM5 = new HashSet<SANPHAM>();
         }
     
         public string MANPP { get; set; }
@@ -31,10 +46,40 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANGs { get; set; }
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPPs { get; set; }
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG5 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM3 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAM> SANPHAM5 { get; set; }
     }
 }

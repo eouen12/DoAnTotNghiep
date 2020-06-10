@@ -11,7 +11,7 @@ namespace DAO
         private static QuanLyCuaHangNoiThatEntities DbContex = new QuanLyCuaHangNoiThatEntities();
         public static List<CONGNO> LayDanhSachCongNo()
         {
-            return DbContex.CONGNOes.ToList();
+            return DbContex.CONGNO.ToList();
         }
     }
 }

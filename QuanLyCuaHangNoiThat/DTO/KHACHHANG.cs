@@ -14,23 +14,11 @@ namespace DTO
     
     public partial class KHACHHANG
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHHANG()
-        {
-            this.HOADONBANHANGs = new HashSet<HOADONBANHANG>();
-            this.LICHSUTRANOes = new HashSet<LICHSUTRANO>();
-        }
-    
-        public string MAKH { get; set; }
+        public int MAKH { get; set; }
         public string TENKH { get; set; }
         public string SDT { get; set; }
         public string DIACHI { get; set; }
         public string CMND { get; set; }
         public bool TRANGTHAI { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANOes { get; set; }
     }
 }

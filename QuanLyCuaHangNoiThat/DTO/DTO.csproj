@@ -114,22 +114,13 @@
     <Compile Include="SANPHAM.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="ModelQLCHNoiThat.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelQLCHNoiThat.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="ModelQLCHNoiThat.edmx.diagram">
       <DependentUpon>ModelQLCHNoiThat.edmx</DependentUpon>
     </None>

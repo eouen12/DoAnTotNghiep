@@ -12,12 +12,12 @@ namespace DAO
 
         public static List<String> LayDanhSachNhanVien()
         {
-            return db.NHANVIENs.Select(p => p.MANV).ToList();
+            return db.NHANVIEN.Select(p => p.MANV).ToList();
         }
 
         public static String KiemTraChucVu(string manv)
         {
-            var kq = from nv in db.NHANVIENs
+            var kq = from nv in db.NHANVIEN
                      where nv.MANV == manv
                      select nv.CHUCVU;
             return kq.SingleOrDefault().ToString();
@@ -25,8 +25,8 @@ namespace DAO
 
         public static String LayMatKhau(string manv)
         {
-            var kq = from nv in db.NHANVIENs
-                      where nv.MANV == manv
+            var kq = from nv in db.NHANVIEN
+                     where nv.MANV == manv
                       select nv.MATKHAU;
             return kq.SingleOrDefault().ToString();
         }

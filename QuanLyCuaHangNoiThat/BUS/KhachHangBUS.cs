@@ -13,5 +13,17 @@ namespace BUS
         {
             return KhachHangDAO.LayDanhSachKhachHang();
         }
+        public static string Insert(KHACHHANG entity)
+        {
+            return KhachHangDAO.Insert(entity);
+        }
+        public static bool Update(KHACHHANG entity)
+        {
+            return KhachHangDAO.Update(entity);
+        }
+        public static string Delete(string IDKH)
+        {
+            return KhachHangDAO.Delete(IDKH);
+        }
     }
 }
