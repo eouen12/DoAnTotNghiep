@@ -18,11 +18,6 @@ namespace DTO
         public QUYENHAN()
         {
             this.NHANVIEN = new HashSet<NHANVIEN>();
-            this.NHANVIEN1 = new HashSet<NHANVIEN>();
-            this.NHANVIEN2 = new HashSet<NHANVIEN>();
-            this.NHANVIEN3 = new HashSet<NHANVIEN>();
-            this.NHANVIEN4 = new HashSet<NHANVIEN>();
-            this.NHANVIEN5 = new HashSet<NHANVIEN>();
         }
     
         public string MACHUCVU { get; set; }
@@ -31,15 +26,5 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIEN { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIEN1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIEN2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIEN3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIEN4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIEN5 { get; set; }
     }
 }

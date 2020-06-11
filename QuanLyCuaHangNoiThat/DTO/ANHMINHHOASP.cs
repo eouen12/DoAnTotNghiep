@@ -14,29 +14,11 @@ namespace DTO
     
     public partial class ANHMINHHOASP
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ANHMINHHOASP()
-        {
-            this.SANPHAM = new HashSet<SANPHAM>();
-            this.SANPHAM1 = new HashSet<SANPHAM>();
-            this.SANPHAM2 = new HashSet<SANPHAM>();
-            this.SANPHAM3 = new HashSet<SANPHAM>();
-            this.SANPHAM4 = new HashSet<SANPHAM>();
-        }
-    
         public string MAANH { get; set; }
         public string TENANHMINHHOA { get; set; }
+        public string MASP { get; set; }
         public bool TRANGTHAI { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM4 { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }

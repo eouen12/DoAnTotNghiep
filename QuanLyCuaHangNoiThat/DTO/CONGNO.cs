@@ -18,11 +18,6 @@ namespace DTO
         public CONGNO()
         {
             this.LICHSUTRANO = new HashSet<LICHSUTRANO>();
-            this.LICHSUTRANO1 = new HashSet<LICHSUTRANO>();
-            this.LICHSUTRANO2 = new HashSet<LICHSUTRANO>();
-            this.LICHSUTRANO3 = new HashSet<LICHSUTRANO>();
-            this.LICHSUTRANO4 = new HashSet<LICHSUTRANO>();
-            this.LICHSUTRANO5 = new HashSet<LICHSUTRANO>();
         }
     
         public string MACONGNO { get; set; }
@@ -34,15 +29,5 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LICHSUTRANO> LICHSUTRANO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANO1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANO2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANO3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANO4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHSUTRANO> LICHSUTRANO5 { get; set; }
     }
 }

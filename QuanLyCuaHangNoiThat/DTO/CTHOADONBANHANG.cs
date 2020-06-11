@@ -19,5 +19,8 @@ namespace DTO
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<int> DONGIA { get; set; }
         public bool TRANGTHAI { get; set; }
+    
+        public virtual HOADONBANHANG HOADONBANHANG { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }

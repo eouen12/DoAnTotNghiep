@@ -18,17 +18,7 @@ namespace DTO
         public NHANVIEN()
         {
             this.HOADONBANHANG = new HashSet<HOADONBANHANG>();
-            this.HOADONBANHANG1 = new HashSet<HOADONBANHANG>();
-            this.HOADONBANHANG2 = new HashSet<HOADONBANHANG>();
-            this.HOADONBANHANG3 = new HashSet<HOADONBANHANG>();
-            this.HOADONBANHANG4 = new HashSet<HOADONBANHANG>();
-            this.HOADONBANHANG5 = new HashSet<HOADONBANHANG>();
             this.HOADONNHAPHANG = new HashSet<HOADONNHAPHANG>();
-            this.HOADONNHAPHANG1 = new HashSet<HOADONNHAPHANG>();
-            this.HOADONNHAPHANG2 = new HashSet<HOADONNHAPHANG>();
-            this.HOADONNHAPHANG3 = new HashSet<HOADONNHAPHANG>();
-            this.HOADONNHAPHANG4 = new HashSet<HOADONNHAPHANG>();
-            this.HOADONNHAPHANG5 = new HashSet<HOADONNHAPHANG>();
         }
     
         public string MANV { get; set; }
@@ -46,32 +36,7 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADONBANHANG> HOADONBANHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANG1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANG2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANG3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANG4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONBANHANG> HOADONBANHANG5 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG5 { get; set; }
         public virtual QUYENHAN QUYENHAN { get; set; }
-        public virtual QUYENHAN QUYENHAN1 { get; set; }
-        public virtual QUYENHAN QUYENHAN2 { get; set; }
-        public virtual QUYENHAN QUYENHAN3 { get; set; }
-        public virtual QUYENHAN QUYENHAN4 { get; set; }
-        public virtual QUYENHAN QUYENHAN5 { get; set; }
     }
 }

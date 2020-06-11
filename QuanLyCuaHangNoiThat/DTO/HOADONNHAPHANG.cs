@@ -18,11 +18,6 @@ namespace DTO
         public HOADONNHAPHANG()
         {
             this.CTNHAPHANGTUNPP = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP1 = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP2 = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP3 = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP4 = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP5 = new HashSet<CTNHAPHANGTUNPP>();
         }
     
         public string MAHDNH { get; set; }
@@ -32,21 +27,6 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP3 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP4 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP5 { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual NHANVIEN NHANVIEN1 { get; set; }
-        public virtual NHANVIEN NHANVIEN2 { get; set; }
-        public virtual NHANVIEN NHANVIEN3 { get; set; }
-        public virtual NHANVIEN NHANVIEN4 { get; set; }
-        public virtual NHANVIEN NHANVIEN5 { get; set; }
     }
 }

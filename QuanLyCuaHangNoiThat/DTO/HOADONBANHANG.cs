@@ -14,6 +14,12 @@ namespace DTO
     
     public partial class HOADONBANHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HOADONBANHANG()
+        {
+            this.CTHOADONBANHANG = new HashSet<CTHOADONBANHANG>();
+        }
+    
         public string MAHD { get; set; }
         public int MAKH { get; set; }
         public string NV_LAP_HD { get; set; }
@@ -21,5 +27,10 @@ namespace DTO
         public Nullable<int> TONGTIEN { get; set; }
         public Nullable<System.DateTime> NGAYGIAO { get; set; }
         public bool TRANGTHAI { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
+        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

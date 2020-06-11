@@ -23,16 +23,6 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         public virtual NHAPHANPHOI NHAPHANPHOI { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI1 { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI2 { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI3 { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI4 { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI5 { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
-        public virtual SANPHAM SANPHAM1 { get; set; }
-        public virtual SANPHAM SANPHAM2 { get; set; }
-        public virtual SANPHAM SANPHAM3 { get; set; }
-        public virtual SANPHAM SANPHAM4 { get; set; }
-        public virtual SANPHAM SANPHAM5 { get; set; }
     }
 }
