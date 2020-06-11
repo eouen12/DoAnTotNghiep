@@ -9,5 +9,28 @@ namespace BUS
 {
     public class SanPhamBUS
     {
+        public static List<SANPHAM> LayDanhSachSanPham()
+        {
+            return SanPhamDAO.LayDanhSachSanPham();
+        }
+
+        public static bool KiemTraMaSPTonTai(string masp)
+        {
+            return SanPhamDAO.KiemTraMaSPTonTai(masp);
+        }
+
+        public static bool ThemSanPham(SANPHAM sp)
+        {
+             return SanPhamDAO.ThemSanPham(sp);
+        }
+
+        public static bool SuaSanPham(SANPHAM sp)
+        {
+            return SanPhamDAO.SuaSanPham(sp);
+        }
+        public static bool XoaSanPham(string masp)
+        {
+            return SanPhamDAO.XoaSanPham(masp);
+        }
     }
 }

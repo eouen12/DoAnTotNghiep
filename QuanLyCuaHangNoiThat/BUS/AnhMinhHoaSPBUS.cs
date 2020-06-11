@@ -9,5 +9,14 @@ namespace BUS
 {
     public class AnhMinhHoaSPBUS
     {
+        public static List<ANHMINHHOASP> LayDanhSachAnhMinhHoa()
+        {
+            return AnhMinhHoaSPDAO.LayDanhSachAnhMinhHoa();
+        }
+
+        public static bool ThemAnhMinhHoa(ANHMINHHOASP anhMH)
+        {
+            return AnhMinhHoaSPDAO.ThemAnhMinhHoaSanPham(anhMH);
+        }
     }
 }

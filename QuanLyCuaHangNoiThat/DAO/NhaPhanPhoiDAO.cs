@@ -8,5 +8,11 @@ namespace DAO
 {
     public class NhaPhanPhoiDAO
     {
+        private static QuanLyCuaHangNoiThatEntities db = new QuanLyCuaHangNoiThatEntities();
+        
+        public static List<NHAPHANPHOI> LayDanhSachNhaPhanPhoi()
+        {
+            return db.NHAPHANPHOI.Where(p => p.TRANGTHAI == true).ToList();
+        }
     }
 }

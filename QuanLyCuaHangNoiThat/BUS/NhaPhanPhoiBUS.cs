@@ -9,5 +9,9 @@ namespace BUS
 {
     public class NhaPhanPhoiBUS
     {
+        public static List<NHAPHANPHOI> LayDanhSachNhaPhanPhoi()
+        {
+            return NhaPhanPhoiDAO.LayDanhSachNhaPhanPhoi();
+        }
     }
 }
