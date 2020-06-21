@@ -9,5 +9,24 @@ namespace BUS
 {
     public class HoaDonBanHangBUS
     {
+        public static List<HOADONBANHANG> LayDanhSachHoaDon()
+        {
+            return HoaDonBanHangDAO.LayDanhSachHonDon();
+        }
+
+        public static bool ThemHoaDon(HOADONBANHANG hd)
+        {
+            return HoaDonBanHangDAO.ThemHoaDon(hd);
+        }
+
+        public static bool CapNhatHoaDon(HOADONBANHANG hd)
+        {
+            return HoaDonBanHangDAO.CapNhatHoaDon(hd);
+        }
+
+        public static bool XoaHoaDon(string mahd)
+        {
+            return HoaDonBanHangDAO.XoaHoaDon(mahd);
+        }
     }
 }

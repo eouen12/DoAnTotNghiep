@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangNoiThat.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace QuanLyCuaHangNoiThat
             //{
             //    Application.Run(new frmKhachHang());
             //}
-            Application.Run(new frmSanPham());
+            Application.Run(new frmLapHoaDon());
         }
     }
 }
