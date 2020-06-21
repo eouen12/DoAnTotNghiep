@@ -22,8 +22,8 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnLapHD_Click(object sender, EventArgs e)
         {
-            frmLapHoaDon frm = new frmLapHoaDon();
-            frm.ShowDialog();
+            //frmLapHoaDon frm = new frmLapHoaDon();
+            //frm.ShowDialog();
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
