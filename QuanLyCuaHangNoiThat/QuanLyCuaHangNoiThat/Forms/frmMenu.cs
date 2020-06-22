@@ -18,7 +18,8 @@ namespace QuanLyCuaHangNoiThat
         private Panel currentPanel;
         private Form currentfrmDesktop;
         private NHANVIEN nhanvien = new NHANVIEN();
-        private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        // private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Anh_NhanVien\";
         public frmMenu(NHANVIEN nv)
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace QuanLyCuaHangNoiThat
         private void btnMenuKhachHang_Click(object sender, EventArgs e)
         {
             IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmKhachHang());
+            MofrmDesktop(new frmKhachHang(nhanvien.MANV));
         }
 
         private void btnMenuCongNo_Click(object sender, EventArgs e)

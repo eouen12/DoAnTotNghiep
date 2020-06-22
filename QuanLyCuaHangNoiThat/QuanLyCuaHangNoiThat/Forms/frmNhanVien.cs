@@ -15,7 +15,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmNhanVien : Form
     {
         private List<NHANVIEN> lstNV = new List<NHANVIEN>();
-        private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        //private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Anh_NhanVien\";
         private string tenAnhDaiDien = "";
         private bool dangThayDoiDuLieu = false;
         public frmNhanVien()
@@ -128,7 +129,7 @@ namespace QuanLyCuaHangNoiThat
                     CMND = Convert.ToInt32(this.txtCMNDNV.Text),
                     EMAIL = this.txtEmail.Text,
                     DIACHI = this.txtDiaChiNV.Text,
-                    ANHDAIDIEN = tenAnhDaiDien,
+                    ANHDAIDIEN = tenAnhDaiDien.ToString(),
                     LUONGCB = Convert.ToInt32(this.txtLuongNV.Text),
                 };
                 if (NhanVienBUS.CapNhatNhanVien(nv))

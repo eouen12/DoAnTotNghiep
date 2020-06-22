@@ -18,18 +18,22 @@ namespace QuanLyCuaHangNoiThat.Forms
         private List<HOADONBANHANG> lstHoaDon = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
         private string mahd;
+        private int maKH;
+        private string maNV;
         private bool slHopLe = true;
         private bool dangThaoTac = false;
-        public frmLapHoaDon()
+        public frmLapHoaDon(int makh, string manv)
         {
             InitializeComponent();
+            maKH = makh;
+            maNV = manv;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                TaoHoaDon("2", "NV_MINHNHUT");
+                TaoHoaDon(maKH.ToString(),maNV);
 
                 TaoCTHoaDon();
 

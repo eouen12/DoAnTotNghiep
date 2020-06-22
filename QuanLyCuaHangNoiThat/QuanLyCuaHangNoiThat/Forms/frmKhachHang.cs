@@ -15,14 +15,17 @@ namespace QuanLyCuaHangNoiThat
 {
     public partial class frmKhachHang : Form
     {
-        public frmKhachHang()
+        private string manv;
+        private int makh;
+        public frmKhachHang(string nhanvien)
         {
             InitializeComponent();
+            manv = nhanvien;
         }
 
         private void btnLapHD_Click(object sender, EventArgs e)
         {
-            frmLapHoaDon frm = new frmLapHoaDon();
+            frmLapHoaDon frm = new frmLapHoaDon(makh,manv);
             frm.ShowDialog();
         }
 
@@ -85,6 +88,8 @@ namespace QuanLyCuaHangNoiThat
 
         private void dgvDSKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.btnLapHD.Enabled = true;
+            this.makh = Convert.ToInt32(dgvDSKH.CurrentRow.Cells["MAKH"].Value);
             txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMND"].Value.ToString();
             txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHI"].Value.ToString();
             txtSDT.Text = dgvDSKH.CurrentRow.Cells["SDT"].Value.ToString();

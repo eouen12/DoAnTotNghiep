@@ -64,7 +64,7 @@ namespace QuanLyCuaHangNoiThat.Forms
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (this.txtMasp.Text != string.Empty || this.txtSoLuong.Text != string.Empty)
+            if (this.txtMasp.Text == string.Empty || this.txtSoLuong.Text == string.Empty)
             {
                 return;
             }
@@ -219,6 +219,8 @@ namespace QuanLyCuaHangNoiThat.Forms
             this.txtMasp.Clear();
             this.txtSoLuong.Clear();
             this.txtMasp.Enabled = true;
+            this.dangThayDoiCTHD = false;
+            this.dangThayDoiNgayGiao = false;
         }
 
     }

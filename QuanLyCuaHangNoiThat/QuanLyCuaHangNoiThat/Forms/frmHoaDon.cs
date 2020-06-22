@@ -26,9 +26,15 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
+            if(this.lblMaHD.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa chọn hóa đơn !!!", "Thông báo");
+                return;
+            }
             frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd);
             frm.ShowDialog();
             frmHoaDon_Load(sender, e);
+            
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
