@@ -19,9 +19,9 @@ namespace QuanLyCuaHangNoiThat
             frmDangNhap frmDangNhap = new frmDangNhap();
             if (frmDangNhap.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new frmMenu());
+                Application.Run(new frmMenu(frmDangNhap.nv));
             }
-            //Application.Run(new frmSanPham());
+            //Application.Run(new frmNhanVien());
         }
     }
 }

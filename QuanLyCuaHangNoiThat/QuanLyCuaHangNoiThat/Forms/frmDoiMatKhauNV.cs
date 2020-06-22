@@ -7,14 +7,89 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BUS;
+using System.Security.Cryptography;
 
 namespace QuanLyCuaHangNoiThat
 {
     public partial class frmDoiMatKhauNV : Form
     {
-        public frmDoiMatKhauNV()
+        private NHANVIEN nv = new NHANVIEN();
+        private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        public frmDoiMatKhauNV(NHANVIEN nhanvien)
         {
             InitializeComponent();
+            nv = nhanvien;
+        }
+
+        private void frmDoiMatKhauNV_Load(object sender, EventArgs e)
+        {
+            this.lblMaNV.Text = nv.MANV;
+            this.lblTenNV.Text = nv.TENNV;
+            this.lblCMNDNV.Text = nv.CMND.ToString();
+            this.lblSDTNV.Text = nv.SDT;
+            this.lblDiaChiNV.Text = nv.DIACHI;
+            this.lblEmail.Text = nv.EMAIL;
+            this.imgNhanVien.ImageLocation = patch + nv.ANHDAIDIEN;
+        }
+
+        private void btnLuuDoiMK_Click(object sender, EventArgs e)
+        {
+            if(this.txtMatKhauCu.Text == nv.MANV)
+            {
+                string mk = MD5(this.txtMatKhauMoi.Text);
+                if(NhanVienBUS.DoiMatKhau(nv.MANV,mk))
+                {
+                    MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo");
+                    this.txtMatKhauCu.Clear();
+                    this.txtMatKhauMoi.Clear();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi");
+                    return;
+                }
+            }
+            if(MD5(this.txtMatKhauCu.Text) != nv.MATKHAU)
+            {
+                MessageBox.Show("Mật khẩu cũ không chính xác !!!", "Thông báo");
+                return;
+            }
+            if(this.txtMatKhauCu.Text != this.txtMatKhauMoi.Text)
+            {
+                MessageBox.Show("Mật khẩu mới không trùng khớp !!!", "Thông báo");
+                return;
+            }
+
+            string mkMoi = MD5(this.txtMatKhauMoi.Text);
+            if (NhanVienBUS.DoiMatKhau(nv.MANV, mkMoi))
+            {
+                MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo");
+                this.txtMatKhauCu.Clear();
+                this.txtMatKhauMoi.Clear();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi");
+                return;
+            }
+
+        }
+
+        string MD5 (string mk)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(mk));
+            byte[] kq = md5.Hash;
+            StringBuilder str = new StringBuilder();
+            foreach (var item in kq)
+            {
+                str.Append(item.ToString("x2"));
+            }
+            return str.ToString();
         }
     }
 }
