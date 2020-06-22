@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
+using System.Security.Cryptography;
 
 namespace QuanLyCuaHangNoiThat
 {
     public partial class frmDangNhap : Form
     {
-        private string chucvu;
+        public static NHANVIEN nv = new NHANVIEN();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -28,9 +30,14 @@ namespace QuanLyCuaHangNoiThat
                     MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if(NhanVienBUS.KiemTraDangNhap(txtTenDangNhap.Text,txtMatKhau.Text))
+                if(NhanVienBUS.KiemTraDangNhap(txtTenDangNhap.Text,MD5(txtMatKhau.Text)))
                 {
-                    chucvu = NhanVienBUS.ChucVuNhanVien(txtTenDangNhap.Text);
+                    nv = NhanVienBUS.LayThongTinCuaNV(this.txtTenDangNhap.Text).FirstOrDefault();
+                    DialogResult = DialogResult.OK;
+                }
+                else if (NhanVienBUS.KiemTraDangNhap(txtTenDangNhap.Text, txtMatKhau.Text))
+                {
+                    nv = NhanVienBUS.LayThongTinCuaNV(this.txtTenDangNhap.Text).FirstOrDefault();
                     DialogResult = DialogResult.OK;
                 }
                 else
@@ -65,7 +72,7 @@ namespace QuanLyCuaHangNoiThat
 
         void AutoCompleteMaNV()
         {
-            List<String> lst = NhanVienBUS.LayDanhSachNhanVien();
+            List<String> lst = NhanVienBUS.LayDanhSachMaNV();
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
             foreach(string item in lst )
             {
@@ -74,6 +81,18 @@ namespace QuanLyCuaHangNoiThat
             txtTenDangNhap.AutoCompleteCustomSource = collection;
             txtTenDangNhap.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtTenDangNhap.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+        string MD5(string mk)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(mk));
+            byte[] kq = md5.Hash;
+            StringBuilder str = new StringBuilder();
+            foreach (var item in kq)
+            {
+                str.Append(item.ToString("x2"));
+            }
+            return str.ToString();
         }
 
     }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace QuanLyCuaHangNoiThat
 {
@@ -16,15 +17,21 @@ namespace QuanLyCuaHangNoiThat
         private IconButton currentIconBtn;
         private Panel currentPanel;
         private Form currentfrmDesktop;
-        public frmMenu()
+        private NHANVIEN nhanvien = new NHANVIEN();
+        private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        public frmMenu(NHANVIEN nv)
         {
             InitializeComponent();
+            nhanvien = nv;
             this.currentIconBtn = new IconButton();
             this.currentPanel = new Panel();
             this.currentPanel.Size = new Size(5, btnMenuCongNo.Size.Height);
             panelMenu.Controls.Add(this.currentPanel);
 
             this.currentfrmDesktop = new Form();
+
+            ChucVu();
+            LoadAnhDaiDien();
            
         }
         private void btnMenuHoaDon_Click(object sender, EventArgs e)
@@ -71,6 +78,13 @@ namespace QuanLyCuaHangNoiThat
         private void btnMenuDangXuat_Click(object sender, EventArgs e)
         {
             IconButtonMenuClick(sender, e);
+            this.Visible = false;
+            frmDangNhap dangnhap = new frmDangNhap();
+            if (dangnhap.ShowDialog() == DialogResult.OK)
+            {
+                frmMenu menu = new frmMenu(frmDangNhap.nv);
+                menu.Show();
+            }
         }
 
         private void btnStatusMenu_Click(object sender, EventArgs e)
@@ -127,8 +141,26 @@ namespace QuanLyCuaHangNoiThat
 
         private void lblTenNhanVien_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhauNV frm = new frmDoiMatKhauNV();
+            frmDoiMatKhauNV frm = new frmDoiMatKhauNV(nhanvien);
             frm.ShowDialog();
+        }
+
+        void ChucVu()
+        {
+            if(nhanvien.CHUCVU == "NV")
+            {
+                btnMenuNhanVien.Enabled = false;
+            }
+            else
+            {
+                btnMenuNhanVien.Enabled = true;
+            }
+        }
+
+        void LoadAnhDaiDien()
+        {
+            this.imgAnhNhanVien.ImageLocation = patch + nhanvien.ANHDAIDIEN;
+            this.lblTenNhanVien.Text = nhanvien.TENNV;
         }
     }
 }
