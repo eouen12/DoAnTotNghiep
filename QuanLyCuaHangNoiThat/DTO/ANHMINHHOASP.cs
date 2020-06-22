@@ -9,16 +9,16 @@
 
 namespace DTO
 {
-    
     using System;
     using System.Collections.Generic;
-
+    
     public partial class ANHMINHHOASP
     {
         public string MAANH { get; set; }
         public string TENANHMINHHOA { get; set; }
         public string MASP { get; set; }
         public bool TRANGTHAI { get; set; }
+    
         public virtual SANPHAM SANPHAM { get; set; }
     }
 }

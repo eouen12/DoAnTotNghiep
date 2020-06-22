@@ -54,7 +54,7 @@
     <Compile Include="AnhMinhHoaSPDAO.cs" />
     <Compile Include="CongNoDAO.cs" />
     <Compile Include="CTHoaDonBanHangDAO.cs" />
-    <Compile Include="CTHoaDonNhapHangTuNPPDAO.cs" />
+    <Compile Include="CTNhapHangTuNPPDAO.cs" />
     <Compile Include="CTNhapHangDAO.cs" />
     <Compile Include="HoaDonBanHangDAO.cs" />
     <Compile Include="HoaDonNhapHangDAO.cs" />

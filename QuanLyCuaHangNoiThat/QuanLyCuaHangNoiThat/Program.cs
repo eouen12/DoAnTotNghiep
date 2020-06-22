@@ -16,12 +16,12 @@ namespace QuanLyCuaHangNoiThat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //frmDangNhap frmDangNhap = new frmDangNhap();
-            //if(frmDangNhap.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new frmKhachHang());
-            //}
-            Application.Run(new frmSanPham());
+            frmDangNhap frmDangNhap = new frmDangNhap();
+            if (frmDangNhap.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmMenu());
+            }
+            //Application.Run(new frmSanPham());
         }
     }
 }

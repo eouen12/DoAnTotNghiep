@@ -14,5 +14,50 @@ namespace DAO
         {
             return db.NHAPHANPHOI.Where(p => p.TRANGTHAI == true).ToList();
         }
+        public static bool ThemNPP(NHAPHANPHOI npp)
+        {
+            try
+            {
+                db.NHAPHANPHOI.Add(npp);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public static bool SuaNPP(NHAPHANPHOI npp)
+        {
+            try
+            {
+                var s = db.NHAPHANPHOI.Find(npp.MANPP);
+                s.TENNPP = npp.TENNPP;
+                s.SDT = npp.SDT;
+                s.EMAIL = npp.EMAIL;
+                s.DIACHI = npp.DIACHI;
+                s.WEBSITE = npp.WEBSITE;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+            public static bool XoaNPP(string manpp)
+            {
+                try
+                {
+                    var npp = db.NHAPHANPHOI.Find(manpp);
+                    npp.TRANGTHAI = false;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
     }
 }

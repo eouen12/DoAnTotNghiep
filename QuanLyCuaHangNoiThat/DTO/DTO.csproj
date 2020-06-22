@@ -114,6 +114,9 @@
     <Compile Include="SANPHAM.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

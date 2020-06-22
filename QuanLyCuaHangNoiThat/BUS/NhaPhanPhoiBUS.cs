@@ -13,5 +13,17 @@ namespace BUS
         {
             return NhaPhanPhoiDAO.LayDanhSachNhaPhanPhoi();
         }
+        public static bool ThemNPP(NHAPHANPHOI npp)
+        {
+            return NhaPhanPhoiDAO.ThemNPP(npp);
+        }
+        public static bool SuaNPP(NHAPHANPHOI npp)
+        {
+            return NhaPhanPhoiDAO.SuaNPP(npp);
+        }
+        public static bool XoaNPP(string manpp)
+        {
+            return NhaPhanPhoiDAO.XoaNPP(manpp);
+        }
     }
 }

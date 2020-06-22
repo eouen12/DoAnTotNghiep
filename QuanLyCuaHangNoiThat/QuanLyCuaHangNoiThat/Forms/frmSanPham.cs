@@ -16,7 +16,7 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmSanPham : Form
     {
         private string tenAnhMinhHoa;
-        private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Hinh_SanPham\";
+        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
 
@@ -55,6 +55,7 @@ namespace QuanLyCuaHangNoiThat
             this.dgvDSSanPham.DataSource = kq.ToList();
             this.dgvDSSanPham.AutoSize = true;
             this.dgvDSSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDSSanPham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         void LoadComboBoxData()
@@ -112,6 +113,8 @@ namespace QuanLyCuaHangNoiThat
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP
                      };
+
+            //lstSanPham.Where(u => u.TENSP.Contains(chuoi) || u.MASP.Contains(chuoi) || u.MALOAI == chuoi || u.MANPP == chuoi).ToList();
             this.dgvDSSanPham.DataSource = kq.ToList();
             this.dgvDSSanPham.AutoSize = true;
             this.dgvDSSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -141,6 +144,9 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadDataTabQLSP()
         {
+
+            lstSanPham = SanPhamBUS.LayDanhSachSanPham();
+            lstAnhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa();
             var kq = from sp in lstSanPham
                      join anhMH in lstAnhMinhHoa
                      on sp.MASP equals anhMH.MASP 
@@ -158,6 +164,7 @@ namespace QuanLyCuaHangNoiThat
             this.dgvQLSanPham.DataSource = kq.ToList();
             this.dgvQLSanPham.AutoSize = true;
             this.dgvQLSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvQLSanPham.Columns["TENANHMINHHOA"].Visible = false;
         }
 
         void TimKiemQLSP(string chuoi)

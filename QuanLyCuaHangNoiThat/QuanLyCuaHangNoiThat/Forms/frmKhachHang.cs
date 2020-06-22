@@ -34,6 +34,9 @@ namespace QuanLyCuaHangNoiThat
         private void Loading()
         {
             dgvDSKH.DataSource = KhachHangBUS.LayDanhSachKhachHang();
+            //this.dgvDSKH.AutoSize = true;
+            //this.dgvDSKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //this.dgvDSKH.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -57,12 +60,19 @@ namespace QuanLyCuaHangNoiThat
         private void btnSua_Click(object sender, EventArgs e)
         {
             KHACHHANG KH = new KHACHHANG();
+            if (txtCMND.Text == string.Empty || txtTenKH.Text == string.Empty || txtSDT.Text == string.Empty || txtDiaChi.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else 
             KH.MAKH = int.Parse(dgvDSKH.CurrentRow.Cells["MAKH"].Value.ToString());
             KH.CMND = txtCMND.Text;
             KH.DIACHI = txtDiaChi.Text;
             KH.SDT = txtSDT.Text;
             KH.TENKH = txtTenKH.Text;
             KhachHangBUS.Update(KH);
+            MessageBox.Show("Sửa thông tin thành công", "Thông báo");
             Loading();
         }
 

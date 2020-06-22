@@ -9,19 +9,6 @@
     <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="CHITIETNHAPHANG">
-    <Key>
-      <PropertyRef Name="MASP" />
-      <PropertyRef Name="MANPP" />
-    </Key>
-    <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="MANPP" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="DONGIA" Type="int" />
-    <Property Name="SL_NHAPHANG" Type="int" />
-    <Property Name="TONGGIATRI" Type="int" />
-    <Property Name="NGAYNHAPHANG" Type="datetime" />
-    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
-  </EntityType>
   <EntityType Name="CONGNO">
     <Key>
       <PropertyRef Name="MACONGNO" />
@@ -31,6 +18,16 @@
     <Property Name="DATRA" Type="money" />
     <Property Name="TIENCONNO" Type="money" />
     <Property Name="NGAYTRA" Type="datetime" />
+    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTNHAPHANGTUNPP">
+    <Key>
+      <PropertyRef Name="MAHDNH" />
+      <PropertyRef Name="MANPP" />
+    </Key>
+    <Property Name="MAHDNH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MANPP" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TONGGIATRI" Type="money" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="CTHOADONBANHANG">
@@ -44,14 +41,17 @@
     <Property Name="DONGIA" Type="int" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="CTNHAPHANGTUNPP">
+  <EntityType Name="CHITIETNHAPHANG">
     <Key>
-      <PropertyRef Name="MAHDNH" />
+      <PropertyRef Name="MASP" />
       <PropertyRef Name="MANPP" />
     </Key>
-    <Property Name="MAHDNH" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MANPP" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="TONGGIATRI" Type="money" />
+    <Property Name="DONGIA" Type="int" />
+    <Property Name="SL_NHAPHANG" Type="int" />
+    <Property Name="TONGGIATRI" Type="int" />
+    <Property Name="NGAYNHAPHANG" Type="datetime" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="HOADONBANHANG">
@@ -161,7 +161,17 @@
     <Property Name="MALOAI" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
-  <Association Name="FK__ANHMINHHOA__MASP__59063A47">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__ANHMINHHOA__MASP__44FF419A">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="ANHMINHHOASP" Type="Self.ANHMINHHOASP" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,55 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETNH__MANPP__5441852A">
-    <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="1" />
-    <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NHAPHANPHOI">
-        <PropertyRef Name="MANPP" />
-      </Principal>
-      <Dependent Role="CHITIETNHAPHANG">
-        <PropertyRef Name="MANPP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CHITIETNHA__MASP__5535A963">
-    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
-    <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SANPHAM">
-        <PropertyRef Name="MASP" />
-      </Principal>
-      <Dependent Role="CHITIETNHAPHANG">
-        <PropertyRef Name="MASP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHOADONBA__MAHD__52593CB8">
-    <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="1" />
-    <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HOADONBANHANG">
-        <PropertyRef Name="MAHD" />
-      </Principal>
-      <Dependent Role="CTHOADONBANHANG">
-        <PropertyRef Name="MAHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHOADONBA__MASP__534D60F1">
-    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
-    <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SANPHAM">
-        <PropertyRef Name="MASP" />
-      </Principal>
-      <Dependent Role="CTHOADONBANHANG">
-        <PropertyRef Name="MASP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTNHAPHAN__MAHDN__5070F446">
+  <Association Name="FK__CTNHAPHAN__MAHDN__3C69FB99">
     <End Role="HOADONNHAPHANG" Type="Self.HOADONNHAPHANG" Multiplicity="1" />
     <End Role="CTNHAPHANGTUNPP" Type="Self.CTNHAPHANGTUNPP" Multiplicity="*" />
     <ReferentialConstraint>
@@ -233,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTNHAPHAN__MANPP__5165187F">
+  <Association Name="FK__CTNHAPHAN__MANPP__3D5E1FD2">
     <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="1" />
     <End Role="CTNHAPHANGTUNPP" Type="Self.CTNHAPHANGTUNPP" Multiplicity="*" />
     <ReferentialConstraint>
@@ -245,7 +207,55 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADONBAN__NV_LA__4E88ABD4">
+  <Association Name="FK__CTHOADONBA__MAHD__3E52440B">
+    <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="1" />
+    <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONBANHANG">
+        <PropertyRef Name="MAHD" />
+      </Principal>
+      <Dependent Role="CTHOADONBANHANG">
+        <PropertyRef Name="MAHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHOADONBA__MASP__3F466844">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CTHOADONBANHANG">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETNH__MANPP__403A8C7D">
+    <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="1" />
+    <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAPHANPHOI">
+        <PropertyRef Name="MANPP" />
+      </Principal>
+      <Dependent Role="CHITIETNHAPHANG">
+        <PropertyRef Name="MANPP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETNHA__MASP__412EB0B6">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CHITIETNHAPHANG">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOADONBAN__NV_LA__3A81B327">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -257,7 +267,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADONBANH__MAKH__4D94879B">
+  <Association Name="FK__HOADONBANH__MAKH__398D8EEE">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -269,7 +279,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADONNHA__NV_NH__4F7CD00D">
+  <Association Name="FK__HOADONNHA__NV_NH__3B75D760">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="HOADONNHAPHANG" Type="Self.HOADONNHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -281,7 +291,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LICHSUTRA__MACON__4CA06362">
+  <Association Name="FK__LICHSUTRA__MACON__38996AB5">
     <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="1" />
     <End Role="LICHSUTRANO" Type="Self.LICHSUTRANO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -293,7 +303,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LICHSUTRAN__MAKH__4BAC3F29">
+  <Association Name="FK__LICHSUTRAN__MAKH__37A5467C">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="LICHSUTRANO" Type="Self.LICHSUTRANO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -305,7 +315,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NHANVIEN__CHUCVU__5629CD9C">
+  <Association Name="FK__NHANVIEN__CHUCVU__4222D4EF">
     <End Role="QUYENHAN" Type="Self.QUYENHAN" Multiplicity="0..1" />
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -317,7 +327,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MALOAI__571DF1D5">
+  <Association Name="FK__SANPHAM__MALOAI__4316F928">
     <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -329,7 +339,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MANPP__5812160E">
+  <Association Name="FK__SANPHAM__MANPP__440B1D61">
     <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -343,10 +353,10 @@
   </Association>
   <EntityContainer Name="QuanLyCuaHangNoiThatModelStoreContainer">
     <EntitySet Name="ANHMINHHOASP" EntityType="Self.ANHMINHHOASP" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CHITIETNHAPHANG" EntityType="Self.CHITIETNHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CONGNO" EntityType="Self.CONGNO" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CTHOADONBANHANG" EntityType="Self.CTHOADONBANHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTNHAPHANGTUNPP" EntityType="Self.CTNHAPHANGTUNPP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTHOADONBANHANG" EntityType="Self.CTHOADONBANHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETNHAPHANG" EntityType="Self.CHITIETNHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADONBANHANG" EntityType="Self.HOADONBANHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADONNHAPHANG" EntityType="Self.HOADONNHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
@@ -357,63 +367,64 @@
     <EntitySet Name="NHAPHANPHOI" EntityType="Self.NHAPHANPHOI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUYENHAN" EntityType="Self.QUYENHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ANHMINHHOA__MASP__59063A47" Association="Self.FK__ANHMINHHOA__MASP__59063A47">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ANHMINHHOA__MASP__44FF419A" Association="Self.FK__ANHMINHHOA__MASP__44FF419A">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="ANHMINHHOASP" EntitySet="ANHMINHHOASP" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETNH__MANPP__5441852A" Association="Self.FK__CHITIETNH__MANPP__5441852A">
-      <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
-      <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CHITIETNHA__MASP__5535A963" Association="Self.FK__CHITIETNHA__MASP__5535A963">
-      <End Role="SANPHAM" EntitySet="SANPHAM" />
-      <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CTHOADONBA__MAHD__52593CB8" Association="Self.FK__CTHOADONBA__MAHD__52593CB8">
-      <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
-      <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CTHOADONBA__MASP__534D60F1" Association="Self.FK__CTHOADONBA__MASP__534D60F1">
-      <End Role="SANPHAM" EntitySet="SANPHAM" />
-      <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CTNHAPHAN__MAHDN__5070F446" Association="Self.FK__CTNHAPHAN__MAHDN__5070F446">
+    <AssociationSet Name="FK__CTNHAPHAN__MAHDN__3C69FB99" Association="Self.FK__CTNHAPHAN__MAHDN__3C69FB99">
       <End Role="HOADONNHAPHANG" EntitySet="HOADONNHAPHANG" />
       <End Role="CTNHAPHANGTUNPP" EntitySet="CTNHAPHANGTUNPP" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTNHAPHAN__MANPP__5165187F" Association="Self.FK__CTNHAPHAN__MANPP__5165187F">
+    <AssociationSet Name="FK__CTNHAPHAN__MANPP__3D5E1FD2" Association="Self.FK__CTNHAPHAN__MANPP__3D5E1FD2">
       <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
       <End Role="CTNHAPHANGTUNPP" EntitySet="CTNHAPHANGTUNPP" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADONBAN__NV_LA__4E88ABD4" Association="Self.FK__HOADONBAN__NV_LA__4E88ABD4">
+    <AssociationSet Name="FK__CTHOADONBA__MAHD__3E52440B" Association="Self.FK__CTHOADONBA__MAHD__3E52440B">
+      <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
+      <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHOADONBA__MASP__3F466844" Association="Self.FK__CTHOADONBA__MASP__3F466844">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETNH__MANPP__403A8C7D" Association="Self.FK__CHITIETNH__MANPP__403A8C7D">
+      <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
+      <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETNHA__MASP__412EB0B6" Association="Self.FK__CHITIETNHA__MASP__412EB0B6">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOADONBAN__NV_LA__3A81B327" Association="Self.FK__HOADONBAN__NV_LA__3A81B327">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADONBANH__MAKH__4D94879B" Association="Self.FK__HOADONBANH__MAKH__4D94879B">
+    <AssociationSet Name="FK__HOADONBANH__MAKH__398D8EEE" Association="Self.FK__HOADONBANH__MAKH__398D8EEE">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADONNHA__NV_NH__4F7CD00D" Association="Self.FK__HOADONNHA__NV_NH__4F7CD00D">
+    <AssociationSet Name="FK__HOADONNHA__NV_NH__3B75D760" Association="Self.FK__HOADONNHA__NV_NH__3B75D760">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="HOADONNHAPHANG" EntitySet="HOADONNHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__LICHSUTRA__MACON__4CA06362" Association="Self.FK__LICHSUTRA__MACON__4CA06362">
+    <AssociationSet Name="FK__LICHSUTRA__MACON__38996AB5" Association="Self.FK__LICHSUTRA__MACON__38996AB5">
       <End Role="CONGNO" EntitySet="CONGNO" />
       <End Role="LICHSUTRANO" EntitySet="LICHSUTRANO" />
     </AssociationSet>
-    <AssociationSet Name="FK__LICHSUTRAN__MAKH__4BAC3F29" Association="Self.FK__LICHSUTRAN__MAKH__4BAC3F29">
+    <AssociationSet Name="FK__LICHSUTRAN__MAKH__37A5467C" Association="Self.FK__LICHSUTRAN__MAKH__37A5467C">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="LICHSUTRANO" EntitySet="LICHSUTRANO" />
     </AssociationSet>
-    <AssociationSet Name="FK__NHANVIEN__CHUCVU__5629CD9C" Association="Self.FK__NHANVIEN__CHUCVU__5629CD9C">
+    <AssociationSet Name="FK__NHANVIEN__CHUCVU__4222D4EF" Association="Self.FK__NHANVIEN__CHUCVU__4222D4EF">
       <End Role="QUYENHAN" EntitySet="QUYENHAN" />
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MALOAI__571DF1D5" Association="Self.FK__SANPHAM__MALOAI__571DF1D5">
+    <AssociationSet Name="FK__SANPHAM__MALOAI__4316F928" Association="Self.FK__SANPHAM__MALOAI__4316F928">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MANPP__5812160E" Association="Self.FK__SANPHAM__MANPP__5812160E">
+    <AssociationSet Name="FK__SANPHAM__MANPP__440B1D61" Association="Self.FK__SANPHAM__MANPP__440B1D61">
       <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>
