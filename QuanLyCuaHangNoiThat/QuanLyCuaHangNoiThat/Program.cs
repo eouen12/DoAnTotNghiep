@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyCuaHangNoiThat.Forms;
 
 namespace QuanLyCuaHangNoiThat
 {
@@ -17,11 +18,11 @@ namespace QuanLyCuaHangNoiThat
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmDangNhap frmDangNhap = new frmDangNhap();
-            if (frmDangNhap.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new frmMenu());
-            }
-            //Application.Run(new frmSanPham());
+            //if (frmDangNhap.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new frmMenu());
+            //}
+            Application.Run(new frmMenu());
         }
     }
 }

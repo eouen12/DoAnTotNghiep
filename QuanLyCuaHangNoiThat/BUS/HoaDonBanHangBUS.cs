@@ -14,6 +14,11 @@ namespace BUS
             return HoaDonBanHangDAO.LayDanhSachHonDon();
         }
 
+        public static List<HOADONBANHANG> LayThongTinCuaHD(string mahd)
+        {
+            return HoaDonBanHangDAO.LayThongTinCuaHD(mahd);
+        }
+
         public static bool ThemHoaDon(HOADONBANHANG hd)
         {
             return HoaDonBanHangDAO.ThemHoaDon(hd);

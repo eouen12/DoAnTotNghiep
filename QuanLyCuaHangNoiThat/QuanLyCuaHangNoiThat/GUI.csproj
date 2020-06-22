@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmChinhSuaCTHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChinhSuaCTHoaDon.Designer.cs">
+      <DependentUpon>frmChinhSuaCTHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCongNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmChinhSuaCTHoaDon.resx">
+      <DependentUpon>frmChinhSuaCTHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCongNo.resx">
       <DependentUpon>frmCongNo.cs</DependentUpon>
     </EmbeddedResource>

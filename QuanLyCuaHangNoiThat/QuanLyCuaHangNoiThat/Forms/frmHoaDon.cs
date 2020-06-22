@@ -17,6 +17,7 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<HOADONBANHANG> lstHD = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
+        private HOADONBANHANG hd = new HOADONBANHANG();
 
         public frmHoaDon()
         {
@@ -25,9 +26,10 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
-
+            frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd);
+            frm.ShowDialog();
+            frmHoaDon_Load(sender, e);
         }
-
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             LoadDSHoaDon();
@@ -69,6 +71,7 @@ namespace QuanLyCuaHangNoiThat
             this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD["TONGTIEN", e.RowIndex].Value).ToString("#,##0");
             this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYGIAO", e.RowIndex].Value).ToShortDateString();
             LoadDSCTHD(this.lblMaHD.Text);
+            hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
         }
 
         void LoadDSHoaDon()
@@ -91,7 +94,7 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadDSCTHD(string mahd)
         {
-            lstCTHD = CTHoaDonBanHangBUS.LayDSCTHDcuaKH(mahd);
+            lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD(mahd);
             var kq = from ct in lstCTHD
                      select new
                      {
