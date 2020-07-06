@@ -82,14 +82,9 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnXacNhanThanhToan_Click(object sender, EventArgs e)
         {
-            CongNoBUS.CapNhatCongNo(new CONGNO
-            {
-                TONGTIEN = Convert.ToDecimal(this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString()),
-                TIENCONNO = Convert.ToDecimal(this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString()) - Convert.ToDecimal(this.txtSoTienTraHomNay.Text),
-                NGAYTRA = this.dateTimePickerNgayTra.Value,
-                TRANGTHAI = true
-            });
+            CapNhatCongNo();
             LoadDSCN();
+            Reset();
         }
 
         //void XoaCongNo()
@@ -108,7 +103,6 @@ namespace QuanLyCuaHangNoiThat
             {
                 this.btnXacNhanThanhToan.Enabled = true;
                 this.txtSoTienTraHomNay.Enabled = true;
-                this.dateTimePickerNgayTra.Enabled = true;
 
                 KHACHHANG kh = KhachHangBUS.LayThongTin(Convert.ToInt32(this.dgvCongNo["MAKHCongNo", e.RowIndex].Value.ToString()));
                 this.txtCMNDKHCongNo.Text = kh.CMND;
@@ -118,12 +112,12 @@ namespace QuanLyCuaHangNoiThat
 
                 this.lblTongTien.Text = this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString();
                 this.txtTienConNo.Text = this.dgvCongNo.CurrentRow.Cells["TIENCONNO"].Value.ToString();
+                this.dateTimePickerNgayTra.Value = Convert.ToDateTime(this.dgvCongNo.CurrentRow.Cells["NGAYTRA"].Value);
             }
             else
             {
                 this.btnXacNhanThanhToan.Enabled = false;
                 this.txtSoTienTraHomNay.Enabled = false;
-                this.dateTimePickerNgayTra.Enabled = false;
             }
         }
 
@@ -135,6 +129,7 @@ namespace QuanLyCuaHangNoiThat
                 this.txtSoTienTraHomNay.Enabled = true;
                 this.dateTimePickerNgayTra.Enabled = true;
 
+
                 KHACHHANG kh = KhachHangBUS.LayThongTin(Convert.ToInt32(this.dgvCongNo["MAKHCongNo", e.RowIndex].Value.ToString()));
                 this.txtCMNDKHCongNo.Text = kh.CMND;
                 this.txtTenKHCongNo.Text = kh.TENKH;
@@ -143,13 +138,57 @@ namespace QuanLyCuaHangNoiThat
 
                 this.lblTongTien.Text = this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString();
                 this.txtTienConNo.Text = this.dgvCongNo.CurrentRow.Cells["TIENCONNO"].Value.ToString();
+                this.dateTimePickerNgayTra.Value = Convert.ToDateTime(this.dgvCongNo.CurrentRow.Cells["NGAYTRA"].Value);
             }
             else
             {
-                this.btnXacNhanThanhToan.Enabled = false;
-                this.txtSoTienTraHomNay.Enabled = false;
-                this.dateTimePickerNgayTra.Enabled = false;
+                Reset();
             }
+        }
+
+        void CapNhatCongNo()
+        {
+            if (Convert.ToDecimal(this.txtSoTienTraHomNay.Text) > Convert.ToDecimal(this.txtTienConNo.Text))
+            {
+                MessageBox.Show("Số tiền trả đang lớn hơn tổng số tiền trong hóa đơn !!!", "Lỗi");
+                return;
+            }
+            string macn = this.dgvCongNo.CurrentRow.Cells["MACONGNO"].Value.ToString();
+            CongNoBUS.CapNhatCongNo(new CONGNO
+            {
+                MACONGNO = macn,
+                MAKH = Convert.ToInt32(this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value),
+                TONGTIEN = Convert.ToDecimal(this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString()),
+                TIENCONNO = Convert.ToDecimal(this.txtTienConNo.Text) - Convert.ToDecimal(this.txtSoTienTraHomNay.Text),
+                NGAYTRA = this.dateTimePickerNgayTra.Value,
+                TRANGTHAI = true
+            });
+
+            LichSuTraNoBUS.TaoLichSuTraNo(new LICHSUTRANO
+            {
+                MACONGNO = macn,
+                NGAYTRA_THEODOI = DateTime.Now,
+                TIENTRA_THEODOI = Convert.ToDecimal(this.txtSoTienTraHomNay.Text),
+                TRANGTHAI = true,
+            });
+            MessageBox.Show("Thanh toán thành công !!!", "Thông báo");
+        }
+        void Reset()
+        {
+            this.btnXacNhanThanhToan.Enabled = false;
+            this.txtSoTienTraHomNay.Enabled = false;
+            this.dateTimePickerNgayTra.Enabled = false;
+            this.txtCMNDKHCongNo.Clear();
+            this.txtTenKHCongNo.Clear();
+            this.txtDiaChiKHCongNo.Clear();
+            this.txtSDTKHCongNo.Clear();
+            this.lblTongTien.Clear();
+            this.txtTienConNo.Clear();
+            this.dateTimePickerNgayTra.Value = DateTime.Now;
+        }
+
+        private void txtSoTienTraHomNay_Validating(object sender, CancelEventArgs e)
+        {
         }
     }
 }

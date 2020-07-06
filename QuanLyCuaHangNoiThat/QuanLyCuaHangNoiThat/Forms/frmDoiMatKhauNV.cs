@@ -16,8 +16,7 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmDoiMatKhauNV : Form
     {
         private NHANVIEN nv = new NHANVIEN();
-        //private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
-        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
         public frmDoiMatKhauNV(NHANVIEN nhanvien)
         {
             InitializeComponent();

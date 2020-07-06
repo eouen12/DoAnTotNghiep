@@ -18,10 +18,12 @@ namespace QuanLyCuaHangNoiThat
         private List<HOADONBANHANG> lstHD = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
         private HOADONBANHANG hd = new HOADONBANHANG();
+        private string manv;
 
-        public frmHoaDon()
+        public frmHoaDon(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void btnSuaHD_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Bạn chưa chọn hóa đơn !!!", "Thông báo");
                 return;
             }
-            frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd);
+            frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd,this.manv);
             frm.ShowDialog();
             frmHoaDon_Load(sender, e);
             

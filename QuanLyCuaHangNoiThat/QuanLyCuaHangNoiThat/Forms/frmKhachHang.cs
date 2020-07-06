@@ -56,6 +56,9 @@ namespace QuanLyCuaHangNoiThat
                 KH.SDT = txtSDT.Text;
                 KH.TENKH = txtTenKH.Text;
                 KhachHangBUS.Insert(KH);
+                MessageBox.Show("Thêm mới thành công", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới khách hàng " + KH.TENKH;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Loading();
             }
         }
@@ -76,6 +79,8 @@ namespace QuanLyCuaHangNoiThat
             KH.TENKH = txtTenKH.Text;
             KhachHangBUS.Update(KH);
             MessageBox.Show("Sửa thông tin thành công", "Thông báo");
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin khách hàng " + KH.TENKH;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             Loading();
         }
 
@@ -83,6 +88,9 @@ namespace QuanLyCuaHangNoiThat
         {
             string IDKH = dgvDSKH.CurrentRow.Cells["MAKH"].Value.ToString();
             KhachHangBUS.Delete(IDKH);
+            MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo");
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin khách hàng " + this.txtTenKH.Text;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             Loading();
         }
 

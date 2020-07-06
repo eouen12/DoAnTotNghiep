@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-
+using BUS;
 namespace QuanLyCuaHangNoiThat
 {
     public partial class frmMenu : Form
@@ -18,8 +18,7 @@ namespace QuanLyCuaHangNoiThat
         private Panel currentPanel;
         private Form currentfrmDesktop;
         private NHANVIEN nhanvien = new NHANVIEN();
-        // private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
-        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
         public frmMenu(NHANVIEN nv)
         {
             InitializeComponent();
@@ -33,43 +32,38 @@ namespace QuanLyCuaHangNoiThat
 
             ChucVu();
             LoadAnhDaiDien();
-           
+            LoadLSHeThong();
         }
         private void btnMenuHoaDon_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmHoaDon());
+            MofrmDesktop(new frmHoaDon(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuSanPham_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmSanPham());
+            MofrmDesktop(new frmSanPham(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuKhachHang_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmKhachHang(nhanvien.MANV));
+            MofrmDesktop(new frmKhachHang(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuCongNo_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmCongNo());
+            MofrmDesktop(new frmCongNo(), sender, e);
         }
 
         private void btnMenuNhaPhanPhoi_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmNhaPhanPhoi());
+            MofrmDesktop(new frmNhaPhanPhoi(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuNhanVien_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
-            MofrmDesktop(new frmNhanVien());
+            MofrmDesktop(new frmNhanVien(nhanvien.MANV), sender, e);
         }
+
 
         private void btnMenuDoiDonVi_Click(object sender, EventArgs e)
         {
@@ -110,20 +104,24 @@ namespace QuanLyCuaHangNoiThat
             }
         }
 
-        private void MofrmDesktop(Form frm)
+        private void MofrmDesktop(Form frm, object sender, EventArgs e)
         {
             if (frm != null)
             {
                 this.currentfrmDesktop.Close();
             }
-            this.currentfrmDesktop = frm;
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(frm);
-            panelDesktop.Tag = frm;
-            frm.BringToFront();
-            frm.Show();
+            if (this.currentfrmDesktop.DialogResult != DialogResult.No)
+            {
+                this.currentfrmDesktop = frm;
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Dock = DockStyle.Fill;
+                panelDesktop.Controls.Add(frm);
+                panelDesktop.Tag = frm;
+                frm.BringToFront();
+                frm.Show();
+                IconButtonMenuClick(sender, e);
+            }
         }
 
         private void Reset()
@@ -162,6 +160,12 @@ namespace QuanLyCuaHangNoiThat
         {
             this.imgAnhNhanVien.ImageLocation = patch + nhanvien.ANHDAIDIEN;
             this.lblTenNhanVien.Text = nhanvien.TENNV;
+        }
+
+        void LoadLSHeThong()
+        {
+            this.dgvLSHeThong.AutoGenerateColumns = false;
+            this.dgvLSHeThong.DataSource = LichSuHeThongBUS.LayDanhSachLSHT();
         }
     }
 }

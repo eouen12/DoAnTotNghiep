@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.imgNhanVien = new System.Windows.Forms.PictureBox();
             this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDiaChiNV = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.imgNhanVien = new System.Windows.Forms.PictureBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -76,22 +76,54 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(570, 411);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(88, 188);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(68, 24);
+            this.lblEmail.TabIndex = 24;
+            this.lblEmail.Text = "Test...";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 188);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 24);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Email:";
+            // 
+            // imgNhanVien
+            // 
+            this.imgNhanVien.BackColor = System.Drawing.Color.White;
+            this.imgNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgNhanVien.Location = new System.Drawing.Point(12, 33);
+            this.imgNhanVien.Name = "imgNhanVien";
+            this.imgNhanVien.Size = new System.Drawing.Size(127, 137);
+            this.imgNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgNhanVien.TabIndex = 22;
+            this.imgNhanVien.TabStop = false;
+            // 
             // txtMatKhauMoi
             // 
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(206, 296);
-            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(215, 29);
             this.txtMatKhauMoi.TabIndex = 21;
+            this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -196,10 +228,11 @@
             // 
             this.txtMatKhauCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauCu.Location = new System.Drawing.Point(206, 260);
-            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Size = new System.Drawing.Size(215, 29);
             this.txtMatKhauCu.TabIndex = 11;
+            this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -261,44 +294,13 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã nhân viên:";
             // 
-            // imgNhanVien
-            // 
-            this.imgNhanVien.BackColor = System.Drawing.Color.White;
-            this.imgNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgNhanVien.Location = new System.Drawing.Point(12, 33);
-            this.imgNhanVien.Name = "imgNhanVien";
-            this.imgNhanVien.Size = new System.Drawing.Size(127, 137);
-            this.imgNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgNhanVien.TabIndex = 22;
-            this.imgNhanVien.TabStop = false;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(88, 188);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(68, 24);
-            this.lblEmail.TabIndex = 24;
-            this.lblEmail.Text = "Test...";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 188);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 24);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Email:";
-            // 
             // frmDoiMatKhauNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 411);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDoiMatKhauNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDoiMatKhauNV";

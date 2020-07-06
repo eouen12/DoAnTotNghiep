@@ -9,5 +9,13 @@ namespace BUS
 {
     public class LichSuTraNoBUS
     {
+        public static List<LICHSUTRANO> LayDSLSTraNoCuaKH(string macn)
+        {
+            return LichSuTraNoDAO.LayDanhSachLSTraNoCuaKH(macn);
+        }
+        public static bool TaoLichSuTraNo(LICHSUTRANO lstrano)
+        {
+            return LichSuTraNoDAO.TaoLichSuTraNo(lstrano);
+        }
     }
 }

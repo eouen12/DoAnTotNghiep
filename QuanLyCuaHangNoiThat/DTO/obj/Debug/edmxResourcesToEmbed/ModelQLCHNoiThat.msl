@@ -11,6 +11,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETNHAPHANG">
+      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG">
+        <MappingFragment StoreEntitySet="CHITIETNHAPHANG">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="NGAYNHAPHANG" ColumnName="NGAYNHAPHANG" />
+          <ScalarProperty Name="TONGGIATRI" ColumnName="TONGGIATRI" />
+          <ScalarProperty Name="SL_NHAPHANG" ColumnName="SL_NHAPHANG" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="MANPP" ColumnName="MANPP" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CONGNO">
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CONGNO">
         <MappingFragment StoreEntitySet="CONGNO">
@@ -20,16 +33,6 @@
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
           <ScalarProperty Name="MAKH" ColumnName="MAKH" />
           <ScalarProperty Name="MACONGNO" ColumnName="MACONGNO" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CTNHAPHANGTUNPP">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP">
-        <MappingFragment StoreEntitySet="CTNHAPHANGTUNPP">
-          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="TONGGIATRI" ColumnName="TONGGIATRI" />
-          <ScalarProperty Name="MANPP" ColumnName="MANPP" />
-          <ScalarProperty Name="MAHDNH" ColumnName="MAHDNH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -44,16 +47,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CHITIETNHAPHANG">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG">
-        <MappingFragment StoreEntitySet="CHITIETNHAPHANG">
+    <EntitySetMapping Name="CTNHAPHANGTUNPP">
+      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP">
+        <MappingFragment StoreEntitySet="CTNHAPHANGTUNPP">
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="NGAYNHAPHANG" ColumnName="NGAYNHAPHANG" />
           <ScalarProperty Name="TONGGIATRI" ColumnName="TONGGIATRI" />
-          <ScalarProperty Name="SL_NHAPHANG" ColumnName="SL_NHAPHANG" />
-          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
           <ScalarProperty Name="MANPP" ColumnName="MANPP" />
-          <ScalarProperty Name="MASP" ColumnName="MASP" />
+          <ScalarProperty Name="MAHDNH" ColumnName="MAHDNH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -169,17 +169,6 @@
           <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
           <ScalarProperty Name="TENSP" ColumnName="TENSP" />
           <ScalarProperty Name="MASP" ColumnName="MASP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

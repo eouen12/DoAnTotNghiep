@@ -8,6 +8,24 @@ namespace DAO
 {
     public class LichSuTraNoDAO
     {
+        private static QuanLyCuaHangNoiThatEntities db = new QuanLyCuaHangNoiThatEntities();
+        public static List<LICHSUTRANO> LayDanhSachLSTraNoCuaKH(string macn)
+        {
+            return db.LICHSUTRANO.Where(p => p.TRANGTHAI == true && p.MACONGNO == macn).ToList();
+        }
 
+        public static bool TaoLichSuTraNo(LICHSUTRANO lstrano)
+        {
+            try
+            {
+                db.LICHSUTRANO.Add(lstrano);
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace DAO
             try
             {
                 var l = db.CONGNO.Find(congno.MACONGNO);
-                l.TIENCONNO = Convert.ToDecimal(congno.TIENCONNO);
+                l.TIENCONNO = congno.TIENCONNO;
+                l.TONGTIEN = congno.TONGTIEN;
                 l.NGAYTRA = congno.NGAYTRA;
                 db.SaveChanges();
                 return true;

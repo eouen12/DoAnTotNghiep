@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace QuanLyCuaHangNoiThat
 {
@@ -18,10 +20,12 @@ namespace QuanLyCuaHangNoiThat
         //private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
         private string patch = @"..\..\..\..\Anh_NhanVien\";
         private string tenAnhDaiDien = "";
+        private string manv;
         private bool dangThayDoiDuLieu = false;
-        public frmNhanVien()
+        public frmNhanVien(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
@@ -56,18 +60,22 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            if(this.txtMaNV.Text != string.Empty
-                || this.txtTenNV.Text != string.Empty
+            if (/*this.txtMaNV.Text != string.Empty*/
+                /*||*/ this.txtTenNV.Text != string.Empty
                 || this.txtSDTNV.Text != string.Empty
                 || this.txtCMNDNV.Text != string.Empty
                 || this.txtEmail.Text != string.Empty
                 || this.txtLuongNV.Text != string.Empty
                 || this.txtDiaChiNV.Text != string.Empty)
             {
+                string s = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(this.txtTenNV.Text.ToLower());
+                string chuoiTen = convertChuoiKhongDau(s).Replace(" ", "");
+                string chuoiNgayTao = DateTime.Now.ToString("dd-MM-yyyy");
+                string manv = "NV_" + chuoiTen + "_" + chuoiNgayTao;
                 try
                 {
                     string[] chuoiXuLiTenAnh = this.tenAnhDaiDien.Split('.');
-                    tenAnhDaiDien = this.txtMaNV.Text + "_" + DateTime.Now.Millisecond + "." + chuoiXuLiTenAnh[1];
+                    tenAnhDaiDien = chuoiTen + "_" + DateTime.Now.ToString("dd-MM-yyyy") + "." + chuoiXuLiTenAnh[1];
                 }
                 catch(Exception ex)
                 {
@@ -76,9 +84,9 @@ namespace QuanLyCuaHangNoiThat
                 }
                 NHANVIEN nv = new NHANVIEN
                 {
-                    MANV = this.txtMaNV.Text,
+                    MANV = manv,
                     TENNV = this.txtTenNV.Text,
-                    MATKHAU = this.txtMaNV.Text,
+                    MATKHAU = manv,
                     SDT = this.txtSDTNV.Text,
                     CMND = Convert.ToInt32(this.txtCMNDNV.Text),
                     EMAIL = this.txtEmail.Text,
@@ -90,8 +98,10 @@ namespace QuanLyCuaHangNoiThat
                 };
                 if(NhanVienBUS.ThemNhanVien(nv))
                 {
-                    this.imgNhanVien.Image.Save(System.IO.Path.Combine(patch,this.tenAnhDaiDien));
+                    this.imgNhanVien.Image.Save(System.IO.Path.Combine(patch, this.tenAnhDaiDien));
                     MessageBox.Show("Thêm nhân viên thành công !!!", "Thông báo");
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + nv.MANV;
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     LoadDsNhanVien();
                     Reset();
                 }
@@ -119,7 +129,7 @@ namespace QuanLyCuaHangNoiThat
                 if (this.tenAnhDaiDien != this.dgvDSNhanVien.CurrentRow.Cells["ANHDAIDIEN"].Value.ToString())
                 {
                     string[] chuoiXuLiTenAnh = this.tenAnhDaiDien.Split('.');
-                    tenAnhDaiDien = this.txtMaNV.Text + "_" + DateTime.Now.Millisecond + "." + chuoiXuLiTenAnh[1];
+                    tenAnhDaiDien = this.txtMaNV.Text + "_(" + DateTime.Now.ToString("dd-MM-yyyy") + ")." + chuoiXuLiTenAnh[1];
                 }
                 NHANVIEN nv = new NHANVIEN
                 {
@@ -139,6 +149,8 @@ namespace QuanLyCuaHangNoiThat
                         this.imgNhanVien.Image.Save(System.IO.Path.Combine(patch + this.tenAnhDaiDien));
                     }
                     MessageBox.Show("Cập nhật nhân viên thành công !!!", "Thông báo");
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhân viên " + nv.MANV;
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     LoadDsNhanVien();
                     Reset();
                 }
@@ -159,6 +171,8 @@ namespace QuanLyCuaHangNoiThat
             {
                 NhanVienBUS.XoaNhanVien(this.txtMaNV.Text);
                 MessageBox.Show("Xóa nhân viên thành công thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + this.txtMaNV.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDsNhanVien();
             }
@@ -236,7 +250,6 @@ namespace QuanLyCuaHangNoiThat
         }
         void setEnable(bool b)
         {
-            this.txtMaNV.Enabled = b;
             this.btnThemNV.Enabled = b;
             this.btnSuaNV.Enabled = !b;
             this.btnXoaNV.Enabled = !b;
@@ -255,6 +268,49 @@ namespace QuanLyCuaHangNoiThat
             this.txtEmail.Clear();
             this.imgNhanVien.Image = null;
             this.tenAnhDaiDien = string.Empty;
+        }
+
+        private void txtEmail_Validated(object sender, EventArgs e)
+        {
+            if (!isValidEmail(this.txtEmail.Text))
+            {
+                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi");
+                this.txtEmail.Focus();
+            }
+        }
+
+        private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dangThayDoiDuLieu)
+            {
+                if (MessageBox.Show("Đang có sự thay đổi dữ liệu, bạn có chắc chứ ?", "Thông báo",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    this.DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+        }
+
+        string convertChuoiKhongDau(string s)
+        {
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+
+        bool isValidEmail(string inputEmail)
+        {
+            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,3}$");
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
         }
     }
 }

@@ -19,10 +19,11 @@ namespace QuanLyCuaHangNoiThat.Forms
         private HOADONBANHANG hd = new HOADONBANHANG();
         private bool dangThayDoiNgayGiao = false;
         private bool dangThayDoiCTHD = false;
-        public frmChinhSuaCTHoaDon(HOADONBANHANG hoadon)
+        private string manv;
+        public frmChinhSuaCTHoaDon(HOADONBANHANG hoadon,string manv)
         {
             InitializeComponent();
-
+            this.manv = manv;
             hd = hoadon;
         }
 
@@ -84,6 +85,8 @@ namespace QuanLyCuaHangNoiThat.Forms
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
                 this.dangThayDoiCTHD = false;
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết hóa đơn " + hd.MAHD;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 loadThongTinHD(hd.MAHD);
                 Reset();
             }
@@ -129,6 +132,8 @@ namespace QuanLyCuaHangNoiThat.Forms
             if (HoaDonBanHangBUS.CapNhatHoaDon(hd))
             {
                 MessageBox.Show("Cập nhật ngày giao thành công", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật ngày giao " + this.lblMaHD.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 loadThongTinHD(hd.MAHD);
                 this.dangThayDoiNgayGiao = false;
             }
@@ -162,7 +167,14 @@ namespace QuanLyCuaHangNoiThat.Forms
                 if (MessageBox.Show("Đang có sự thay đổi dữ liệu, bạn có chắc chứ ?", "Thông báo",
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Warning) == DialogResult.No)
+                {
                     e.Cancel = true;
+                    this.DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
         void loadDSCTHD(string mahd)

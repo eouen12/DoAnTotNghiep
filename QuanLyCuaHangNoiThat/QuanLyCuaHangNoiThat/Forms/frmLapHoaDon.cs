@@ -18,22 +18,22 @@ namespace QuanLyCuaHangNoiThat.Forms
         private List<HOADONBANHANG> lstHoaDon = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
         private string mahd;
-        private int maKH;
-        private string maNV;
+        private int makh;
+        private string manv;
         private bool slHopLe = true;
         private bool dangThaoTac = false;
         public frmLapHoaDon(int makh, string manv)
         {
             InitializeComponent();
-            maKH = makh;
-            maNV = manv;
+            this.makh = makh;
+            this.manv = manv;
         }
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                TaoHoaDon(maKH.ToString(),maNV);
+                TaoHoaDon(this.makh.ToString(), this.manv);
 
                 TaoCTHoaDon();
 
@@ -42,6 +42,8 @@ namespace QuanLyCuaHangNoiThat.Forms
                     TaoCongNo();
                 }    
                 MessageBox.Show("Lập hóa đơn thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập một hóa đơn";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 dangThaoTac = false;
             }
             catch(Exception ex)
@@ -108,6 +110,11 @@ namespace QuanLyCuaHangNoiThat.Forms
 
         private void txtSoLuong_Validating(object sender, CancelEventArgs e)
         {
+            if (this.txtSoLuong.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng !!!", "Thông báo");
+                return;
+            }
             if (Convert.ToInt32(this.txtSoLuong.Text) > Convert.ToInt32(this.dgvDSSanPham.CurrentRow.Cells["SOLUONGTON"].Value) && this.txtSoLuong.Text != string.Empty)
             {
                 slHopLe = false;
@@ -125,24 +132,20 @@ namespace QuanLyCuaHangNoiThat.Forms
             lstSanPham = SanPhamBUS.LayDanhSachSanPham();
             lstHoaDon = HoaDonBanHangBUS.LayDanhSachHoaDon();
             var kq = from sp in lstSanPham
-                     select new
-                     {
-                         sp.MASP,
-                         sp.TENSP,
-                         sp.SL_TON,
-                         sp.GIABAN,
-                         sp.LOAISANPHAM.TENLOAI,
-                         sp.NHAPHANPHOI.TENNPP
-                     };
+                     select sp;
+            this.dgvDSSanPham.AutoGenerateColumns = false;
             this.dgvDSSanPham.DataSource = kq.ToList();
-            this.dgvDSSanPham.AutoSize = true;
-            this.dgvDSSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         void LoadDSCTHD()
         {
             if (!slHopLe)
             {
+                return;
+            }
+            if (this.txtSoLuong.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng !!!", "Thông báo");
                 return;
             }
             if (lstCTHD.Count == 0)
@@ -221,7 +224,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             CongNoBUS.ThemCongNo(new CONGNO
             {
                 MACONGNO = macn,
-                MAKH = maKH,
+                MAKH = makh,
                 TONGTIEN = Convert.ToDecimal(this.lblTongTien.Text),
                 TIENCONNO = Convert.ToDecimal(this.lblTongTien.Text) - Convert.ToDecimal(this.txtSoTienTraTrc.Text),
                 NGAYTRA = this.dateHanTra.Value,
@@ -252,6 +255,12 @@ namespace QuanLyCuaHangNoiThat.Forms
                 this.txtSoTienTraTrc.Enabled = false;
                 this.dateHanTra.Enabled = false;
             }
+        }
+
+        private void dgvDSSanPham_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            frmChiTietSanPham ctsp = new frmChiTietSanPham(this.dgvDSSanPham["MASP", e.RowIndex].Value.ToString());
+            ctsp.ShowDialog();
         }
     }
 }
