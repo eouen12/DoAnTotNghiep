@@ -37,6 +37,10 @@ namespace QuanLyCuaHangNoiThat.Forms
 
                 TaoCTHoaDon();
 
+                if(this.chkTraGop.Checked)
+                {
+                    TaoCongNo();
+                }    
                 MessageBox.Show("Lập hóa đơn thành công !!!", "Thông báo");
                 dangThaoTac = false;
             }
@@ -208,7 +212,23 @@ namespace QuanLyCuaHangNoiThat.Forms
                 CTHoaDonBanHangBUS.ThemCTHoaDon(ct);
             }
         }
+        
+        void TaoCongNo()
+        {
+            var lstcongno = CongNoBUS.LayDanhSachCongNo().LastOrDefault();
+            int somacn = Convert.ToInt32(lstcongno.MACONGNO.Remove(0, 2)) + 1;
+            string macn = "CN" + somacn;
+            CongNoBUS.ThemCongNo(new CONGNO
+            {
+                MACONGNO = macn,
+                MAKH = maKH,
+                TONGTIEN = Convert.ToDecimal(this.lblTongTien.Text),
+                TIENCONNO = Convert.ToDecimal(this.lblTongTien.Text) - Convert.ToDecimal(this.txtSoTienTraTrc.Text),
+                NGAYTRA = this.dateHanTra.Value,
+                TRANGTHAI = true
+            });
 
+        }
         private void frmLapHoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(dangThaoTac)
@@ -217,6 +237,20 @@ namespace QuanLyCuaHangNoiThat.Forms
                                     MessageBoxButtons.YesNo, 
                                     MessageBoxIcon.Warning) == DialogResult.No)
                 e.Cancel = true;
+            }
+        }
+
+        private void chkTraGop_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.chkTraGop.Checked)
+            {
+                this.txtSoTienTraTrc.Enabled = true;
+                this.dateHanTra.Enabled = true;
+            }    
+            else
+            {
+                this.txtSoTienTraTrc.Enabled = false;
+                this.dateHanTra.Enabled = false;
             }
         }
     }

@@ -16,7 +16,7 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<NHANVIEN> lstNV = new List<NHANVIEN>();
         //private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
-        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Anh_NhanVien\";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
         private string tenAnhDaiDien = "";
         private bool dangThayDoiDuLieu = false;
         public frmNhanVien()

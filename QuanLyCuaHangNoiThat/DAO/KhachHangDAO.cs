@@ -15,6 +15,12 @@ namespace DAO
         {
             return db.KHACHHANG.ToList();
         }
+
+        public static KHACHHANG LayThongTin(int makh)
+        {
+            return db.KHACHHANG.Find(makh);
+            
+        }
         public static string Insert(KHACHHANG entity)
         {
             db.KHACHHANG.Add(entity);

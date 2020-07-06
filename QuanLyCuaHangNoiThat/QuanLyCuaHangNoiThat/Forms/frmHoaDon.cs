@@ -137,5 +137,15 @@ namespace QuanLyCuaHangNoiThat
             this.dgvDanhSachHD.DataSource = kq.ToList();
             this.dgvDanhSachHD.AutoGenerateColumns = false;
         }
+
+        private void dgvDataChiTietHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnXuatHD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

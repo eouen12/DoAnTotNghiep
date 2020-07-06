@@ -49,8 +49,8 @@ namespace DAO
             {
                 try
                 {
-                    var npp = db.NHAPHANPHOI.Find(manpp);
-                    npp.TRANGTHAI = false;
+                    var s = db.NHAPHANPHOI.Find(manpp);
+                    s.TRANGTHAI = false;
                     db.SaveChanges();
                     return true;
                 }

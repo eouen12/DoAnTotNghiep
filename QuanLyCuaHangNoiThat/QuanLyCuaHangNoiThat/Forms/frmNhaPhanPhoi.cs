@@ -264,9 +264,9 @@ namespace QuanLyCuaHangNoiThat
             CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG();
             ctnh.MANPP = this.txtMaNPPNhapHang.Text;
             ctnh.MASP = this.txtMaSPNhapHang.Text;
-            ctnh.DONGIA = this.txtDonGiaNhapHang.MaxLength;
-            ctnh.SL_NHAPHANG = this.txtSLNhapHang.MaxLength;
-            ctnh.TONGGIATRI = this.txtTongGtriNhapHang.MaxLength;
+            ctnh.DONGIA = int.Parse(this.txtDonGiaNhapHang.Text);
+            ctnh.SL_NHAPHANG = int.Parse(this.txtSLNhapHang.Text);
+            ctnh.TONGGIATRI = int.Parse(this.txtTongGtriNhapHang.Text);
             ctnh.NGAYNHAPHANG = this.dateTimePickerNhapHang.MaxDate;
             if (CTNhapHangTuNPPBUS.SuaCTNH(ctnh))
             {
@@ -324,6 +324,11 @@ namespace QuanLyCuaHangNoiThat
         private void btnHuyNhapHang_Click(object sender, EventArgs e)
         {
             ResetTabQLCTNH();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

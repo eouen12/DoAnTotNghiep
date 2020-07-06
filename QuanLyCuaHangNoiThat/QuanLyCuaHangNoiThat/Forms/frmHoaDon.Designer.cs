@@ -89,9 +89,9 @@
             this.groupBox1.Controls.Add(this.dgvDanhSachHD);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(605, 672);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -101,7 +101,7 @@
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTim.Location = new System.Drawing.Point(497, 134);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(77, 39);
             this.btnTim.TabIndex = 21;
@@ -113,7 +113,7 @@
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(519, 38);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(77, 39);
             this.btnReset.TabIndex = 20;
@@ -125,7 +125,7 @@
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(329, 46);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(180, 30);
             this.txtTimKiem.TabIndex = 19;
@@ -214,7 +214,7 @@
             this.NVLAPHD,
             this.NGAYLAP});
             this.dgvDanhSachHD.Location = new System.Drawing.Point(8, 204);
-            this.dgvDanhSachHD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDanhSachHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDanhSachHD.Name = "dgvDanhSachHD";
             this.dgvDanhSachHD.ReadOnly = true;
             this.dgvDanhSachHD.RowHeadersVisible = false;
@@ -306,9 +306,9 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(647, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(609, 672);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -350,6 +350,7 @@
             this.btnXuatHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXuatHD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXuatHD.UseVisualStyleBackColor = false;
+            this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
             // 
             // lblNgayGiaoHang
             // 
@@ -421,7 +422,7 @@
             this.SOLUONG,
             this.DONGIA});
             this.dgvDataChiTietHD.Location = new System.Drawing.Point(27, 249);
-            this.dgvDataChiTietHD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDataChiTietHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDataChiTietHD.Name = "dgvDataChiTietHD";
             this.dgvDataChiTietHD.ReadOnly = true;
             this.dgvDataChiTietHD.RowHeadersVisible = false;
@@ -429,6 +430,7 @@
             this.dgvDataChiTietHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDataChiTietHD.Size = new System.Drawing.Size(559, 185);
             this.dgvDataChiTietHD.TabIndex = 6;
+            this.dgvDataChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataChiTietHD_CellContentClick);
             // 
             // MASP
             // 
@@ -536,7 +538,7 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1272, 690);
             this.panel1.TabIndex = 2;
@@ -547,7 +549,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 690);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDon";
             this.Text = "frmHoaDon";
             this.Load += new System.EventHandler(this.frmHoaDon_Load);

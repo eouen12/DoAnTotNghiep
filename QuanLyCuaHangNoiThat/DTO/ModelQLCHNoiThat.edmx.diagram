@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="a3256b46a4f142ba860dfb5adebc122f" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.ANHMINHHOASP" Width="1.5" PointX="5.25" PointY="4" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CONGNO" Width="1.5" PointX="0.75" PointY="25.125" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CONGNO" Width="1.5" PointX="3" PointY="21.125" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP" Width="1.5" PointX="3" PointY="7.875" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CTHOADONBANHANG" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG" Width="1.5" PointX="6" PointY="7.5" />
@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONNHAPHANG" Width="1.5" PointX="0.75" PointY="0.875" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="21.125" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="7.75" PointY="2.5" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="3" PointY="21.125" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="5.25" PointY="21.25" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="4" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="11.625" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHAPHANPHOI" Width="1.5" PointX="0.75" PointY="7.5" />
@@ -22,7 +22,8 @@
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.SANPHAM" Width="1.5" PointX="3" PointY="3.25" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="5.5" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__ANHMINHHOA__MASP__44FF419A" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__38996AB5" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__37A5467C" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MAHDN__3C69FB99" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTNHAPHAN__MANPP__3D5E1FD2" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__3E52440B" />
@@ -32,7 +33,6 @@
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__3A81B327" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__398D8EEE" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONNHA__NV_NH__3B75D760" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__37A5467C" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__4316F928" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__4222D4EF" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__440B1D61" />

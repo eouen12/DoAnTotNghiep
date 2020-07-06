@@ -31,7 +31,11 @@
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="ANHMINHHOASP" EntitySet="ANHMINHHOASP" />
     </AssociationSet>
-    <AssociationSet Name="FK__LICHSUTRA__MACON__38996AB5" Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5">
+    <AssociationSet Name="FK__CONGNO__MAKH__38996AB5" Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__38996AB5">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="CONGNO" EntitySet="CONGNO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LICHSUTRA__MACON__37A5467C" Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__37A5467C">
       <End Role="CONGNO" EntitySet="CONGNO" />
       <End Role="LICHSUTRANO" EntitySet="LICHSUTRANO" />
     </AssociationSet>
@@ -71,10 +75,6 @@
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="HOADONNHAPHANG" EntitySet="HOADONNHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__LICHSUTRAN__MAKH__37A5467C" Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__37A5467C">
-      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-      <End Role="LICHSUTRANO" EntitySet="LICHSUTRANO" />
-    </AssociationSet>
     <AssociationSet Name="FK__SANPHAM__MALOAI__4316F928" Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__4316F928">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
@@ -103,12 +103,13 @@
       <PropertyRef Name="MACONGNO" />
     </Key>
     <Property Name="MACONGNO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAKH" Type="Int32" Nullable="false" />
     <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="DATRA" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="TIENCONNO" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="NGAYTRA" Type="DateTime" Precision="3" />
     <Property Name="TRANGTHAI" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="LICHSUTRANO" Relationship="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5" FromRole="CONGNO" ToRole="LICHSUTRANO" />
+    <NavigationProperty Name="KHACHHANG" Relationship="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__38996AB5" FromRole="CONGNO" ToRole="KHACHHANG" />
+    <NavigationProperty Name="LICHSUTRANO" Relationship="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__37A5467C" FromRole="CONGNO" ToRole="LICHSUTRANO" />
   </EntityType>
   <EntityType Name="CTNHAPHANGTUNPP">
     <Key>
@@ -186,6 +187,8 @@
     <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CMND" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="TRANGTHAI" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CONGNO" Relationship="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__38996AB5" FromRole="KHACHHANG" ToRole="CONGNO" />
+    <NavigationProperty Name="HOADONBANHANG" Relationship="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__398D8EEE" FromRole="KHACHHANG" ToRole="HOADONBANHANG" />
   </EntityType>
   <EntityType Name="LICHSUHETHONG">
     <Key>
@@ -196,17 +199,14 @@
   </EntityType>
   <EntityType Name="LICHSUTRANO">
     <Key>
-      <PropertyRef Name="MACONGNO" />
-      <PropertyRef Name="MAKH" />
-      <PropertyRef Name="NGAYTRA_THEODOI" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MACONGNO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="MAKH" Type="Int32" Nullable="false" />
     <Property Name="NGAYTRA_THEODOI" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="TIENTRA_THEODOI" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="TRANGTHAI" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="CONGNO" Relationship="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5" FromRole="LICHSUTRANO" ToRole="CONGNO" />
-    <NavigationProperty Name="KHACHHANG" Relationship="QuanLyCuaHangNoiThatModel.FK__LICHSUTRAN__MAKH__37A5467C" FromRole="LICHSUTRANO" ToRole="KHACHHANG" />
+    <NavigationProperty Name="CONGNO" Relationship="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__37A5467C" FromRole="LICHSUTRANO" ToRole="CONGNO" />
   </EntityType>
   <EntityType Name="LOAISANPHAM">
     <Key>
@@ -299,7 +299,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LICHSUTRA__MACON__38996AB5">
+  <Association Name="FK__CONGNO__MAKH__38996AB5">
+    <End Type="QuanLyCuaHangNoiThatModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
+    <End Type="QuanLyCuaHangNoiThatModel.CONGNO" Role="CONGNO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="CONGNO">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LICHSUTRA__MACON__37A5467C">
     <End Type="QuanLyCuaHangNoiThatModel.CONGNO" Role="CONGNO" Multiplicity="1" />
     <End Type="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Role="LICHSUTRANO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -416,18 +428,6 @@
       </Principal>
       <Dependent Role="HOADONNHAPHANG">
         <PropertyRef Name="NV_NHANHANG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__LICHSUTRAN__MAKH__37A5467C">
-    <End Type="QuanLyCuaHangNoiThatModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
-    <End Type="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Role="LICHSUTRANO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="MAKH" />
-      </Principal>
-      <Dependent Role="LICHSUTRANO">
-        <PropertyRef Name="MAKH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

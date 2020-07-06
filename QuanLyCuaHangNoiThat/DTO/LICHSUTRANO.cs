@@ -14,13 +14,12 @@ namespace DTO
     
     public partial class LICHSUTRANO
     {
+        public int ID { get; set; }
         public string MACONGNO { get; set; }
-        public int MAKH { get; set; }
         public System.DateTime NGAYTRA_THEODOI { get; set; }
         public Nullable<decimal> TIENTRA_THEODOI { get; set; }
         public bool TRANGTHAI { get; set; }
     
         public virtual CONGNO CONGNO { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

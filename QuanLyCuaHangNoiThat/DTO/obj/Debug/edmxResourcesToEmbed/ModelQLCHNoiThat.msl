@@ -17,8 +17,8 @@
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
           <ScalarProperty Name="NGAYTRA" ColumnName="NGAYTRA" />
           <ScalarProperty Name="TIENCONNO" ColumnName="TIENCONNO" />
-          <ScalarProperty Name="DATRA" ColumnName="DATRA" />
           <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
           <ScalarProperty Name="MACONGNO" ColumnName="MACONGNO" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -106,8 +106,8 @@
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
           <ScalarProperty Name="TIENTRA_THEODOI" ColumnName="TIENTRA_THEODOI" />
           <ScalarProperty Name="NGAYTRA_THEODOI" ColumnName="NGAYTRA_THEODOI" />
-          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
           <ScalarProperty Name="MACONGNO" ColumnName="MACONGNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

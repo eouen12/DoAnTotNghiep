@@ -8,5 +8,6 @@ namespace DAO
 {
     public class LichSuTraNoDAO
     {
+
     }
 }
