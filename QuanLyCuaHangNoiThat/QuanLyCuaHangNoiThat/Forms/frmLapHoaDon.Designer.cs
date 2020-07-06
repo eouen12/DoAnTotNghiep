@@ -39,11 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDSSanPham = new System.Windows.Forms.DataGridView();
             this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONGTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NHAPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChonSP = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,8 +90,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSChiTietHD.DefaultCellStyle = dataGridViewCellStyle2;
+<<<<<<< Updated upstream
             this.dgvDSChiTietHD.Location = new System.Drawing.Point(12, 12);
             this.dgvDSChiTietHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.dgvDSChiTietHD.Location = new System.Drawing.Point(9, 10);
+            this.dgvDSChiTietHD.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> Stashed changes
             this.dgvDSChiTietHD.Name = "dgvDSChiTietHD";
             this.dgvDSChiTietHD.ReadOnly = true;
             this.dgvDSChiTietHD.RowHeadersVisible = false;
@@ -109,7 +111,10 @@
             this.ITEMMASP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ITEMMASP.DataPropertyName = "MASP";
             this.ITEMMASP.HeaderText = "Mã sản phẩm";
+<<<<<<< Updated upstream
             this.ITEMMASP.MinimumWidth = 6;
+=======
+>>>>>>> Stashed changes
             this.ITEMMASP.Name = "ITEMMASP";
             this.ITEMMASP.ReadOnly = true;
             // 
@@ -118,7 +123,10 @@
             this.ITEMSOLUONG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ITEMSOLUONG.DataPropertyName = "SOLUONG";
             this.ITEMSOLUONG.HeaderText = "Số lượng";
+<<<<<<< Updated upstream
             this.ITEMSOLUONG.MinimumWidth = 6;
+=======
+>>>>>>> Stashed changes
             this.ITEMSOLUONG.Name = "ITEMSOLUONG";
             this.ITEMSOLUONG.ReadOnly = true;
             // 
@@ -127,7 +135,10 @@
             this.ITEMGIATIEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ITEMGIATIEN.DataPropertyName = "DONGIA";
             this.ITEMGIATIEN.HeaderText = "Giá tiền";
+<<<<<<< Updated upstream
             this.ITEMGIATIEN.MinimumWidth = 6;
+=======
+>>>>>>> Stashed changes
             this.ITEMGIATIEN.Name = "ITEMGIATIEN";
             this.ITEMGIATIEN.ReadOnly = true;
             // 
@@ -166,11 +177,8 @@
             this.dgvDSSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASP,
-            this.TENSP,
             this.SOLUONGTON,
-            this.GIABAN,
-            this.TENLOAI,
-            this.NHAPP});
+            this.GIABAN});
             this.dgvDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvDSSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -183,6 +191,7 @@
             this.dgvDSSanPham.Size = new System.Drawing.Size(440, 297);
             this.dgvDSSanPham.TabIndex = 2;
             this.dgvDSSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSanPham_CellClick);
+            this.dgvDSSanPham.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDSSanPham_CellMouseDoubleClick);
             // 
             // MASP
             // 
@@ -191,6 +200,7 @@
             this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
+<<<<<<< Updated upstream
             this.MASP.Width = 179;
             // 
             // TENSP
@@ -201,6 +211,9 @@
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
             this.TENSP.Width = 189;
+=======
+            this.MASP.Width = 160;
+>>>>>>> Stashed changes
             // 
             // SOLUONGTON
             // 
@@ -209,7 +222,11 @@
             this.SOLUONGTON.MinimumWidth = 6;
             this.SOLUONGTON.Name = "SOLUONGTON";
             this.SOLUONGTON.ReadOnly = true;
+<<<<<<< Updated upstream
             this.SOLUONGTON.Width = 172;
+=======
+            this.SOLUONGTON.Width = 154;
+>>>>>>> Stashed changes
             // 
             // GIABAN
             // 
@@ -218,6 +235,7 @@
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
             this.GIABAN.ReadOnly = true;
+<<<<<<< Updated upstream
             this.GIABAN.Width = 121;
             // 
             // TENLOAI
@@ -237,6 +255,9 @@
             this.NHAPP.Name = "NHAPP";
             this.NHAPP.ReadOnly = true;
             this.NHAPP.Width = 192;
+=======
+            this.GIABAN.Width = 107;
+>>>>>>> Stashed changes
             // 
             // btnChonSP
             // 
@@ -262,7 +283,7 @@
             this.txtSoLuong.Size = new System.Drawing.Size(63, 34);
             this.txtSoLuong.TabIndex = 4;
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
-            this.txtSoLuong.Validating += new System.ComponentModel.CancelEventHandler(this.txtSoLuong_Validating);
+            this.txtSoLuong.Validated += new System.EventHandler(this.txtSoLuong_Validated);
             // 
             // label2
             // 
@@ -430,7 +451,12 @@
             this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
+<<<<<<< Updated upstream
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+>>>>>>> Stashed changes
             this.Name = "frmLapHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLapHoaDon";
@@ -460,12 +486,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTongTien;
         private FontAwesome.Sharp.IconButton btnXacNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGTON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NHAPP;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEMMASP;
@@ -473,10 +493,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEMGIATIEN;
         private System.Windows.Forms.DateTimePicker dtNgayGiao;
         private System.Windows.Forms.Label label5;
+<<<<<<< Updated upstream
         private System.Windows.Forms.DateTimePicker dateHanTra;
         private System.Windows.Forms.TextBox txtSoTienTraTrc;
         private System.Windows.Forms.CheckBox chkTraGop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGTON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
+>>>>>>> Stashed changes
     }
 }

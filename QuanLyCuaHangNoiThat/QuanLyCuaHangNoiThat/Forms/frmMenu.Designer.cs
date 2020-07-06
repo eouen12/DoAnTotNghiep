@@ -49,8 +49,6 @@
             this.btnStatusMenu = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
@@ -58,6 +56,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvLSHeThong = new System.Windows.Forms.DataGridView();
+            this.LSHeThong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +68,8 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelDesktop.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLSHeThong)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -100,7 +103,7 @@
             this.btnMenuDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 570);
             this.btnMenuDangXuat.Name = "btnMenuDangXuat";
-            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuDangXuat.Rotation = 0D;
             this.btnMenuDangXuat.Size = new System.Drawing.Size(180, 60);
             this.btnMenuDangXuat.TabIndex = 5;
@@ -122,7 +125,7 @@
             this.btnMenuDoiDonVi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 510);
             this.btnMenuDoiDonVi.Name = "btnMenuDoiDonVi";
-            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuDoiDonVi.Rotation = 0D;
             this.btnMenuDoiDonVi.Size = new System.Drawing.Size(180, 60);
             this.btnMenuDoiDonVi.TabIndex = 6;
@@ -144,7 +147,7 @@
             this.btnMenuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 450);
             this.btnMenuNhanVien.Name = "btnMenuNhanVien";
-            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuNhanVien.Rotation = 0D;
             this.btnMenuNhanVien.Size = new System.Drawing.Size(180, 60);
             this.btnMenuNhanVien.TabIndex = 8;
@@ -166,7 +169,7 @@
             this.btnMenuNhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 390);
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
-            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
             this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(214, 60);
             this.btnMenuNhaPhanPhoi.TabIndex = 7;
@@ -189,7 +192,7 @@
             this.btnMenuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 270);
             this.btnMenuKhachHang.Name = "btnMenuKhachHang";
-            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuKhachHang.Rotation = 0D;
             this.btnMenuKhachHang.Size = new System.Drawing.Size(180, 60);
             this.btnMenuKhachHang.TabIndex = 4;
@@ -212,7 +215,7 @@
             this.btnMenuSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuSanPham.Location = new System.Drawing.Point(0, 210);
             this.btnMenuSanPham.Name = "btnMenuSanPham";
-            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuSanPham.Rotation = 0D;
             this.btnMenuSanPham.Size = new System.Drawing.Size(180, 60);
             this.btnMenuSanPham.TabIndex = 3;
@@ -236,7 +239,7 @@
             this.btnMenuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 150);
             this.btnMenuHoaDon.Name = "btnMenuHoaDon";
-            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuHoaDon.Rotation = 0D;
             this.btnMenuHoaDon.Size = new System.Drawing.Size(180, 60);
             this.btnMenuHoaDon.TabIndex = 2;
@@ -258,7 +261,7 @@
             this.btnMenuCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCongNo.Location = new System.Drawing.Point(0, 330);
             this.btnMenuCongNo.Name = "btnMenuCongNo";
-            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuCongNo.Rotation = 0D;
             this.btnMenuCongNo.Size = new System.Drawing.Size(180, 60);
             this.btnMenuCongNo.TabIndex = 6;
@@ -306,7 +309,7 @@
             this.panel7.Controls.Add(this.imgAnhNhanVien);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel7.Location = new System.Drawing.Point(337, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(185, 106);
             this.panel7.TabIndex = 2;
@@ -329,7 +332,7 @@
             this.imgAnhNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgAnhNhanVien.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgAnhNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.imgAnhNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgAnhNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.imgAnhNhanVien.Name = "imgAnhNhanVien";
             this.imgAnhNhanVien.Size = new System.Drawing.Size(76, 106);
             this.imgAnhNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,33 +381,12 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.listBox1);
+            this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(702, 106);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(285, 503);
             this.panel5.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(285, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Lịch sử hệ thống";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 37);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(280, 407);
-            this.listBox1.TabIndex = 0;
             // 
             // panel6
             // 
@@ -474,6 +456,41 @@
             this.panel1.Size = new System.Drawing.Size(3, 365);
             this.panel1.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.dgvLSHeThong);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(285, 503);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lịch sử hệ thống";
+            // 
+            // dgvLSHeThong
+            // 
+            this.dgvLSHeThong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvLSHeThong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvLSHeThong.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLSHeThong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLSHeThong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LSHeThong});
+            this.dgvLSHeThong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLSHeThong.Location = new System.Drawing.Point(3, 25);
+            this.dgvLSHeThong.Name = "dgvLSHeThong";
+            this.dgvLSHeThong.RowHeadersVisible = false;
+            this.dgvLSHeThong.Size = new System.Drawing.Size(279, 475);
+            this.dgvLSHeThong.TabIndex = 0;
+            // 
+            // LSHeThong
+            // 
+            this.LSHeThong.DataPropertyName = "GHICHU";
+            this.LSHeThong.HeaderText = "";
+            this.LSHeThong.Name = "LSHeThong";
+            this.LSHeThong.Width = 21;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,7 +501,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -501,6 +518,8 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLSHeThong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,11 +549,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTenNhanVien;
         private System.Windows.Forms.PictureBox imgAnhNhanVien;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvLSHeThong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LSHeThong;
     }
 }

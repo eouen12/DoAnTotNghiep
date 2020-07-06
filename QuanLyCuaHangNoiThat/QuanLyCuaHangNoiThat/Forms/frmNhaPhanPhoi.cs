@@ -17,9 +17,11 @@ namespace QuanLyCuaHangNoiThat
         private List<LOAISANPHAM> lstLoaiSP = new List<LOAISANPHAM>();
         private List<NHAPHANPHOI> lstNPP = new List<NHAPHANPHOI>();
         private List<CHITIETNHAPHANG> lstCTNH = new List<CHITIETNHAPHANG>();
-        public frmNhaPhanPhoi()
+        private string manv;
+        public frmNhaPhanPhoi(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void frmNhaPhanPhoi_Load(object sender, EventArgs e)
@@ -41,6 +43,8 @@ namespace QuanLyCuaHangNoiThat
             if(LoaiSanPhamBUS.ThemLoaiSanPham(loaisp))
             {
                 MessageBox.Show("Thêm loại sản phẩm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới loại sản phẩm "+ loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 ResetTabQLLoaiSP();
             }
@@ -57,7 +61,9 @@ namespace QuanLyCuaHangNoiThat
             loaisp.TENLOAI = this.txtTenLoaiSP.Text;
             if (LoaiSanPhamBUS.SuaLoaiSanPham(loaisp))
             {
-                MessageBox.Show("Sửa loại sản phẩm thành công !!!", "Thông báo");
+                MessageBox.Show("Cập nhật thông tin loại sản phẩm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin loại sản phẩm " + loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 ResetTabQLLoaiSP();
             }
@@ -73,6 +79,8 @@ namespace QuanLyCuaHangNoiThat
             {
                 LoaiSanPhamBUS.XoaLoaiSanPham(this.txtMaLoai.Text);
                 MessageBox.Show("Xóa loại sản phẩm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin loại sản phẩm " + this.txtMaLoai.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 ResetTabQLLoaiSP();
             }
@@ -140,6 +148,8 @@ namespace QuanLyCuaHangNoiThat
             if (NhaPhanPhoiBUS.ThemNPP(npp))
             {
                 MessageBox.Show("Thêm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhà phân phối " + npp.MANPP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
             }
@@ -193,6 +203,8 @@ namespace QuanLyCuaHangNoiThat
             if (NhaPhanPhoiBUS.SuaNPP(npp))
             {
                 MessageBox.Show("Sửa thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhà phân phối " + npp.MANPP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
             }
@@ -208,6 +220,8 @@ namespace QuanLyCuaHangNoiThat
             {
                 NhaPhanPhoiBUS.XoaNPP(this.txtMaNPP.Text);
                 MessageBox.Show("Xóa thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin nhà phân phối " + this.txtMaNPP.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
             }
@@ -250,6 +264,8 @@ namespace QuanLyCuaHangNoiThat
             if (CTNhapHangTuNPPBUS.ThemCTNH(ctnh))
             {
                 MessageBox.Show("Thêm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
             }
@@ -271,6 +287,8 @@ namespace QuanLyCuaHangNoiThat
             if (CTNhapHangTuNPPBUS.SuaCTNH(ctnh))
             {
                 MessageBox.Show("Sửa thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
             }
@@ -286,6 +304,8 @@ namespace QuanLyCuaHangNoiThat
             {
                 CTNhapHangTuNPPBUS.XoaCTNH(this.txtMaNPPNhapHang.Text , this.txtMaSPNhapHang.Text);
                 MessageBox.Show("Xóa thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin chi tiết nhập hàng (" + this.txtMaNPPNhapHang.Text + "," + this.txtMaSPNhapHang.Text + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
             }

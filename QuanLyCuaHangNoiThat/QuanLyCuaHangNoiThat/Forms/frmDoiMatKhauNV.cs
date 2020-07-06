@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DTO;
 using BUS;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace QuanLyCuaHangNoiThat
 {
@@ -37,10 +39,10 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnLuuDoiMK_Click(object sender, EventArgs e)
         {
-            if(this.txtMatKhauCu.Text == nv.MANV)
+            if (this.txtMatKhauCu.Text == nv.MANV)
             {
                 string mk = MD5(this.txtMatKhauMoi.Text);
-                if(NhanVienBUS.DoiMatKhau(nv.MANV,mk))
+                if (NhanVienBUS.DoiMatKhau(nv.MANV, mk))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo");
                     this.txtMatKhauCu.Clear();
@@ -53,12 +55,12 @@ namespace QuanLyCuaHangNoiThat
                     return;
                 }
             }
-            if(MD5(this.txtMatKhauCu.Text) != nv.MATKHAU)
+            if (MD5(this.txtMatKhauCu.Text) != nv.MATKHAU)
             {
                 MessageBox.Show("Mật khẩu cũ không chính xác !!!", "Thông báo");
                 return;
             }
-            if(this.txtMatKhauCu.Text != this.txtMatKhauMoi.Text)
+            if (this.txtMatKhauCu.Text != this.txtMatKhauMoi.Text)
             {
                 MessageBox.Show("Mật khẩu mới không trùng khớp !!!", "Thông báo");
                 return;
@@ -77,7 +79,6 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi");
                 return;
             }
-
         }
 
         string MD5 (string mk)

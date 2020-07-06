@@ -67,4 +67,9 @@ C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHang
 C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
 C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmChinhSuaCTHoaDon.resources
+<<<<<<< Updated upstream
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+=======
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmChinhSuaCTHoaDon.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmChiTietSanPham.resources
+>>>>>>> Stashed changes

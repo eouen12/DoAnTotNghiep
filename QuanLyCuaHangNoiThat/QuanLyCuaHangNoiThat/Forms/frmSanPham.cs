@@ -19,10 +19,12 @@ namespace QuanLyCuaHangNoiThat
         private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
+        private string manv;
 
-        public frmSanPham()
+        public frmSanPham(string manv)
         {
             InitializeComponent();
+            this.manv = manv;
         }
 
         private void frmSanPham_Load(object sender, EventArgs e)
@@ -291,6 +293,8 @@ namespace QuanLyCuaHangNoiThat
 
                     this.imgSanPham.Image.Save(patch + anhMH.TENANHMINHHOA);
                     MessageBox.Show("Thêm sản phẩm thành công !!!", "Thông báo");
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm một sản phẩm (" + sanpham.MASP + ")";
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     Reset();
                     LoadDataTabQLSP();
                 }
@@ -320,6 +324,8 @@ namespace QuanLyCuaHangNoiThat
             if(SanPhamBUS.SuaSanPham(sanpham))
             {
                 MessageBox.Show("Sửa thông tin thành công", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của sản phẩm "+ sanpham.MASP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
             }
@@ -335,6 +341,8 @@ namespace QuanLyCuaHangNoiThat
             {
                 SanPhamBUS.XoaSanPham(this.txtMaSp.Text);
                 MessageBox.Show("Xóa sản phẩm thành công !!!", "Thông báo");
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMaSp.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
             }

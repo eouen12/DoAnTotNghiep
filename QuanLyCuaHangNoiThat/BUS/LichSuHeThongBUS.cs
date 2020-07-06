@@ -9,5 +9,14 @@ namespace BUS
 {
     public class LichSuHeThongBUS
     {
+        public static List<LICHSUHETHONG> LayDanhSachLSHT()
+        {
+            return LichSuHeThongDAO.LayDanhSachLSHT();
+        }
+
+        public static void ThemLSHT(LICHSUHETHONG lsht)
+        {
+            LichSuHeThongDAO.ThemLSHT(lsht);
+        }
     }
 }
