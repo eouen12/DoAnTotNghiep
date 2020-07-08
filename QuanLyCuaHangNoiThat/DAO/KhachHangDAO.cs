@@ -37,29 +37,19 @@ namespace DAO
             db.SaveChanges();
             return true ;
         }
-        public static string Delete(string IDKH)
+        public static bool Delete(string IDKH)
         {
-            int ID = int.Parse(IDKH);
-            string TenKH = string.Empty;
-            using (QuanLyCuaHangNoiThatEntities db = new QuanLyCuaHangNoiThatEntities())
+            try
             {
-                var ch = (from dt in db.KHACHHANG where dt.MAKH == ID select dt).SingleOrDefault();
-                TenKH = ch.TENKH.ToString();
-                db.KHACHHANG.Remove(ch);
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw;
-                }
-                finally
-                {
-                    
-                }
+                var kq = db.KHACHHANG.Find(IDKH);
+                kq.TRANGTHAI = false;
+                db.SaveChanges();
+                return true;
             }
-            return TenKH;
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

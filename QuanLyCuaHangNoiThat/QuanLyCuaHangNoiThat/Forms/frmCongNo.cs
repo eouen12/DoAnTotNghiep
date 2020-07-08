@@ -157,7 +157,7 @@ namespace QuanLyCuaHangNoiThat
             CongNoBUS.CapNhatCongNo(new CONGNO
             {
                 MACONGNO = macn,
-                MAKH = Convert.ToInt32(this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value),
+                MAKH = this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString(),
                 TONGTIEN = Convert.ToDecimal(this.dgvCongNo.CurrentRow.Cells["TONGTIEN"].Value.ToString()),
                 TIENCONNO = Convert.ToDecimal(this.txtTienConNo.Text) - Convert.ToDecimal(this.txtSoTienTraHomNay.Text),
                 NGAYTRA = this.dateTimePickerNgayTra.Value,

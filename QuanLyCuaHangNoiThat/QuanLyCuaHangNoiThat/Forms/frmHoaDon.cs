@@ -35,7 +35,8 @@ namespace QuanLyCuaHangNoiThat
             }
             frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd,this.manv);
             frm.ShowDialog();
-            frmHoaDon_Load(sender, e);
+            LoadDSHoaDon();
+            Reset();
             
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace QuanLyCuaHangNoiThat
                 var kq = from hd in lstHD
                          where hd.MAHD.Contains(this.txtTimKiem.Text)
                          || hd.KHACHHANG.TENKH.Contains(this.txtTimKiem.Text)
-                         || hd.MAKH == Convert.ToInt32(this.txtTimKiem.Text)
+                         || hd.MAKH.Contains(this.txtTimKiem.Text)
                          select new
                          {
                              hd.MAHD,
@@ -75,10 +76,10 @@ namespace QuanLyCuaHangNoiThat
             this.lblMaHD.Text = this.dgvDanhSachHD["MAHD", e.RowIndex].Value.ToString();
             this.lblTenKH.Text = this.dgvDanhSachHD["TENKH", e.RowIndex].Value.ToString();
             this.lblTenNhanVien.Text = this.dgvDanhSachHD["NVLAPHD", e.RowIndex].Value.ToString();
-            this.lblNgayLapHD.Text = this.dgvDanhSachHD["NGAYLAP", e.RowIndex].Value.ToString();
+            this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYLAP", e.RowIndex].Value).ToString("dd/MM/yyyy");
             this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD["TONGTIEN", e.RowIndex].Value).ToString("#,##0");
-            this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYGIAO", e.RowIndex].Value).ToShortDateString();
-            LoadDSCTHD(this.lblMaHD.Text);
+            this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYGIAO", e.RowIndex].Value).ToString("dd/MM/yyyy");
+            LoadDSCTHD(this.dgvDanhSachHD["MAHD", e.RowIndex].Value.ToString());
             hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
         }
 
@@ -149,6 +150,17 @@ namespace QuanLyCuaHangNoiThat
         {
             frmReport frm = new frmReport();
             frm.ShowDialog();
+        }
+        void Reset()
+        {
+            this.txtTimKiem.Clear();
+            this.lblMaHD.Text = string.Empty;
+            this.lblTenKH.Text = string.Empty;
+            this.lblTenNhanVien.Text = string.Empty;
+            this.lblTongTien.Text = string.Empty;
+            this.lblNgayLapHD.Text = string.Empty;
+            this.lblNgayGiaoHang.Text = string.Empty;
+            this.dgvDataChiTietHD.DataSource = null;
         }
     }
 }

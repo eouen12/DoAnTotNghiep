@@ -18,5 +18,10 @@ namespace BUS
         {
             return AnhMinhHoaSPDAO.ThemAnhMinhHoaSanPham(anhMH);
         }
+
+        public static bool XoaAnhMinhHoa(string maanh)
+        {
+            return AnhMinhHoaSPDAO.XoaSanPham(maanh);
+        }
     }
 }

@@ -18,11 +18,11 @@ namespace QuanLyCuaHangNoiThat.Forms
         private List<HOADONBANHANG> lstHoaDon = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
         private string mahd;
-        private int makh;
+        private string makh;
         private string manv;
         private bool slHopLe = true;
         private bool dangThaoTac = false;
-        public frmLapHoaDon(int makh, string manv)
+        public frmLapHoaDon(string makh, string manv)
         {
             InitializeComponent();
             this.makh = makh;
@@ -33,7 +33,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             try
             {
-                TaoHoaDon(this.makh.ToString(), this.manv);
+                TaoHoaDon(this.makh, this.manv);
 
                 TaoCTHoaDon();
 
@@ -193,12 +193,12 @@ namespace QuanLyCuaHangNoiThat.Forms
         void TaoHoaDon(string makh, string manv)
         {
             mahd = lstHoaDon[lstHoaDon.Count - 1].MAHD.ToString();
-            int somahd = Convert.ToInt32(mahd.Remove(0, 5)) + 1;
-            mahd = "HD000" + somahd;
+            int somahd = Convert.ToInt32(mahd.Remove(0, 2)) + 1;
+            mahd = "HD" + somahd;
             HoaDonBanHangBUS.ThemHoaDon(new HOADONBANHANG
             {
                 MAHD = mahd,
-                MAKH = Convert.ToInt32(makh),
+                MAKH = makh,
                 NV_LAP_HD = manv,
                 NGAYLAP = DateTime.Now,
                 TONGTIEN = Convert.ToInt32(lstCTHD.Sum(p => p.DONGIA)),

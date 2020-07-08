@@ -16,9 +16,11 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmSanPham : Form
     {
         private string tenAnhMinhHoa;
-        private string patch = @"C:\Users\ACER\Desktop\DoAnTotNghiep\Hinh_SanPham\";
+        private string patch = @"..\..\..\..\Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
+        private ANHMINHHOASP AMH = new ANHMINHHOASP();
+        private bool dangThayDoiDL = false;
         private string manv;
 
         public frmSanPham(string manv)
@@ -34,6 +36,8 @@ namespace QuanLyCuaHangNoiThat
             LoadDataTabQLSP();
 
             LoadComboBoxData();
+
+            this.txtMaSp.Text = AutoTaoMaSP();
         }
 
 
@@ -104,6 +108,10 @@ namespace QuanLyCuaHangNoiThat
                      || sp.MASP.Contains(chuoi)
                      || sp.MALOAI == chuoi
                      || sp.MANPP == chuoi
+                     || sp.MALOAI.Contains(chuoi)
+                     || sp.MANPP.Contains(chuoi)
+                     || sp.LOAISANPHAM.TENLOAI.Contains(chuoi)
+                     || sp.NHAPHANPHOI.TENNPP.Contains(chuoi)
                      select new
                      {
                          sp.MASP,
@@ -148,8 +156,8 @@ namespace QuanLyCuaHangNoiThat
             lstSanPham = SanPhamBUS.LayDanhSachSanPham();
             lstAnhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa();
             var kq = from sp in lstSanPham
-                     join anhMH in lstAnhMinhHoa
-                     on sp.MASP equals anhMH.MASP 
+                     //join anhMH in lstAnhMinhHoa
+                     //on sp.MASP equals anhMH.MASP 
                      select new
                      {
                          sp.MASP,
@@ -158,13 +166,12 @@ namespace QuanLyCuaHangNoiThat
                          sp.GIABAN,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP,
-                         anhMH.TENANHMINHHOA
+                         //anhMH.TENANHMINHHOA
                      };
             this.dgvDSSanPham.AutoGenerateColumns = false;
             this.dgvQLSanPham.DataSource = kq.ToList();
             this.dgvQLSanPham.AutoSize = true;
             this.dgvQLSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvQLSanPham.Columns["TENANHMINHHOA"].Visible = false;
         }
 
         void TimKiemQLSP(string chuoi)
@@ -176,6 +183,10 @@ namespace QuanLyCuaHangNoiThat
                      || sp.MASP.Contains(chuoi)
                      || sp.MALOAI == chuoi
                      || sp.MANPP == chuoi
+                     || sp.MALOAI.Contains(chuoi)
+                     || sp.MANPP.Contains(chuoi)
+                     || sp.LOAISANPHAM.TENLOAI.Contains(chuoi)
+                     || sp.NHAPHANPHOI.TENNPP.Contains(chuoi)
                      select new
                      {
                          sp.MASP,
@@ -194,13 +205,14 @@ namespace QuanLyCuaHangNoiThat
         void Reset()
         {
             this.imgSanPham.Image = null;
-            this.txtMaSp.Clear();
+            this.txtMaSp.Text = AutoTaoMaSP();
             this.txtTenSP.Clear();
             this.txtGiaBanSp.Clear();
             this.txtSLTonSp.Clear();
             this.btnThemSP.Enabled = true;
             this.btnSuaSP.Enabled = false;
             this.btnXoaSP.Enabled = false;
+            this.dangThayDoiDL = false;
         }
 
         private void txtTimKiemQLSP_TextChanged(object sender, EventArgs e)
@@ -236,11 +248,21 @@ namespace QuanLyCuaHangNoiThat
             this.btnSuaSP.Enabled = true;
             this.btnXoaSP.Enabled = true;
             this.btnThemSP.Enabled = false;
+            this.dangThayDoiDL = true;
             this.txtMaSp.Text = this.dgvQLSanPham.CurrentRow.Cells["MASPQL"].Value.ToString();
             this.txtTenSP.Text = this.dgvQLSanPham.CurrentRow.Cells["TENSPQL"].Value.ToString();
             this.txtGiaBanSp.Text = this.dgvQLSanPham.CurrentRow.Cells["GIABANQL"].Value.ToString();
             this.txtSLTonSp.Text = this.dgvQLSanPham.CurrentRow.Cells["SLTONQL"].Value.ToString();
-            this.imgSanPham.ImageLocation = patch + this.dgvQLSanPham.CurrentRow.Cells["TENANHMINHHOA"].Value.ToString();
+
+            AMH = lstAnhMinhHoa.Where(p => p.MASP == this.txtMaSp.Text && p.TRANGTHAI == true).FirstOrDefault();
+            try
+            {
+                this.imgSanPham.ImageLocation = patch + AMH.TENANHMINHHOA;
+            }
+            catch
+            {
+                this.imgSanPham.ImageLocation = null;
+            }
             //this.cbLoaiSp.SelectedItem = this.dgvQLSanPham.CurrentRow.Cells["TENLOAIQL"].Value.ToString();
             //this.cbNPPSp.SelectedItem = this.dgvQLSanPham.CurrentRow.Cells["TENNPPQL"].Value.ToString();
         }
@@ -261,13 +283,12 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnModeThem_Click(object sender, EventArgs e)
         {
-            if(this.txtMaSp.Text == string.Empty
-                || this.txtTenSP.Text == string.Empty
+            if( this.txtTenSP.Text == string.Empty
                 || this.txtGiaBanSp.Text == string.Empty
                 || this.txtSLTonSp.Text == string.Empty
                 || this.imgSanPham.Image == null)
             {
-                MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo");
+                MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
             SANPHAM sanpham = new SANPHAM();
@@ -279,8 +300,9 @@ namespace QuanLyCuaHangNoiThat
             sanpham.MANPP = this.cbNPPSp.SelectedValue.ToString();
             sanpham.TRANGTHAI = true;
 
+            string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
             string[] chuoiXuLiTenAnh = this.tenAnhMinhHoa.Split('.');
-            string maAnh = this.txtMaSp.Text + "_" + chuoiXuLiTenAnh[0];
+            this.tenAnhMinhHoa = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s") + "." + chuoiXuLiTenAnh[1];
             ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
             if(!SanPhamBUS.KiemTraMaSPTonTai(sanpham.MASP))
             {
@@ -290,7 +312,7 @@ namespace QuanLyCuaHangNoiThat
                     AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
 
                     this.imgSanPham.Image.Save(patch + anhMH.TENANHMINHHOA);
-                    MessageBox.Show("Thêm sản phẩm thành công !!!", "Thông báo");
+                    MessageBox.Show("Thêm sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm một sản phẩm (" + sanpham.MASP + ")";
                     LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     Reset();
@@ -302,15 +324,27 @@ namespace QuanLyCuaHangNoiThat
                 }
                 
             }
-            else
-            {
-                MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Thông báo");
-            }
 
         }
 
         private void btnModeSua_Click(object sender, EventArgs e)
         {
+            if (this.txtTenSP.Text == string.Empty
+                || this.txtGiaBanSp.Text == string.Empty
+                || this.txtSLTonSp.Text == string.Empty
+                || this.imgSanPham.Image == null)
+            {
+                MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (this.tenAnhMinhHoa != AMH.TENANHMINHHOA && this.tenAnhMinhHoa != null)
+            {
+                string[] chuoiXuLiTenAnh = this.tenAnhMinhHoa.Split('.');
+                tenAnhMinhHoa = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s") + "." + chuoiXuLiTenAnh[1];
+            }
+
+
             SANPHAM sanpham = new SANPHAM();
             sanpham.MASP = this.txtMaSp.Text;
             sanpham.TENSP = this.txtTenSP.Text;
@@ -321,7 +355,24 @@ namespace QuanLyCuaHangNoiThat
 
             if(SanPhamBUS.SuaSanPham(sanpham))
             {
-                MessageBox.Show("Sửa thông tin thành công", "Thông báo");
+                if (this.imgSanPham.ImageLocation == System.IO.Path.Combine(patch, AMH.TENANHMINHHOA) && this.tenAnhMinhHoa != null)
+                {
+                    ANHMINHHOASP anhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa().Where(p => p.TENANHMINHHOA == AMH.TENANHMINHHOA).FirstOrDefault();
+                    this.imgSanPham.Image.Save(System.IO.Path.Combine(patch + this.tenAnhMinhHoa));
+                    AnhMinhHoaSPBUS.XoaAnhMinhHoa(anhMinhHoa.MAANH);
+                    string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
+                    ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
+                    AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
+                }
+                //else
+                //{
+                //    this.imgSanPham.Image.Save(System.IO.Path.Combine(patch + this.tenAnhMinhHoa));
+                //    //AnhMinhHoaSPBUS.XoaAnhMinhHoa(anhMinhHoa.MAANH);
+                //    string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
+                //    ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
+                //    AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
+                //}
+                MessageBox.Show("Cập nhật thông tin sản phẩm thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của sản phẩm " + sanpham.MASP;
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
@@ -329,7 +380,7 @@ namespace QuanLyCuaHangNoiThat
             }
             else
             {
-                MessageBox.Show("Sửa thông tin thất bại", "Thông báo");
+                MessageBox.Show("Cập nhật thông tin sản phẩm thất bại", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -338,7 +389,7 @@ namespace QuanLyCuaHangNoiThat
             if(MessageBox.Show("Bạn có chắc chứ?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
                 SanPhamBUS.XoaSanPham(this.txtMaSp.Text);
-                MessageBox.Show("Xóa sản phẩm thành công !!!", "Thông báo");
+                MessageBox.Show("Xóa sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMaSp.Text;
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
@@ -361,6 +412,31 @@ namespace QuanLyCuaHangNoiThat
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        string AutoTaoMaSP()
+        {
+            string masp = lstSanPham.Select(p => p.MASP).LastOrDefault();
+            int automa = Convert.ToInt32(masp.Remove(0, 2)) + 1;
+            return "SP" + automa;
+        }
+
+        private void frmSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dangThayDoiDL)
+            {
+                if (MessageBox.Show("Đang có sự thay đổi dữ liệu, bạn có chắc chứ ?", "Thông báo",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    this.DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
         }
     }
 }

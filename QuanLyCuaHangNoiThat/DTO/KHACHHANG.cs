@@ -21,7 +21,7 @@ namespace DTO
             this.HOADONBANHANG = new HashSet<HOADONBANHANG>();
         }
     
-        public int MAKH { get; set; }
+        public string MAKH { get; set; }
         public string TENKH { get; set; }
         public string SDT { get; set; }
         public string DIACHI { get; set; }

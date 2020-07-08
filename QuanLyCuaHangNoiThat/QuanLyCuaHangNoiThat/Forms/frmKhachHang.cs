@@ -17,7 +17,7 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<KHACHHANG> lstKhachHang = new List<KHACHHANG>();
         private string manv;
-        private int makh;
+        private string makh;
         public frmKhachHang(string nhanvien)
         {
             InitializeComponent();
@@ -73,7 +73,7 @@ namespace QuanLyCuaHangNoiThat
                 return;
             }
             else 
-            KH.MAKH = int.Parse(dgvDSKH.CurrentRow.Cells["MAKH"].Value.ToString());
+            KH.MAKH = dgvDSKH.CurrentRow.Cells["MAKH"].Value.ToString();
             KH.CMND = txtCMND.Text;
             KH.DIACHI = txtDiaChi.Text;
             KH.SDT = txtSDT.Text;
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangNoiThat
             this.btnHuybo.Enabled = true;
             this.btnLapHD.Enabled = true;
             this.btnThem.Enabled = false;
-            this.makh = Convert.ToInt32(dgvDSKH.CurrentRow.Cells["MaKHang"].Value);
+            this.makh = dgvDSKH.CurrentRow.Cells["MaKHang"].Value.ToString();
             txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMNDKHang"].Value.ToString();
             txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHIKHang"].Value.ToString();
             txtSDT.Text = dgvDSKH.CurrentRow.Cells["SDTKHang"].Value.ToString();

@@ -21,7 +21,7 @@ namespace DTO
         }
     
         public string MACONGNO { get; set; }
-        public int MAKH { get; set; }
+        public string MAKH { get; set; }
         public Nullable<decimal> TONGTIEN { get; set; }
         public Nullable<decimal> TIENCONNO { get; set; }
         public Nullable<System.DateTime> NGAYTRA { get; set; }

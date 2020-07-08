@@ -25,7 +25,7 @@ namespace BUS
         {
             return KhachHangDAO.Update(entity);
         }
-        public static string Delete(string IDKH)
+        public static bool Delete(string IDKH)
         {
             return KhachHangDAO.Delete(IDKH);
         }

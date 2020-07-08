@@ -32,7 +32,7 @@
             <PropertyRef Name="MACONGNO" />
           </Key>
           <Property Name="MACONGNO" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MAKH" Type="int" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TONGTIEN" Type="money" />
           <Property Name="TIENCONNO" Type="money" />
           <Property Name="NGAYTRA" Type="datetime" />
@@ -64,7 +64,7 @@
             <PropertyRef Name="MAHD" />
           </Key>
           <Property Name="MAHD" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MAKH" Type="int" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NV_LAP_HD" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NGAYLAP" Type="datetime" />
           <Property Name="TONGTIEN" Type="int" />
@@ -84,7 +84,7 @@
           <Key>
             <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TENKH" Type="nvarchar(max)" />
           <Property Name="SDT" Type="varchar" MaxLength="10" />
           <Property Name="DIACHI" Type="nvarchar(max)" />
@@ -542,7 +542,7 @@
             <PropertyRef Name="MACONGNO" />
           </Key>
           <Property Name="MACONGNO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="MAKH" Type="Int32" Nullable="false" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="TIENCONNO" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="NGAYTRA" Type="DateTime" Precision="3" />
@@ -580,7 +580,7 @@
             <PropertyRef Name="MAHD" />
           </Key>
           <Property Name="MAHD" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="MAKH" Type="Int32" Nullable="false" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="NV_LAP_HD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
           <Property Name="TONGTIEN" Type="Int32" />
@@ -605,7 +605,7 @@
           <Key>
             <PropertyRef Name="MAKH" />
           </Key>
-          <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="TENKH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

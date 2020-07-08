@@ -21,7 +21,7 @@ namespace DTO
         }
     
         public string MAHD { get; set; }
-        public int MAKH { get; set; }
+        public string MAKH { get; set; }
         public string NV_LAP_HD { get; set; }
         public Nullable<System.DateTime> NGAYLAP { get; set; }
         public Nullable<int> TONGTIEN { get; set; }
