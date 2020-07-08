@@ -146,14 +146,17 @@ namespace QuanLyCuaHangNoiThat
 
         void ChucVu()
         {
-            if(nhanvien.CHUCVU == "NV")
+            if(nhanvien.CHUCVU != "NV")
             {
-                btnMenuNhanVien.Enabled = false;
+                btnMenuNhanVien.Enabled = true;
+                groupBox1.Visible= true;
             }
             else
             {
-                btnMenuNhanVien.Enabled = true;
+                btnMenuNhanVien.Enabled = false;
+                groupBox1.Visible = false;
             }
+
         }
 
         void LoadAnhDaiDien()
@@ -166,6 +169,11 @@ namespace QuanLyCuaHangNoiThat
         {
             this.dgvLSHeThong.AutoGenerateColumns = false;
             this.dgvLSHeThong.DataSource = LichSuHeThongBUS.LayDanhSachLSHT();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

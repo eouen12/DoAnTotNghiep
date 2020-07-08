@@ -140,7 +140,7 @@ namespace QuanLyCuaHangNoiThat
                     EMAIL = this.txtEmail.Text,
                     DIACHI = this.txtDiaChiNV.Text,
                     ANHDAIDIEN = tenAnhDaiDien.ToString(),
-                    LUONGCB = Convert.ToInt32(this.txtLuongNV.Text),
+                    //LUONGCB = Convert.ToInt32(this.txtLuongNV.Text),
                 };
                 if (NhanVienBUS.CapNhatNhanVien(nv))
                 {

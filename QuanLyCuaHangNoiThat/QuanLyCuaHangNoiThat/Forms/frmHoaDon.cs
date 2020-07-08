@@ -147,7 +147,8 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
-
+            frmReport frm = new frmReport();
+            frm.ShowDialog();
         }
     }
 }

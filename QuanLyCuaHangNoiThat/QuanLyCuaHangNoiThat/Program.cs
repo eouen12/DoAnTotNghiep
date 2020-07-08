@@ -22,7 +22,7 @@ namespace QuanLyCuaHangNoiThat
             {
                 Application.Run(new frmMenu(frmDangNhap.nv));
             }
-            //Application.Run(new frmNhanVien());
+            //Application.Run(new frmReport());
         }
     }
 }

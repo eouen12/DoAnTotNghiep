@@ -12,7 +12,7 @@ namespace DAO
 
         public static List<String> LayDanhSachMaNV()
         {
-            return db.NHANVIEN.Select(p => p.MANV).ToList();
+            return db.NHANVIEN.Where(p => p.TRANGTHAI == true).Select(p => p.MANV).ToList();
         }
 
         public static List<NHANVIEN> LayDanhSachNV()

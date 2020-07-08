@@ -15,6 +15,7 @@ namespace QuanLyCuaHangNoiThat
 {
     public partial class frmKhachHang : Form
     {
+        private List<KHACHHANG> lstKhachHang = new List<KHACHHANG>();
         private string manv;
         private int makh;
         public frmKhachHang(string nhanvien)
@@ -36,10 +37,10 @@ namespace QuanLyCuaHangNoiThat
 
         private void Loading()
         {
-            dgvDSKH.DataSource = KhachHangBUS.LayDanhSachKhachHang();
-            //this.dgvDSKH.AutoSize = true;
-            //this.dgvDSKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            //this.dgvDSKH.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            lstKhachHang=KhachHangBUS.LayDanhSachKhachHang();
+            dgvDSKH.AutoGenerateColumns = false;
+            dgvDSKH.DataSource = lstKhachHang;
+            
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -94,14 +95,51 @@ namespace QuanLyCuaHangNoiThat
             Loading();
         }
 
+        void TimKiemKhachHang(string chuoi)
+        {
+            var kq = from sc in lstKhachHang
+                     where sc.SDT.Contains(chuoi) || sc.TENKH.Contains(chuoi) || sc.CMND.Contains(chuoi)
+                     select sc;
+            this.dgvDSKH.AutoGenerateColumns = false;
+            this.dgvDSKH.DataSource = kq.ToList();
+        }
         private void dgvDSKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.btnSua.Enabled = true;
+            this.btnHuybo.Enabled = true;
             this.btnLapHD.Enabled = true;
-            this.makh = Convert.ToInt32(dgvDSKH.CurrentRow.Cells["MAKH"].Value);
-            txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMND"].Value.ToString();
-            txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHI"].Value.ToString();
-            txtSDT.Text = dgvDSKH.CurrentRow.Cells["SDT"].Value.ToString();
-            txtTenKH.Text = dgvDSKH.CurrentRow.Cells["TENKH"].Value.ToString();
+            this.btnThem.Enabled = false;
+            this.makh = Convert.ToInt32(dgvDSKH.CurrentRow.Cells["MaKHang"].Value);
+            txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMNDKHang"].Value.ToString();
+            txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHIKHang"].Value.ToString();
+            txtSDT.Text = dgvDSKH.CurrentRow.Cells["SDTKHang"].Value.ToString();
+            txtTenKH.Text = dgvDSKH.CurrentRow.Cells["TenKHang"].Value.ToString();
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            {
+                if (this.txtTimKiem.Text != string.Empty)
+                {
+                    TimKiemKhachHang(this.txtTimKiem.Text);
+                }
+                else
+                {
+                    Loading();
+                }
+            }
+        }
+
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

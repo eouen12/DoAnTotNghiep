@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Globalization;
 using BUS;
 using DTO;
 
@@ -138,13 +140,22 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnThemNPP_Click(object sender, EventArgs e)
         {
-            if (this.txtMaNPP.Text == string.Empty || this.txtTenNPP.Text == string.Empty || this.txtDiaChiNPP.Text == string.Empty || this.txtSDTNPP.Text == string.Empty || this.txtEmailNPP.Text == string.Empty)
+            if ( this.txtTenNPP.Text == string.Empty || this.txtDiaChiNPP.Text == string.Empty || this.txtSDTNPP.Text == string.Empty || this.txtEmailNPP.Text == string.Empty)
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo");
                 return;
             }
 
-            NHAPHANPHOI npp = new NHAPHANPHOI { MANPP = this.txtMaNPP.Text, TENNPP = this.txtTenNPP.Text, DIACHI = this.txtDiaChiNPP.Text , EMAIL = this.txtEmailNPP.Text , SDT = this.txtSDTNPP.Text, TRANGTHAI = true };
+            NHAPHANPHOI npp = new NHAPHANPHOI 
+            { 
+                MANPP = AutoMaNPP(), 
+                TENNPP = this.txtTenNPP.Text, 
+                DIACHI = this.txtDiaChiNPP.Text , 
+                EMAIL = this.txtEmailNPP.Text , 
+                SDT = this.txtSDTNPP.Text,
+                WEBSITE = this.txtWebsiteNPP.Text,
+                TRANGTHAI = true 
+            };
             if (NhaPhanPhoiBUS.ThemNPP(npp))
             {
                 MessageBox.Show("Thêm thành công !!!", "Thông báo");
@@ -159,7 +170,7 @@ namespace QuanLyCuaHangNoiThat
             }
         }
 
-        private void dgvDSNhaPhanPhoi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDSNhaPhanPhoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.btnThemNPP.Enabled = false;
             this.btnSuaNPP.Enabled = true;
@@ -171,7 +182,12 @@ namespace QuanLyCuaHangNoiThat
             this.txtEmailNPP.Text = this.dgvDSNhaPhanPhoi.CurrentRow.Cells["EMAIL"].Value.ToString();
             this.txtWebsiteNPP.Text = this.dgvDSNhaPhanPhoi.CurrentRow.Cells["WEBSITE"].Value.ToString();
         }
-
+        string AutoMaNPP()
+        {
+            string manpp = lstNPP[lstNPP.Count - 1].MANPP.ToString();
+            int somanpp = Convert.ToInt32(manpp.Remove(0, 3)) + 1;
+            return "NPP" + somanpp;
+        }
         void LoadDataDSNPP()
         {
             lstNPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
@@ -260,8 +276,15 @@ namespace QuanLyCuaHangNoiThat
                 return;
             }
 
-            CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG { MANPP = this.txtMaNPPNhapHang.Text, MASP = this.txtMaSPNhapHang.Text, DONGIA = this.txtDonGiaNhapHang.MaxLength, SL_NHAPHANG = this.txtSLNhapHang.MaxLength, TONGGIATRI = this.txtTongGtriNhapHang.MaxLength, NGAYNHAPHANG = dateTimePickerNhapHang.MaxDate, TRANGTHAI = true };
-            if (CTNhapHangTuNPPBUS.ThemCTNH(ctnh))
+            CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG { 
+                MANPP = this.txtMaNPPNhapHang.Text,
+                MASP = this.txtMaSPNhapHang.Text,
+                DONGIA = Convert.ToInt32(this.txtDonGiaNhapHang.Text), 
+                SL_NHAPHANG = Convert.ToInt32(this.txtSLNhapHang.Text), 
+                TONGGIATRI = Convert.ToInt32(this.txtTongGtriNhapHang.Text), 
+                NGAYNHAPHANG = dateTimePickerNhapHang.Value, 
+                TRANGTHAI = true };
+            if (CTNhapHangBUS.ThemCTNH(ctnh))
             {
                 MessageBox.Show("Thêm thành công !!!", "Thông báo");
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
@@ -277,14 +300,16 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnSuaDLNhapHang_Click(object sender, EventArgs e)
         {
+
             CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG();
             ctnh.MANPP = this.txtMaNPPNhapHang.Text;
             ctnh.MASP = this.txtMaSPNhapHang.Text;
             ctnh.DONGIA = int.Parse(this.txtDonGiaNhapHang.Text);
             ctnh.SL_NHAPHANG = int.Parse(this.txtSLNhapHang.Text);
             ctnh.TONGGIATRI = int.Parse(this.txtTongGtriNhapHang.Text);
-            ctnh.NGAYNHAPHANG = this.dateTimePickerNhapHang.MaxDate;
-            if (CTNhapHangTuNPPBUS.SuaCTNH(ctnh))
+            ctnh.NGAYNHAPHANG = this.dateTimePickerNhapHang.Value;
+
+            if (CTNhapHangBUS.SuaCTNH(ctnh))
             {
                 MessageBox.Show("Sửa thành công !!!", "Thông báo");
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
@@ -302,7 +327,7 @@ namespace QuanLyCuaHangNoiThat
         {
             if (MessageBox.Show("Bạn có chắc chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                CTNhapHangTuNPPBUS.XoaCTNH(this.txtMaNPPNhapHang.Text , this.txtMaSPNhapHang.Text);
+                CTNhapHangBUS.XoaCTNH(this.txtMaNPPNhapHang.Text , this.txtMaSPNhapHang.Text);
                 MessageBox.Show("Xóa thành công !!!", "Thông báo");
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin chi tiết nhập hàng (" + this.txtMaNPPNhapHang.Text + "," + this.txtMaSPNhapHang.Text + ")";
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
@@ -325,7 +350,7 @@ namespace QuanLyCuaHangNoiThat
         }
         void LoadDataDSCTNH()
         {
-            lstCTNH = CTNhapHangTuNPPBUS.LayDanhSachChiTietNhapHang();
+            lstCTNH = CTNhapHangBUS.LayDanhSachChiTietNhapHang();
             this.dgvDsChiTietNhapHang.AutoGenerateColumns = false;
             this.dgvDsChiTietNhapHang.DataSource = lstCTNH;
         }
@@ -349,6 +374,29 @@ namespace QuanLyCuaHangNoiThat
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSDTNPP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        bool isValidEmail(string inputEmail)
+        {
+            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,3}$");
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+
+        private void txtEmailNPP_Validated(object sender, EventArgs e)
+        {
+            if (!isValidEmail(this.txtEmailNPP.Text))
+            {
+                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi");
+                this.txtEmailNPP.Focus();
+            }
         }
     }
 }
