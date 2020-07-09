@@ -9,9 +9,9 @@ namespace BUS
 {
     public class CTHoaDonBanHangBUS
     {
-        public static List<CTHOADONBANHANG> LayDSCTHD (string mahd)
+        public static List<CTHOADONBANHANG> LayDSCTHD ()
         {
-            return CTHoaDonBanHangDAO.LayDanhSachCTHD(mahd);
+            return CTHoaDonBanHangDAO.LayDanhSachCTHD();
         }
         public static void ThemCTHoaDon(CTHOADONBANHANG ct)
         {

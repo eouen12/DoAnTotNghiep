@@ -19,6 +19,8 @@ namespace QuanLyCuaHangNoiThat
         private string patch = @"..\..\..\..\Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
+        private List<LOAISANPHAM> lstLoaiSp = new List<LOAISANPHAM>();
+        private List<NHAPHANPHOI> lstNhaPP = new List<NHAPHANPHOI>();
         private ANHMINHHOASP AMH = new ANHMINHHOASP();
         private bool dangThayDoiDL = false;
         private string manv;
@@ -37,9 +39,21 @@ namespace QuanLyCuaHangNoiThat
 
             LoadComboBoxData();
 
+            FormatDataGridView();
+
+            AutoCompleteMaLoai();
+
+            AutoCompleteMaNPP();
+
             this.txtMaSp.Text = AutoTaoMaSP();
         }
-
+        void FormatDataGridView()
+        {
+            DataGridViewCellStyle styleTien = new DataGridViewCellStyle();
+            styleTien.Format = "#,###";
+            this.dgvDSSanPham.Columns["GIABAN"].DefaultCellStyle = styleTien;
+            this.dgvQLSanPham.Columns["GIABANQL"].DefaultCellStyle = styleTien;
+        }
 
         /// <summary>
         /// Tab danh sach san pham
@@ -71,14 +85,6 @@ namespace QuanLyCuaHangNoiThat
             this.cbDSNPP.DataSource = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
             this.cbDSNPP.DisplayMember = "TENNPP";
             this.cbDSNPP.ValueMember = "MANPP";
-
-            this.cbLoaiSp.DataSource = LoaiSanPhamBUS.LayDanhSachLoaiSanPham();
-            this.cbLoaiSp.DisplayMember = "TENLOAI";
-            this.cbLoaiSp.ValueMember = "MALOAI";
-
-            this.cbNPPSp.DataSource = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
-            this.cbNPPSp.DisplayMember = "TENNPP";
-            this.cbNPPSp.ValueMember = "MANPP";
 
             this.cbQLTimKiemLoaiSP.DataSource = LoaiSanPhamBUS.LayDanhSachLoaiSanPham();
             this.cbQLTimKiemLoaiSP.DisplayMember = "TENLOAI";
@@ -202,19 +208,6 @@ namespace QuanLyCuaHangNoiThat
             this.dgvQLSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        void Reset()
-        {
-            this.imgSanPham.Image = null;
-            this.txtMaSp.Text = AutoTaoMaSP();
-            this.txtTenSP.Clear();
-            this.txtGiaBanSp.Clear();
-            this.txtSLTonSp.Clear();
-            this.btnThemSP.Enabled = true;
-            this.btnSuaSP.Enabled = false;
-            this.btnXoaSP.Enabled = false;
-            this.dangThayDoiDL = false;
-        }
-
         private void txtTimKiemQLSP_TextChanged(object sender, EventArgs e)
         {
             if (this.txtTimKiemQLSP.Text != string.Empty)
@@ -254,6 +247,11 @@ namespace QuanLyCuaHangNoiThat
             this.txtGiaBanSp.Text = this.dgvQLSanPham.CurrentRow.Cells["GIABANQL"].Value.ToString();
             this.txtSLTonSp.Text = this.dgvQLSanPham.CurrentRow.Cells["SLTONQL"].Value.ToString();
 
+            string tenLoai = this.dgvQLSanPham.CurrentRow.Cells["TENLOAIQL"].Value.ToString();
+            string tenNPP = this.dgvQLSanPham.CurrentRow.Cells["TENNPPQL"].Value.ToString();
+            this.txtLoaiSanPham.Text = lstLoaiSp.Where(p => p.TENLOAI == tenLoai).Select(p => p.MALOAI).FirstOrDefault();
+            this.txtNhaPhanPhoi.Text = lstNhaPP.Where(p => p.TENNPP == tenNPP).Select(p => p.MANPP).FirstOrDefault();
+
             AMH = lstAnhMinhHoa.Where(p => p.MASP == this.txtMaSp.Text && p.TRANGTHAI == true).FirstOrDefault();
             try
             {
@@ -263,8 +261,6 @@ namespace QuanLyCuaHangNoiThat
             {
                 this.imgSanPham.ImageLocation = null;
             }
-            //this.cbLoaiSp.SelectedItem = this.dgvQLSanPham.CurrentRow.Cells["TENLOAIQL"].Value.ToString();
-            //this.cbNPPSp.SelectedItem = this.dgvQLSanPham.CurrentRow.Cells["TENNPPQL"].Value.ToString();
         }
 
         private void btnChonAnhMHSP_Click(object sender, EventArgs e)
@@ -296,8 +292,8 @@ namespace QuanLyCuaHangNoiThat
             sanpham.TENSP = this.txtTenSP.Text;
             sanpham.GIABAN = Convert.ToInt32(this.txtGiaBanSp.Text);
             sanpham.SL_TON = Convert.ToInt32(this.txtSLTonSp.Text);
-            sanpham.MALOAI = this.cbLoaiSp.SelectedValue.ToString();
-            sanpham.MANPP = this.cbNPPSp.SelectedValue.ToString();
+            sanpham.MALOAI = this.txtLoaiSanPham.Text;
+            sanpham.MANPP = this.txtNhaPhanPhoi.Text;
             sanpham.TRANGTHAI = true;
 
             string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
@@ -317,6 +313,7 @@ namespace QuanLyCuaHangNoiThat
                     LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     Reset();
                     LoadDataTabQLSP();
+                    LoadDataTabDSSP();
                 }
                 catch(Exception ex)
                 {
@@ -337,11 +334,13 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            if (this.tenAnhMinhHoa != AMH.TENANHMINHHOA && this.tenAnhMinhHoa != null)
+            if (AMH != null)
             {
-                string[] chuoiXuLiTenAnh = this.tenAnhMinhHoa.Split('.');
-                tenAnhMinhHoa = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s") + "." + chuoiXuLiTenAnh[1];
+                if (this.tenAnhMinhHoa != AMH.TENANHMINHHOA && this.tenAnhMinhHoa != null)
+                {
+                    string[] chuoiXuLiTenAnh = this.tenAnhMinhHoa.Split('.');
+                    tenAnhMinhHoa = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s") + "." + chuoiXuLiTenAnh[1];
+                }
             }
 
 
@@ -350,33 +349,44 @@ namespace QuanLyCuaHangNoiThat
             sanpham.TENSP = this.txtTenSP.Text;
             sanpham.GIABAN = Convert.ToInt32(this.txtGiaBanSp.Text);
             sanpham.SL_TON = Convert.ToInt32(this.txtSLTonSp.Text);
-            sanpham.MALOAI = this.cbLoaiSp.SelectedValue.ToString();
-            sanpham.MANPP = this.cbNPPSp.SelectedValue.ToString();
+            sanpham.MALOAI = this.txtLoaiSanPham.Text;
+            sanpham.MANPP = this.txtNhaPhanPhoi.Text;
 
             if(SanPhamBUS.SuaSanPham(sanpham))
             {
-                if (this.imgSanPham.ImageLocation == System.IO.Path.Combine(patch, AMH.TENANHMINHHOA) && this.tenAnhMinhHoa != null)
+                if (AMH != null)
                 {
-                    ANHMINHHOASP anhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa().Where(p => p.TENANHMINHHOA == AMH.TENANHMINHHOA).FirstOrDefault();
-                    this.imgSanPham.Image.Save(System.IO.Path.Combine(patch + this.tenAnhMinhHoa));
-                    AnhMinhHoaSPBUS.XoaAnhMinhHoa(anhMinhHoa.MAANH);
-                    string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
-                    ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
-                    AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
+                    if (this.imgSanPham.ImageLocation == System.IO.Path.Combine(patch, AMH.TENANHMINHHOA) && this.tenAnhMinhHoa != null)
+                    {
+                        ANHMINHHOASP anhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa().Where(p => p.TENANHMINHHOA == AMH.TENANHMINHHOA).FirstOrDefault();
+                        this.imgSanPham.Image.Save(System.IO.Path.Combine(patch + this.tenAnhMinhHoa));
+                        AnhMinhHoaSPBUS.XoaAnhMinhHoa(anhMinhHoa.MAANH);
+                        string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
+                        ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
+                        AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
+                    }
                 }
-                //else
-                //{
-                //    this.imgSanPham.Image.Save(System.IO.Path.Combine(patch + this.tenAnhMinhHoa));
-                //    //AnhMinhHoaSPBUS.XoaAnhMinhHoa(anhMinhHoa.MAANH);
-                //    string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
-                //    ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
-                //    AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
-                //}
+                else
+                {
+                    string maAnh = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s");
+                    string[] chuoiXuLiTenAnh = this.tenAnhMinhHoa.Split('.');
+                    this.tenAnhMinhHoa = this.txtMaSp.Text + "_" + DateTime.Now.ToString("dd-MM-yy-h-m-s") + "." + chuoiXuLiTenAnh[1];
+                    ANHMINHHOASP anhMH = new ANHMINHHOASP
+                    {
+                        MAANH = maAnh,
+                        TENANHMINHHOA = this.tenAnhMinhHoa,
+                        MASP = sanpham.MASP,
+                        TRANGTHAI = true
+                    };
+                    AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
+                    this.imgSanPham.Image.Save(patch + anhMH.TENANHMINHHOA);
+                }
                 MessageBox.Show("Cập nhật thông tin sản phẩm thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của sản phẩm " + sanpham.MASP;
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
+                LoadDataTabDSSP();
             }
             else
             {
@@ -394,6 +404,7 @@ namespace QuanLyCuaHangNoiThat
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
+                LoadDataTabDSSP();
             }
         }
 
@@ -408,6 +419,21 @@ namespace QuanLyCuaHangNoiThat
                 e.Handled = true;
         }
 
+        void Reset()
+        {
+            this.imgSanPham.Image = null;
+            this.txtMaSp.Text = AutoTaoMaSP();
+            this.txtTenSP.Clear();
+            this.txtGiaBanSp.Clear();
+            this.txtSLTonSp.Clear();
+            this.txtLoaiSanPham.Clear();
+            this.txtNhaPhanPhoi.Clear();
+            this.btnThemSP.Enabled = true;
+            this.btnSuaSP.Enabled = false;
+            this.btnXoaSP.Enabled = false;
+            this.dangThayDoiDL = false;
+        }
+
         private void txtSLTonSp_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -416,9 +442,45 @@ namespace QuanLyCuaHangNoiThat
 
         string AutoTaoMaSP()
         {
-            string masp = lstSanPham.Select(p => p.MASP).LastOrDefault();
-            int automa = Convert.ToInt32(masp.Remove(0, 2)) + 1;
-            return "SP" + automa;
+            List<SANPHAM> lstMaSP = SanPhamBUS.LayDanhSachMaSanPham();
+            string ma = lstMaSP.Select(p => p.MASP).LastOrDefault();
+            int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+            ma = "SP" + automa;
+            for (int i = 0; i < lstMaSP.Count(); i++)
+            {
+                if (ma == lstMaSP[i].MASP)
+                {
+                    automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+                    ma = "SP" + automa;
+                }
+            }
+            return ma;
+        }
+
+        void AutoCompleteMaLoai()
+        {
+            lstLoaiSp = LoaiSanPhamBUS.LayDanhSachLoaiSanPham();
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            foreach (LOAISANPHAM item in lstLoaiSp)
+            {
+                collection.Add(item.MALOAI);
+            }
+            this.txtLoaiSanPham.AutoCompleteCustomSource = collection;
+            this.txtLoaiSanPham.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.txtLoaiSanPham.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        void AutoCompleteMaNPP()
+        {
+            lstNhaPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            foreach (NHAPHANPHOI item in lstNhaPP)
+            {
+                collection.Add(item.MANPP);
+            }
+            this.txtNhaPhanPhoi.AutoCompleteCustomSource = collection;
+            this.txtNhaPhanPhoi.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.txtNhaPhanPhoi.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void frmSanPham_FormClosing(object sender, FormClosingEventArgs e)

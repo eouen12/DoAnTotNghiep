@@ -51,7 +51,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnMenuCongNo_Click(object sender, EventArgs e)
         {
-            MofrmDesktop(new frmCongNo(), sender, e);
+            MofrmDesktop(new frmCongNo(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuNhaPhanPhoi_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace QuanLyCuaHangNoiThat
         void LoadAnhDaiDien()
         {
             this.imgAnhNhanVien.ImageLocation = patch + nhanvien.ANHDAIDIEN;
-            this.lblTenNhanVien.Text = nhanvien.TENNV;
+            //this.lblTenNhanVien.Text = nhanvien.TENNV;
         }
 
         void LoadLSHeThong()

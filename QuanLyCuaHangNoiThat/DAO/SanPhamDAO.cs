@@ -16,11 +16,22 @@ namespace DAO
             return db.SANPHAM.Where(x => x.TRANGTHAI == true).ToList();
 
         }
+        public static List<SANPHAM> LayDanhSachSP()
+        {
+            return db.SANPHAM.ToList();
+
+        }
+
+        public static List<SANPHAM> LayDanhSachMaSanPham()
+        {
+            return db.SANPHAM.ToList();
+
+        }
 
         public static bool KiemTraMaSPTonTai(string masp)
         {
             var kq = db.SANPHAM.Find(masp);
-            if (kq != null)
+            if (kq != null && kq.TRANGTHAI == true)
                 return true;
             return false;
         }

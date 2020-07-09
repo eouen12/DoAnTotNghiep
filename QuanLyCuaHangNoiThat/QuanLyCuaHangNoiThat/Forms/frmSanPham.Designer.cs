@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlSanPham = new System.Windows.Forms.TabControl();
             this.tabPageDsSanPham = new System.Windows.Forms.TabPage();
             this.dgvDSSanPham = new System.Windows.Forms.DataGridView();
@@ -78,14 +74,14 @@
             this.txtGiaBanSp = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.txtMaSp = new System.Windows.Forms.TextBox();
-            this.cbNPPSp = new System.Windows.Forms.ComboBox();
-            this.cbLoaiSp = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtLoaiSanPham = new System.Windows.Forms.TextBox();
+            this.txtNhaPhanPhoi = new System.Windows.Forms.TextBox();
             this.tabControlSanPham.SuspendLayout();
             this.tabPageDsSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).BeginInit();
@@ -134,14 +130,6 @@
             this.dgvDSSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDSSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSSanPham.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvDSSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASP,
@@ -150,14 +138,6 @@
             this.SLTON,
             this.TENLOAISP,
             this.TENNPP});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSSanPham.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSSanPham.Location = new System.Drawing.Point(3, 101);
             this.dgvDSSanPham.Margin = new System.Windows.Forms.Padding(2);
@@ -179,7 +159,7 @@
             this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
-            this.MASP.Width = 162;
+            this.MASP.Width = 152;
             // 
             // TENSP
             // 
@@ -190,18 +170,18 @@
             this.TENSP.MinimumWidth = 6;
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 169;
+            this.TENSP.Width = 159;
             // 
             // GIABAN
             // 
             this.GIABAN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.GIABAN.DataPropertyName = "GIABAN";
             this.GIABAN.FillWeight = 150F;
-            this.GIABAN.HeaderText = "Giá bán";
+            this.GIABAN.HeaderText = "Giá bán (VND)";
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
             this.GIABAN.ReadOnly = true;
-            this.GIABAN.Width = 109;
+            this.GIABAN.Width = 160;
             // 
             // SLTON
             // 
@@ -212,7 +192,7 @@
             this.SLTON.MinimumWidth = 6;
             this.SLTON.Name = "SLTON";
             this.SLTON.ReadOnly = true;
-            this.SLTON.Width = 155;
+            this.SLTON.Width = 144;
             // 
             // TENLOAISP
             // 
@@ -223,7 +203,7 @@
             this.TENLOAISP.MinimumWidth = 6;
             this.TENLOAISP.Name = "TENLOAISP";
             this.TENLOAISP.ReadOnly = true;
-            this.TENLOAISP.Width = 174;
+            this.TENLOAISP.Width = 162;
             // 
             // TENNPP
             // 
@@ -234,7 +214,7 @@
             this.TENNPP.MinimumWidth = 6;
             this.TENNPP.Name = "TENNPP";
             this.TENNPP.ReadOnly = true;
-            this.TENNPP.Width = 173;
+            this.TENNPP.Width = 161;
             // 
             // groupBox1
             // 
@@ -347,14 +327,6 @@
             // 
             this.dgvQLSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvQLSanPham.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvQLSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASPQL,
@@ -363,14 +335,6 @@
             this.GIABANQL,
             this.TENLOAIQL,
             this.TENNPPQL});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLSanPham.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvQLSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvQLSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvQLSanPham.Margin = new System.Windows.Forms.Padding(0);
@@ -391,7 +355,7 @@
             this.MASPQL.MinimumWidth = 6;
             this.MASPQL.Name = "MASPQL";
             this.MASPQL.ReadOnly = true;
-            this.MASPQL.Width = 162;
+            this.MASPQL.Width = 152;
             // 
             // TENSPQL
             // 
@@ -401,7 +365,7 @@
             this.TENSPQL.MinimumWidth = 6;
             this.TENSPQL.Name = "TENSPQL";
             this.TENSPQL.ReadOnly = true;
-            this.TENSPQL.Width = 169;
+            this.TENSPQL.Width = 159;
             // 
             // SLTONQL
             // 
@@ -411,17 +375,17 @@
             this.SLTONQL.MinimumWidth = 6;
             this.SLTONQL.Name = "SLTONQL";
             this.SLTONQL.ReadOnly = true;
-            this.SLTONQL.Width = 155;
+            this.SLTONQL.Width = 144;
             // 
             // GIABANQL
             // 
             this.GIABANQL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.GIABANQL.DataPropertyName = "GIABAN";
-            this.GIABANQL.HeaderText = "Giá bán";
+            this.GIABANQL.HeaderText = "Giá bán (VND)";
             this.GIABANQL.MinimumWidth = 6;
             this.GIABANQL.Name = "GIABANQL";
             this.GIABANQL.ReadOnly = true;
-            this.GIABANQL.Width = 109;
+            this.GIABANQL.Width = 160;
             // 
             // TENLOAIQL
             // 
@@ -431,7 +395,7 @@
             this.TENLOAIQL.MinimumWidth = 6;
             this.TENLOAIQL.Name = "TENLOAIQL";
             this.TENLOAIQL.ReadOnly = true;
-            this.TENLOAIQL.Width = 174;
+            this.TENLOAIQL.Width = 162;
             // 
             // TENNPPQL
             // 
@@ -441,7 +405,7 @@
             this.TENNPPQL.MinimumWidth = 6;
             this.TENNPPQL.Name = "TENNPPQL";
             this.TENNPPQL.ReadOnly = true;
-            this.TENNPPQL.Width = 173;
+            this.TENNPPQL.Width = 161;
             // 
             // panel3
             // 
@@ -652,12 +616,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtNhaPhanPhoi);
+            this.groupBox2.Controls.Add(this.txtLoaiSanPham);
             this.groupBox2.Controls.Add(this.txtSLTonSp);
             this.groupBox2.Controls.Add(this.txtGiaBanSp);
             this.groupBox2.Controls.Add(this.txtTenSP);
             this.groupBox2.Controls.Add(this.txtMaSp);
-            this.groupBox2.Controls.Add(this.cbNPPSp);
-            this.groupBox2.Controls.Add(this.cbLoaiSp);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -701,22 +665,6 @@
             this.txtMaSp.Name = "txtMaSp";
             this.txtMaSp.Size = new System.Drawing.Size(172, 31);
             this.txtMaSp.TabIndex = 8;
-            // 
-            // cbNPPSp
-            // 
-            this.cbNPPSp.FormattingEnabled = true;
-            this.cbNPPSp.Location = new System.Drawing.Point(167, 290);
-            this.cbNPPSp.Name = "cbNPPSp";
-            this.cbNPPSp.Size = new System.Drawing.Size(172, 33);
-            this.cbNPPSp.TabIndex = 7;
-            // 
-            // cbLoaiSp
-            // 
-            this.cbLoaiSp.FormattingEnabled = true;
-            this.cbLoaiSp.Location = new System.Drawing.Point(167, 240);
-            this.cbLoaiSp.Name = "cbLoaiSp";
-            this.cbLoaiSp.Size = new System.Drawing.Size(172, 33);
-            this.cbLoaiSp.TabIndex = 6;
             // 
             // label8
             // 
@@ -772,6 +720,20 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã sản phẩm:";
             // 
+            // txtLoaiSanPham
+            // 
+            this.txtLoaiSanPham.Location = new System.Drawing.Point(167, 242);
+            this.txtLoaiSanPham.Name = "txtLoaiSanPham";
+            this.txtLoaiSanPham.Size = new System.Drawing.Size(172, 31);
+            this.txtLoaiSanPham.TabIndex = 12;
+            // 
+            // txtNhaPhanPhoi
+            // 
+            this.txtNhaPhanPhoi.Location = new System.Drawing.Point(167, 292);
+            this.txtNhaPhanPhoi.Name = "txtNhaPhanPhoi";
+            this.txtNhaPhanPhoi.Size = new System.Drawing.Size(172, 31);
+            this.txtNhaPhanPhoi.TabIndex = 13;
+            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,8 +787,6 @@
         private System.Windows.Forms.TextBox txtGiaBanSp;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.TextBox txtMaSp;
-        private System.Windows.Forms.ComboBox cbNPPSp;
-        private System.Windows.Forms.ComboBox cbLoaiSp;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -848,17 +808,19 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox imgSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MASPQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENSPQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SLTONQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIABANQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAIQL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENNPPQL;
         private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLTON;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAISP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNPP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASPQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENSPQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLTONQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIABANQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAIQL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNPPQL;
+        private System.Windows.Forms.TextBox txtNhaPhanPhoi;
+        private System.Windows.Forms.TextBox txtLoaiSanPham;
     }
 }

@@ -14,6 +14,15 @@ namespace BUS
             return SanPhamDAO.LayDanhSachSanPham();
         }
 
+        public static List<SANPHAM> LayDanhSachSP()
+        {
+            return SanPhamDAO.LayDanhSachSP();
+        }
+        public static List<SANPHAM> LayDanhSachMaSanPham()
+        {
+            return SanPhamDAO.LayDanhSachMaSanPham();
+        }
+
         public static bool KiemTraMaSPTonTai(string masp)
         {
             return SanPhamDAO.KiemTraMaSPTonTai(masp);

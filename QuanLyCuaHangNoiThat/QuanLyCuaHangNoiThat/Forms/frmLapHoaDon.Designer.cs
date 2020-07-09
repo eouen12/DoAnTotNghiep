@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDSChiTietHD = new System.Windows.Forms.DataGridView();
             this.ITEMMASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEMSOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,8 +42,6 @@
             this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONGTON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIABAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NHAPP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChonSP = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.btnXacNhan = new FontAwesome.Sharp.IconButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.dtNgayGiao = new System.Windows.Forms.DateTimePicker();
             this.chkTraGop = new System.Windows.Forms.CheckBox();
@@ -66,7 +61,6 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSChiTietHD
@@ -136,7 +130,7 @@
             // 
             this.ITEMGIATIEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ITEMGIATIEN.DataPropertyName = "DONGIA";
-            this.ITEMGIATIEN.HeaderText = "Giá tiền";
+            this.ITEMGIATIEN.HeaderText = "Giá tiền (VND)";
             this.ITEMGIATIEN.MinimumWidth = 6;
             this.ITEMGIATIEN.Name = "ITEMGIATIEN";
             this.ITEMGIATIEN.ReadOnly = true;
@@ -177,22 +171,12 @@
             this.MASP,
             this.TENSP,
             this.SOLUONGTON,
-            this.GIABAN,
-            this.TENLOAI,
-            this.NHAPP});
+            this.GIABAN});
             this.dgvDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvDSSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSSanPham.Name = "dgvDSSanPham";
             this.dgvDSSanPham.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSSanPham.RowHeadersVisible = false;
             this.dgvDSSanPham.RowHeadersWidth = 51;
             this.dgvDSSanPham.RowTemplate.Height = 24;
@@ -232,29 +216,11 @@
             // GIABAN
             // 
             this.GIABAN.DataPropertyName = "GIABAN";
-            this.GIABAN.HeaderText = "Giá bán";
+            this.GIABAN.HeaderText = "Giá bán (VND)";
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
             this.GIABAN.ReadOnly = true;
-            this.GIABAN.Width = 98;
-            // 
-            // TENLOAI
-            // 
-            this.TENLOAI.DataPropertyName = "TENLOAI";
-            this.TENLOAI.HeaderText = "Loại sản phẩm";
-            this.TENLOAI.MinimumWidth = 6;
-            this.TENLOAI.Name = "TENLOAI";
-            this.TENLOAI.ReadOnly = true;
-            this.TENLOAI.Width = 156;
-            // 
-            // NHAPP
-            // 
-            this.NHAPP.DataPropertyName = "TENNPP";
-            this.NHAPP.HeaderText = "Nhà phân phối";
-            this.NHAPP.MinimumWidth = 6;
-            this.NHAPP.Name = "NHAPP";
-            this.NHAPP.ReadOnly = true;
-            this.NHAPP.Width = 158;
+            this.GIABAN.Width = 155;
             // 
             // btnChonSP
             // 
@@ -279,8 +245,9 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(48, 28);
             this.txtSoLuong.TabIndex = 4;
+            this.txtSoLuong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoLuong_KeyDown);
             this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
-            this.txtSoLuong.Validating += new System.ComponentModel.CancelEventHandler(this.txtSoLuong_Validating);
+            this.txtSoLuong.Validated += new System.EventHandler(this.txtSoLuong_Validated);
             // 
             // label2
             // 
@@ -338,6 +305,7 @@
             // btnXacNhan
             // 
             this.btnXacNhan.BackColor = System.Drawing.Color.Lime;
+            this.btnXacNhan.Enabled = false;
             this.btnXacNhan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhan.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -357,10 +325,6 @@
             this.btnXacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // label5
             // 
@@ -382,6 +346,7 @@
             this.dtNgayGiao.Name = "dtNgayGiao";
             this.dtNgayGiao.Size = new System.Drawing.Size(196, 35);
             this.dtNgayGiao.TabIndex = 10;
+            this.dtNgayGiao.Validated += new System.EventHandler(this.dtNgayGiao_Validated);
             // 
             // chkTraGop
             // 
@@ -405,6 +370,8 @@
             this.txtSoTienTraTrc.Name = "txtSoTienTraTrc";
             this.txtSoTienTraTrc.Size = new System.Drawing.Size(196, 35);
             this.txtSoTienTraTrc.TabIndex = 12;
+            this.txtSoTienTraTrc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTienTraTrc_KeyPress);
+            this.txtSoTienTraTrc.Validated += new System.EventHandler(this.txtSoTienTraTrc_Validated);
             // 
             // dateHanTra
             // 
@@ -417,6 +384,7 @@
             this.dateHanTra.Name = "dateHanTra";
             this.dateHanTra.Size = new System.Drawing.Size(196, 35);
             this.dateHanTra.TabIndex = 13;
+            this.dateHanTra.Validated += new System.EventHandler(this.dateHanTra_Validated);
             // 
             // label4
             // 
@@ -468,7 +436,6 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,17 +454,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTongTien;
         private FontAwesome.Sharp.IconButton btnXacNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGTON;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NHAPP;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMMASP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMSOLUONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMGIATIEN;
         private System.Windows.Forms.DateTimePicker dtNgayGiao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateHanTra;
@@ -505,5 +462,12 @@
         private System.Windows.Forms.CheckBox chkTraGop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMMASP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMSOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMGIATIEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONGTON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIABAN;
     }
 }

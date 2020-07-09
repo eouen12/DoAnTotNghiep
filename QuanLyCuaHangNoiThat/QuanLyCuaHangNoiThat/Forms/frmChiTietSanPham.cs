@@ -19,6 +19,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             InitializeComponent();
             this.masp = masp;
+            this.Text = "Thông tin chi tiết sản phẩm " + this.masp;
         }
 
         private void frmChiTietSanPham_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             var sp = SanPhamBUS.LayDanhSachSanPham().Find(p => p.MASP == masp);
             this.lblMasp.Text = sp.MASP;
             this.lblTensp.Text = sp.TENSP;
-            this.lblGiaban.Text = sp.GIABAN.ToString();
+            this.lblGiaban.Text = Convert.ToInt32(sp.GIABAN).ToString("#,###") + " VND";
             this.lblSoluong.Text = sp.SL_TON.ToString();
             this.lblMaloai.Text = sp.MALOAI;
             this.lblTenloai.Text = sp.LOAISANPHAM.TENLOAI;

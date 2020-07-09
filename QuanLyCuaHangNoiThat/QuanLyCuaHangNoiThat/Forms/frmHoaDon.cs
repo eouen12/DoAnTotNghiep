@@ -17,6 +17,8 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<HOADONBANHANG> lstHD = new List<HOADONBANHANG>();
         private List<CTHOADONBANHANG> lstCTHD = new List<CTHOADONBANHANG>();
+        private List<SANPHAM> lstDSSP = new List<SANPHAM>();
+        private List<KHACHHANG> lstDSKH = new List<KHACHHANG>();
         private HOADONBANHANG hd = new HOADONBANHANG();
         private string manv;
 
@@ -24,6 +26,7 @@ namespace QuanLyCuaHangNoiThat
         {
             InitializeComponent();
             this.manv = manv;
+            LoadDSHoaDon();
         }
 
         private void btnSuaHD_Click(object sender, EventArgs e)
@@ -42,6 +45,8 @@ namespace QuanLyCuaHangNoiThat
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             LoadDSHoaDon();
+
+            FormatDataGridView();
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -77,48 +82,17 @@ namespace QuanLyCuaHangNoiThat
             this.lblTenKH.Text = this.dgvDanhSachHD["TENKH", e.RowIndex].Value.ToString();
             this.lblTenNhanVien.Text = this.dgvDanhSachHD["NVLAPHD", e.RowIndex].Value.ToString();
             this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYLAP", e.RowIndex].Value).ToString("dd/MM/yyyy");
-            this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD["TONGTIEN", e.RowIndex].Value).ToString("#,##0");
+            this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD["TONGTIEN", e.RowIndex].Value).ToString("#,##0") + " VND";
             this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYGIAO", e.RowIndex].Value).ToString("dd/MM/yyyy");
-            LoadDSCTHD(this.dgvDanhSachHD["MAHD", e.RowIndex].Value.ToString());
+            LoadDSCTHD(this.lblMaHD.Text);
             hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
         }
 
-        void LoadDSHoaDon()
-        {
-            lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
-            var kq = from hd in lstHD
-                     select new
-                     {
-                         hd.MAHD,
-                         hd.MAKH,
-                         hd.KHACHHANG.TENKH,
-                         hd.NGAYGIAO,
-                         hd.TONGTIEN,
-                         hd.NV_LAP_HD,
-                         hd.NGAYLAP
-                     };
-            this.dgvDanhSachHD.DataSource = kq.ToList();
-            this.dgvDanhSachHD.AutoGenerateColumns = false;
-        }
-
-        void LoadDSCTHD(string mahd)
-        {
-            lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD(mahd);
-            var kq = from ct in lstCTHD
-                     select new
-                     {
-                         ct.MASP,
-                         ct.SANPHAM.TENSP,
-                         ct.SOLUONG,
-                         ct.DONGIA
-                     };
-            this.dgvDataChiTietHD.DataSource = kq.ToList();
-            this.dgvDataChiTietHD.AutoGenerateColumns = false;
-        }
+       
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            this.txtTimKiem.Clear();
+            Reset();
             LoadDSHoaDon();
         }
 
@@ -141,16 +115,53 @@ namespace QuanLyCuaHangNoiThat
             this.dgvDanhSachHD.AutoGenerateColumns = false;
         }
 
-        private void dgvDataChiTietHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
             frmReport frm = new frmReport();
             frm.ShowDialog();
         }
+
+        void LoadDSHoaDon()
+        {
+            lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            lstDSKH = KhachHangBUS.LayDanhSachKhachHang();
+            var kq = from hd in lstHD
+                     join kh in lstDSKH
+                     on hd.MAKH equals kh.MAKH
+                     select new
+                     {
+                         hd.MAHD,
+                         hd.MAKH,
+                         kh.TENKH,
+                         hd.NGAYGIAO,
+                         hd.TONGTIEN,
+                         hd.NV_LAP_HD,
+                         hd.NGAYLAP
+                     };
+            this.dgvDanhSachHD.AutoGenerateColumns = false;
+            this.dgvDanhSachHD.DataSource = kq.ToList();
+        }
+
+        void LoadDSCTHD(string mahd)
+        {
+            lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD().Where(p => p.MAHD == mahd).ToList();
+            lstDSSP = SanPhamBUS.LayDanhSachSP();
+            //var kq = from ct in lstCTHD
+            //         select ct;
+            var kq = from ct in lstCTHD
+                     join sp in lstDSSP
+                     on ct.MASP equals sp.MASP
+                     select new
+                     {
+                         ct.MASP,
+                         sp.TENSP,
+                         ct.SOLUONG,
+                         ct.DONGIA,
+                     };
+            this.dgvDataChiTietHD.AutoGenerateColumns = false;
+            this.dgvDataChiTietHD.DataSource = kq.ToList();
+        }
+
         void Reset()
         {
             this.txtTimKiem.Clear();
@@ -161,6 +172,25 @@ namespace QuanLyCuaHangNoiThat
             this.lblNgayLapHD.Text = string.Empty;
             this.lblNgayGiaoHang.Text = string.Empty;
             this.dgvDataChiTietHD.DataSource = null;
+        }
+
+        void FormatDataGridView()
+        {
+            DataGridViewCellStyle styleTien = new DataGridViewCellStyle();
+            DataGridViewCellStyle styleNgay = new DataGridViewCellStyle();
+            styleTien.Format = "#,###";
+            styleNgay.Format = "dd/MM/yyyy";
+            this.dgvDanhSachHD.Columns["TONGTIEN"].DefaultCellStyle = styleTien;
+            this.dgvDanhSachHD.Columns["NGAYGIAO"].DefaultCellStyle = styleNgay;
+            this.dgvDanhSachHD.Columns["NGAYLAP"].DefaultCellStyle = styleNgay;
+            this.dgvDataChiTietHD.Columns["DONGIA"].DefaultCellStyle = styleTien;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD();
+            lstDSSP = SanPhamBUS.LayDanhSachSP();
         }
     }
 }

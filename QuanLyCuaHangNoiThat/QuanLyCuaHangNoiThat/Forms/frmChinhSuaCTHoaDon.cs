@@ -21,6 +21,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         private bool dangThayDoiNgayGiao = false;
         private bool dangThayDoiCTHD = false;
         private string manv;
+        private int sl_cthd;
         public frmChinhSuaCTHoaDon(HOADONBANHANG hoadon,string manv)
         {
             InitializeComponent();
@@ -45,20 +46,23 @@ namespace QuanLyCuaHangNoiThat.Forms
             if (this.txtMasp.Text == string.Empty || this.txtSoLuong.Text == string.Empty)
             {
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                this.txtMasp.Focus();
                 return;
             }
             if (!SanPhamBUS.KiemTraMaSPTonTai(this.txtMasp.Text))
             {
                 MessageBox.Show("Mã sản phẩm không tồn tại !!!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                this.txtMasp.Focus();
                 return;
             }
 
             if(!KiemTraSLMasp(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text)))
             {
+                this.txtSoLuong.Focus();
                 return;
             }
 
-            if (!KiemTraMaspTonTai(this.txtMasp.Text,hd.MAHD))
+            if (!KiemTraMaspTonTaiTrongCTHD(this.txtMasp.Text))
             {
                 CTHoaDonBanHangBUS.ThemCTHoaDon(new CTHOADONBANHANG
                 {
@@ -79,6 +83,12 @@ namespace QuanLyCuaHangNoiThat.Forms
                 loadThongTinHD(hd.MAHD);
                 Reset();
             }
+            else
+            {
+                MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                this.txtMasp.Focus();
+                return;
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -90,6 +100,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             }
             if (!KiemTraSLMasp(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text)))
             {
+                this.txtSoLuong.Focus();
                 return;
             }
             CTHOADONBANHANG ct = new CTHOADONBANHANG
@@ -105,7 +116,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             {
                 MessageBox.Show("Cập nhật thông tin thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 loadDSCTHD(hd.MAHD);
-                CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 0);
+                CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 1);
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
                 this.dangThayDoiCTHD = false;
@@ -133,7 +144,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                 {
                     MessageBox.Show("Xóa thông tin thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     loadDSCTHD(hd.MAHD);
-                    CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 1);
+                    CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 2);
                     hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                     HoaDonBanHangBUS.CapNhatHoaDon(hd);
                     this.dangThayDoiCTHD = false;
@@ -173,11 +184,14 @@ namespace QuanLyCuaHangNoiThat.Forms
 
         private void dgvCTHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            this.btnSua.Enabled = true;
+            this.btnXoa.Enabled = true;
             this.txtMasp.Enabled = false;
             this.btnThem.Enabled = false;
             this.dangThayDoiCTHD = true;
             this.txtMasp.Text = this.dgvCTHD.CurrentRow.Cells["MASP"].Value.ToString();
             this.txtSoLuong.Text = this.dgvCTHD.CurrentRow.Cells["SOLUONG"].Value.ToString();
+            this.sl_cthd = Convert.ToInt32(this.dgvCTHD.CurrentRow.Cells["SOLUONG"].Value.ToString());
         }
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
@@ -208,7 +222,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         }
         void loadDSCTHD(string mahd)
         {
-            lstcthd = CTHoaDonBanHangBUS.LayDSCTHD(mahd);
+            lstcthd = CTHoaDonBanHangBUS.LayDSCTHD().Where(p => p.MAHD == mahd).ToList();
             this.dgvCTHD.AutoGenerateColumns = false;
             this.dgvCTHD.DataSource = lstcthd;
         }
@@ -219,8 +233,8 @@ namespace QuanLyCuaHangNoiThat.Forms
             var hd = lstThongTinHD.FirstOrDefault();
             this.lblMaHD.Text = hd.MAHD;
             this.lblMaKH.Text = hd.MAKH.ToString();
-            this.lblTenKH.Text = hd.KHACHHANG.TENKH;
-            this.lblTongTien.Text = Convert.ToInt32(hd.TONGTIEN).ToString("#,##0");
+            this.lblTenKH.Text = KhachHangBUS.LayThongTin(hd.MAKH).TENKH;
+            this.lblTongTien.Text = Convert.ToInt32(hd.TONGTIEN).ToString("#,##0") + " VND";
             this.dtNgayGiao.Value = hd.NGAYGIAO.Value;
         }
 
@@ -237,8 +251,9 @@ namespace QuanLyCuaHangNoiThat.Forms
             this.txtMasp.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-        bool KiemTraMaspTonTai(string masp, string mahd)
+        bool KiemTraMaspTonTaiTrongCTHD(string masp)
         {
+            
             for(int i = 0; i < this.dgvCTHD.Rows.Count; i++)
             {
                 if(masp == this.dgvCTHD["MASP",i].Value.ToString())
@@ -268,9 +283,23 @@ namespace QuanLyCuaHangNoiThat.Forms
             {
                 kq.SL_TON = sl_ton - sl;
             }
+            // sl ton =100
+            // sl trong ct = 50
+            // sl cap nhat =40
             if(mode == 1)
             {
-                kq.SL_TON = sl_ton + sl;
+                if(sl < sl_cthd)
+                {
+                    kq.SL_TON = sl_ton + (sl_cthd - sl); 
+                } 
+                else if(sl > sl_cthd)
+                {
+                    kq.SL_TON = sl_ton - (sl - sl_cthd);
+                }
+            }
+            if(mode == 2)
+            {
+                kq.SL_TON = sl_ton + sl_cthd;
             }
             SanPhamBUS.SuaSanPham(kq);
         }
@@ -283,11 +312,14 @@ namespace QuanLyCuaHangNoiThat.Forms
         void Reset()
         {
             this.txtMasp.Clear();
+            this.txtMasp.Focus();
             this.txtSoLuong.Clear();
             this.txtMasp.Enabled = true;
             this.dangThayDoiCTHD = false;
             this.dangThayDoiNgayGiao = false;
             this.btnThem.Enabled = true;
+            this.btnXoa.Enabled = false;
+            this.btnSua.Enabled = false;
         }
 
     }

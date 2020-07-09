@@ -13,19 +13,31 @@ namespace DAO
 
         public static List<KHACHHANG> LayDanhSachKhachHang()
         {
+            return db.KHACHHANG.Where(p=>p.TRANGTHAI == true).ToList();
+        }
+
+        public static List<KHACHHANG> LayDanhSachMaKhachHang()
+        {
             return db.KHACHHANG.ToList();
         }
 
-        public static KHACHHANG LayThongTin(int makh)
+        public static KHACHHANG LayThongTin(string makh)
         {
             return db.KHACHHANG.Find(makh);
             
         }
-        public static string Insert(KHACHHANG entity)
+        public static bool Insert(KHACHHANG entity)
         {
-            db.KHACHHANG.Add(entity);
-            db.SaveChanges();
-            return entity.TENKH;
+            try
+            {
+                db.KHACHHANG.Add(entity);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public static bool Update(KHACHHANG entity)
         {

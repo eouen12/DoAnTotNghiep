@@ -13,11 +13,16 @@ namespace BUS
         {
             return KhachHangDAO.LayDanhSachKhachHang();
         }
-        public static KHACHHANG LayThongTin(int makh)
+
+        public static List<KHACHHANG> LayDanhSachMaKhachHang()
+        {
+            return KhachHangDAO.LayDanhSachMaKhachHang();
+        }
+        public static KHACHHANG LayThongTin(string makh)
         {
             return KhachHangDAO.LayThongTin(makh);
         }
-        public static string Insert(KHACHHANG entity)
+        public static bool Insert(KHACHHANG entity)
         {
             return KhachHangDAO.Insert(entity);
         }

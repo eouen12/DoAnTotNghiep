@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -41,13 +40,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.dtBatDau = new System.Windows.Forms.DateTimePicker();
             this.dgvDanhSachHD = new System.Windows.Forms.DataGridView();
-            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYGIAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVLAPHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnXuatHD = new FontAwesome.Sharp.IconButton();
@@ -58,10 +50,6 @@
             this.lblTenKH = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.dgvDataChiTietHD = new System.Windows.Forms.DataGridView();
-            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,6 +57,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYGIAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVLAPHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHD)).BeginInit();
@@ -163,7 +163,7 @@
             this.dtKetThuc.CustomFormat = "dd/MM/yyyy";
             this.dtKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtKetThuc.Location = new System.Drawing.Point(234, 110);
-            this.dtKetThuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtKetThuc.Margin = new System.Windows.Forms.Padding(2);
             this.dtKetThuc.Name = "dtKetThuc";
             this.dtKetThuc.Size = new System.Drawing.Size(134, 31);
             this.dtKetThuc.TabIndex = 15;
@@ -176,7 +176,7 @@
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconSize = 41;
             this.iconPictureBox1.Location = new System.Drawing.Point(168, 109);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(64, 41);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +188,7 @@
             this.dtBatDau.CustomFormat = "dd/MM/yyyy";
             this.dtBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtBatDau.Location = new System.Drawing.Point(31, 110);
-            this.dtBatDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtBatDau.Margin = new System.Windows.Forms.Padding(2);
             this.dtBatDau.Name = "dtBatDau";
             this.dtBatDau.Size = new System.Drawing.Size(134, 31);
             this.dtBatDau.TabIndex = 10;
@@ -210,83 +210,12 @@
             this.dgvDanhSachHD.Location = new System.Drawing.Point(6, 166);
             this.dgvDanhSachHD.Name = "dgvDanhSachHD";
             this.dgvDanhSachHD.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachHD.RowHeadersVisible = false;
             this.dgvDanhSachHD.RowHeadersWidth = 51;
             this.dgvDanhSachHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachHD.Size = new System.Drawing.Size(441, 365);
             this.dgvDanhSachHD.TabIndex = 9;
             this.dgvDanhSachHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHD_CellClick);
-            // 
-            // MAHD
-            // 
-            this.MAHD.DataPropertyName = "MAHD";
-            this.MAHD.HeaderText = "Mã hóa đơn";
-            this.MAHD.MinimumWidth = 6;
-            this.MAHD.Name = "MAHD";
-            this.MAHD.ReadOnly = true;
-            this.MAHD.Width = 147;
-            // 
-            // MAKH
-            // 
-            this.MAKH.DataPropertyName = "MAKH";
-            this.MAKH.HeaderText = "Mã khách hàng";
-            this.MAKH.MinimumWidth = 6;
-            this.MAKH.Name = "MAKH";
-            this.MAKH.ReadOnly = true;
-            this.MAKH.Width = 180;
-            // 
-            // TENKH
-            // 
-            this.TENKH.DataPropertyName = "TENKH";
-            this.TENKH.HeaderText = "Tên khách hàng";
-            this.TENKH.MinimumWidth = 6;
-            this.TENKH.Name = "TENKH";
-            this.TENKH.ReadOnly = true;
-            this.TENKH.Width = 187;
-            // 
-            // NGAYGIAO
-            // 
-            this.NGAYGIAO.DataPropertyName = "NGAYGIAO";
-            this.NGAYGIAO.HeaderText = "Ngày giao";
-            this.NGAYGIAO.MinimumWidth = 6;
-            this.NGAYGIAO.Name = "NGAYGIAO";
-            this.NGAYGIAO.ReadOnly = true;
-            this.NGAYGIAO.Width = 131;
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
-            this.TONGTIEN.ReadOnly = true;
-            this.TONGTIEN.Width = 124;
-            // 
-            // NVLAPHD
-            // 
-            this.NVLAPHD.DataPropertyName = "NV_LAP_HD";
-            this.NVLAPHD.HeaderText = "NV lập hóa đơn";
-            this.NVLAPHD.MinimumWidth = 6;
-            this.NVLAPHD.Name = "NVLAPHD";
-            this.NVLAPHD.ReadOnly = true;
-            this.NVLAPHD.Width = 146;
-            // 
-            // NGAYLAP
-            // 
-            this.NGAYLAP.DataPropertyName = "NGAYLAP";
-            this.NGAYLAP.HeaderText = "Ngày lập";
-            this.NGAYLAP.MinimumWidth = 6;
-            this.NGAYLAP.Name = "NGAYLAP";
-            this.NGAYLAP.ReadOnly = true;
-            this.NGAYLAP.Width = 119;
             // 
             // groupBox2
             // 
@@ -322,7 +251,7 @@
             this.btnSuaHD.IconColor = System.Drawing.Color.Black;
             this.btnSuaHD.IconSize = 16;
             this.btnSuaHD.Location = new System.Drawing.Point(20, 464);
-            this.btnSuaHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaHD.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaHD.Name = "btnSuaHD";
             this.btnSuaHD.Rotation = 0D;
             this.btnSuaHD.Size = new System.Drawing.Size(200, 62);
@@ -340,7 +269,7 @@
             this.btnXuatHD.IconColor = System.Drawing.Color.Black;
             this.btnXuatHD.IconSize = 40;
             this.btnXuatHD.Location = new System.Drawing.Point(239, 464);
-            this.btnXuatHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXuatHD.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatHD.Name = "btnXuatHD";
             this.btnXuatHD.Rotation = 0D;
             this.btnXuatHD.Size = new System.Drawing.Size(200, 62);
@@ -417,56 +346,11 @@
             this.dgvDataChiTietHD.Location = new System.Drawing.Point(20, 202);
             this.dgvDataChiTietHD.Name = "dgvDataChiTietHD";
             this.dgvDataChiTietHD.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataChiTietHD.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDataChiTietHD.RowHeadersVisible = false;
             this.dgvDataChiTietHD.RowHeadersWidth = 51;
             this.dgvDataChiTietHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDataChiTietHD.Size = new System.Drawing.Size(419, 150);
             this.dgvDataChiTietHD.TabIndex = 6;
-            this.dgvDataChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataChiTietHD_CellContentClick);
-            // 
-            // MASP
-            // 
-            this.MASP.DataPropertyName = "MASP";
-            this.MASP.HeaderText = "Mã sản phẩm";
-            this.MASP.MinimumWidth = 6;
-            this.MASP.Name = "MASP";
-            this.MASP.ReadOnly = true;
-            this.MASP.Width = 162;
-            // 
-            // TENSP
-            // 
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.MinimumWidth = 6;
-            this.TENSP.Name = "TENSP";
-            this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 169;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.ReadOnly = true;
-            this.SOLUONG.Width = 119;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Giá bán";
-            this.DONGIA.MinimumWidth = 6;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.ReadOnly = true;
-            this.DONGIA.Width = 109;
             // 
             // label9
             // 
@@ -536,6 +420,110 @@
             this.panel1.Size = new System.Drawing.Size(954, 561);
             this.panel1.TabIndex = 2;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // MAHD
+            // 
+            this.MAHD.DataPropertyName = "MAHD";
+            this.MAHD.HeaderText = "Mã hóa đơn";
+            this.MAHD.MinimumWidth = 6;
+            this.MAHD.Name = "MAHD";
+            this.MAHD.ReadOnly = true;
+            this.MAHD.Width = 161;
+            // 
+            // MAKH
+            // 
+            this.MAKH.DataPropertyName = "MAKH";
+            this.MAKH.HeaderText = "Mã khách hàng";
+            this.MAKH.MinimumWidth = 6;
+            this.MAKH.Name = "MAKH";
+            this.MAKH.ReadOnly = true;
+            this.MAKH.Width = 180;
+            // 
+            // TENKH
+            // 
+            this.TENKH.DataPropertyName = "TENKH";
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.MinimumWidth = 6;
+            this.TENKH.Name = "TENKH";
+            this.TENKH.ReadOnly = true;
+            this.TENKH.Width = 187;
+            // 
+            // NGAYGIAO
+            // 
+            this.NGAYGIAO.DataPropertyName = "NGAYGIAO";
+            this.NGAYGIAO.HeaderText = "Ngày giao";
+            this.NGAYGIAO.MinimumWidth = 6;
+            this.NGAYGIAO.Name = "NGAYGIAO";
+            this.NGAYGIAO.ReadOnly = true;
+            this.NGAYGIAO.Width = 131;
+            // 
+            // TONGTIEN
+            // 
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền (VND)";
+            this.TONGTIEN.MinimumWidth = 6;
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.ReadOnly = true;
+            this.TONGTIEN.Width = 187;
+            // 
+            // NVLAPHD
+            // 
+            this.NVLAPHD.DataPropertyName = "NV_LAP_HD";
+            this.NVLAPHD.HeaderText = "NV lập hóa đơn";
+            this.NVLAPHD.MinimumWidth = 6;
+            this.NVLAPHD.Name = "NVLAPHD";
+            this.NVLAPHD.ReadOnly = true;
+            this.NVLAPHD.Width = 146;
+            // 
+            // NGAYLAP
+            // 
+            this.NGAYLAP.DataPropertyName = "NGAYLAP";
+            this.NGAYLAP.HeaderText = "Ngày lập";
+            this.NGAYLAP.MinimumWidth = 6;
+            this.NGAYLAP.Name = "NGAYLAP";
+            this.NGAYLAP.ReadOnly = true;
+            this.NGAYLAP.Width = 119;
+            // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.MinimumWidth = 6;
+            this.MASP.Name = "MASP";
+            this.MASP.ReadOnly = true;
+            this.MASP.Width = 162;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.ReadOnly = true;
+            this.TENSP.Width = 169;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            this.SOLUONG.Width = 119;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Giá bán (VND)";
+            this.DONGIA.MinimumWidth = 6;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            this.DONGIA.Width = 172;
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,6 +573,9 @@
         private System.Windows.Forms.DateTimePicker dtKetThuc;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENKH;
@@ -596,7 +587,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnTim;
     }
 }

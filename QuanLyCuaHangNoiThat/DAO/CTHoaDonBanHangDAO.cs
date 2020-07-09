@@ -10,9 +10,9 @@ namespace DAO
     {
         private static QuanLyCuaHangNoiThatEntities db = new QuanLyCuaHangNoiThatEntities();
         
-        public static List<CTHOADONBANHANG> LayDanhSachCTHD(string mahd)
+        public static List<CTHOADONBANHANG> LayDanhSachCTHD()
         {
-            return db.CTHOADONBANHANG.Where(p => p.MAHD == mahd && p.TRANGTHAI == true).ToList();
+            return db.CTHOADONBANHANG.Where(p =>p.TRANGTHAI == true).ToList();
         }
 
         public static void ThemCTHoaDon(CTHOADONBANHANG ct)
