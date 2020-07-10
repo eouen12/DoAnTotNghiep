@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnXoaNV = new FontAwesome.Sharp.IconButton();
             this.btnSuaNV = new FontAwesome.Sharp.IconButton();
             this.btnThemNV = new FontAwesome.Sharp.IconButton();
@@ -83,7 +83,7 @@
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Rotation = 0D;
             this.btnXoaNV.Size = new System.Drawing.Size(134, 48);
-            this.btnXoaNV.TabIndex = 16;
+            this.btnXoaNV.TabIndex = 17;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,7 +105,7 @@
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Rotation = 0D;
             this.btnSuaNV.Size = new System.Drawing.Size(134, 48);
-            this.btnSuaNV.TabIndex = 15;
+            this.btnSuaNV.TabIndex = 16;
             this.btnSuaNV.Text = "Cập nhật";
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -126,7 +126,7 @@
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Rotation = 0D;
             this.btnThemNV.Size = new System.Drawing.Size(134, 48);
-            this.btnThemNV.TabIndex = 14;
+            this.btnThemNV.TabIndex = 15;
             this.btnThemNV.Text = "Thêm";
             this.btnThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -138,14 +138,14 @@
             this.dgvDSNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDSNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSNhanVien.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MANV,
@@ -156,14 +156,14 @@
             this.DIACHI,
             this.LUONGCB,
             this.ANHDAIDIEN});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSNhanVien.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDSNhanVien.Location = new System.Drawing.Point(14, 50);
             this.dgvDSNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSNhanVien.Name = "dgvDSNhanVien";
@@ -173,7 +173,7 @@
             this.dgvDSNhanVien.RowTemplate.Height = 24;
             this.dgvDSNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSNhanVien.Size = new System.Drawing.Size(440, 262);
-            this.dgvDSNhanVien.TabIndex = 13;
+            this.dgvDSNhanVien.TabIndex = 14;
             this.dgvDSNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSNhanVien_CellClick);
             // 
             // MANV
@@ -276,7 +276,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 29);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 10;
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // label8
@@ -313,7 +313,7 @@
             this.btnChonAnhNV.Name = "btnChonAnhNV";
             this.btnChonAnhNV.Rotation = 0D;
             this.btnChonAnhNV.Size = new System.Drawing.Size(128, 46);
-            this.btnChonAnhNV.TabIndex = 15;
+            this.btnChonAnhNV.TabIndex = 20;
             this.btnChonAnhNV.Text = "Chọn ảnh";
             this.btnChonAnhNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChonAnhNV.UseVisualStyleBackColor = true;
@@ -337,7 +337,7 @@
             this.txtDiaChiNV.Multiline = true;
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.Size = new System.Drawing.Size(200, 145);
-            this.txtDiaChiNV.TabIndex = 10;
+            this.txtDiaChiNV.TabIndex = 12;
             // 
             // txtSDTNV
             // 
@@ -348,6 +348,7 @@
             this.txtSDTNV.Size = new System.Drawing.Size(215, 29);
             this.txtSDTNV.TabIndex = 9;
             this.txtSDTNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDTNV_KeyPress);
+            this.txtSDTNV.Validated += new System.EventHandler(this.txtSDTNV_Validated);
             // 
             // txtCMNDNV
             // 
@@ -358,6 +359,7 @@
             this.txtCMNDNV.Size = new System.Drawing.Size(215, 29);
             this.txtCMNDNV.TabIndex = 8;
             this.txtCMNDNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMNDNV_KeyPress);
+            this.txtCMNDNV.Validated += new System.EventHandler(this.txtCMNDNV_Validated);
             // 
             // txtTenNV
             // 
@@ -371,6 +373,7 @@
             // txtMaNV
             // 
             this.txtMaNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(25, 67);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
@@ -452,7 +455,7 @@
             this.btnLamMoiNV.Name = "btnLamMoiNV";
             this.btnLamMoiNV.Rotation = 0D;
             this.btnLamMoiNV.Size = new System.Drawing.Size(209, 58);
-            this.btnLamMoiNV.TabIndex = 13;
+            this.btnLamMoiNV.TabIndex = 19;
             this.btnLamMoiNV.Text = "Làm mới";
             this.btnLamMoiNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -466,7 +469,7 @@
             this.txtTimKiemNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiemNV.Name = "txtTimKiemNV";
             this.txtTimKiemNV.Size = new System.Drawing.Size(236, 28);
-            this.txtTimKiemNV.TabIndex = 11;
+            this.txtTimKiemNV.TabIndex = 13;
             this.txtTimKiemNV.TextChanged += new System.EventHandler(this.txtTimKiemNV_TextChanged);
             // 
             // label1
@@ -496,7 +499,7 @@
             this.btnLamMoiMK.Name = "btnLamMoiMK";
             this.btnLamMoiMK.Rotation = 0D;
             this.btnLamMoiMK.Size = new System.Drawing.Size(209, 58);
-            this.btnLamMoiMK.TabIndex = 17;
+            this.btnLamMoiMK.TabIndex = 18;
             this.btnLamMoiMK.Text = "Làm mới mật khẩu";
             this.btnLamMoiMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoiMK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

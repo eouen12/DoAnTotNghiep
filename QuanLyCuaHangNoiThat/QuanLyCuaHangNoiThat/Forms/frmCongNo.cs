@@ -19,6 +19,7 @@ namespace QuanLyCuaHangNoiThat
         private List<KHACHHANG> lstKhachhang = new List<KHACHHANG>();
         private List<LICHSUTRANO> lstTraNo = new List<LICHSUTRANO>();
         private CONGNO cn = new CONGNO();
+        private bool dangThayDoiDL = false;
         //private string tienConNo;
         //private string tongTien;
         private string manv;
@@ -71,6 +72,8 @@ namespace QuanLyCuaHangNoiThat
         {
             if (this.dgvCongNo.CurrentRow.Selected)
             {
+                this.dangThayDoiDL = true;
+
                 this.btnXacNhanThanhToan.Enabled = true;
                 this.txtSoTienTraHomNay.Enabled = true;
                 this.dateTimePickerNgayTra.Enabled = true;
@@ -86,8 +89,8 @@ namespace QuanLyCuaHangNoiThat
 
                 //tongTien = this.dgvCongNo.CurrentRow.Cells["TONGTIENCN"].Value.ToString();
                 //tienConNo = this.dgvCongNo.CurrentRow.Cells["TIENCONNOCN"].Value.ToString();
-                this.lblTongTien.Text = Convert.ToDecimal(cn.TONGTIEN).ToString("#,###") + " VND";
-                this.lblTienConNo.Text = Convert.ToDecimal(cn.TIENCONNO).ToString("#,###") + " VND";
+                this.lblTongTien.Text = Convert.ToDecimal(cn.TONGTIEN).ToString("#,##0") + " VND";
+                this.lblTienConNo.Text = Convert.ToDecimal(cn.TIENCONNO).ToString("#,##0") + " VND";
                 this.dateTimePickerNgayTra.Value = Convert.ToDateTime(this.dgvCongNo.CurrentRow.Cells["NGAYTRA"].Value);
             }
             else
@@ -178,12 +181,14 @@ namespace QuanLyCuaHangNoiThat
             this.lblTienConNo.Text = string.Empty;
             this.txtSoTienTraHomNay.Clear();
             this.dateTimePickerNgayTra.Value = DateTime.Now;
+            this.dangThayDoiDL = false;
+
         }
 
         void FormatDataGridView()
         {
-            this.dgvCongNo.Columns["TONGTIENCN"].DefaultCellStyle.Format = "#,###";
-            this.dgvCongNo.Columns["TIENCONNOCN"].DefaultCellStyle.Format = "#,###";
+            this.dgvCongNo.Columns["TONGTIENCN"].DefaultCellStyle.Format = "#,##0";
+            this.dgvCongNo.Columns["TIENCONNOCN"].DefaultCellStyle.Format = "#,##0";
             this.dgvCongNo.Columns["NGAYLAP"].DefaultCellStyle.Format = "dd/MM/yyyy";
             this.dgvCongNo.Columns["NGAYTRA"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
@@ -228,6 +233,24 @@ namespace QuanLyCuaHangNoiThat
                      select cn;
             this.dgvCongNo.AutoGenerateColumns = false;
             this.dgvCongNo.DataSource = kq.ToList();
+        }
+
+        private void frmCongNo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dangThayDoiDL)
+            {
+                if (MessageBox.Show("Đang có sự thay đổi dữ liệu, bạn có chắc chứ ?", "Thông báo",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    this.DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
         }
     }
 }

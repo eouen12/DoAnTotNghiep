@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlSanPham = new System.Windows.Forms.TabControl();
             this.tabPageDsSanPham = new System.Windows.Forms.TabPage();
             this.dgvDSSanPham = new System.Windows.Forms.DataGridView();
@@ -70,6 +72,8 @@
             this.btnChonAnhMHSP = new FontAwesome.Sharp.IconButton();
             this.btnHuyBo = new FontAwesome.Sharp.IconButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNhaPhanPhoi = new System.Windows.Forms.TextBox();
+            this.txtLoaiSanPham = new System.Windows.Forms.TextBox();
             this.txtSLTonSp = new System.Windows.Forms.TextBox();
             this.txtGiaBanSp = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
@@ -80,8 +84,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtLoaiSanPham = new System.Windows.Forms.TextBox();
-            this.txtNhaPhanPhoi = new System.Windows.Forms.TextBox();
+            this.tabQLLoaiSP = new System.Windows.Forms.TabPage();
+            this.dgvDsLoaiSP = new System.Windows.Forms.DataGridView();
+            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnXoaLoaiSP = new FontAwesome.Sharp.IconButton();
+            this.btnLamMoiLoaiSP = new FontAwesome.Sharp.IconButton();
+            this.btnSuaLoaiSP = new FontAwesome.Sharp.IconButton();
+            this.txtTenLoaiSP = new System.Windows.Forms.TextBox();
+            this.btnThemLoaiSP = new FontAwesome.Sharp.IconButton();
+            this.txtMaLoai = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtTimKiemLoaiSP = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabControlSanPham.SuspendLayout();
             this.tabPageDsSanPham.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).BeginInit();
@@ -96,12 +113,16 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSanPham)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.tabQLLoaiSP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsLoaiSP)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlSanPham
             // 
             this.tabControlSanPham.Controls.Add(this.tabPageDsSanPham);
             this.tabControlSanPham.Controls.Add(this.tabPageQlSanPham);
+            this.tabControlSanPham.Controls.Add(this.tabQLLoaiSP);
             this.tabControlSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlSanPham.ItemSize = new System.Drawing.Size(300, 29);
@@ -130,6 +151,14 @@
             this.dgvDSSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDSSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSSanPham.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASP,
@@ -138,6 +167,14 @@
             this.SLTON,
             this.TENLOAISP,
             this.TENNPP});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSSanPham.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSSanPham.Location = new System.Drawing.Point(3, 101);
             this.dgvDSSanPham.Margin = new System.Windows.Forms.Padding(2);
@@ -159,7 +196,7 @@
             this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
-            this.MASP.Width = 152;
+            this.MASP.Width = 162;
             // 
             // TENSP
             // 
@@ -170,7 +207,7 @@
             this.TENSP.MinimumWidth = 6;
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 159;
+            this.TENSP.Width = 169;
             // 
             // GIABAN
             // 
@@ -181,7 +218,7 @@
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
             this.GIABAN.ReadOnly = true;
-            this.GIABAN.Width = 160;
+            this.GIABAN.Width = 172;
             // 
             // SLTON
             // 
@@ -192,7 +229,7 @@
             this.SLTON.MinimumWidth = 6;
             this.SLTON.Name = "SLTON";
             this.SLTON.ReadOnly = true;
-            this.SLTON.Width = 144;
+            this.SLTON.Width = 155;
             // 
             // TENLOAISP
             // 
@@ -203,7 +240,7 @@
             this.TENLOAISP.MinimumWidth = 6;
             this.TENLOAISP.Name = "TENLOAISP";
             this.TENLOAISP.ReadOnly = true;
-            this.TENLOAISP.Width = 162;
+            this.TENLOAISP.Width = 174;
             // 
             // TENNPP
             // 
@@ -214,7 +251,7 @@
             this.TENNPP.MinimumWidth = 6;
             this.TENNPP.Name = "TENNPP";
             this.TENNPP.ReadOnly = true;
-            this.TENNPP.Width = 161;
+            this.TENNPP.Width = 173;
             // 
             // groupBox1
             // 
@@ -635,6 +672,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin sản phẩm";
             // 
+            // txtNhaPhanPhoi
+            // 
+            this.txtNhaPhanPhoi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNhaPhanPhoi.Location = new System.Drawing.Point(167, 292);
+            this.txtNhaPhanPhoi.Name = "txtNhaPhanPhoi";
+            this.txtNhaPhanPhoi.Size = new System.Drawing.Size(172, 31);
+            this.txtNhaPhanPhoi.TabIndex = 13;
+            this.txtNhaPhanPhoi.Validated += new System.EventHandler(this.txtNhaPhanPhoi_Validated);
+            // 
+            // txtLoaiSanPham
+            // 
+            this.txtLoaiSanPham.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLoaiSanPham.Location = new System.Drawing.Point(167, 242);
+            this.txtLoaiSanPham.Name = "txtLoaiSanPham";
+            this.txtLoaiSanPham.Size = new System.Drawing.Size(172, 31);
+            this.txtLoaiSanPham.TabIndex = 12;
+            this.txtLoaiSanPham.Validated += new System.EventHandler(this.txtLoaiSanPham_Validated);
+            // 
             // txtSLTonSp
             // 
             this.txtSLTonSp.Location = new System.Drawing.Point(167, 190);
@@ -720,19 +775,220 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã sản phẩm:";
             // 
-            // txtLoaiSanPham
+            // tabQLLoaiSP
             // 
-            this.txtLoaiSanPham.Location = new System.Drawing.Point(167, 242);
-            this.txtLoaiSanPham.Name = "txtLoaiSanPham";
-            this.txtLoaiSanPham.Size = new System.Drawing.Size(172, 31);
-            this.txtLoaiSanPham.TabIndex = 12;
+            this.tabQLLoaiSP.Controls.Add(this.dgvDsLoaiSP);
+            this.tabQLLoaiSP.Controls.Add(this.groupBox4);
+            this.tabQLLoaiSP.Controls.Add(this.txtTimKiemLoaiSP);
+            this.tabQLLoaiSP.Controls.Add(this.label21);
+            this.tabQLLoaiSP.Location = new System.Drawing.Point(4, 33);
+            this.tabQLLoaiSP.Name = "tabQLLoaiSP";
+            this.tabQLLoaiSP.Padding = new System.Windows.Forms.Padding(3);
+            this.tabQLLoaiSP.Size = new System.Drawing.Size(946, 524);
+            this.tabQLLoaiSP.TabIndex = 2;
+            this.tabQLLoaiSP.Text = "Loại sản phẩm";
+            this.tabQLLoaiSP.UseVisualStyleBackColor = true;
             // 
-            // txtNhaPhanPhoi
+            // dgvDsLoaiSP
             // 
-            this.txtNhaPhanPhoi.Location = new System.Drawing.Point(167, 292);
-            this.txtNhaPhanPhoi.Name = "txtNhaPhanPhoi";
-            this.txtNhaPhanPhoi.Size = new System.Drawing.Size(172, 31);
-            this.txtNhaPhanPhoi.TabIndex = 13;
+            this.dgvDsLoaiSP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDsLoaiSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsLoaiSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MALOAI,
+            this.TENLOAI});
+            this.dgvDsLoaiSP.Location = new System.Drawing.Point(15, 57);
+            this.dgvDsLoaiSP.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDsLoaiSP.Name = "dgvDsLoaiSP";
+            this.dgvDsLoaiSP.ReadOnly = true;
+            this.dgvDsLoaiSP.RowHeadersVisible = false;
+            this.dgvDsLoaiSP.RowHeadersWidth = 51;
+            this.dgvDsLoaiSP.RowTemplate.Height = 24;
+            this.dgvDsLoaiSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDsLoaiSP.Size = new System.Drawing.Size(427, 262);
+            this.dgvDsLoaiSP.TabIndex = 17;
+            this.dgvDsLoaiSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsLoaiSP_CellClick);
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MALOAI.DataPropertyName = "MALOAI";
+            this.MALOAI.FillWeight = 200F;
+            this.MALOAI.HeaderText = "Mã loại sản phẩm";
+            this.MALOAI.MinimumWidth = 6;
+            this.MALOAI.Name = "MALOAI";
+            this.MALOAI.ReadOnly = true;
+            // 
+            // TENLOAI
+            // 
+            this.TENLOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TENLOAI.DataPropertyName = "TENLOAI";
+            this.TENLOAI.FillWeight = 200F;
+            this.TENLOAI.HeaderText = "Tên loại sản phẩm";
+            this.TENLOAI.MinimumWidth = 6;
+            this.TENLOAI.Name = "TENLOAI";
+            this.TENLOAI.ReadOnly = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnXoaLoaiSP);
+            this.groupBox4.Controls.Add(this.btnLamMoiLoaiSP);
+            this.groupBox4.Controls.Add(this.btnSuaLoaiSP);
+            this.groupBox4.Controls.Add(this.txtTenLoaiSP);
+            this.groupBox4.Controls.Add(this.btnThemLoaiSP);
+            this.groupBox4.Controls.Add(this.txtMaLoai);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Location = new System.Drawing.Point(464, 5);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(472, 514);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Thông tin loại sản phẩm";
+            // 
+            // btnXoaLoaiSP
+            // 
+            this.btnXoaLoaiSP.BackColor = System.Drawing.Color.Red;
+            this.btnXoaLoaiSP.Enabled = false;
+            this.btnXoaLoaiSP.FlatAppearance.BorderSize = 2;
+            this.btnXoaLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaLoaiSP.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnXoaLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaLoaiSP.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaLoaiSP.IconColor = System.Drawing.Color.Black;
+            this.btnXoaLoaiSP.IconSize = 32;
+            this.btnXoaLoaiSP.Location = new System.Drawing.Point(337, 157);
+            this.btnXoaLoaiSP.Name = "btnXoaLoaiSP";
+            this.btnXoaLoaiSP.Rotation = 0D;
+            this.btnXoaLoaiSP.Size = new System.Drawing.Size(115, 48);
+            this.btnXoaLoaiSP.TabIndex = 16;
+            this.btnXoaLoaiSP.Text = "Xóa";
+            this.btnXoaLoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaLoaiSP.UseVisualStyleBackColor = false;
+            this.btnXoaLoaiSP.Click += new System.EventHandler(this.btnXoaLoaiSP_Click);
+            // 
+            // btnLamMoiLoaiSP
+            // 
+            this.btnLamMoiLoaiSP.BackColor = System.Drawing.Color.Red;
+            this.btnLamMoiLoaiSP.FlatAppearance.BorderSize = 2;
+            this.btnLamMoiLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoiLoaiSP.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnLamMoiLoaiSP.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.btnLamMoiLoaiSP.IconColor = System.Drawing.Color.Black;
+            this.btnLamMoiLoaiSP.IconSize = 40;
+            this.btnLamMoiLoaiSP.Location = new System.Drawing.Point(25, 234);
+            this.btnLamMoiLoaiSP.Name = "btnLamMoiLoaiSP";
+            this.btnLamMoiLoaiSP.Rotation = 0D;
+            this.btnLamMoiLoaiSP.Size = new System.Drawing.Size(427, 58);
+            this.btnLamMoiLoaiSP.TabIndex = 13;
+            this.btnLamMoiLoaiSP.Text = "Làm mới";
+            this.btnLamMoiLoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoiLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoiLoaiSP.UseVisualStyleBackColor = false;
+            this.btnLamMoiLoaiSP.Click += new System.EventHandler(this.btnHuyboLoaiSP_Click);
+            // 
+            // btnSuaLoaiSP
+            // 
+            this.btnSuaLoaiSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSuaLoaiSP.Enabled = false;
+            this.btnSuaLoaiSP.FlatAppearance.BorderSize = 2;
+            this.btnSuaLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaLoaiSP.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSuaLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaLoaiSP.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnSuaLoaiSP.IconColor = System.Drawing.Color.Black;
+            this.btnSuaLoaiSP.IconSize = 32;
+            this.btnSuaLoaiSP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaLoaiSP.Location = new System.Drawing.Point(179, 157);
+            this.btnSuaLoaiSP.Name = "btnSuaLoaiSP";
+            this.btnSuaLoaiSP.Rotation = 0D;
+            this.btnSuaLoaiSP.Size = new System.Drawing.Size(115, 48);
+            this.btnSuaLoaiSP.TabIndex = 15;
+            this.btnSuaLoaiSP.Text = "Cập nhật";
+            this.btnSuaLoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSuaLoaiSP.UseVisualStyleBackColor = false;
+            this.btnSuaLoaiSP.Click += new System.EventHandler(this.btnSuaLoaiSP_Click);
+            // 
+            // txtTenLoaiSP
+            // 
+            this.txtTenLoaiSP.Location = new System.Drawing.Point(233, 96);
+            this.txtTenLoaiSP.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenLoaiSP.Name = "txtTenLoaiSP";
+            this.txtTenLoaiSP.Size = new System.Drawing.Size(215, 32);
+            this.txtTenLoaiSP.TabIndex = 7;
+            // 
+            // btnThemLoaiSP
+            // 
+            this.btnThemLoaiSP.BackColor = System.Drawing.Color.Lime;
+            this.btnThemLoaiSP.FlatAppearance.BorderSize = 2;
+            this.btnThemLoaiSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemLoaiSP.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnThemLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemLoaiSP.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnThemLoaiSP.IconColor = System.Drawing.Color.Black;
+            this.btnThemLoaiSP.IconSize = 32;
+            this.btnThemLoaiSP.Location = new System.Drawing.Point(25, 157);
+            this.btnThemLoaiSP.Name = "btnThemLoaiSP";
+            this.btnThemLoaiSP.Rotation = 0D;
+            this.btnThemLoaiSP.Size = new System.Drawing.Size(115, 48);
+            this.btnThemLoaiSP.TabIndex = 14;
+            this.btnThemLoaiSP.Text = "Thêm";
+            this.btnThemLoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemLoaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemLoaiSP.UseVisualStyleBackColor = false;
+            this.btnThemLoaiSP.Click += new System.EventHandler(this.btnThemLoaiSP_Click);
+            // 
+            // txtMaLoai
+            // 
+            this.txtMaLoai.Location = new System.Drawing.Point(233, 47);
+            this.txtMaLoai.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(215, 32);
+            this.txtMaLoai.TabIndex = 6;
+            this.txtMaLoai.Validated += new System.EventHandler(this.txtMaLoai_Validated);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(20, 101);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(196, 26);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Tên loại sản phẩm:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(20, 52);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(88, 26);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Mã loại:";
+            // 
+            // txtTimKiemLoaiSP
+            // 
+            this.txtTimKiemLoaiSP.Location = new System.Drawing.Point(124, 14);
+            this.txtTimKiemLoaiSP.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiemLoaiSP.Name = "txtTimKiemLoaiSP";
+            this.txtTimKiemLoaiSP.Size = new System.Drawing.Size(236, 32);
+            this.txtTimKiemLoaiSP.TabIndex = 15;
+            this.txtTimKiemLoaiSP.Click += new System.EventHandler(this.txtTimKiemLoaiSP_TextChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(10, 16);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(116, 26);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Tìm kiếm:";
             // 
             // frmSanPham
             // 
@@ -762,6 +1018,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgSanPham)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabQLLoaiSP.ResumeLayout(false);
+            this.tabQLLoaiSP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsLoaiSP)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -822,5 +1083,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNPPQL;
         private System.Windows.Forms.TextBox txtNhaPhanPhoi;
         private System.Windows.Forms.TextBox txtLoaiSanPham;
+        private System.Windows.Forms.TabPage tabQLLoaiSP;
+        private System.Windows.Forms.DataGridView dgvDsLoaiSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENLOAI;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private FontAwesome.Sharp.IconButton btnXoaLoaiSP;
+        private FontAwesome.Sharp.IconButton btnLamMoiLoaiSP;
+        private FontAwesome.Sharp.IconButton btnSuaLoaiSP;
+        private System.Windows.Forms.TextBox txtTenLoaiSP;
+        private FontAwesome.Sharp.IconButton btnThemLoaiSP;
+        private System.Windows.Forms.TextBox txtMaLoai;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtTimKiemLoaiSP;
+        private System.Windows.Forms.Label label21;
     }
 }

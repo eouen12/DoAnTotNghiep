@@ -32,7 +32,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             var sp = SanPhamBUS.LayDanhSachSanPham().Find(p => p.MASP == masp);
             this.lblMasp.Text = sp.MASP;
             this.lblTensp.Text = sp.TENSP;
-            this.lblGiaban.Text = Convert.ToInt32(sp.GIABAN).ToString("#,###") + " VND";
+            this.lblGiaban.Text = Convert.ToInt32(sp.GIABAN).ToString("#,##0") + " VND";
             this.lblSoluong.Text = sp.SL_TON.ToString();
             this.lblMaloai.Text = sp.MALOAI;
             this.lblTenloai.Text = sp.LOAISANPHAM.TENLOAI;

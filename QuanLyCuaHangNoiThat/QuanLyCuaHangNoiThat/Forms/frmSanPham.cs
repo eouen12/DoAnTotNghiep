@@ -45,6 +45,8 @@ namespace QuanLyCuaHangNoiThat
 
             AutoCompleteMaNPP();
 
+            LoadDataDSLoaiSP();
+
             this.txtMaSp.Text = AutoTaoMaSP();
         }
         void FormatDataGridView()
@@ -279,9 +281,11 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnModeThem_Click(object sender, EventArgs e)
         {
-            if( this.txtTenSP.Text == string.Empty
+            if (this.txtTenSP.Text == string.Empty
                 || this.txtGiaBanSp.Text == string.Empty
                 || this.txtSLTonSp.Text == string.Empty
+                || this.txtLoaiSanPham.Text == string.Empty
+                || this.txtNhaPhanPhoi.Text == string.Empty
                 || this.imgSanPham.Image == null)
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -329,6 +333,8 @@ namespace QuanLyCuaHangNoiThat
             if (this.txtTenSP.Text == string.Empty
                 || this.txtGiaBanSp.Text == string.Empty
                 || this.txtSLTonSp.Text == string.Empty
+                || this.txtLoaiSanPham.Text == string.Empty
+                || this.txtNhaPhanPhoi.Text == string.Empty
                 || this.imgSanPham.Image == null)
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -442,19 +448,28 @@ namespace QuanLyCuaHangNoiThat
 
         string AutoTaoMaSP()
         {
-            List<SANPHAM> lstMaSP = SanPhamBUS.LayDanhSachMaSanPham();
-            string ma = lstMaSP.Select(p => p.MASP).LastOrDefault();
-            int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-            ma = "SP" + automa;
-            for (int i = 0; i < lstMaSP.Count(); i++)
+            List<SANPHAM> lstMaSP = SanPhamBUS.LayDanhSachSP();
+            string ma = string.Empty;
+            if (lstMaSP.Count == 0)
             {
-                if (ma == lstMaSP[i].MASP)
-                {
-                    automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-                    ma = "SP" + automa;
-                }
+                ma = "SP1";
+                return ma;
             }
-            return ma;
+            else
+            {
+                ma = lstMaSP.Select(p => p.MASP).LastOrDefault();
+                int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+                ma = "SP" + automa;
+                for (int i = 0; i < lstMaSP.Count(); i++)
+                {
+                    if (ma == lstMaSP[i].MASP)
+                    {
+                        automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+                        ma = "SP" + automa;
+                    }
+                }
+                return ma;
+            }
         }
 
         void AutoCompleteMaLoai()
@@ -497,6 +512,166 @@ namespace QuanLyCuaHangNoiThat
                 else
                 {
                     this.DialogResult = DialogResult.OK;
+                }
+            }
+        }
+
+        private void txtLoaiSanPham_Validated(object sender, EventArgs e)
+        {
+            if(this.txtLoaiSanPham.Text != string.Empty)
+            {
+                if(!LoaiSanPhamBUS.KiemTraMaLoaiTonTai(this.txtLoaiSanPham.Text))
+                {
+                    MessageBox.Show("Mã loại không tồn tại !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtLoaiSanPham.Focus();
+                }
+            }
+        }
+
+        private void txtNhaPhanPhoi_Validated(object sender, EventArgs e)
+        {
+            if (this.txtNhaPhanPhoi.Text != string.Empty)
+            {
+                if (!NhaPhanPhoiBUS.KiemTraMaNPPTonTai(this.txtNhaPhanPhoi.Text))
+                {
+                    MessageBox.Show("Mã nhà phân phối không tồn tại !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtNhaPhanPhoi.Focus();
+                }
+            }
+        }
+
+
+
+
+        private void btnThemLoaiSP_Click(object sender, EventArgs e)
+        {
+            if (this.txtMaLoai.Text == string.Empty || this.txtTenLoaiSP.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            LOAISANPHAM loaisp = new LOAISANPHAM { MALOAI = this.txtMaLoai.Text, TENLOAI = this.txtTenLoaiSP.Text, TRANGTHAI = true };
+            if (LoaiSanPhamBUS.ThemLoaiSanPham(loaisp))
+            {
+                MessageBox.Show("Thêm loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới loại sản phẩm " + loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LoadDataDSLoaiSP();
+                AutoCompleteMaLoai();
+                LoadComboBoxData();
+                ResetTabQLLoaiSP();
+            }
+            else
+            {
+                MessageBox.Show("Thêm loại sản phẩm thất bại!!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSuaLoaiSP_Click(object sender, EventArgs e)
+        {
+            if (this.txtTenLoaiSP.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LOAISANPHAM loaisp = new LOAISANPHAM();
+            loaisp.MALOAI = this.txtMaLoai.Text;
+            loaisp.TENLOAI = this.txtTenLoaiSP.Text;
+            if (LoaiSanPhamBUS.SuaLoaiSanPham(loaisp))
+            {
+                MessageBox.Show("Cập nhật thông tin loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin loại sản phẩm " + loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LoadDataDSLoaiSP();
+                AutoCompleteMaLoai();
+                LoadComboBoxData();
+                ResetTabQLLoaiSP();
+            }
+            else
+            {
+                MessageBox.Show("Sửa loại sản phẩm thất bại!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoaLoaiSP_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                LoaiSanPhamBUS.XoaLoaiSanPham(this.txtMaLoai.Text);
+                MessageBox.Show("Xóa loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin loại sản phẩm " + this.txtMaLoai.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LoadDataDSLoaiSP();
+                AutoCompleteMaLoai();
+                LoadComboBoxData();
+                ResetTabQLLoaiSP();
+            }
+        }
+
+        private void btnHuyboLoaiSP_Click(object sender, EventArgs e)
+        {
+            ResetTabQLLoaiSP();
+        }
+
+        private void txtTimKiemLoaiSP_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtTimKiemLoaiSP.Text != string.Empty)
+            {
+                TimKiemLoaiSanPham(this.txtTimKiemLoaiSP.Text);
+            }
+            else
+            {
+                LoadDataDSLoaiSP();
+            }
+        }
+
+        private void dgvDsLoaiSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnThemLoaiSP.Enabled = false;
+            this.btnSuaLoaiSP.Enabled = true;
+            this.btnXoaLoaiSP.Enabled = true;
+            this.txtMaLoai.Enabled = false;
+            this.dangThayDoiDL = true;
+            this.txtMaLoai.Text = this.dgvDsLoaiSP.CurrentRow.Cells["MALOAI"].Value.ToString();
+            this.txtTenLoaiSP.Text = this.dgvDsLoaiSP.CurrentRow.Cells["TENLOAI"].Value.ToString();
+        }
+        void LoadDataDSLoaiSP()
+        {
+            lstLoaiSp = LoaiSanPhamBUS.LayDanhSachLoaiSanPham();
+            this.dgvDsLoaiSP.AutoGenerateColumns = false;
+            this.dgvDsLoaiSP.DataSource = lstLoaiSp;
+        }
+
+        void TimKiemLoaiSanPham(string chuoi)
+        {
+            var kq = from loai in lstLoaiSp
+                     where loai.MALOAI.Contains(chuoi) || loai.TENLOAI.Contains(chuoi)
+                     select loai;
+            this.dgvDsLoaiSP.AutoGenerateColumns = false;
+            this.dgvDsLoaiSP.DataSource = kq.ToList();
+        }
+
+        void ResetTabQLLoaiSP()
+        {
+            this.txtMaLoai.Clear();
+            this.txtTenLoaiSP.Clear();
+            this.txtMaLoai.Focus();
+            this.txtMaLoai.Enabled = true;
+            this.btnThemLoaiSP.Enabled = true;
+            this.btnSuaLoaiSP.Enabled = false;
+            this.btnXoaLoaiSP.Enabled = false;
+        }
+
+        private void txtMaLoai_Validated(object sender, EventArgs e)
+        {
+            if(this.txtMaLoai.Text != string.Empty)
+            {
+                var kq = LoaiSanPhamBUS.LayDanhSachMaLoai().Where(p => p.MALOAI == this.txtMaLoai.Text).FirstOrDefault();
+                if (kq != null)
+                {
+                    MessageBox.Show("Mã loại đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtMaLoai.Focus();
                 }
             }
         }

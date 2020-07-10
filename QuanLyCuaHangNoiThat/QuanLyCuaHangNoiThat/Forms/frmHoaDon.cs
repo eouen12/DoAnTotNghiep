@@ -178,7 +178,7 @@ namespace QuanLyCuaHangNoiThat
         {
             DataGridViewCellStyle styleTien = new DataGridViewCellStyle();
             DataGridViewCellStyle styleNgay = new DataGridViewCellStyle();
-            styleTien.Format = "#,###";
+            styleTien.Format = "#,##0";
             styleNgay.Format = "dd/MM/yyyy";
             this.dgvDanhSachHD.Columns["TONGTIEN"].DefaultCellStyle = styleTien;
             this.dgvDanhSachHD.Columns["NGAYGIAO"].DefaultCellStyle = styleNgay;

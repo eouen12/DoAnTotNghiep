@@ -48,12 +48,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtMakh = new System.Windows.Forms.TextBox();
             this.dgvDSKH = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.MaKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDTKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMNDKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).BeginInit();
@@ -324,51 +324,6 @@
             this.dgvDSKH.TabIndex = 23;
             this.dgvDSKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKH_CellClick);
             // 
-            // MaKHang
-            // 
-            this.MaKHang.DataPropertyName = "MAKH";
-            this.MaKHang.HeaderText = "Mã  Khách Hàng";
-            this.MaKHang.MinimumWidth = 6;
-            this.MaKHang.Name = "MaKHang";
-            this.MaKHang.ReadOnly = true;
-            this.MaKHang.Width = 194;
-            // 
-            // TenKHang
-            // 
-            this.TenKHang.DataPropertyName = "TENKH";
-            this.TenKHang.HeaderText = "Tên Khách Hàng";
-            this.TenKHang.MinimumWidth = 6;
-            this.TenKHang.Name = "TenKHang";
-            this.TenKHang.ReadOnly = true;
-            this.TenKHang.Width = 194;
-            // 
-            // SDTKHang
-            // 
-            this.SDTKHang.DataPropertyName = "SDT";
-            this.SDTKHang.HeaderText = "Số Điện Thoại";
-            this.SDTKHang.MinimumWidth = 6;
-            this.SDTKHang.Name = "SDTKHang";
-            this.SDTKHang.ReadOnly = true;
-            this.SDTKHang.Width = 170;
-            // 
-            // CMNDKHang
-            // 
-            this.CMNDKHang.DataPropertyName = "CMND";
-            this.CMNDKHang.HeaderText = "CMND";
-            this.CMNDKHang.MinimumWidth = 6;
-            this.CMNDKHang.Name = "CMNDKHang";
-            this.CMNDKHang.ReadOnly = true;
-            this.CMNDKHang.Width = 107;
-            // 
-            // DIACHIKHang
-            // 
-            this.DIACHIKHang.DataPropertyName = "DIACHI";
-            this.DIACHIKHang.HeaderText = "Địa Chỉ";
-            this.DIACHIKHang.MinimumWidth = 6;
-            this.DIACHIKHang.Name = "DIACHIKHang";
-            this.DIACHIKHang.ReadOnly = true;
-            this.DIACHIKHang.Width = 74;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -379,6 +334,51 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Mã khách hàng:";
             // 
+            // MaKHang
+            // 
+            this.MaKHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaKHang.DataPropertyName = "MAKH";
+            this.MaKHang.HeaderText = "Mã  Khách Hàng";
+            this.MaKHang.MinimumWidth = 6;
+            this.MaKHang.Name = "MaKHang";
+            this.MaKHang.ReadOnly = true;
+            // 
+            // TenKHang
+            // 
+            this.TenKHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenKHang.DataPropertyName = "TENKH";
+            this.TenKHang.HeaderText = "Tên Khách Hàng";
+            this.TenKHang.MinimumWidth = 6;
+            this.TenKHang.Name = "TenKHang";
+            this.TenKHang.ReadOnly = true;
+            // 
+            // SDTKHang
+            // 
+            this.SDTKHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDTKHang.DataPropertyName = "SDT";
+            this.SDTKHang.HeaderText = "Số Điện Thoại";
+            this.SDTKHang.MinimumWidth = 6;
+            this.SDTKHang.Name = "SDTKHang";
+            this.SDTKHang.ReadOnly = true;
+            // 
+            // CMNDKHang
+            // 
+            this.CMNDKHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CMNDKHang.DataPropertyName = "CMND";
+            this.CMNDKHang.HeaderText = "CMND";
+            this.CMNDKHang.MinimumWidth = 6;
+            this.CMNDKHang.Name = "CMNDKHang";
+            this.CMNDKHang.ReadOnly = true;
+            // 
+            // DIACHIKHang
+            // 
+            this.DIACHIKHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DIACHIKHang.DataPropertyName = "DIACHI";
+            this.DIACHIKHang.HeaderText = "Địa Chỉ";
+            this.DIACHIKHang.MinimumWidth = 6;
+            this.DIACHIKHang.Name = "DIACHIKHang";
+            this.DIACHIKHang.ReadOnly = true;
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +387,7 @@
             this.ClientSize = new System.Drawing.Size(954, 561);
             this.Controls.Add(this.panel3);
             this.Name = "frmKhachHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmKhachHang_FormClosing);
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -416,12 +417,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvDSKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn makhachhang;
+        private System.Windows.Forms.TextBox txtMakh;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDTKHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMNDKHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHIKHang;
-        private System.Windows.Forms.TextBox txtMakh;
-        private System.Windows.Forms.Label label6;
     }
 }

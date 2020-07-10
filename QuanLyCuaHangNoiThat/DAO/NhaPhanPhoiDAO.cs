@@ -14,6 +14,14 @@ namespace DAO
         {
             return db.NHAPHANPHOI.Where(p => p.TRANGTHAI == true).ToList();
         }
+
+        public static bool KiemTraMaNPPTonTai(string manpp)
+        {
+            var kq = db.NHAPHANPHOI.Find(manpp);
+            if (kq != null && kq.TRANGTHAI == true)
+                return true;
+            return false;
+        }
         public static bool ThemNPP(NHAPHANPHOI npp)
         {
             try

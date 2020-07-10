@@ -14,6 +14,19 @@ namespace DAO
             return db.LOAISANPHAM.Where(p => p.TRANGTHAI == true).ToList();
         }
 
+        public static List<LOAISANPHAM> LayDanhSachMaLoai()
+        {
+            return db.LOAISANPHAM.ToList();
+        }
+
+        public static bool KiemTraMaLoaiTonTai(string maloai)
+        {
+            var kq = db.LOAISANPHAM.Find(maloai);
+            if (kq != null && kq.TRANGTHAI == true)
+                return true;
+            return false;
+        }
+
         public static bool ThemLoaiSanPham(LOAISANPHAM loaisp)
         {
             try

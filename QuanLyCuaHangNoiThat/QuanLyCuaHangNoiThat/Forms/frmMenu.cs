@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using QuanLyCuaHangNoiThat.Forms;
+
 namespace QuanLyCuaHangNoiThat
 {
     public partial class frmMenu : Form
@@ -21,6 +23,7 @@ namespace QuanLyCuaHangNoiThat
         private string patch = @"..\..\..\..\Anh_NhanVien\";
         public frmMenu(NHANVIEN nv)
         {
+            
             InitializeComponent();
             nhanvien = nv;
             this.currentIconBtn = new IconButton();
@@ -33,6 +36,19 @@ namespace QuanLyCuaHangNoiThat
             ChucVu();
             LoadAnhDaiDien();
             LoadLSHeThong();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            Form frm = new frmTrangChu();
+            this.currentfrmDesktop = frm;
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(frm);
+            panelDesktop.Tag = frm;
+            frm.BringToFront();
+            frm.Show();
         }
         private void btnMenuHoaDon_Click(object sender, EventArgs e)
         {
@@ -85,6 +101,7 @@ namespace QuanLyCuaHangNoiThat
         private void btnStatusMenu_Click(object sender, EventArgs e)
         {
             Reset();
+            frmMenu_Load(sender, e);
         }
 
         private void IconButtonMenuClick(object sender, EventArgs e)
@@ -121,6 +138,7 @@ namespace QuanLyCuaHangNoiThat
                 frm.BringToFront();
                 frm.Show();
                 IconButtonMenuClick(sender, e);
+                LoadLSHeThong();
             }
         }
 
@@ -162,13 +180,13 @@ namespace QuanLyCuaHangNoiThat
         void LoadAnhDaiDien()
         {
             this.imgAnhNhanVien.ImageLocation = patch + nhanvien.ANHDAIDIEN;
-            //this.lblTenNhanVien.Text = nhanvien.TENNV;
         }
 
         void LoadLSHeThong()
         {
             this.dgvLSHeThong.AutoGenerateColumns = false;
-            this.dgvLSHeThong.DataSource = LichSuHeThongBUS.LayDanhSachLSHT();
+            var kq = LichSuHeThongBUS.LayDanhSachLSHT().OrderByDescending(p=>p.ID).Take(50);
+            this.dgvLSHeThong.DataSource = kq.ToList();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

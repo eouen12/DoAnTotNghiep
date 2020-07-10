@@ -18,6 +18,7 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<KHACHHANG> lstKhachHang = new List<KHACHHANG>();
         private string manv;
+        private bool dangThayDoiDL = false;
         public frmKhachHang(string nhanvien)
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace QuanLyCuaHangNoiThat
         {
             frmLapHoaDon frm = new frmLapHoaDon(this.txtMakh.Text,manv);
             frm.ShowDialog();
+            Loading();
+            Reset();
         }
 
         private void frmKhachHang_Load(object sender, EventArgs e)
@@ -111,6 +114,7 @@ namespace QuanLyCuaHangNoiThat
             this.btnHuybo.Enabled = true;
             this.btnLapHD.Enabled = true;
             this.btnThem.Enabled = false;
+            this.dangThayDoiDL = true;
             txtMakh.Text = dgvDSKH.CurrentRow.Cells["MaKHang"].Value.ToString();
             txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMNDKHang"].Value.ToString();
             txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHIKHang"].Value.ToString();
@@ -188,18 +192,27 @@ namespace QuanLyCuaHangNoiThat
         string AutoMaKh()
         {
             List<KHACHHANG> lstMaKH = KhachHangBUS.LayDanhSachMaKhachHang();
-            string ma = lstMaKH.Select(p => p.MAKH).LastOrDefault();
-            int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-            ma = "KH" + automa;
-            for (int i = 0; i < lstMaKH.Count(); i++)
+            string ma = string.Empty;
+            if (lstMaKH.Count == 0)
             {
-                if (ma == lstMaKH[i].MAKH)
-                {
-                    automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-                    ma = "KH" + automa;
-                }
+                ma = "KH1";
+                return ma;
             }
-            return ma;
+            else
+            {
+                ma = lstMaKH.Select(p => p.MAKH).LastOrDefault();
+                int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+                ma = "KH" + automa;
+                for (int i = 0; i < lstMaKH.Count(); i++)
+                {
+                    if (ma == lstMaKH[i].MAKH)
+                    {
+                        automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+                        ma = "KH" + automa;
+                    }
+                }
+                return ma;
+            }
         }
         
         void Reset()
@@ -208,6 +221,7 @@ namespace QuanLyCuaHangNoiThat
             this.btnHuybo.Enabled = false;
             this.btnLapHD.Enabled = false;
             this.btnThem.Enabled = true;
+            this.dangThayDoiDL = false;
 
             this.txtMakh.Text = AutoMaKh();
             this.txtCMND.Clear();
@@ -232,6 +246,24 @@ namespace QuanLyCuaHangNoiThat
                 return (true);
             else
                 return (false);
+        }
+
+        private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (dangThayDoiDL)
+            {
+                if (MessageBox.Show("Đang có sự thay đổi dữ liệu, bạn có chắc chứ ?", "Thông báo",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    this.DialogResult = DialogResult.No;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
         }
     }
 }

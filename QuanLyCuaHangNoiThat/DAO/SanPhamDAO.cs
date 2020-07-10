@@ -22,12 +22,6 @@ namespace DAO
 
         }
 
-        public static List<SANPHAM> LayDanhSachMaSanPham()
-        {
-            return db.SANPHAM.ToList();
-
-        }
-
         public static bool KiemTraMaSPTonTai(string masp)
         {
             var kq = db.SANPHAM.Find(masp);

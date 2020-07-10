@@ -1,6 +1,4 @@
-﻿
-
---KHOI TAO DATABASE
+﻿--KHOI TAO DATABASE
 GO
 CREATE DATABASE QuanLyCuaHangNoiThat;
 
@@ -46,7 +44,7 @@ CREATE TABLE NHANVIEN (
 	MATKHAU		VARCHAR(50),
 	TENNV		NVARCHAR(MAX),
 	SDT			VARCHAR(10),
-	CMND		INT,
+	CMND		VARCHAR(12),
 	EMAIL		VARCHAR(MAX),
 	DIACHI		NVARCHAR(MAX),
 	LUONGCB		INT,
@@ -233,8 +231,8 @@ INSERT INTO KHACHHANG VALUES ('KH5', N'Nguyễn Văn C','0123456789',N'Quận 
 INSERT INTO QUYENHAN VALUES ('QL', N'Quản lý', N'Lập tài khoản nhân viên, quản lý đơn hàng từ nhà phân phối,quản lý sản phẩm,...')
 INSERT INTO QUYENHAN VALUES ('NV', N'Nhân viên', N'Quản lý khách hàng,lập hóa đơn,...')
 -- BANG NHAN VIEN --
-INSERT INTO NHANVIEN VALUES ('NV_TRIENCHI', 'NV_TRIENCHI', N'Trần Triển Chí', '0123456789', '0123456789', 'TRANTRIENCHI@GMAIL.COM', N'Quận Bình Tân, Thành phố Hồ Chí Minh', 5000000, 'NV', 'trienchi.png', 1)
-INSERT INTO NHANVIEN VALUES ('NV_MINHNHUT', 'NV_MINHNHUT', N'Trần Minh Nhựt', '0123456789', '0123456789', 'TRANMINHNHUT@GMAIL.COM', N'Quận Bình Tân, Thành phố Hồ Chí Minh', 5000000, 'QL', 'trienchi.png', 1)
+--INSERT INTO NHANVIEN VALUES ('NV1', 'NV_TRIENCHI', N'Trần Triển Chí', '0123456789', '0123456789', 'TRANTRIENCHI@GMAIL.COM', N'Quận Bình Tân, Thành phố Hồ Chí Minh', 5000000, 'NV', 'trienchi.png', 1)
+INSERT INTO NHANVIEN VALUES ('QL_MINHNHUT', 'QL_MINHNHUT', N'Trần Minh Nhựt', '0123456789', '0123456789', 'TRANMINHNHUT@GMAIL.COM', N'Quận Bình Tân, Thành phố Hồ Chí Minh', 5000000, 'QL', 'img_default.jpg', 1)
 -- BANG LOAI SAN PHAM --
 INSERT INTO LOAISANPHAM VALUES ('GM1', N'Gạch men',1)
 INSERT INTO LOAISANPHAM VALUES ('GM2', N'Gạch bóng kiếng',1)

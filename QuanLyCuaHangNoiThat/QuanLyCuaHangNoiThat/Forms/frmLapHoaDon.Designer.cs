@@ -370,6 +370,7 @@
             this.txtSoTienTraTrc.Name = "txtSoTienTraTrc";
             this.txtSoTienTraTrc.Size = new System.Drawing.Size(196, 35);
             this.txtSoTienTraTrc.TabIndex = 12;
+            this.txtSoTienTraTrc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSoTienTraTrc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTienTraTrc_KeyPress);
             this.txtSoTienTraTrc.Validated += new System.EventHandler(this.txtSoTienTraTrc_Validated);
             // 

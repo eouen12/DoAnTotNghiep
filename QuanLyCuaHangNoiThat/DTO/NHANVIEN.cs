@@ -26,7 +26,7 @@ namespace DTO
         public string MATKHAU { get; set; }
         public string TENNV { get; set; }
         public string SDT { get; set; }
-        public Nullable<int> CMND { get; set; }
+        public string CMND { get; set; }
         public string EMAIL { get; set; }
         public string DIACHI { get; set; }
         public Nullable<int> LUONGCB { get; set; }

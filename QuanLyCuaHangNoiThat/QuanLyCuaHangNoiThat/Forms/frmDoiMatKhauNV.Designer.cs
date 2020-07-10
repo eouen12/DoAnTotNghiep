@@ -122,7 +122,7 @@
             this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(215, 29);
-            this.txtMatKhauMoi.TabIndex = 21;
+            this.txtMatKhauMoi.TabIndex = 12;
             this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label1
@@ -198,11 +198,12 @@
             this.btnThoatDoiMK.Name = "btnThoatDoiMK";
             this.btnThoatDoiMK.Rotation = 0D;
             this.btnThoatDoiMK.Size = new System.Drawing.Size(170, 58);
-            this.btnThoatDoiMK.TabIndex = 13;
+            this.btnThoatDoiMK.TabIndex = 14;
             this.btnThoatDoiMK.Text = "Thoát";
             this.btnThoatDoiMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThoatDoiMK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoatDoiMK.UseVisualStyleBackColor = false;
+            this.btnThoatDoiMK.Click += new System.EventHandler(this.btnThoatDoiMK_Click);
             // 
             // btnLuuDoiMK
             // 
@@ -217,7 +218,7 @@
             this.btnLuuDoiMK.Name = "btnLuuDoiMK";
             this.btnLuuDoiMK.Rotation = 0D;
             this.btnLuuDoiMK.Size = new System.Drawing.Size(170, 58);
-            this.btnLuuDoiMK.TabIndex = 12;
+            this.btnLuuDoiMK.TabIndex = 13;
             this.btnLuuDoiMK.Text = "Lưu";
             this.btnLuuDoiMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuuDoiMK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

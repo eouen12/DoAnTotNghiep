@@ -45,13 +45,13 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             if (this.txtMasp.Text == string.Empty || this.txtSoLuong.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 this.txtMasp.Focus();
                 return;
             }
             if (!SanPhamBUS.KiemTraMaSPTonTai(this.txtMasp.Text))
             {
-                MessageBox.Show("Mã sản phẩm không tồn tại !!!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Mã sản phẩm không tồn tại !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtMasp.Focus();
                 return;
             }
@@ -85,7 +85,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             }
             else
             {
-                MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtMasp.Focus();
                 return;
             }
@@ -95,7 +95,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             if (this.txtMasp.Text == string.Empty || this.txtSoLuong.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa chọn dòng sản phẩm muốn cập nhật !!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn dòng sản phẩm muốn cập nhật !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!KiemTraSLMasp(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text)))
@@ -135,7 +135,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             if (this.txtMasp.Text == string.Empty || this.txtSoLuong.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa chọn dòng sản phẩm muốn xóa !!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn dòng sản phẩm muốn xóa !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (MessageBox.Show("Bạn có chắc chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)

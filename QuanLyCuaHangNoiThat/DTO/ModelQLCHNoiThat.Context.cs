@@ -42,7 +42,6 @@ namespace DTO
         public virtual DbSet<NHAPHANPHOI> NHAPHANPHOI { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHAN { get; set; }
         public virtual DbSet<SANPHAM> SANPHAM { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int SuaKH(Nullable<int> mAKH, string tENKH, string sDT, string dIACHI, string cMND)
         {

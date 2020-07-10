@@ -43,6 +43,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelStatus = new System.Windows.Forms.Panel();
             this.imgAnhNhanVien = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnStatusMenu = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -57,9 +59,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,7 +102,7 @@
             this.btnMenuDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 570);
             this.btnMenuDangXuat.Name = "btnMenuDangXuat";
-            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuDangXuat.Rotation = 0D;
             this.btnMenuDangXuat.Size = new System.Drawing.Size(180, 60);
             this.btnMenuDangXuat.TabIndex = 5;
@@ -125,7 +124,7 @@
             this.btnMenuDoiDonVi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 510);
             this.btnMenuDoiDonVi.Name = "btnMenuDoiDonVi";
-            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuDoiDonVi.Rotation = 0D;
             this.btnMenuDoiDonVi.Size = new System.Drawing.Size(180, 60);
             this.btnMenuDoiDonVi.TabIndex = 6;
@@ -147,7 +146,7 @@
             this.btnMenuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 450);
             this.btnMenuNhanVien.Name = "btnMenuNhanVien";
-            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuNhanVien.Rotation = 0D;
             this.btnMenuNhanVien.Size = new System.Drawing.Size(180, 60);
             this.btnMenuNhanVien.TabIndex = 8;
@@ -169,7 +168,7 @@
             this.btnMenuNhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 390);
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
-            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
             this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(214, 60);
             this.btnMenuNhaPhanPhoi.TabIndex = 7;
@@ -192,7 +191,7 @@
             this.btnMenuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 270);
             this.btnMenuKhachHang.Name = "btnMenuKhachHang";
-            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuKhachHang.Rotation = 0D;
             this.btnMenuKhachHang.Size = new System.Drawing.Size(180, 60);
             this.btnMenuKhachHang.TabIndex = 4;
@@ -215,7 +214,7 @@
             this.btnMenuSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuSanPham.Location = new System.Drawing.Point(0, 210);
             this.btnMenuSanPham.Name = "btnMenuSanPham";
-            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuSanPham.Rotation = 0D;
             this.btnMenuSanPham.Size = new System.Drawing.Size(180, 60);
             this.btnMenuSanPham.TabIndex = 3;
@@ -239,7 +238,7 @@
             this.btnMenuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 150);
             this.btnMenuHoaDon.Name = "btnMenuHoaDon";
-            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuHoaDon.Rotation = 0D;
             this.btnMenuHoaDon.Size = new System.Drawing.Size(180, 60);
             this.btnMenuHoaDon.TabIndex = 2;
@@ -261,7 +260,7 @@
             this.btnMenuCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCongNo.Location = new System.Drawing.Point(0, 330);
             this.btnMenuCongNo.Name = "btnMenuCongNo";
-            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(10);
             this.btnMenuCongNo.Rotation = 0D;
             this.btnMenuCongNo.Size = new System.Drawing.Size(180, 60);
             this.btnMenuCongNo.TabIndex = 6;
@@ -310,13 +309,30 @@
             this.imgAnhNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgAnhNhanVien.Dock = System.Windows.Forms.DockStyle.Right;
             this.imgAnhNhanVien.Location = new System.Drawing.Point(413, 0);
-            this.imgAnhNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgAnhNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.imgAnhNhanVien.Name = "imgAnhNhanVien";
             this.imgAnhNhanVien.Size = new System.Drawing.Size(106, 106);
             this.imgAnhNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgAnhNhanVien.TabIndex = 0;
             this.imgAnhNhanVien.TabStop = false;
             this.imgAnhNhanVien.Click += new System.EventHandler(this.lblTenNhanVien_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(255, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(264, 106);
+            this.panel9.TabIndex = 4;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(519, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(3, 106);
+            this.panel7.TabIndex = 2;
             // 
             // lblTimer
             // 
@@ -432,7 +448,6 @@
             this.panelDesktop.Controls.Add(this.panel2);
             this.panelDesktop.Controls.Add(this.panel3);
             this.panelDesktop.Controls.Add(this.panel4);
-            this.panelDesktop.Controls.Add(this.panel8);
             this.panelDesktop.Controls.Add(this.panel1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(180, 106);
@@ -476,30 +491,6 @@
             this.panel1.Size = new System.Drawing.Size(3, 365);
             this.panel1.TabIndex = 0;
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(519, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(3, 106);
-            this.panel7.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(189, 95);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(257, 189);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(255, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(264, 106);
-            this.panel9.TabIndex = 4;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,12 +501,13 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống quản lí cửa hàng nội thất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelLogo.ResumeLayout(false);
@@ -564,6 +556,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
     }
 }

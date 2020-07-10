@@ -41,39 +41,39 @@ namespace QuanLyCuaHangNoiThat
                 string mk = MD5(this.txtMatKhauMoi.Text);
                 if(NhanVienBUS.DoiMatKhau(nv.MANV,mk))
                 {
-                    MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo");
+                    MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.txtMatKhauCu.Clear();
                     this.txtMatKhauMoi.Clear();
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi");
+                    MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return;
                 }
             }
             if(MD5(this.txtMatKhauCu.Text) != nv.MATKHAU)
             {
-                MessageBox.Show("Mật khẩu cũ không chính xác !!!", "Thông báo");
+                MessageBox.Show("Mật khẩu cũ không chính xác !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             if(this.txtMatKhauCu.Text != this.txtMatKhauMoi.Text)
             {
-                MessageBox.Show("Mật khẩu mới không trùng khớp !!!", "Thông báo");
+                MessageBox.Show("Mật khẩu mới không trùng khớp !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
 
             string mkMoi = MD5(this.txtMatKhauMoi.Text);
             if (NhanVienBUS.DoiMatKhau(nv.MANV, mkMoi))
             {
-                MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo");
+                MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.txtMatKhauCu.Clear();
                 this.txtMatKhauMoi.Clear();
                 return;
             }
             else
             {
-                MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi");
+                MessageBox.Show("Đổi mật khẩu thất bại !!!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
 
@@ -90,6 +90,11 @@ namespace QuanLyCuaHangNoiThat
                 str.Append(item.ToString("x2"));
             }
             return str.ToString();
+        }
+
+        private void btnThoatDoiMK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

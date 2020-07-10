@@ -121,7 +121,7 @@
     <Property Name="MATKHAU" Type="varchar" MaxLength="50" />
     <Property Name="TENNV" Type="nvarchar(max)" />
     <Property Name="SDT" Type="varchar" MaxLength="10" />
-    <Property Name="CMND" Type="int" />
+    <Property Name="CMND" Type="varchar" MaxLength="12" />
     <Property Name="EMAIL" Type="varchar(max)" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
     <Property Name="LUONGCB" Type="int" />
@@ -160,16 +160,6 @@
     <Property Name="MANPP" Type="varchar" MaxLength="10" />
     <Property Name="MALOAI" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK__ANHMINHHOA__MASP__59FA5E80">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
@@ -379,7 +369,6 @@
     <EntitySet Name="NHAPHANPHOI" EntityType="Self.NHAPHANPHOI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUYENHAN" EntityType="Self.QUYENHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__ANHMINHHOA__MASP__59FA5E80" Association="Self.FK__ANHMINHHOA__MASP__59FA5E80">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="ANHMINHHOASP" EntitySet="ANHMINHHOASP" />
