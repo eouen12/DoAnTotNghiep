@@ -12,8 +12,6 @@ namespace DTO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
     public partial class QuanLyCuaHangNoiThatEntities : DbContext
     {
@@ -28,10 +26,10 @@ namespace DTO
         }
     
         public virtual DbSet<ANHMINHHOASP> ANHMINHHOASP { get; set; }
-        public virtual DbSet<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
         public virtual DbSet<CONGNO> CONGNO { get; set; }
-        public virtual DbSet<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
         public virtual DbSet<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
+        public virtual DbSet<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
+        public virtual DbSet<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
         public virtual DbSet<HOADONBANHANG> HOADONBANHANG { get; set; }
         public virtual DbSet<HOADONNHAPHANG> HOADONNHAPHANG { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
@@ -42,39 +40,5 @@ namespace DTO
         public virtual DbSet<NHAPHANPHOI> NHAPHANPHOI { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHAN { get; set; }
         public virtual DbSet<SANPHAM> SANPHAM { get; set; }
-    
-        public virtual int SuaKH(Nullable<int> mAKH, string tENKH, string sDT, string dIACHI, string cMND)
-        {
-            var mAKHParameter = mAKH.HasValue ?
-                new ObjectParameter("MAKH", mAKH) :
-                new ObjectParameter("MAKH", typeof(int));
-    
-            var tENKHParameter = tENKH != null ?
-                new ObjectParameter("TENKH", tENKH) :
-                new ObjectParameter("TENKH", typeof(string));
-    
-            var sDTParameter = sDT != null ?
-                new ObjectParameter("SDT", sDT) :
-                new ObjectParameter("SDT", typeof(string));
-    
-            var dIACHIParameter = dIACHI != null ?
-                new ObjectParameter("DIACHI", dIACHI) :
-                new ObjectParameter("DIACHI", typeof(string));
-    
-            var cMNDParameter = cMND != null ?
-                new ObjectParameter("CMND", cMND) :
-                new ObjectParameter("CMND", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SuaKH", mAKHParameter, tENKHParameter, sDTParameter, dIACHIParameter, cMNDParameter);
-        }
-    
-        public virtual int XoaKH(Nullable<int> mAKH)
-        {
-            var mAKHParameter = mAKH.HasValue ?
-                new ObjectParameter("MAKH", mAKH) :
-                new ObjectParameter("MAKH", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("XoaKH", mAKHParameter);
-        }
     }
 }

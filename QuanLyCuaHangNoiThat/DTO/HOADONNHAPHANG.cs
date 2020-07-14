@@ -18,6 +18,7 @@ namespace DTO
         public HOADONNHAPHANG()
         {
             this.CTNHAPHANGTUNPP = new HashSet<CTNHAPHANGTUNPP>();
+            this.CTNHAPHANGTUNPP1 = new HashSet<CTNHAPHANGTUNPP>();
         }
     
         public string MAHDNH { get; set; }
@@ -27,6 +28,9 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP1 { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NHANVIEN NHANVIEN1 { get; set; }
     }
 }

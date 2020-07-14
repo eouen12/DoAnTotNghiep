@@ -20,5 +20,6 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         public virtual SANPHAM SANPHAM { get; set; }
+        public virtual SANPHAM SANPHAM1 { get; set; }
     }
 }

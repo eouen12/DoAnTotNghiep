@@ -20,6 +20,8 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         public virtual HOADONNHAPHANG HOADONNHAPHANG { get; set; }
+        public virtual HOADONNHAPHANG HOADONNHAPHANG1 { get; set; }
         public virtual NHAPHANPHOI NHAPHANPHOI { get; set; }
+        public virtual NHAPHANPHOI NHAPHANPHOI1 { get; set; }
     }
 }

@@ -252,5 +252,11 @@ namespace QuanLyCuaHangNoiThat
                 }
             }
         }
+
+        private void dgvCongNo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            frmLSCongNo lscn = new frmLSCongNo(this.dgvCongNo["MACONGNO", e.RowIndex].Value.ToString());
+            lscn.ShowDialog();
+        }
     }
 }

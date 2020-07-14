@@ -21,5 +21,6 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         public virtual CONGNO CONGNO { get; set; }
+        public virtual CONGNO CONGNO1 { get; set; }
     }
 }

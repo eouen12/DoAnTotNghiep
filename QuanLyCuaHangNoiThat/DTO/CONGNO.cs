@@ -18,6 +18,7 @@ namespace DTO
         public CONGNO()
         {
             this.LICHSUTRANO = new HashSet<LICHSUTRANO>();
+            this.LICHSUTRANO1 = new HashSet<LICHSUTRANO>();
         }
     
         public string MACONGNO { get; set; }
@@ -30,8 +31,12 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual KHACHHANG KHACHHANG1 { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NHANVIEN NHANVIEN1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LICHSUTRANO> LICHSUTRANO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICHSUTRANO> LICHSUTRANO1 { get; set; }
     }
 }

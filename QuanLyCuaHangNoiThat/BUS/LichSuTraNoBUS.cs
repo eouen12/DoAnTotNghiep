@@ -11,7 +11,7 @@ namespace BUS
     {
         public static List<LICHSUTRANO> LayDSLSTraNoCuaKH(string macn)
         {
-            return LichSuTraNoDAO.LayDanhSachLSTraNoCuaKH(macn);
+            return LichSuTraNoDAO.LayDSLSTraNoCuaKH(macn);
         }
         public static bool TaoLichSuTraNo(LICHSUTRANO lstrano)
         {

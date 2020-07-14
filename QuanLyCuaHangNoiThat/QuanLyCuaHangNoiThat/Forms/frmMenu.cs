@@ -83,7 +83,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnMenuDoiDonVi_Click(object sender, EventArgs e)
         {
-            IconButtonMenuClick(sender, e);
+            MofrmDesktop(new FrmDoiDonVi(nhanvien.MANV), sender, e);
         }
 
         private void btnMenuDangXuat_Click(object sender, EventArgs e)

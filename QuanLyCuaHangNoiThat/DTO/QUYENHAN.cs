@@ -18,6 +18,7 @@ namespace DTO
         public QUYENHAN()
         {
             this.NHANVIEN = new HashSet<NHANVIEN>();
+            this.NHANVIEN1 = new HashSet<NHANVIEN>();
         }
     
         public string MACHUCVU { get; set; }
@@ -26,5 +27,7 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHANVIEN> NHANVIEN1 { get; set; }
     }
 }
