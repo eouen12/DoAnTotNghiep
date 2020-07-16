@@ -20,6 +20,7 @@ namespace QuanLyCuaHangNoiThat
         private Panel currentPanel;
         private Form currentfrmDesktop;
         private NHANVIEN nhanvien = new NHANVIEN();
+        private List<LICHSUHETHONG> lsht = new List<LICHSUHETHONG>();
         private string patch = @"..\..\..\..\Anh_NhanVien\";
         public frmMenu(NHANVIEN nv)
         {
@@ -154,6 +155,10 @@ namespace QuanLyCuaHangNoiThat
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTimer.Text = System.DateTime.Now.ToString("dd/MM/yyyy") + " " + System.DateTime.Now.ToLongTimeString();
+            if(lsht.Count != LichSuHeThongBUS.LayDanhSachLSHT().Count)
+            {
+                LoadLSHeThong();
+            }
         }
 
         private void lblTenNhanVien_Click(object sender, EventArgs e)
@@ -184,6 +189,7 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadLSHeThong()
         {
+            lsht = LichSuHeThongBUS.LayDanhSachLSHT();
             this.dgvLSHeThong.AutoGenerateColumns = false;
             var kq = LichSuHeThongBUS.LayDanhSachLSHT().OrderByDescending(p=>p.ID).Take(50);
             this.dgvLSHeThong.DataSource = kq.ToList();

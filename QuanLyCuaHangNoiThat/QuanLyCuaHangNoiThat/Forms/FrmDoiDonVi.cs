@@ -68,7 +68,8 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             double a = Convert.ToDouble(txtMet.Text);
             double b = Convert.ToDouble(txtNhapMetVuong.Text);
-            txtKQ2.Text = ((b / a ) + " thùng").ToString();
+            // txtKQ2.Text = ((b / a ) + " thùng").ToString();
+            txtKQ2.Text = Convert.ToInt32((b / a)) + " thùng";
         }
 
         private void btndoi2_Click(object sender, EventArgs e)
@@ -76,7 +77,8 @@ namespace QuanLyCuaHangNoiThat.Forms
             double a = Convert.ToDouble(txtNhapMetToi.Text);
             double b = Convert.ToDouble(txtMetToi.Text);
             double c = Convert.ToDouble(txtNhapSoLop.Text);
-            txtKQ2.Text = ((a / b)*c + " thùng").ToString();
+            //txtKQ2.Text = ((a / b)*c + " thùng").ToString();
+            txtKQ2.Text = Convert.ToInt32((a / b) * c) +" thùng";
         }
 
         private void txtNhapMetVuong_KeyPress(object sender, KeyPressEventArgs e)

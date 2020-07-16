@@ -337,7 +337,7 @@ namespace QuanLyCuaHangNoiThat
         }
         bool isValidEmail(string inputEmail)
         {
-            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,3}$");
+            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,5}$");
             if (re.IsMatch(inputEmail))
                 return (true);
             else
