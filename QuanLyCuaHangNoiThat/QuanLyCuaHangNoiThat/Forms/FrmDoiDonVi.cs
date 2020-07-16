@@ -37,28 +37,28 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             listItem = new List<Gach>()
             {
-                new Gach(){GachNen = "30x30" ,KTGachNen = 1.2},
-                new Gach(){GachNen = "40x40" ,KTGachNen = 1.3},
-                new Gach(){GachNen = "50x50" ,KTGachNen = 1.4},
-                new Gach(){GachNen = "60x60" ,KTGachNen = 1.5},
-                new Gach(){GachNen = "80x80" ,KTGachNen = 1.6},
+                new Gach(){GachNen = "30x30 - 6 viên/thùng" ,KTGachNen = 0.9},
+                new Gach(){GachNen = "40x40 - 4 viên/thùng" ,KTGachNen = 1.6},
+                new Gach(){GachNen = "50x50 - 5 viên/thùng" ,KTGachNen = 1.25},
+                new Gach(){GachNen = "60x60 - 4 viên/thùng" ,KTGachNen = 1.2},
+                new Gach(){GachNen = "80x80 - 4 viên/thùng",KTGachNen = 1.6},
             };
             comboBox1.DataSource = listItem;
             comboBox1.DisplayMember = "GachNen";
         }
         void AddBinding()
         {
-            txtMet.DataBindings.Add(new Binding("Text", comboBox1.DataSource, "KTGachNen"));
-            txtMetToi.DataBindings.Add(new Binding("Text", comboBox2.DataSource, "KTGachTuong"));
+            txtMet.DataBindings.Add(new Binding("Text", comboBox1.DataSource, "KTGachNen" ));
+            txtMetToi.DataBindings.Add(new Binding("Text", comboBox2.DataSource, "KTGachTuong" ));
         }
         void Load2()
         {
             listItem = new List<Gach>()
             {
-                new Gach(){GachTuong = "25x40" ,KTGachTuong = 1.2},
-                new Gach(){GachTuong = "30x45" ,KTGachTuong = 1.3},
-                new Gach(){GachTuong = "30x60" ,KTGachTuong = 1.4},
-                new Gach(){GachTuong = "40x80" ,KTGachTuong = 1.5},
+                new Gach(){GachTuong = "25x40 - 6 viên/thùng" ,KTGachTuong = 1.2},
+                new Gach(){GachTuong = "30x45 - 6 viên/thùng" ,KTGachTuong = 1.3},
+                new Gach(){GachTuong = "30x60 - 6 viên/thùng" ,KTGachTuong = 1.4},
+                new Gach(){GachTuong = "40x80 - 6 viên/thùng" ,KTGachTuong = 1.5},
             };
             comboBox2.DataSource = listItem;
             comboBox2.DisplayMember = "GachTuong";
@@ -77,6 +77,50 @@ namespace QuanLyCuaHangNoiThat.Forms
             double b = Convert.ToDouble(txtMetToi.Text);
             double c = Convert.ToDouble(txtNhapSoLop.Text);
             txtKQ2.Text = ((a / b)*c + " thùng").ToString();
+        }
+
+        private void txtNhapMetVuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtNhapMetToi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtNhapSoLop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtNhapMetVuong_TextChanged(object sender, EventArgs e)
+        {
+            btndoi1.Enabled = true;
+        }
+
+        private void txtNhapSoLop_TextChanged(object sender, EventArgs e)
+        {
+            btndoi2.Enabled = true;
+        }
+
+        private void txtNhapMetToi_TextChanged(object sender, EventArgs e)
+        {
+            txtNhapSoLop.Enabled = true;
+        }
+
+        private void btnLamMoiDV_Click(object sender, EventArgs e)
+        {
+            txtNhapMetVuong.Clear();
+            txtNhapSoLop.Clear();
+            txtNhapMetToi.Clear();
+            txtKQ2.Clear();
+            btndoi1.Enabled = false;
+            btndoi2.Enabled = false;
+            txtNhapSoLop.Enabled = false;
         }
     }
 }

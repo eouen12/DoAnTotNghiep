@@ -265,5 +265,14 @@ namespace QuanLyCuaHangNoiThat
                 }
             }
         }
+
+        private void btnLamMoiKH_Click(object sender, EventArgs e)
+        {
+            txtMakh.Text = AutoMaKh();
+            txtDiaChi.Clear();
+            txtCMND.Clear();
+            txtSDT.Clear();
+            txtTenKH.Clear();
+        }
     }
 }
