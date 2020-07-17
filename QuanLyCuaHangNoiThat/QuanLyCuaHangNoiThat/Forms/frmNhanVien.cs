@@ -16,6 +16,7 @@ namespace QuanLyCuaHangNoiThat
 {
     public partial class frmNhanVien : Form
     {
+        private List<NHANVIEN> lstAllNV = new List<NHANVIEN>();
         private List<NHANVIEN> lstNV = new List<NHANVIEN>();
         //private string patch = @"C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\Anh_NhanVien\";
         private string patch = @"..\..\..\..\Anh_NhanVien\";
@@ -229,9 +230,10 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadDsNhanVien()
         {
+            lstAllNV = NhanVienBUS.LayDanhSachAllNV();
             lstNV = NhanVienBUS.LayDanhSachNV();
             this.dgvDSNhanVien.AutoGenerateColumns = false;
-            this.dgvDSNhanVien.DataSource = lstNV;
+            this.dgvDSNhanVien.DataSource = lstAllNV;
             this.txtMaNV.Text = AutoTaoMaNV();
         }
 

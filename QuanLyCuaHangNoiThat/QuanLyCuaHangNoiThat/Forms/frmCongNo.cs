@@ -137,8 +137,9 @@ namespace QuanLyCuaHangNoiThat
                     NGAYTRA = cn.NGAYTRA.Value.Date,
                     NV_LAPCN = cn.NV_LAPCN,
                     NGAYLAP = cn.NGAYLAP.Value.Date,
-                    TRANGTHAI = true
+                    TRANGTHAI = false
                 });
+                //CongNoBUS.XoaCongNo(cn.MACONGNO);
             }
             else
             {

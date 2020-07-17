@@ -216,7 +216,7 @@
             this.btnHuybo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuybo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnHuybo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuybo.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.btnHuybo.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnHuybo.IconColor = System.Drawing.Color.Red;
             this.btnHuybo.IconSize = 32;
             this.btnHuybo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -226,7 +226,7 @@
             this.btnHuybo.Rotation = 0D;
             this.btnHuybo.Size = new System.Drawing.Size(155, 66);
             this.btnHuybo.TabIndex = 21;
-            this.btnHuybo.Text = "Hủy bỏ";
+            this.btnHuybo.Text = " Xóa";
             this.btnHuybo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuybo.UseVisualStyleBackColor = true;
             this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);

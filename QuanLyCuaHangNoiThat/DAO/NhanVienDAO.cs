@@ -19,6 +19,10 @@ namespace DAO
         {
             return db.NHANVIEN.Where(p => p.TRANGTHAI == true && p.CHUCVU == "NV").ToList();
         }
+        public static List<NHANVIEN> LayDanhSachAllNV()
+        {
+            return db.NHANVIEN.Where(p => p.TRANGTHAI).ToList();
+        }
 
         public static List<NHANVIEN> LayThongTinCuaNV(string manv)
         {

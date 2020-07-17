@@ -22,6 +22,7 @@ namespace QuanLyCuaHangNoiThat
         private NHANVIEN nhanvien = new NHANVIEN();
         private List<LICHSUHETHONG> lsht = new List<LICHSUHETHONG>();
         private string patch = @"..\..\..\..\Anh_NhanVien\";
+        private string patchLogo = @"..\..\..\..\logo.jpg";
         public frmMenu(NHANVIEN nv)
         {
             
@@ -41,6 +42,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            this.pictureBox1.ImageLocation = patchLogo;
             Form frm = new frmTrangChu();
             this.currentfrmDesktop = frm;
             frm.TopLevel = false;
@@ -159,6 +161,7 @@ namespace QuanLyCuaHangNoiThat
             {
                 LoadLSHeThong();
             }
+            //LoadAnhDaiDien();
         }
 
         private void lblTenNhanVien_Click(object sender, EventArgs e)

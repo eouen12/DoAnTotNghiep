@@ -20,18 +20,19 @@ namespace QuanLyCuaHangNoiThat.Forms
             this.macn = macn;
             this.Text = "Chi tiết trả nợ " + this.macn;
         }
-            private void frmLSCongNo_Load_1(object sender, EventArgs e)
-                    {
-                        LoadThongTin();
-                    }
-            void LoadThongTin()
-            {
-            var cn = LichSuTraNoBUS.LayDSLSTraNoCuaKH(macn).Find(p => p.MACONGNO == macn); ;
-                
-                this.lblNgaytra.Text = Convert.ToDateTime(cn.NGAYTRA_THEODOI).ToString();
-                this.lblMacn.Text = cn.MACONGNO;
-                this.lblTientra.Text = Convert.ToInt32(cn.TIENTRA_THEODOI).ToString("#,##0") + " VND";
-            }
+        private void frmLSCongNo_Load_1(object sender, EventArgs e)
+        {
+            LoadThongTin();
+        }
+        void LoadThongTin()
+        {
+            this.lblMacn.Text = macn;
+            var cn = LichSuTraNoBUS.LayDSLSTraNoCuaKH(macn);
+            this.dgvLSCongNo.AutoGenerateColumns = false;
+            this.dgvLSCongNo.DataSource = cn.ToList();
+            this.dgvLSCongNo.Columns["NgayTra"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            this.dgvLSCongNo.Columns["TienTra"].DefaultCellStyle.Format = "#,##0";
+        }
 
         
     }

@@ -12,9 +12,11 @@ namespace QuanLyCuaHangNoiThat
 {
     public partial class frmReport : Form
     {
-        public frmReport()
+        private string mahd;
+        public frmReport(string mahd)
         {
             InitializeComponent();
+            this.mahd = mahd;
         }
 
         private void frmReport_Load(object sender, EventArgs e)

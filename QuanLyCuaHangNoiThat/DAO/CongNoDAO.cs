@@ -22,6 +22,7 @@ namespace DAO
                 l.TIENCONNO = congno.TIENCONNO;
                 l.TONGTIEN = congno.TONGTIEN;
                 l.NGAYTRA = congno.NGAYTRA;
+                l.TRANGTHAI = congno.TRANGTHAI;
                 db.SaveChanges();
                 return true;
             }

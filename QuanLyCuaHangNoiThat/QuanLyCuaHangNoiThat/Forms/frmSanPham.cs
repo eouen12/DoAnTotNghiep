@@ -257,7 +257,14 @@ namespace QuanLyCuaHangNoiThat
             AMH = lstAnhMinhHoa.Where(p => p.MASP == this.txtMaSp.Text && p.TRANGTHAI == true).FirstOrDefault();
             try
             {
-                this.imgSanPham.ImageLocation = patch + AMH.TENANHMINHHOA;
+                if (AMH != null)
+                {
+                    this.imgSanPham.ImageLocation = patch + AMH.TENANHMINHHOA;
+                }
+                else
+                {
+                    this.imgSanPham.ImageLocation = null;
+                }
             }
             catch
             {
@@ -306,8 +313,8 @@ namespace QuanLyCuaHangNoiThat
             ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
             if(!SanPhamBUS.KiemTraMaSPTonTai(sanpham.MASP))
             {
-                try
-                {
+                //try
+                //{
                     SanPhamBUS.ThemSanPham(sanpham);
                     AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
 
@@ -318,11 +325,11 @@ namespace QuanLyCuaHangNoiThat
                     Reset();
                     LoadDataTabQLSP();
                     LoadDataTabDSSP();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                //}
+                //catch(Exception ex)
+                //{
+                //    MessageBox.Show(ex.ToString());
+                //}
                 
             }
 

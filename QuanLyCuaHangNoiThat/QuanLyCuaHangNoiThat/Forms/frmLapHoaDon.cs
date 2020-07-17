@@ -67,6 +67,18 @@ namespace QuanLyCuaHangNoiThat.Forms
                 this.txtSoLuong.Focus();
                 return;
             }
+            if (this.txtSoLuong.Text == "0")
+            {
+                MessageBox.Show("Số lượng nhập không hợp lệ !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.txtSoLuong.Focus();
+                return;
+            }
+            if (Convert.ToInt32(this.dgvDSSanPham.CurrentRow.Cells["SOLUONGTON"].Value) == 0)
+            {
+                MessageBox.Show("Sản phẩm này đã hết hàng !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.txtSoLuong.Focus();
+                return;
+            }
             dangThaoTac = true;
             LoadDSCTHD();
             this.txtSoLuong.Clear();
@@ -135,7 +147,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             }
             if (Convert.ToInt32(this.txtSoLuong.Text) > Convert.ToInt32(this.dgvDSSanPham.CurrentRow.Cells["SOLUONGTON"].Value) && this.txtSoLuong.Text != string.Empty)
             {
-                MessageBox.Show("Số lượng nhập không được vượt quá số lượng tồn kho !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số lượng nhập không được vượt quá số lượng tồn kho !!!\nHoặc sản phẩm này đã hết hàng !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtSoLuong.Focus();
                 return;
             }

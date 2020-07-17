@@ -80,7 +80,7 @@
             this.btnXoaNV.IconColor = System.Drawing.Color.Black;
             this.btnXoaNV.IconSize = 32;
             this.btnXoaNV.Location = new System.Drawing.Point(427, 421);
-            this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Rotation = 0D;
             this.btnXoaNV.Size = new System.Drawing.Size(179, 59);
@@ -103,7 +103,7 @@
             this.btnSuaNV.IconColor = System.Drawing.Color.Black;
             this.btnSuaNV.IconSize = 32;
             this.btnSuaNV.Location = new System.Drawing.Point(221, 421);
-            this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Rotation = 0D;
             this.btnSuaNV.Size = new System.Drawing.Size(179, 59);
@@ -125,7 +125,7 @@
             this.btnThemNV.IconColor = System.Drawing.Color.Black;
             this.btnThemNV.IconSize = 32;
             this.btnThemNV.Location = new System.Drawing.Point(19, 421);
-            this.btnThemNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Rotation = 0D;
             this.btnThemNV.Size = new System.Drawing.Size(179, 59);
@@ -304,7 +304,7 @@
             this.imgNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imgNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgNhanVien.Location = new System.Drawing.Point(33, 142);
-            this.imgNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.imgNhanVien.Name = "imgNhanVien";
             this.imgNhanVien.Size = new System.Drawing.Size(170, 167);
             this.imgNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,10 +321,10 @@
             this.btnChonAnhNV.IconSize = 40;
             this.btnChonAnhNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChonAnhNV.Location = new System.Drawing.Point(33, 309);
-            this.btnChonAnhNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChonAnhNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnChonAnhNV.Name = "btnChonAnhNV";
             this.btnChonAnhNV.Rotation = 0D;
-            this.btnChonAnhNV.Size = new System.Drawing.Size(197, 57);
+            this.btnChonAnhNV.Size = new System.Drawing.Size(170, 57);
             this.btnChonAnhNV.TabIndex = 20;
             this.btnChonAnhNV.Text = "Chọn ảnh";
             this.btnChonAnhNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -458,7 +458,7 @@
             this.btnLamMoiNV.IconColor = System.Drawing.Color.Black;
             this.btnLamMoiNV.IconSize = 40;
             this.btnLamMoiNV.Location = new System.Drawing.Point(327, 516);
-            this.btnLamMoiNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLamMoiNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoiNV.Name = "btnLamMoiNV";
             this.btnLamMoiNV.Rotation = 0D;
             this.btnLamMoiNV.Size = new System.Drawing.Size(279, 71);
@@ -502,7 +502,7 @@
             this.btnLamMoiMK.IconColor = System.Drawing.Color.Black;
             this.btnLamMoiMK.IconSize = 32;
             this.btnLamMoiMK.Location = new System.Drawing.Point(19, 516);
-            this.btnLamMoiMK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLamMoiMK.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoiMK.Name = "btnLamMoiMK";
             this.btnLamMoiMK.Rotation = 0D;
             this.btnLamMoiMK.Size = new System.Drawing.Size(279, 71);
@@ -528,7 +528,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTimKiemNV);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNhanVien_FormClosing);

@@ -33,7 +33,7 @@ namespace QuanLyCuaHangNoiThat
         {
             if(this.lblMaHD.Text == string.Empty)
             {
-                MessageBox.Show("Bạn chưa chọn hóa đơn !!!", "Thông báo");
+                MessageBox.Show("Bạn chưa chọn hóa đơn !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
             frmChinhSuaCTHoaDon frm = new frmChinhSuaCTHoaDon(hd,this.manv);
@@ -117,7 +117,12 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
-            frmReport frm = new frmReport();
+            if (this.lblMaHD.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa chọn hóa đơn !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            frmReport frm = new frmReport(this.lblMaHD.Text);
             frm.ShowDialog();
         }
 

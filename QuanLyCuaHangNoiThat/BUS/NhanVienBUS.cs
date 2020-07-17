@@ -18,6 +18,10 @@ namespace BUS
         {
             return NhanVienDAO.LayDanhSachNV();
         }
+        public static List<NHANVIEN> LayDanhSachAllNV()
+        {
+            return NhanVienDAO.LayDanhSachAllNV();
+        }
 
         public static List<NHANVIEN> LayThongTinCuaNV(string manv)
         {

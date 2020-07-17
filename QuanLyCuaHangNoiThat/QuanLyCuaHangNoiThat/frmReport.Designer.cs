@@ -32,19 +32,39 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.QuanLyCuaHangNoiThatDataSet = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSet();
             this.KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.KHACHHANGTableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetTableAdapters.KHACHHANGTableAdapter();
+            this.QuanLyCuaHangNoiThatDataSet = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSet();
             this.cTHOADONBANHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cTHOADONBANHANGTableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetTableAdapters.CTHOADONBANHANGTableAdapter();
             this.hOADONBANHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.KHACHHANGTableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetTableAdapters.KHACHHANGTableAdapter();
+            this.cTHOADONBANHANGTableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetTableAdapters.CTHOADONBANHANGTableAdapter();
             this.hOADONBANHANGTableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetTableAdapters.HOADONBANHANGTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KHACHHANGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTHOADONBANHANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONBANHANGBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // KHACHHANGBindingSource
+            // 
+            this.KHACHHANGBindingSource.DataMember = "KHACHHANG";
+            this.KHACHHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
+            // 
+            // QuanLyCuaHangNoiThatDataSet
+            // 
+            this.QuanLyCuaHangNoiThatDataSet.DataSetName = "QuanLyCuaHangNoiThatDataSet";
+            this.QuanLyCuaHangNoiThatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cTHOADONBANHANGBindingSource
+            // 
+            this.cTHOADONBANHANGBindingSource.DataMember = "CTHOADONBANHANG";
+            this.cTHOADONBANHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
+            // 
+            // hOADONBANHANGBindingSource
+            // 
+            this.hOADONBANHANGBindingSource.DataMember = "HOADONBANHANG";
+            this.hOADONBANHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
             // 
             // reportViewer1
             // 
@@ -62,36 +82,16 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(1117, 685);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // QuanLyCuaHangNoiThatDataSet
-            // 
-            this.QuanLyCuaHangNoiThatDataSet.DataSetName = "QuanLyCuaHangNoiThatDataSet";
-            this.QuanLyCuaHangNoiThatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // KHACHHANGBindingSource
-            // 
-            this.KHACHHANGBindingSource.DataMember = "KHACHHANG";
-            this.KHACHHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
             // 
             // KHACHHANGTableAdapter
             // 
             this.KHACHHANGTableAdapter.ClearBeforeFill = true;
             // 
-            // cTHOADONBANHANGBindingSource
-            // 
-            this.cTHOADONBANHANGBindingSource.DataMember = "CTHOADONBANHANG";
-            this.cTHOADONBANHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
-            // 
             // cTHOADONBANHANGTableAdapter
             // 
             this.cTHOADONBANHANGTableAdapter.ClearBeforeFill = true;
-            // 
-            // hOADONBANHANGBindingSource
-            // 
-            this.hOADONBANHANGBindingSource.DataMember = "HOADONBANHANG";
-            this.hOADONBANHANGBindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet;
             // 
             // hOADONBANHANGTableAdapter
             // 
@@ -101,13 +101,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1117, 685);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmReport";
             this.Text = "frmReport";
             this.Load += new System.EventHandler(this.frmReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KHACHHANGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTHOADONBANHANGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONBANHANGBindingSource)).EndInit();
             this.ResumeLayout(false);

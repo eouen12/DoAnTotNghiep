@@ -16,6 +16,7 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmDangNhap : Form
     {
         public static NHANVIEN nv = new NHANVIEN();
+        private string patch = @"..\..\..\..\logo.jpg";
         public frmDangNhap()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace QuanLyCuaHangNoiThat
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             AutoCompleteMaNV();
+            this.pictureBox1.ImageLocation = patch;
         }
 
         void AutoCompleteMaNV()
