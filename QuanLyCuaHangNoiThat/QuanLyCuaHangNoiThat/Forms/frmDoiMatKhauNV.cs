@@ -44,7 +44,7 @@ namespace QuanLyCuaHangNoiThat
                     MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.txtMatKhauCu.Clear();
                     this.txtMatKhauMoi.Clear();
-                    return;
+                    this.Close();
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Đổi mật khẩu thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.txtMatKhauCu.Clear();
                 this.txtMatKhauMoi.Clear();
-                return;
+                this.Close();
             }
             else
             {

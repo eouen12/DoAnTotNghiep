@@ -22,6 +22,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         private bool dangThayDoiCTHD = false;
         private string manv;
         private int sl_cthd;
+        private string vitrithaotac = "Chỉnh sửa chi tiết hóa đơn";
         public frmChinhSuaCTHoaDon(HOADONBANHANG hoadon,string manv)
         {
             InitializeComponent();
@@ -77,11 +78,18 @@ namespace QuanLyCuaHangNoiThat.Forms
                 CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 0);
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
+                CapNhatThongTienCongNo();
                 this.dangThayDoiCTHD = false;
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm sản phẩm " + this.txtMasp.Text +" vào chi tiết hóa đơn " + hd.MAHD;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 loadThongTinHD(hd.MAHD);
                 Reset();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm sản phẩm " + this.txtMasp.Text +" vào chi tiết hóa đơn " + hd.MAHD;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -119,11 +127,18 @@ namespace QuanLyCuaHangNoiThat.Forms
                 CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 1);
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
+                CapNhatThongTienCongNo();
                 this.dangThayDoiCTHD = false;
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết hóa đơn " + hd.MAHD;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 loadThongTinHD(hd.MAHD);
                 Reset();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết hóa đơn " + hd.MAHD;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -147,11 +162,18 @@ namespace QuanLyCuaHangNoiThat.Forms
                     CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 2);
                     hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                     HoaDonBanHangBUS.CapNhatHoaDon(hd);
+                    CapNhatThongTienCongNo();
                     this.dangThayDoiCTHD = false;
-                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMasp.Text + " của chi tiết hóa đơn " + hd.MAHD;
-                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     loadThongTinHD(hd.MAHD);
                     Reset();
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMasp.Text + " của chi tiết hóa đơn " + hd.MAHD;
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                    {
+                        NGAYTAO = DateTime.Now.Date,
+                        NV_THAOTAC = this.manv,
+                        VITRI_THAOTAC = this.vitrithaotac,
+                        GHICHU = lsth
+                    });
                 }
                 else
                 {
@@ -171,10 +193,16 @@ namespace QuanLyCuaHangNoiThat.Forms
             if (HoaDonBanHangBUS.CapNhatHoaDon(hd))
             {
                 MessageBox.Show("Cập nhật ngày giao thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật ngày giao " + this.lblMaHD.Text;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 loadThongTinHD(hd.MAHD);
                 this.dangThayDoiNgayGiao = false;
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật ngày giao " + this.lblMaHD.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -320,6 +348,44 @@ namespace QuanLyCuaHangNoiThat.Forms
             this.btnThem.Enabled = true;
             this.btnXoa.Enabled = false;
             this.btnSua.Enabled = false;
+        }
+
+        void CapNhatThongTienCongNo()
+        {
+            var cn = CongNoBUS.LayDanhSachCongNo().Where(p => p.MAKH == this.lblMaKH.Text && p.MAHD == hd.MAHD).FirstOrDefault();
+            if (hd.TONGTIEN == 0)
+            {
+                CongNoBUS.CapNhatCongNo(new CONGNO
+                {
+                    MACONGNO = cn.MACONGNO,
+                    MAKH = cn.MAKH,
+                    MAHD = cn.MAHD,
+                    TONGTIEN = cn.TONGTIEN,
+                    TIENCONNO = 0M,
+                    NGAYTRA = cn.NGAYTRA.Value.Date,
+                    NV_LAPCN = cn.NV_LAPCN,
+                    NGAYLAP = cn.NGAYLAP.Value.Date,
+                    TRANGTHAI = false
+                });
+                //CongNoBUS.XoaCongNo(cn.MACONGNO);
+            }
+            else
+            {
+                // cn tong tien 15 , con no 10
+                // hd edit tong tien 10, cn tong tien 10
+                CongNoBUS.CapNhatCongNo(new CONGNO
+                {
+                    MACONGNO = cn.MACONGNO,
+                    MAKH = cn.MAKH,
+                    MAHD = cn.MAHD,
+                    TONGTIEN = Convert.ToDecimal(hd.TONGTIEN),
+                    TIENCONNO = Convert.ToDecimal(hd.TONGTIEN) - cn.TONGTIEN + cn.TIENCONNO,
+                    NGAYTRA = cn.NGAYTRA.Value.Date,
+                    NV_LAPCN = cn.NV_LAPCN,
+                    NGAYLAP = cn.NGAYLAP.Value.Date,
+                    TRANGTHAI = true
+                });
+            }
         }
 
     }

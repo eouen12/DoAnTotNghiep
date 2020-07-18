@@ -15,6 +15,9 @@ namespace DTO
     public partial class LICHSUHETHONG
     {
         public int ID { get; set; }
+        public Nullable<System.DateTime> NGAYTAO { get; set; }
+        public string NV_THAOTAC { get; set; }
+        public string VITRI_THAOTAC { get; set; }
         public string GHICHU { get; set; }
     }
 }

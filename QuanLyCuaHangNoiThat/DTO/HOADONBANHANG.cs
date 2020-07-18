@@ -17,8 +17,8 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOADONBANHANG()
         {
+            this.CONGNO = new HashSet<CONGNO>();
             this.CTHOADONBANHANG = new HashSet<CTHOADONBANHANG>();
-            this.CTHOADONBANHANG1 = new HashSet<CTHOADONBANHANG>();
         }
     
         public string MAHD { get; set; }
@@ -30,12 +30,10 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
+        public virtual ICollection<CONGNO> CONGNO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG1 { get; set; }
+        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual NHANVIEN NHANVIEN1 { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual KHACHHANG KHACHHANG1 { get; set; }
     }
 }

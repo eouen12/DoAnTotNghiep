@@ -18,7 +18,6 @@ namespace DTO
         public LOAISANPHAM()
         {
             this.SANPHAM = new HashSet<SANPHAM>();
-            this.SANPHAM1 = new HashSet<SANPHAM>();
         }
     
         public string MALOAI { get; set; }
@@ -27,7 +26,5 @@ namespace DTO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAM { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM1 { get; set; }
     }
 }

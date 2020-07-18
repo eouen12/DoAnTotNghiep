@@ -24,6 +24,7 @@ namespace QuanLyCuaHangNoiThat
         private ANHMINHHOASP AMH = new ANHMINHHOASP();
         private bool dangThayDoiDL = false;
         private string manv;
+        private string vitrithaotac = "Sản phẩm";
 
         public frmSanPham(string manv)
         {
@@ -313,24 +314,30 @@ namespace QuanLyCuaHangNoiThat
             ANHMINHHOASP anhMH = new ANHMINHHOASP { MAANH = maAnh, TENANHMINHHOA = this.tenAnhMinhHoa, MASP = sanpham.MASP, TRANGTHAI = true };
             if(!SanPhamBUS.KiemTraMaSPTonTai(sanpham.MASP))
             {
-                //try
-                //{
+                try
+                {
                     SanPhamBUS.ThemSanPham(sanpham);
                     AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
 
                     this.imgSanPham.Image.Save(patch + anhMH.TENANHMINHHOA);
                     MessageBox.Show("Thêm sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm một sản phẩm (" + sanpham.MASP + ")";
-                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     Reset();
                     LoadDataTabQLSP();
                     LoadDataTabDSSP();
-                //}
-                //catch(Exception ex)
-                //{
-                //    MessageBox.Show(ex.ToString());
-                //}
-                
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm một sản phẩm (" + sanpham.MASP + ")";
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                    {
+                        NGAYTAO = DateTime.Now.Date,
+                        NV_THAOTAC = this.manv,
+                        VITRI_THAOTAC = this.vitrithaotac,
+                        GHICHU = lsth
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
             }
 
         }
@@ -394,12 +401,18 @@ namespace QuanLyCuaHangNoiThat
                     AnhMinhHoaSPBUS.ThemAnhMinhHoa(anhMH);
                     this.imgSanPham.Image.Save(patch + anhMH.TENANHMINHHOA);
                 }
-                MessageBox.Show("Cập nhật thông tin sản phẩm thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của sản phẩm " + sanpham.MASP;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
                 LoadDataTabDSSP();
+                MessageBox.Show("Cập nhật thông tin sản phẩm thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của sản phẩm " + sanpham.MASP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -413,11 +426,17 @@ namespace QuanLyCuaHangNoiThat
             {
                 SanPhamBUS.XoaSanPham(this.txtMaSp.Text);
                 MessageBox.Show("Xóa sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMaSp.Text;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDataTabQLSP();
                 LoadDataTabDSSP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa sản phẩm " + this.txtMaSp.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
         }
 
@@ -562,12 +581,18 @@ namespace QuanLyCuaHangNoiThat
             if (LoaiSanPhamBUS.ThemLoaiSanPham(loaisp))
             {
                 MessageBox.Show("Thêm loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới loại sản phẩm " + loaisp.MALOAI;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 AutoCompleteMaLoai();
                 LoadComboBoxData();
                 ResetTabQLLoaiSP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới loại sản phẩm " + loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -588,12 +613,18 @@ namespace QuanLyCuaHangNoiThat
             if (LoaiSanPhamBUS.SuaLoaiSanPham(loaisp))
             {
                 MessageBox.Show("Cập nhật thông tin loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin loại sản phẩm " + loaisp.MALOAI;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 AutoCompleteMaLoai();
                 LoadComboBoxData();
                 ResetTabQLLoaiSP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin loại sản phẩm " + loaisp.MALOAI;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -607,12 +638,18 @@ namespace QuanLyCuaHangNoiThat
             {
                 LoaiSanPhamBUS.XoaLoaiSanPham(this.txtMaLoai.Text);
                 MessageBox.Show("Xóa loại sản phẩm thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin loại sản phẩm " + this.txtMaLoai.Text;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSLoaiSP();
                 AutoCompleteMaLoai();
                 LoadComboBoxData();
                 ResetTabQLLoaiSP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin loại sản phẩm " + this.txtMaLoai.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
         }
 
