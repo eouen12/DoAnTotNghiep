@@ -25,8 +25,8 @@ namespace QuanLyCuaHangNoiThat.Forms
         private void frmLSHeThong_Load(object sender, EventArgs e)
         {
             
-            LoadLichSuHeThong();
             LoadDataComboBox();
+            LoadLichSuHeThong();
         }
 
         private void dtNgayTao_ValueChanged(object sender, EventArgs e)
@@ -73,6 +73,7 @@ namespace QuanLyCuaHangNoiThat.Forms
 
         void LoadDataComboBox()
         {
+            this.lstnv = NhanVienBUS.LayDanhSachAllNV();
             this.cbNVThaoTac.DataSource = this.lstnv;
             this.cbNVThaoTac.DisplayMember = "MANV";
             this.cbNVThaoTac.ValueMember = "MANV";
@@ -114,7 +115,6 @@ namespace QuanLyCuaHangNoiThat.Forms
 
         void LoadLichSuHeThong()
         {
-            this.lstnv = NhanVienBUS.LayDanhSachAllNV();
             this.lstLSHT = LichSuHeThongBUS.LayDanhSachLSHT();
             this.dgvLSHeThong.AutoGenerateColumns = false;
             this.dgvLSHeThong.DataSource = this.lstLSHT;
