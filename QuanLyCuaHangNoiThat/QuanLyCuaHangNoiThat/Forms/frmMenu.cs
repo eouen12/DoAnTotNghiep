@@ -22,7 +22,7 @@ namespace QuanLyCuaHangNoiThat
         private NHANVIEN nhanvien = new NHANVIEN();
         private List<LICHSUHETHONG> lsht = new List<LICHSUHETHONG>();
         private string patch = @"..\..\..\..\Anh_NhanVien\";
-        private string patchLogo = @"..\..\..\..\logo.jpg";
+        private string patchLogo = @"..\..\..\..\logo3.jpg";
         public frmMenu(NHANVIEN nv)
         {
             
@@ -175,12 +175,14 @@ namespace QuanLyCuaHangNoiThat
             if(nhanvien.CHUCVU != "NV")
             {
                 btnMenuNhanVien.Enabled = true;
-                groupBox1.Visible= true;
+                this.dgvLSHeThong.Visible= true;
+                btnfrmLSHT.Enabled = true;
             }
             else
             {
                 btnMenuNhanVien.Enabled = false;
-                groupBox1.Visible = false;
+                this.dgvLSHeThong.Visible = true;
+                btnfrmLSHT.Enabled = true;
             }
 
         }
@@ -199,6 +201,16 @@ namespace QuanLyCuaHangNoiThat
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLSHeThong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnfrmLSHT_Click(object sender, EventArgs e)
         {
 
         }

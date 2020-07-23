@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using Microsoft.Reporting.WinForms;
 
 namespace QuanLyCuaHangNoiThat
 {

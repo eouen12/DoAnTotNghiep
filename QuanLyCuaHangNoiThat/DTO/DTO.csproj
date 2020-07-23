@@ -68,6 +68,12 @@
     <Compile Include="CTNHAPHANGTUNPP.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
+    <Compile Include="DOIDONVINEN.cs">
+      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DOIDONVITUONG.cs">
+      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
+    </Compile>
     <Compile Include="HOADONBANHANG.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>

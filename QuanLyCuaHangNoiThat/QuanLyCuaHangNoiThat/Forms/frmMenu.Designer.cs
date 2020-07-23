@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnfrmLSHT = new FontAwesome.Sharp.IconButton();
             this.btnMenuDangXuat = new FontAwesome.Sharp.IconButton();
             this.btnMenuDoiDonVi = new FontAwesome.Sharp.IconButton();
             this.btnMenuNhanVien = new FontAwesome.Sharp.IconButton();
@@ -48,23 +50,19 @@
             this.btnStatusMenu = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvLSHeThong = new System.Windows.Forms.DataGridView();
-            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAnhNhanVien)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSHeThong)).BeginInit();
             this.panel6.SuspendLayout();
             this.panelDesktop.SuspendLayout();
@@ -73,6 +71,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelMenu.Controls.Add(this.btnfrmLSHT);
             this.panelMenu.Controls.Add(this.btnMenuDangXuat);
             this.panelMenu.Controls.Add(this.btnMenuDoiDonVi);
             this.panelMenu.Controls.Add(this.btnMenuNhanVien);
@@ -84,10 +83,33 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(240, 750);
+            this.panelMenu.Size = new System.Drawing.Size(240, 877);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnfrmLSHT
+            // 
+            this.btnfrmLSHT.AutoSize = true;
+            this.btnfrmLSHT.FlatAppearance.BorderSize = 0;
+            this.btnfrmLSHT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfrmLSHT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnfrmLSHT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfrmLSHT.IconChar = FontAwesome.Sharp.IconChar.Wpforms;
+            this.btnfrmLSHT.IconColor = System.Drawing.Color.Black;
+            this.btnfrmLSHT.IconSize = 32;
+            this.btnfrmLSHT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnfrmLSHT.Location = new System.Drawing.Point(0, 636);
+            this.btnfrmLSHT.Margin = new System.Windows.Forms.Padding(4);
+            this.btnfrmLSHT.Name = "btnfrmLSHT";
+            this.btnfrmLSHT.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.btnfrmLSHT.Rotation = 0D;
+            this.btnfrmLSHT.Size = new System.Drawing.Size(239, 66);
+            this.btnfrmLSHT.TabIndex = 9;
+            this.btnfrmLSHT.Text = "Lịch sử hệ thống";
+            this.btnfrmLSHT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnfrmLSHT.UseVisualStyleBackColor = true;
+            this.btnfrmLSHT.Click += new System.EventHandler(this.btnfrmLSHT_Click);
             // 
             // btnMenuDangXuat
             // 
@@ -100,8 +122,8 @@
             this.btnMenuDangXuat.IconColor = System.Drawing.Color.Black;
             this.btnMenuDangXuat.IconSize = 32;
             this.btnMenuDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 702);
-            this.btnMenuDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuDangXuat.Location = new System.Drawing.Point(0, 776);
+            this.btnMenuDangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuDangXuat.Name = "btnMenuDangXuat";
             this.btnMenuDangXuat.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDangXuat.Rotation = 0D;
@@ -123,8 +145,8 @@
             this.btnMenuDoiDonVi.IconColor = System.Drawing.Color.Black;
             this.btnMenuDoiDonVi.IconSize = 32;
             this.btnMenuDoiDonVi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuDoiDonVi.Location = new System.Drawing.Point(0, 628);
-            this.btnMenuDoiDonVi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuDoiDonVi.Location = new System.Drawing.Point(1, 703);
+            this.btnMenuDoiDonVi.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuDoiDonVi.Name = "btnMenuDoiDonVi";
             this.btnMenuDoiDonVi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuDoiDonVi.Rotation = 0D;
@@ -147,7 +169,7 @@
             this.btnMenuNhanVien.IconSize = 32;
             this.btnMenuNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhanVien.Location = new System.Drawing.Point(0, 554);
-            this.btnMenuNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuNhanVien.Name = "btnMenuNhanVien";
             this.btnMenuNhanVien.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhanVien.Rotation = 0D;
@@ -170,11 +192,11 @@
             this.btnMenuNhaPhanPhoi.IconSize = 32;
             this.btnMenuNhaPhanPhoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuNhaPhanPhoi.Location = new System.Drawing.Point(0, 480);
-            this.btnMenuNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuNhaPhanPhoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuNhaPhanPhoi.Name = "btnMenuNhaPhanPhoi";
             this.btnMenuNhaPhanPhoi.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuNhaPhanPhoi.Rotation = 0D;
-            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(285, 74);
+            this.btnMenuNhaPhanPhoi.Size = new System.Drawing.Size(240, 74);
             this.btnMenuNhaPhanPhoi.TabIndex = 7;
             this.btnMenuNhaPhanPhoi.Text = "Nhà phân phối";
             this.btnMenuNhaPhanPhoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -194,7 +216,7 @@
             this.btnMenuKhachHang.IconSize = 32;
             this.btnMenuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuKhachHang.Location = new System.Drawing.Point(0, 333);
-            this.btnMenuKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuKhachHang.Name = "btnMenuKhachHang";
             this.btnMenuKhachHang.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuKhachHang.Rotation = 0D;
@@ -218,7 +240,7 @@
             this.btnMenuSanPham.IconSize = 32;
             this.btnMenuSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuSanPham.Location = new System.Drawing.Point(0, 259);
-            this.btnMenuSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuSanPham.Name = "btnMenuSanPham";
             this.btnMenuSanPham.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuSanPham.Rotation = 0D;
@@ -243,7 +265,7 @@
             this.btnMenuHoaDon.IconSize = 32;
             this.btnMenuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuHoaDon.Location = new System.Drawing.Point(0, 185);
-            this.btnMenuHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuHoaDon.Name = "btnMenuHoaDon";
             this.btnMenuHoaDon.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuHoaDon.Rotation = 0D;
@@ -266,7 +288,7 @@
             this.btnMenuCongNo.IconSize = 32;
             this.btnMenuCongNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCongNo.Location = new System.Drawing.Point(0, 406);
-            this.btnMenuCongNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenuCongNo.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuCongNo.Name = "btnMenuCongNo";
             this.btnMenuCongNo.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.btnMenuCongNo.Rotation = 0D;
@@ -282,17 +304,17 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(240, 185);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 185);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -309,7 +331,7 @@
             this.panelStatus.Controls.Add(this.btnStatusMenu);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelStatus.Location = new System.Drawing.Point(240, 0);
-            this.panelStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelStatus.Margin = new System.Windows.Forms.Padding(4);
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(1076, 130);
             this.panelStatus.TabIndex = 1;
@@ -332,7 +354,7 @@
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(340, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(353, 130);
             this.panel9.TabIndex = 4;
@@ -342,7 +364,7 @@
             this.panel7.BackColor = System.Drawing.Color.Black;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel7.Location = new System.Drawing.Point(693, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(4, 130);
             this.panel7.TabIndex = 2;
@@ -372,7 +394,7 @@
             this.btnStatusMenu.IconSize = 56;
             this.btnStatusMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStatusMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnStatusMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatusMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatusMenu.Name = "btnStatusMenu";
             this.btnStatusMenu.Rotation = 0D;
             this.btnStatusMenu.Size = new System.Drawing.Size(340, 130);
@@ -391,28 +413,12 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(936, 130);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(380, 620);
+            this.panel5.Size = new System.Drawing.Size(380, 747);
             this.panel5.TabIndex = 6;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvLSHeThong);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(380, 620);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lịch sử hệ thống";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dgvLSHeThong
             // 
@@ -422,45 +428,37 @@
             this.dgvLSHeThong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLSHeThong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GHICHU});
-            this.dgvLSHeThong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLSHeThong.Location = new System.Drawing.Point(4, 34);
-            this.dgvLSHeThong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLSHeThong.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLSHeThong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvLSHeThong.Location = new System.Drawing.Point(0, 0);
+            this.dgvLSHeThong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLSHeThong.Name = "dgvLSHeThong";
             this.dgvLSHeThong.ReadOnly = true;
             this.dgvLSHeThong.RowHeadersVisible = false;
             this.dgvLSHeThong.RowHeadersWidth = 51;
             this.dgvLSHeThong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLSHeThong.Size = new System.Drawing.Size(372, 582);
+            this.dgvLSHeThong.Size = new System.Drawing.Size(696, 211);
             this.dgvLSHeThong.TabIndex = 0;
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.DataPropertyName = "GHICHU";
-            this.GHICHU.HeaderText = "";
-            this.GHICHU.MinimumWidth = 6;
-            this.GHICHU.Name = "GHICHU";
-            this.GHICHU.ReadOnly = true;
-            this.GHICHU.Width = 24;
+            this.dgvLSHeThong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLSHeThong_CellContentClick);
             // 
             // panel6
             // 
             this.panel6.AutoSize = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.dgvLSHeThong);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(240, 580);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(240, 666);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(696, 170);
+            this.panel6.Size = new System.Drawing.Size(696, 211);
             this.panel6.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(696, 170);
-            this.label1.TabIndex = 0;
             // 
             // panelDesktop
             // 
@@ -470,9 +468,9 @@
             this.panelDesktop.Controls.Add(this.panel1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(240, 130);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(696, 450);
+            this.panelDesktop.Size = new System.Drawing.Size(696, 536);
             this.panelDesktop.TabIndex = 8;
             // 
             // panel2
@@ -480,7 +478,7 @@
             this.panel2.BackColor = System.Drawing.Color.Red;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(4, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(688, 4);
             this.panel2.TabIndex = 1;
@@ -489,8 +487,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(4, 446);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(4, 532);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(688, 4);
             this.panel3.TabIndex = 1;
@@ -500,9 +498,9 @@
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(692, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(4, 450);
+            this.panel4.Size = new System.Drawing.Size(4, 536);
             this.panel4.TabIndex = 1;
             // 
             // panel1
@@ -510,16 +508,25 @@
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(4, 450);
+            this.panel1.Size = new System.Drawing.Size(4, 536);
             this.panel1.TabIndex = 0;
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GHICHU.DataPropertyName = "GHICHU";
+            this.GHICHU.HeaderText = "";
+            this.GHICHU.MinimumWidth = 6;
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.ReadOnly = true;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 750);
+            this.ClientSize = new System.Drawing.Size(1316, 877);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -539,8 +546,6 @@
             this.panelStatus.ResumeLayout(false);
             this.panelStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAnhNhanVien)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSHeThong)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
@@ -573,12 +578,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgAnhNhanVien;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvLSHeThong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
+        private FontAwesome.Sharp.IconButton btnfrmLSHT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
     }
 }

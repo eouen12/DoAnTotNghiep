@@ -40,5 +40,7 @@ namespace DTO
         public virtual DbSet<NHAPHANPHOI> NHAPHANPHOI { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHAN { get; set; }
         public virtual DbSet<SANPHAM> SANPHAM { get; set; }
+        public virtual DbSet<DOIDONVINEN> DOIDONVINEN { get; set; }
+        public virtual DbSet<DOIDONVITUONG> DOIDONVITUONG { get; set; }
     }
 }

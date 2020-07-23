@@ -56,6 +56,24 @@
     <Property Name="NGAYNHAPHANG" Type="datetime" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="DOIDONVINEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENGACH" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SOMETNEN" Type="varchar" MaxLength="10" />
+    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOIDONVITUONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENGACHTUONG" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SOMETTOI" Type="varchar" MaxLength="10" />
+    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="HOADONBANHANG">
     <Key>
       <PropertyRef Name="MAHD" />
@@ -551,6 +569,8 @@
     <EntitySet Name="CTNHAPHANGTUNPP" EntityType="Self.CTNHAPHANGTUNPP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHOADONBANHANG" EntityType="Self.CTHOADONBANHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETNHAPHANG" EntityType="Self.CHITIETNHAPHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOIDONVINEN" EntityType="Self.DOIDONVINEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOIDONVITUONG" EntityType="Self.DOIDONVITUONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADONBANHANG" EntityType="Self.HOADONBANHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADONNHAPHANG" EntityType="Self.HOADONNHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />

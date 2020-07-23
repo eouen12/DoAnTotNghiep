@@ -52,7 +52,9 @@
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__619B8048" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__44FF419A" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__6383C8BA" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.DOIDONVINEN" Width="1.5" PointX="9.875" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.DOIDONVITUONG" Width="1.5" PointX="12" PointY="7.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
