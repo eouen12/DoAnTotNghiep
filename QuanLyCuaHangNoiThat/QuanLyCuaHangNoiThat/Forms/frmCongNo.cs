@@ -20,8 +20,7 @@ namespace QuanLyCuaHangNoiThat
         private List<LICHSUTRANO> lstTraNo = new List<LICHSUTRANO>();
         private CONGNO cn = new CONGNO();
         private bool dangThayDoiDL = false;
-        //private string tienConNo;
-        //private string tongTien;
+        private string vitrithaotac = "Công nợ";
         private string manv;
         public frmCongNo(string manv)
         {
@@ -51,6 +50,7 @@ namespace QuanLyCuaHangNoiThat
                         {
                             cn.MACONGNO,
                             cn.MAKH,
+                            cn.MAHD,
                             kh.TENKH,
                             cn.TONGTIEN,
                             cn.TIENCONNO,
@@ -104,6 +104,7 @@ namespace QuanLyCuaHangNoiThat
             CongNoBUS.CapNhatCongNo(new CONGNO
             {
                 MACONGNO = cn.MACONGNO,
+                MAHD = cn.MAHD,
                 MAKH = cn.MAKH,
                 TONGTIEN = cn.TONGTIEN,
                 TIENCONNO = cn.TIENCONNO,
@@ -112,10 +113,16 @@ namespace QuanLyCuaHangNoiThat
                 NGAYLAP = cn.NGAYLAP.Value.Date
             });
             MessageBox.Show("Cập nhật hạn trả nợ thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật hạn trả nợ của mã công nợ " + cn.MACONGNO;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             LoadDSCN();
             Reset();
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật hạn trả nợ của mã công nợ " + cn.MACONGNO;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
 
         void CapNhatCongNo()
@@ -132,6 +139,7 @@ namespace QuanLyCuaHangNoiThat
                 {
                     MACONGNO = cn.MACONGNO,
                     MAKH = this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString(),
+                    MAHD = cn.MAHD,
                     TONGTIEN = cn.TONGTIEN,
                     TIENCONNO = 0M,
                     NGAYTRA = cn.NGAYTRA.Value.Date,
@@ -147,6 +155,7 @@ namespace QuanLyCuaHangNoiThat
                 {
                     MACONGNO = cn.MACONGNO,
                     MAKH = this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString(),
+                    MAHD = cn.MAHD,
                     TONGTIEN = cn.TONGTIEN,
                     TIENCONNO = Convert.ToDecimal(cn.TIENCONNO) - Convert.ToDecimal(this.txtSoTienTraHomNay.Text),
                     NGAYTRA = cn.NGAYTRA.Value.Date,
@@ -163,10 +172,16 @@ namespace QuanLyCuaHangNoiThat
                 TRANGTHAI = true,
             });
             MessageBox.Show("Thanh toán thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của mã công nợ " + cn.MACONGNO;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             LoadDSCN();
             Reset();
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin của mã công nợ " + cn.MACONGNO;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
         void Reset()
         {

@@ -46,6 +46,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                      join kh in lstKhachhang
                      on cn.MAKH equals kh.MAKH
                      where cn.NGAYTRA.Value.Month == dt.Month
+                            && cn.NGAYTRA.Value.Year == dt.Year
                      select new
                      {
                          cn.MACONGNO,

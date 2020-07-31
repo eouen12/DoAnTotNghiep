@@ -24,6 +24,7 @@ namespace QuanLyCuaHangNoiThat
         private string manv;
         private string autoManv;
         private bool dangThayDoiDuLieu = false;
+        private string vitrithaotac = "Nhân viên";
         public frmNhanVien(string manv)
         {
             InitializeComponent();
@@ -99,10 +100,16 @@ namespace QuanLyCuaHangNoiThat
                 {
                     this.imgNhanVien.Image.Save(System.IO.Path.Combine(patch, this.tenAnhDaiDien));
                     MessageBox.Show("Thêm nhân viên thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + nv.MANV;
-                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     LoadDsNhanVien();
                     Reset();
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + nv.MANV;
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                    {
+                        NGAYTAO = DateTime.Now.Date,
+                        NV_THAOTAC = this.manv,
+                        VITRI_THAOTAC = this.vitrithaotac,
+                        GHICHU = lsth
+                    });
                 }
                 else
                 {
@@ -148,10 +155,17 @@ namespace QuanLyCuaHangNoiThat
                         this.imgNhanVien.Image.Save(System.IO.Path.Combine(patch + this.tenAnhDaiDien));
                     }
                     MessageBox.Show("Cập nhật nhân viên thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhân viên " + nv.MANV;
-                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     LoadDsNhanVien();
                     Reset();
+                    string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhân viên " + nv.MANV;
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                    {
+                        NGAYTAO = DateTime.Now.Date,
+                        NV_THAOTAC = this.manv,
+                        VITRI_THAOTAC = this.vitrithaotac,
+                        GHICHU = lsth
+                    });
                 }
                 else
                 {
@@ -170,10 +184,16 @@ namespace QuanLyCuaHangNoiThat
             {
                 NhanVienBUS.XoaNhanVien(this.txtMaNV.Text);
                 MessageBox.Show("Xóa nhân viên thành công thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + this.txtMaNV.Text;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 Reset();
                 LoadDsNhanVien();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + this.txtMaNV.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
         }
 

@@ -20,6 +20,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         private string mahd;
         private string makh;
         private string manv;
+        private string vitrithaotac = "Lập hóa đơn";
         private bool dangThaoTac = false;
         public frmLapHoaDon(string makh, string manv)
         {
@@ -48,8 +49,6 @@ namespace QuanLyCuaHangNoiThat.Forms
                     TaoCongNo();
                 }    
                 MessageBox.Show("Lập hóa đơn thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập một hóa đơn";
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 dangThaoTac = false;
                 this.Close();
             }
@@ -236,6 +235,14 @@ namespace QuanLyCuaHangNoiThat.Forms
                 NGAYGIAO = this.dtNgayGiao.Value,
                 TRANGTHAI = true
             });
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập hóa đơn " + mahd;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
 
         void TaoCTHoaDon()
@@ -272,6 +279,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             CongNoBUS.ThemCongNo(new CONGNO
             {
                 MACONGNO = macn,
+                MAHD = mahd,
                 MAKH = makh,
                 NV_LAPCN = this.manv,
                 NGAYLAP = DateTime.Now.Date,
@@ -279,6 +287,15 @@ namespace QuanLyCuaHangNoiThat.Forms
                 TIENCONNO = Convert.ToDecimal(this.lblTongTien.Text) - Convert.ToDecimal(this.txtSoTienTraTrc.Text),
                 NGAYTRA = this.dateHanTra.Value.Date,
                 TRANGTHAI = true
+            });
+
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập công nợ " + macn;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
             });
 
         }

@@ -18,6 +18,7 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<KHACHHANG> lstKhachHang = new List<KHACHHANG>();
         private string manv;
+        private string vitrithaotac = "Khách hàng";
         private bool dangThayDoiDL = false;
         public frmKhachHang(string nhanvien)
         {
@@ -55,24 +56,18 @@ namespace QuanLyCuaHangNoiThat
             KH.TENKH = this.txtTenKH.Text;
             KH.TRANGTHAI = true;
             KhachHangBUS.Insert(KH);
-            //if (!KhachHangBUS.Insert(KH))
-            //{
-            //    KhachHangBUS.Insert(new KHACHHANG
-            //    {
-            //        MAKH = this.txtMakh.Text,
-            //        TENKH = this.txtTenKH.Text,
-            //        SDT = this.txtSDT.Text,
-            //        CMND = this.txtCMND.Text,
-            //        DIACHI = this.txtDiaChi.Text,
-            //        TRANGTHAI = true,
-            //    });
-            //}
             MessageBox.Show("Thêm mới khách hàng thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới khách hàng " + KH.TENKH;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             Loading();
             Reset();
+
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới khách hàng " + KH.MAKH;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -91,10 +86,16 @@ namespace QuanLyCuaHangNoiThat
             KH.TENKH = txtTenKH.Text;
             KhachHangBUS.Update(KH);
             MessageBox.Show("Cập nhật thông tin khách hàng thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin khách hàng " + KH.TENKH;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             Loading();
             Reset();
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin khách hàng " + KH.MAKH;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
 
         private void btnHuybo_Click(object sender, EventArgs e)
@@ -102,10 +103,16 @@ namespace QuanLyCuaHangNoiThat
             string IDKH = this.txtMakh.Text;
             KhachHangBUS.Delete(IDKH);
             MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin khách hàng " + this.txtTenKH.Text;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
             Loading();
             Reset();
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin khách hàng " + this.txtMakh.Text;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
         }
 
         private void dgvDSKH_CellClick(object sender, DataGridViewCellEventArgs e)

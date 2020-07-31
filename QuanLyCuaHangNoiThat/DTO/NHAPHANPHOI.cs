@@ -17,12 +17,9 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHAPHANPHOI()
         {
-            this.CTNHAPHANGTUNPP = new HashSet<CTNHAPHANGTUNPP>();
-            this.CTNHAPHANGTUNPP1 = new HashSet<CTNHAPHANGTUNPP>();
             this.CHITIETNHAPHANG = new HashSet<CHITIETNHAPHANG>();
-            this.CHITIETNHAPHANG1 = new HashSet<CHITIETNHAPHANG>();
+            this.CTNHAPHANGTUNPP = new HashSet<CTNHAPHANGTUNPP>();
             this.SANPHAM = new HashSet<SANPHAM>();
-            this.SANPHAM1 = new HashSet<SANPHAM>();
         }
     
         public string MANPP { get; set; }
@@ -34,16 +31,10 @@ namespace DTO
         public bool TRANGTHAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG1 { get; set; }
+        public virtual ICollection<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAM { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAM1 { get; set; }
     }
 }

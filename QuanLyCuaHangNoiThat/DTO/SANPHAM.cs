@@ -18,11 +18,8 @@ namespace DTO
         public SANPHAM()
         {
             this.ANHMINHHOASP = new HashSet<ANHMINHHOASP>();
-            this.ANHMINHHOASP1 = new HashSet<ANHMINHHOASP>();
-            this.CTHOADONBANHANG = new HashSet<CTHOADONBANHANG>();
-            this.CTHOADONBANHANG1 = new HashSet<CTHOADONBANHANG>();
             this.CHITIETNHAPHANG = new HashSet<CHITIETNHAPHANG>();
-            this.CHITIETNHAPHANG1 = new HashSet<CHITIETNHAPHANG>();
+            this.CTHOADONBANHANG = new HashSet<CTHOADONBANHANG>();
         }
     
         public string MASP { get; set; }
@@ -36,18 +33,10 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ANHMINHHOASP> ANHMINHHOASP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ANHMINHHOASP> ANHMINHHOASP1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG1 { get; set; }
+        public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM { get; set; }
-        public virtual LOAISANPHAM LOAISANPHAM1 { get; set; }
         public virtual NHAPHANPHOI NHAPHANPHOI { get; set; }
-        public virtual NHAPHANPHOI NHAPHANPHOI1 { get; set; }
     }
 }

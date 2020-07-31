@@ -21,6 +21,7 @@ namespace QuanLyCuaHangNoiThat
         private CHITIETNHAPHANG ct = new CHITIETNHAPHANG();
         private string manv;
         private bool dangThayDoiDL = false;
+        private string vitrithaotac = "Nhà phân phối";
         public frmNhaPhanPhoi(string manv)
         {
             InitializeComponent();
@@ -89,10 +90,17 @@ namespace QuanLyCuaHangNoiThat
             if (NhaPhanPhoiBUS.ThemNPP(npp))
             {
                 MessageBox.Show("Thêm nhà phân phối thành công thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhà phân phối " + npp.MANPP;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhà phân phối " + npp.MANPP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -180,10 +188,16 @@ namespace QuanLyCuaHangNoiThat
             if (NhaPhanPhoiBUS.SuaNPP(npp))
             {
                 MessageBox.Show("Cập nhật thông tin nhà phân phối thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhà phân phối " + npp.MANPP;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhà phân phối " + npp.MANPP;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -197,10 +211,17 @@ namespace QuanLyCuaHangNoiThat
             {
                 NhaPhanPhoiBUS.XoaNPP(this.txtMaNPP.Text);
                 MessageBox.Show("Xóa nhà phân phối thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin nhà phân phối " + this.txtMaNPP.Text;
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSNPP();
                 ResetTabQLNPP();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin nhà phân phối " + this.txtMaNPP.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
         }
 
@@ -251,10 +272,17 @@ namespace QuanLyCuaHangNoiThat
             if (CTNhapHangBUS.ThemCTNH(ctnh))
             {
                 MessageBox.Show("Thêm chi tiết nhập hàng thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -284,10 +312,16 @@ namespace QuanLyCuaHangNoiThat
             if (CTNhapHangBUS.SuaCTNH(ctnh))
             {
                 MessageBox.Show("Cập nhật chi tiết nhập hàng thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin chi tiết nhập hàng (" + ctnh.MANPP + "," + ctnh.MASP + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
             else
             {
@@ -301,10 +335,16 @@ namespace QuanLyCuaHangNoiThat
             {
                 CTNhapHangBUS.XoaCTNH(this.txtMaNPPNhapHang.Text , this.txtMaSPNhapHang.Text);
                 MessageBox.Show("Xóa chi tiết nhập hàng thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin chi tiết nhập hàng (" + this.txtMaNPPNhapHang.Text + "," + this.txtMaSPNhapHang.Text + ")";
-                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                 LoadDataDSCTNH();
                 ResetTabQLCTNH();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin chi tiết nhập hàng (" + this.txtMaNPPNhapHang.Text + "," + this.txtMaSPNhapHang.Text + ")";
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
             }
         }
 
