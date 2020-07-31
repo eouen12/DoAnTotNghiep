@@ -259,5 +259,11 @@ namespace QuanLyCuaHangNoiThat
             frmLSCongNo lscn = new frmLSCongNo(this.dgvCongNo["MACONGNO", e.RowIndex].Value.ToString());
             lscn.ShowDialog();
         }
+
+        private void btnTKCN_Click(object sender, EventArgs e)
+        {
+            frmReportCN frm = new frmReportCN();
+            frm.ShowDialog();
+        }
     }
 }

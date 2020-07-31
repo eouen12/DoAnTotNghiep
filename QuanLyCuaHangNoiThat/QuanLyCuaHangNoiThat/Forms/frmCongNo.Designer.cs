@@ -63,6 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTKCN = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongNo)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,9 +78,9 @@
             this.groupBox1.Controls.Add(this.dgvCongNo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(612, 672);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -99,7 +100,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(151, 39);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(259, 34);
             this.txtTimKiem.TabIndex = 1;
@@ -121,7 +122,7 @@
             this.NVLAPCN,
             this.NGAYLAP});
             this.dgvCongNo.Location = new System.Drawing.Point(8, 79);
-            this.dgvCongNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCongNo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCongNo.Name = "dgvCongNo";
             this.dgvCongNo.ReadOnly = true;
             this.dgvCongNo.RowHeadersVisible = false;
@@ -209,6 +210,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTKCN);
             this.groupBox2.Controls.Add(this.lblTienConNo);
             this.groupBox2.Controls.Add(this.lblTongTien);
             this.groupBox2.Controls.Add(this.lblDiaChi);
@@ -228,9 +230,9 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(636, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(620, 672);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -298,9 +300,9 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.dateTimePickerNgayTra);
             this.groupBox3.Location = new System.Drawing.Point(36, 405);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(256, 245);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
@@ -317,7 +319,7 @@
             this.btnCapNhatHanTraNo.IconColor = System.Drawing.Color.Black;
             this.btnCapNhatHanTraNo.IconSize = 40;
             this.btnCapNhatHanTraNo.Location = new System.Drawing.Point(27, 154);
-            this.btnCapNhatHanTraNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCapNhatHanTraNo.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapNhatHanTraNo.Name = "btnCapNhatHanTraNo";
             this.btnCapNhatHanTraNo.Rotation = 0D;
             this.btnCapNhatHanTraNo.Size = new System.Drawing.Size(211, 66);
@@ -363,7 +365,7 @@
             // 
             this.txtSoTienTraHomNay.Enabled = false;
             this.txtSoTienTraHomNay.Location = new System.Drawing.Point(305, 438);
-            this.txtSoTienTraHomNay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoTienTraHomNay.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoTienTraHomNay.Name = "txtSoTienTraHomNay";
             this.txtSoTienTraHomNay.Size = new System.Drawing.Size(255, 34);
             this.txtSoTienTraHomNay.TabIndex = 17;
@@ -376,13 +378,13 @@
             this.btnXacNhanThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnXacNhanThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhanThanhToan.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnXacNhanThanhToan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btnXacNhanThanhToan.IconColor = System.Drawing.Color.White;
             this.btnXacNhanThanhToan.IconSize = 48;
             this.btnXacNhanThanhToan.Location = new System.Drawing.Point(305, 486);
-            this.btnXacNhanThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXacNhanThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
             this.btnXacNhanThanhToan.Rotation = 0D;
             this.btnXacNhanThanhToan.Size = new System.Drawing.Size(307, 82);
@@ -407,7 +409,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Location = new System.Drawing.Point(0, 278);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 2);
             this.panel1.TabIndex = 12;
@@ -468,10 +470,31 @@
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1272, 694);
             this.panel2.TabIndex = 3;
+            // 
+            // btnTKCN
+            // 
+            this.btnTKCN.FlatAppearance.BorderSize = 2;
+            this.btnTKCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTKCN.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnTKCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTKCN.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnTKCN.IconColor = System.Drawing.Color.Black;
+            this.btnTKCN.IconSize = 40;
+            this.btnTKCN.Location = new System.Drawing.Point(305, 576);
+            this.btnTKCN.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTKCN.Name = "btnTKCN";
+            this.btnTKCN.Rotation = 0D;
+            this.btnTKCN.Size = new System.Drawing.Size(307, 66);
+            this.btnTKCN.TabIndex = 26;
+            this.btnTKCN.Text = "Thống kê Công Nợ";
+            this.btnTKCN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTKCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTKCN.UseVisualStyleBackColor = true;
+            this.btnTKCN.Click += new System.EventHandler(this.btnTKCN_Click);
             // 
             // frmCongNo
             // 
@@ -480,7 +503,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1272, 694);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCongNo";
             this.Text = "frmCongNo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCongNo_FormClosing);
@@ -534,5 +557,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTRA;
         private System.Windows.Forms.DataGridViewTextBoxColumn NVLAPCN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
+        private FontAwesome.Sharp.IconButton btnTKCN;
     }
 }

@@ -62,6 +62,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -156,6 +157,18 @@
     <Compile Include="Forms\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmReportCN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportCN.Designer.cs">
+      <DependentUpon>frmReportCN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReportHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportHD.Designer.cs">
+      <DependentUpon>frmReportHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +196,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCuaHangNoiThatDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCuaHangNoiThatDataSetCN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\frmChinhSuaCTHoaDon.resx">
@@ -224,6 +247,12 @@
     <EmbeddedResource Include="Forms\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportCN.resx">
+      <DependentUpon>frmReportCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportHD.resx">
+      <DependentUpon>frmReportHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +262,7 @@
     <EmbeddedResource Include="Forms\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -243,8 +273,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report.rdlc" />
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportCN.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -265,6 +295,28 @@
     </None>
     <None Include="QuanLyCuaHangNoiThatDataSet.xss">
       <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSet11.xsc">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyCuaHangNoiThatDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSet11.xss">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSetCN.xsc">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSetCN.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyCuaHangNoiThatDataSetCN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyCuaHangNoiThatDataSetCN.xss">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

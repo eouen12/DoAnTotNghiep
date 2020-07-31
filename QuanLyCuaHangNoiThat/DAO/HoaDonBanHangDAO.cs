@@ -14,7 +14,10 @@ namespace DAO
         {
             return db.HOADONBANHANG.Where(p => p.TRANGTHAI == true).ToList();
         }
-
+        public static List<HOADONBANHANG> LayDanhSachHoaDonTN(string ngaylap)
+        {
+            return db.HOADONBANHANG.Where(p => p.TRANGTHAI == true ).ToList();
+        }
         public static List<HOADONBANHANG> LayThongTinCuaHD(string mahd)
         {
             return db.HOADONBANHANG.Where(p => p.TRANGTHAI == true && p.MAHD == mahd).ToList();

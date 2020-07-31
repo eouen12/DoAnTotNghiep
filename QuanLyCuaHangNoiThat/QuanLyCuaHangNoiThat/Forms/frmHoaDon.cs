@@ -198,5 +198,11 @@ namespace QuanLyCuaHangNoiThat
             lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD();
             lstDSSP = SanPhamBUS.LayDanhSachSP();
         }
+
+        private void btnTKDT_Click(object sender, EventArgs e)
+        {
+            frmReportHD frm = new frmReportHD();
+            frm.ShowDialog();
+        }
     }
 }

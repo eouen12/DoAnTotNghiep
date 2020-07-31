@@ -238,7 +238,7 @@
                                   <Value>=Fields!NGAYLAP.Value</Value>
                                   <Style>
                                     <FontSize>13pt</FontSize>
-                                    <Format>g</Format>
+                                    <Format>dd/MM/yyyy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -305,7 +305,7 @@
                                 <Width>2.754cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.5cm</Width>
+                                <Width>2.754cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -328,7 +328,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -360,7 +362,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -392,7 +396,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -424,7 +430,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox25</rd:DefaultName>
@@ -456,7 +464,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -492,7 +502,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>MASP</rd:DefaultName>
@@ -523,7 +535,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>TENSP</rd:DefaultName>
@@ -551,10 +565,13 @@
                                                 <Value>=Fields!GIABAN.Value</Value>
                                                 <Style>
                                                   <FontSize>12pt</FontSize>
+                                                  <Format>#,0'₫';(#,0'₫')</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>GIABAN</rd:DefaultName>
@@ -566,6 +583,7 @@
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
+                                          <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
                                         </Style>
                                       </Textbox>
                                     </CellContents>
@@ -585,7 +603,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>SOLUONG</rd:DefaultName>
@@ -613,10 +633,13 @@
                                                 <Value>=Fields!DONGIA.Value</Value>
                                                 <Style>
                                                   <FontSize>12pt</FontSize>
+                                                  <Format>#,0'₫';(#,0'₫')</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>DONGIA</rd:DefaultName>
@@ -628,6 +651,7 @@
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
                                           <PaddingBottom>2pt</PaddingBottom>
+                                          <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
                                         </Style>
                                       </Textbox>
                                     </CellContents>
@@ -659,7 +683,7 @@
                           <Top>5.0453cm</Top>
                           <Left>3.61657cm</Left>
                           <Height>1.43283cm</Height>
-                          <Width>14.65372cm</Width>
+                          <Width>14.90771cm</Width>
                           <ZIndex>9</ZIndex>
                           <Style>
                             <Border>
