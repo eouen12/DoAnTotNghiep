@@ -95,7 +95,6 @@ C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHang
 C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmTrangChu.resources
 C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.FrmDoiDonVi.resources
 C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmLSCongNo.resources
-C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.frmReport.resources
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\GUI.csprojAssemblyReference.cache
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmChinhSuaCTHoaDon.resources
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmChiTietSanPham.resources
@@ -198,3 +197,7 @@ C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\ob
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.exe
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.pdb
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmReportCN.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmLSHeThong.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmReport.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmReportCN.resources
+C:\Users\trant\OneDrive\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\obj\Debug\QuanLyCuaHangNoiThat.Forms.frmReportHD.resources

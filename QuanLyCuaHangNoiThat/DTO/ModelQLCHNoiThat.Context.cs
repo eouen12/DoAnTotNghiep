@@ -30,6 +30,8 @@ namespace DTO
         public virtual DbSet<CONGNO> CONGNO { get; set; }
         public virtual DbSet<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
         public virtual DbSet<CTNHAPHANGTUNPP> CTNHAPHANGTUNPP { get; set; }
+        public virtual DbSet<DOIDONVINEN> DOIDONVINEN { get; set; }
+        public virtual DbSet<DOIDONVITUONG> DOIDONVITUONG { get; set; }
         public virtual DbSet<HOADONBANHANG> HOADONBANHANG { get; set; }
         public virtual DbSet<HOADONNHAPHANG> HOADONNHAPHANG { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANG { get; set; }
@@ -40,7 +42,5 @@ namespace DTO
         public virtual DbSet<NHAPHANPHOI> NHAPHANPHOI { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHAN { get; set; }
         public virtual DbSet<SANPHAM> SANPHAM { get; set; }
-        public virtual DbSet<DOIDONVINEN> DOIDONVINEN { get; set; }
-        public virtual DbSet<DOIDONVITUONG> DOIDONVITUONG { get; set; }
     }
 }

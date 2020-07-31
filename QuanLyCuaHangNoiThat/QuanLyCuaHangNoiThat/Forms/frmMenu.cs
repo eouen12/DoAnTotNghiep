@@ -89,6 +89,11 @@ namespace QuanLyCuaHangNoiThat
             MofrmDesktop(new FrmDoiDonVi(nhanvien.MANV), sender, e);
         }
 
+        private void btnfrmLSHT_Click(object sender, EventArgs e)
+        {
+            MofrmDesktop(new frmLSHeThong(), sender, e);
+        }
+
         private void btnMenuDangXuat_Click(object sender, EventArgs e)
         {
             IconButtonMenuClick(sender, e);
@@ -210,9 +215,6 @@ namespace QuanLyCuaHangNoiThat
 
         }
 
-        private void btnfrmLSHT_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

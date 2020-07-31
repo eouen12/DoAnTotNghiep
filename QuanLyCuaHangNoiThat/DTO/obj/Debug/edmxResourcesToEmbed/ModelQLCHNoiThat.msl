@@ -60,6 +60,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DOIDONVINEN">
+      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.DOIDONVINEN">
+        <MappingFragment StoreEntitySet="DOIDONVINEN">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="SOMETNEN" ColumnName="SOMETNEN" />
+          <ScalarProperty Name="TENGACH" ColumnName="TENGACH" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOIDONVITUONG">
+      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.DOIDONVITUONG">
+        <MappingFragment StoreEntitySet="DOIDONVITUONG">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="SOMETTOI" ColumnName="SOMETTOI" />
+          <ScalarProperty Name="TENGACHTUONG" ColumnName="TENGACHTUONG" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="HOADONBANHANG">
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.HOADONBANHANG">
         <MappingFragment StoreEntitySet="HOADONBANHANG">
@@ -175,26 +195,6 @@
           <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
           <ScalarProperty Name="TENSP" ColumnName="TENSP" />
           <ScalarProperty Name="MASP" ColumnName="MASP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DOIDONVINEN">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.DOIDONVINEN">
-        <MappingFragment StoreEntitySet="DOIDONVINEN">
-          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="SOMETNEN" ColumnName="SOMETNEN" />
-          <ScalarProperty Name="TENGACH" ColumnName="TENGACH" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DOIDONVITUONG">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.DOIDONVITUONG">
-        <MappingFragment StoreEntitySet="DOIDONVITUONG">
-          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="SOMETTOI" ColumnName="SOMETTOI" />
-          <ScalarProperty Name="TENGACHTUONG" ColumnName="TENGACHTUONG" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
