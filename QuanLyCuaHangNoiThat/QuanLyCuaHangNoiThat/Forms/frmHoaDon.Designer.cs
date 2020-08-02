@@ -48,7 +48,6 @@
             this.NVLAPHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnTKDT = new FontAwesome.Sharp.IconButton();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnXuatHD = new FontAwesome.Sharp.IconButton();
             this.lblNgayGiaoHang = new System.Windows.Forms.Label();
@@ -58,10 +57,6 @@
             this.lblTenKH = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.dgvDataChiTietHD = new System.Windows.Forms.DataGridView();
-            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,6 +65,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHD)).BeginInit();
@@ -292,7 +292,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnTKDT);
             this.groupBox2.Controls.Add(this.btnSuaHD);
             this.groupBox2.Controls.Add(this.btnXuatHD);
             this.groupBox2.Controls.Add(this.lblNgayGiaoHang);
@@ -318,42 +317,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn";
             // 
-            // btnTKDT
-            // 
-            this.btnTKDT.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTKDT.FlatAppearance.BorderSize = 2;
-            this.btnTKDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTKDT.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnTKDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTKDT.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnTKDT.IconColor = System.Drawing.Color.Black;
-            this.btnTKDT.IconSize = 40;
-            this.btnTKDT.Location = new System.Drawing.Point(157, 628);
-            this.btnTKDT.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTKDT.Name = "btnTKDT";
-            this.btnTKDT.Rotation = 0D;
-            this.btnTKDT.Size = new System.Drawing.Size(307, 66);
-            this.btnTKDT.TabIndex = 27;
-            this.btnTKDT.Text = "Thống kê doanh thu";
-            this.btnTKDT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTKDT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTKDT.UseVisualStyleBackColor = false;
-            this.btnTKDT.Click += new System.EventHandler(this.btnTKDT_Click);
-            // 
             // btnSuaHD
             // 
             this.btnSuaHD.BackColor = System.Drawing.Color.White;
+            this.btnSuaHD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSuaHD.FlatAppearance.BorderSize = 2;
             this.btnSuaHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaHD.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSuaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaHD.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnSuaHD.IconColor = System.Drawing.Color.Black;
             this.btnSuaHD.IconSize = 40;
-            this.btnSuaHD.Location = new System.Drawing.Point(7, 550);
+            this.btnSuaHD.Location = new System.Drawing.Point(27, 562);
             this.btnSuaHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuaHD.Name = "btnSuaHD";
             this.btnSuaHD.Rotation = 0D;
-            this.btnSuaHD.Size = new System.Drawing.Size(313, 72);
+            this.btnSuaHD.Size = new System.Drawing.Size(293, 89);
             this.btnSuaHD.TabIndex = 14;
             this.btnSuaHD.Text = "Chỉnh sửa thông tin";
             this.btnSuaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -364,17 +343,19 @@
             // btnXuatHD
             // 
             this.btnXuatHD.BackColor = System.Drawing.Color.White;
+            this.btnXuatHD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnXuatHD.FlatAppearance.BorderSize = 2;
             this.btnXuatHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatHD.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnXuatHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatHD.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.btnXuatHD.IconColor = System.Drawing.Color.Black;
             this.btnXuatHD.IconSize = 40;
-            this.btnXuatHD.Location = new System.Drawing.Point(326, 550);
+            this.btnXuatHD.Location = new System.Drawing.Point(363, 562);
             this.btnXuatHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuatHD.Name = "btnXuatHD";
             this.btnXuatHD.Rotation = 0D;
-            this.btnXuatHD.Size = new System.Drawing.Size(276, 72);
+            this.btnXuatHD.Size = new System.Drawing.Size(223, 89);
             this.btnXuatHD.TabIndex = 13;
             this.btnXuatHD.Text = "Xuất hóa đơn";
             this.btnXuatHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -450,6 +431,7 @@
             this.MASP,
             this.TENSP,
             this.SOLUONG,
+            this.DVT,
             this.DONGIA});
             this.dgvDataChiTietHD.Location = new System.Drawing.Point(27, 249);
             this.dgvDataChiTietHD.Margin = new System.Windows.Forms.Padding(4);
@@ -460,42 +442,6 @@
             this.dgvDataChiTietHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDataChiTietHD.Size = new System.Drawing.Size(559, 185);
             this.dgvDataChiTietHD.TabIndex = 6;
-            // 
-            // MASP
-            // 
-            this.MASP.DataPropertyName = "MASP";
-            this.MASP.HeaderText = "Mã sản phẩm";
-            this.MASP.MinimumWidth = 6;
-            this.MASP.Name = "MASP";
-            this.MASP.ReadOnly = true;
-            this.MASP.Width = 197;
-            // 
-            // TENSP
-            // 
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.MinimumWidth = 6;
-            this.TENSP.Name = "TENSP";
-            this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 207;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.ReadOnly = true;
-            this.SOLUONG.Width = 144;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Giá bán (VND)";
-            this.DONGIA.MinimumWidth = 6;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.ReadOnly = true;
-            this.DONGIA.Width = 212;
             // 
             // label9
             // 
@@ -578,6 +524,51 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.MinimumWidth = 6;
+            this.MASP.Name = "MASP";
+            this.MASP.ReadOnly = true;
+            this.MASP.Width = 197;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.MinimumWidth = 6;
+            this.TENSP.Name = "TENSP";
+            this.TENSP.ReadOnly = true;
+            this.TENSP.Width = 207;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            this.SOLUONG.Width = 144;
+            // 
+            // DVT
+            // 
+            this.DVT.DataPropertyName = "DVT";
+            this.DVT.HeaderText = "DVT";
+            this.DVT.MinimumWidth = 6;
+            this.DVT.Name = "DVT";
+            this.DVT.ReadOnly = true;
+            this.DVT.Width = 101;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá (VND)";
+            this.DONGIA.MinimumWidth = 6;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            this.DONGIA.Width = 211;
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -641,7 +632,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
-        private FontAwesome.Sharp.IconButton btnTKDT;
     }
 }

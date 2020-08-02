@@ -39,6 +39,7 @@ namespace DAO
                 var kq = db.CTHOADONBANHANG.Find(ct.MAHD,ct.MASP);
                 kq.SOLUONG = ct.SOLUONG;
                 kq.DONGIA = ct.DONGIA;
+                kq.DVT = ct.DVT;
                 kq.TRANGTHAI = true;
                 db.SaveChanges();
                 return true;

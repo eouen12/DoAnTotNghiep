@@ -25,7 +25,7 @@ namespace DAO
         public static bool KiemTraMaSPTonTai(string masp)
         {
             var kq = db.SANPHAM.Find(masp);
-            if (kq != null && kq.TRANGTHAI == true)
+            if (kq != null)
                 return true;
             return false;
         }
@@ -52,6 +52,7 @@ namespace DAO
                 var s = db.SANPHAM.Find(sp.MASP);
                 s.TENSP = sp.TENSP;
                 s.GIABAN = sp.GIABAN;
+                s.DVT = sp.DVT;
                 s.SL_TON = sp.SL_TON;
                 s.MALOAI = sp.MALOAI;
                 s.MANPP = sp.MANPP;

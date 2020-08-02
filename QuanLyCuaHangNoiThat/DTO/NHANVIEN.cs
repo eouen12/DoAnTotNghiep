@@ -19,7 +19,6 @@ namespace DTO
         {
             this.CONGNO = new HashSet<CONGNO>();
             this.HOADONBANHANG = new HashSet<HOADONBANHANG>();
-            this.HOADONNHAPHANG = new HashSet<HOADONNHAPHANG>();
         }
     
         public string MANV { get; set; }
@@ -38,8 +37,6 @@ namespace DTO
         public virtual ICollection<CONGNO> CONGNO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADONBANHANG> HOADONBANHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADONNHAPHANG> HOADONNHAPHANG { get; set; }
         public virtual QUYENHAN QUYENHAN { get; set; }
     }
 }

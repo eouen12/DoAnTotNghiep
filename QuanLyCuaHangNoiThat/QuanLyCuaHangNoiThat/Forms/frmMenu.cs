@@ -215,6 +215,16 @@ namespace QuanLyCuaHangNoiThat
 
         }
 
+        private void btnTKCN_Click(object sender, EventArgs e)
+        {
+            frmReportCN frm = new frmReportCN();
+            frm.ShowDialog();
+        }
 
+        private void btnTKDT_Click(object sender, EventArgs e)
+        {
+            frmReportDT frm = new frmReportDT();
+            frm.ShowDialog();
+        }
     }
 }

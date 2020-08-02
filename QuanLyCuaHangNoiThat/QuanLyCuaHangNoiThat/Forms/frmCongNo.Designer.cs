@@ -32,14 +32,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvCongNo = new System.Windows.Forms.DataGridView();
-            this.MACONGNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKHCongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKHCongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONGTIENCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIENCONNOCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVLAPCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblTienConNo = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
@@ -63,7 +55,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTKCN = new FontAwesome.Sharp.IconButton();
+            this.MACONGNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKHCongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKHCongNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONGTIENCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENCONNOCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVLAPCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCongNo)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,7 +81,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(612, 672);
+            this.groupBox1.Size = new System.Drawing.Size(612, 650);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách công nợ khách hàng";
@@ -114,6 +114,7 @@
             this.dgvCongNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCongNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MACONGNO,
+            this.MAHD,
             this.MaKHCongNo,
             this.TenKHCongNo,
             this.TONGTIENCN,
@@ -128,89 +129,13 @@
             this.dgvCongNo.RowHeadersVisible = false;
             this.dgvCongNo.RowHeadersWidth = 51;
             this.dgvCongNo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCongNo.Size = new System.Drawing.Size(596, 571);
+            this.dgvCongNo.Size = new System.Drawing.Size(596, 563);
             this.dgvCongNo.TabIndex = 0;
             this.dgvCongNo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCongNo_CellClick);
             this.dgvCongNo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCongNo_CellMouseDoubleClick);
             // 
-            // MACONGNO
-            // 
-            this.MACONGNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MACONGNO.DataPropertyName = "MACONGNO";
-            this.MACONGNO.HeaderText = "Mã Công Nợ";
-            this.MACONGNO.MinimumWidth = 6;
-            this.MACONGNO.Name = "MACONGNO";
-            this.MACONGNO.ReadOnly = true;
-            this.MACONGNO.Width = 171;
-            // 
-            // MaKHCongNo
-            // 
-            this.MaKHCongNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.MaKHCongNo.DataPropertyName = "MAKH";
-            this.MaKHCongNo.HeaderText = "Mã KH";
-            this.MaKHCongNo.MinimumWidth = 6;
-            this.MaKHCongNo.Name = "MaKHCongNo";
-            this.MaKHCongNo.ReadOnly = true;
-            this.MaKHCongNo.Width = 78;
-            // 
-            // TenKHCongNo
-            // 
-            this.TenKHCongNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TenKHCongNo.DataPropertyName = "TENKH";
-            this.TenKHCongNo.HeaderText = "Tên KH";
-            this.TenKHCongNo.MinimumWidth = 6;
-            this.TenKHCongNo.Name = "TenKHCongNo";
-            this.TenKHCongNo.ReadOnly = true;
-            this.TenKHCongNo.Width = 88;
-            // 
-            // TONGTIENCN
-            // 
-            this.TONGTIENCN.DataPropertyName = "TONGTIEN";
-            this.TONGTIENCN.HeaderText = "Tổng tiền (VND)";
-            this.TONGTIENCN.MinimumWidth = 6;
-            this.TONGTIENCN.Name = "TONGTIENCN";
-            this.TONGTIENCN.ReadOnly = true;
-            this.TONGTIENCN.Width = 210;
-            // 
-            // TIENCONNOCN
-            // 
-            this.TIENCONNOCN.DataPropertyName = "TIENCONNO";
-            this.TIENCONNOCN.HeaderText = "Tiền còn nợ (VND)";
-            this.TIENCONNOCN.MinimumWidth = 6;
-            this.TIENCONNOCN.Name = "TIENCONNOCN";
-            this.TIENCONNOCN.ReadOnly = true;
-            this.TIENCONNOCN.Width = 171;
-            // 
-            // NGAYTRA
-            // 
-            this.NGAYTRA.DataPropertyName = "NGAYTRA";
-            this.NGAYTRA.HeaderText = "Ngày Trả";
-            this.NGAYTRA.MinimumWidth = 6;
-            this.NGAYTRA.Name = "NGAYTRA";
-            this.NGAYTRA.ReadOnly = true;
-            this.NGAYTRA.Width = 136;
-            // 
-            // NVLAPCN
-            // 
-            this.NVLAPCN.DataPropertyName = "NV_LAPCN";
-            this.NVLAPCN.HeaderText = "Nhân viên lập công nợ";
-            this.NVLAPCN.MinimumWidth = 6;
-            this.NVLAPCN.Name = "NVLAPCN";
-            this.NVLAPCN.ReadOnly = true;
-            this.NVLAPCN.Width = 190;
-            // 
-            // NGAYLAP
-            // 
-            this.NGAYLAP.DataPropertyName = "NGAYLAP";
-            this.NGAYLAP.HeaderText = "Ngày lập công nợ";
-            this.NGAYLAP.MinimumWidth = 6;
-            this.NGAYLAP.Name = "NGAYLAP";
-            this.NGAYLAP.ReadOnly = true;
-            this.NGAYLAP.Width = 197;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnTKCN);
             this.groupBox2.Controls.Add(this.lblTienConNo);
             this.groupBox2.Controls.Add(this.lblTongTien);
             this.groupBox2.Controls.Add(this.lblDiaChi);
@@ -233,7 +158,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(620, 672);
+            this.groupBox2.Size = new System.Drawing.Size(620, 650);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết công nợ";
@@ -303,7 +228,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(256, 245);
+            this.groupBox3.Size = new System.Drawing.Size(256, 212);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gia hạn ngày trả nợ";
@@ -318,7 +243,7 @@
             this.btnCapNhatHanTraNo.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnCapNhatHanTraNo.IconColor = System.Drawing.Color.Black;
             this.btnCapNhatHanTraNo.IconSize = 40;
-            this.btnCapNhatHanTraNo.Location = new System.Drawing.Point(27, 154);
+            this.btnCapNhatHanTraNo.Location = new System.Drawing.Point(25, 122);
             this.btnCapNhatHanTraNo.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapNhatHanTraNo.Name = "btnCapNhatHanTraNo";
             this.btnCapNhatHanTraNo.Rotation = 0D;
@@ -333,7 +258,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 70);
+            this.label7.Location = new System.Drawing.Point(17, 38);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 29);
@@ -345,7 +270,7 @@
             this.dateTimePickerNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerNgayTra.Enabled = false;
             this.dateTimePickerNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgayTra.Location = new System.Drawing.Point(24, 103);
+            this.dateTimePickerNgayTra.Location = new System.Drawing.Point(22, 71);
             this.dateTimePickerNgayTra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerNgayTra.Name = "dateTimePickerNgayTra";
             this.dateTimePickerNgayTra.Size = new System.Drawing.Size(213, 34);
@@ -383,7 +308,7 @@
             this.btnXacNhanThanhToan.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btnXacNhanThanhToan.IconColor = System.Drawing.Color.White;
             this.btnXacNhanThanhToan.IconSize = 48;
-            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(305, 486);
+            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(300, 511);
             this.btnXacNhanThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
             this.btnXacNhanThanhToan.Rotation = 0D;
@@ -472,36 +397,99 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1272, 694);
+            this.panel2.Size = new System.Drawing.Size(1272, 672);
             this.panel2.TabIndex = 3;
             // 
-            // btnTKCN
+            // MACONGNO
             // 
-            this.btnTKCN.FlatAppearance.BorderSize = 2;
-            this.btnTKCN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTKCN.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnTKCN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTKCN.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.btnTKCN.IconColor = System.Drawing.Color.Black;
-            this.btnTKCN.IconSize = 40;
-            this.btnTKCN.Location = new System.Drawing.Point(305, 576);
-            this.btnTKCN.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTKCN.Name = "btnTKCN";
-            this.btnTKCN.Rotation = 0D;
-            this.btnTKCN.Size = new System.Drawing.Size(307, 66);
-            this.btnTKCN.TabIndex = 26;
-            this.btnTKCN.Text = "Thống kê Công Nợ";
-            this.btnTKCN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTKCN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTKCN.UseVisualStyleBackColor = true;
-            this.btnTKCN.Click += new System.EventHandler(this.btnTKCN_Click);
+            this.MACONGNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MACONGNO.DataPropertyName = "MACONGNO";
+            this.MACONGNO.HeaderText = "Mã Công Nợ";
+            this.MACONGNO.MinimumWidth = 6;
+            this.MACONGNO.Name = "MACONGNO";
+            this.MACONGNO.ReadOnly = true;
+            this.MACONGNO.Width = 187;
+            // 
+            // MAHD
+            // 
+            this.MAHD.DataPropertyName = "MAHD";
+            this.MAHD.HeaderText = "Mã hóa đơn";
+            this.MAHD.MinimumWidth = 6;
+            this.MAHD.Name = "MAHD";
+            this.MAHD.ReadOnly = true;
+            this.MAHD.Width = 178;
+            // 
+            // MaKHCongNo
+            // 
+            this.MaKHCongNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MaKHCongNo.DataPropertyName = "MAKH";
+            this.MaKHCongNo.HeaderText = "Mã KH";
+            this.MaKHCongNo.MinimumWidth = 6;
+            this.MaKHCongNo.Name = "MaKHCongNo";
+            this.MaKHCongNo.ReadOnly = true;
+            this.MaKHCongNo.Width = 119;
+            // 
+            // TenKHCongNo
+            // 
+            this.TenKHCongNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TenKHCongNo.DataPropertyName = "TENKH";
+            this.TenKHCongNo.HeaderText = "Tên KH";
+            this.TenKHCongNo.MinimumWidth = 6;
+            this.TenKHCongNo.Name = "TenKHCongNo";
+            this.TenKHCongNo.ReadOnly = true;
+            this.TenKHCongNo.Width = 130;
+            // 
+            // TONGTIENCN
+            // 
+            this.TONGTIENCN.DataPropertyName = "TONGTIEN";
+            this.TONGTIENCN.HeaderText = "Tổng tiền (VND)";
+            this.TONGTIENCN.MinimumWidth = 6;
+            this.TONGTIENCN.Name = "TONGTIENCN";
+            this.TONGTIENCN.ReadOnly = true;
+            this.TONGTIENCN.Width = 210;
+            // 
+            // TIENCONNOCN
+            // 
+            this.TIENCONNOCN.DataPropertyName = "TIENCONNO";
+            this.TIENCONNOCN.HeaderText = "Tiền còn nợ (VND)";
+            this.TIENCONNOCN.MinimumWidth = 6;
+            this.TIENCONNOCN.Name = "TIENCONNOCN";
+            this.TIENCONNOCN.ReadOnly = true;
+            this.TIENCONNOCN.Width = 171;
+            // 
+            // NGAYTRA
+            // 
+            this.NGAYTRA.DataPropertyName = "NGAYTRA";
+            this.NGAYTRA.HeaderText = "Ngày Trả";
+            this.NGAYTRA.MinimumWidth = 6;
+            this.NGAYTRA.Name = "NGAYTRA";
+            this.NGAYTRA.ReadOnly = true;
+            this.NGAYTRA.Width = 136;
+            // 
+            // NVLAPCN
+            // 
+            this.NVLAPCN.DataPropertyName = "NV_LAPCN";
+            this.NVLAPCN.HeaderText = "Nhân viên lập công nợ";
+            this.NVLAPCN.MinimumWidth = 6;
+            this.NVLAPCN.Name = "NVLAPCN";
+            this.NVLAPCN.ReadOnly = true;
+            this.NVLAPCN.Width = 190;
+            // 
+            // NGAYLAP
+            // 
+            this.NGAYLAP.DataPropertyName = "NGAYLAP";
+            this.NGAYLAP.HeaderText = "Ngày lập công nợ";
+            this.NGAYLAP.MinimumWidth = 6;
+            this.NGAYLAP.Name = "NGAYLAP";
+            this.NGAYLAP.ReadOnly = true;
+            this.NGAYLAP.Width = 197;
             // 
             // frmCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1272, 694);
+            this.ClientSize = new System.Drawing.Size(1272, 672);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCongNo";
@@ -550,6 +538,7 @@
         private System.Windows.Forms.Label lblSDT;
         private System.Windows.Forms.Label lblTenkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MACONGNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKHCongNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKHCongNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIENCN;
@@ -557,6 +546,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTRA;
         private System.Windows.Forms.DataGridViewTextBoxColumn NVLAPCN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
-        private FontAwesome.Sharp.IconButton btnTKCN;
     }
 }

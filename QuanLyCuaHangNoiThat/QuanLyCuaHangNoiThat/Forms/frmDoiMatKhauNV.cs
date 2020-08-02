@@ -25,6 +25,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void frmDoiMatKhauNV_Load(object sender, EventArgs e)
         {
+            this.Text = "Thông tin nhân viên " + nv.MANV;
             this.lblMaNV.Text = nv.MANV;
             this.lblTenNV.Text = nv.TENNV;
             this.lblCMNDNV.Text = nv.CMND.ToString();

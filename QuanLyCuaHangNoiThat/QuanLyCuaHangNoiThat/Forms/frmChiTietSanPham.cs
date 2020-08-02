@@ -35,6 +35,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             this.lblGiaban.Text = Convert.ToInt32(sp.GIABAN).ToString("#,##0") + " VND";
             this.lblSoluong.Text = sp.SL_TON.ToString();
             this.lblMaloai.Text = sp.MALOAI;
+            this.lblDVT.Text = sp.DVT;
             this.lblTenloai.Text = sp.LOAISANPHAM.TENLOAI;
             this.lblMaNPP.Text = sp.MANPP;
             this.lblTenNPP.Text = sp.NHAPHANPHOI.TENNPP;

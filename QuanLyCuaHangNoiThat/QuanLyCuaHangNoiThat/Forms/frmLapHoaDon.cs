@@ -98,6 +98,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                              sp.TENSP,
                              sp.SL_TON,
                              sp.GIABAN,
+                             sp.DVT,
                              sp.LOAISANPHAM.TENLOAI,
                              sp.NHAPHANPHOI.TENNPP
                          };
@@ -169,6 +170,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                 {
                     MASP = this.dgvDSSanPham.CurrentRow.Cells["MASP"].Value.ToString(),
                     SOLUONG = Convert.ToInt32(this.txtSoLuong.Text),
+                    DVT = this.dgvDSSanPham.CurrentRow.Cells["DVT"].Value.ToString(),
                     DONGIA = Convert.ToInt32(this.dgvDSSanPham.CurrentRow.Cells["GIABAN"].Value) * Convert.ToInt32(this.txtSoLuong.Text),
                     TRANGTHAI = true,
                 });
@@ -196,6 +198,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                 {
                     MASP = this.dgvDSSanPham.CurrentRow.Cells["MASP"].Value.ToString(),
                     SOLUONG = Convert.ToInt32(this.txtSoLuong.Text),
+                    DVT = this.dgvDSSanPham.CurrentRow.Cells["DVT"].Value.ToString(),
                     DONGIA = Convert.ToInt32(this.dgvDSSanPham.CurrentRow.Cells["GIABAN"].Value) * Convert.ToInt32(this.txtSoLuong.Text),
                     TRANGTHAI = true,
                 });

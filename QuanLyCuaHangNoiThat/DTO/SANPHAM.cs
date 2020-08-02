@@ -18,14 +18,15 @@ namespace DTO
         public SANPHAM()
         {
             this.ANHMINHHOASP = new HashSet<ANHMINHHOASP>();
-            this.CHITIETNHAPHANG = new HashSet<CHITIETNHAPHANG>();
             this.CTHOADONBANHANG = new HashSet<CTHOADONBANHANG>();
+            this.CHITIETNHAPHANG = new HashSet<CHITIETNHAPHANG>();
         }
     
         public string MASP { get; set; }
         public string TENSP { get; set; }
         public Nullable<int> GIABAN { get; set; }
         public Nullable<int> SL_TON { get; set; }
+        public string DVT { get; set; }
         public string MANPP { get; set; }
         public string MALOAI { get; set; }
         public bool TRANGTHAI { get; set; }
@@ -33,9 +34,9 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ANHMINHHOASP> ANHMINHHOASP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADONBANHANG> CTHOADONBANHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETNHAPHANG> CHITIETNHAPHANG { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM { get; set; }
         public virtual NHAPHANPHOI NHAPHANPHOI { get; set; }
     }

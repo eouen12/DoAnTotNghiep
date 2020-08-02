@@ -56,6 +56,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                          cn.TIENCONNO,
                          cn.NGAYTRA,
                      };
+            this.label1.Text = "Danh sách công nợ cần thu trong tháng " + dt.Date.Month;
             this.dgvDSCongNo.DataSource = kq.ToList();
             this.dgvDSCongNo.AutoGenerateColumns = false;
             FormatDataGridView();

@@ -81,7 +81,7 @@ namespace QuanLyCuaHangNoiThat
 
                 cn = lstCongNo.Where(p => p.MACONGNO == this.dgvCongNo.CurrentRow.Cells["MACONGNO"].Value.ToString()).FirstOrDefault();
 
-                KHACHHANG kh = KhachHangBUS.LayThongTin(this.dgvCongNo["MAKHCongNo", e.RowIndex].Value.ToString());
+                KHACHHANG kh = KhachHangBUS.LayThongTin(this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString());
                 this.lblCMND.Text = kh.CMND;
                 this.lblTenkh.Text = kh.TENKH;
                 this.lblDiaChi.Text = kh.DIACHI;
@@ -273,12 +273,6 @@ namespace QuanLyCuaHangNoiThat
         {
             frmLSCongNo lscn = new frmLSCongNo(this.dgvCongNo["MACONGNO", e.RowIndex].Value.ToString());
             lscn.ShowDialog();
-        }
-
-        private void btnTKCN_Click(object sender, EventArgs e)
-        {
-            frmReportCN frm = new frmReportCN();
-            frm.ShowDialog();
         }
     }
 }

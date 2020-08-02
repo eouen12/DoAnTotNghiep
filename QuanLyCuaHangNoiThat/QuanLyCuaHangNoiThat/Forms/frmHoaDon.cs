@@ -79,12 +79,12 @@ namespace QuanLyCuaHangNoiThat
 
         private void dgvDanhSachHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.lblMaHD.Text = this.dgvDanhSachHD["MAHD", e.RowIndex].Value.ToString();
-            this.lblTenKH.Text = this.dgvDanhSachHD["TENKH", e.RowIndex].Value.ToString();
-            this.lblTenNhanVien.Text = this.dgvDanhSachHD["NVLAPHD", e.RowIndex].Value.ToString();
-            this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYLAP", e.RowIndex].Value).ToString("dd/MM/yyyy");
-            this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD["TONGTIEN", e.RowIndex].Value).ToString("#,##0") + " VND";
-            this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD["NGAYGIAO", e.RowIndex].Value).ToString("dd/MM/yyyy");
+            this.lblMaHD.Text = this.dgvDanhSachHD.CurrentRow.Cells["MAHD"].Value.ToString();
+            this.lblTenKH.Text = this.dgvDanhSachHD.CurrentRow.Cells["TENKH"].Value.ToString();
+            this.lblTenNhanVien.Text = this.dgvDanhSachHD.CurrentRow.Cells["NVLAPHD"].Value.ToString();
+            this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYLAP"].Value).ToString("dd/MM/yyyy");
+            this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD.CurrentRow.Cells["TONGTIEN"].Value).ToString("#,##0") + " VND";
+            this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYGIAO"].Value).ToString("dd/MM/yyyy");
             LoadDSCTHD(this.lblMaHD.Text);
             hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
         }
@@ -161,6 +161,7 @@ namespace QuanLyCuaHangNoiThat
                      {
                          ct.MASP,
                          sp.TENSP,
+                         ct.DVT,
                          ct.SOLUONG,
                          ct.DONGIA,
                      };
@@ -197,12 +198,6 @@ namespace QuanLyCuaHangNoiThat
             lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
             lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD();
             lstDSSP = SanPhamBUS.LayDanhSachSP();
-        }
-
-        private void btnTKDT_Click(object sender, EventArgs e)
-        {
-            frmReportHD frm = new frmReportHD();
-            frm.ShowDialog();
         }
     }
 }

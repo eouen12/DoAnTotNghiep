@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMacn = new System.Windows.Forms.Label();
             this.dgvLSCongNo = new System.Windows.Forms.DataGridView();
             this.Macongno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMacn = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLSCongNo)).BeginInit();
             this.SuspendLayout();
@@ -52,24 +52,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi Tiết Trả Nợ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 29);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mã công nợ :";
-            // 
-            // lblMacn
-            // 
-            this.lblMacn.AutoSize = true;
-            this.lblMacn.Location = new System.Drawing.Point(173, 53);
-            this.lblMacn.Name = "lblMacn";
-            this.lblMacn.Size = new System.Drawing.Size(148, 29);
-            this.lblMacn.TabIndex = 0;
-            this.lblMacn.Text = "Mã công nợ";
             // 
             // dgvLSCongNo
             // 
@@ -118,13 +100,33 @@
             this.NgayTra.Name = "NgayTra";
             this.NgayTra.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 29);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Mã công nợ :";
+            // 
+            // lblMacn
+            // 
+            this.lblMacn.AutoSize = true;
+            this.lblMacn.Location = new System.Drawing.Point(173, 53);
+            this.lblMacn.Name = "lblMacn";
+            this.lblMacn.Size = new System.Drawing.Size(148, 29);
+            this.lblMacn.TabIndex = 0;
+            this.lblMacn.Text = "Mã công nợ";
+            // 
             // frmLSCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frmLSCongNo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLSCongNo";
             this.Load += new System.EventHandler(this.frmLSCongNo_Load_1);
             this.groupBox1.ResumeLayout(false);

@@ -32,16 +32,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btndoi1 = new System.Windows.Forms.Button();
             this.txtMet = new System.Windows.Forms.TextBox();
             this.txtNhapMetVuong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLamMoiDV = new FontAwesome.Sharp.IconButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txtKQ1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLamMoiDV = new FontAwesome.Sharp.IconButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMetToi = new System.Windows.Forms.TextBox();
             this.btndoi2 = new System.Windows.Forms.Button();
@@ -52,8 +55,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtKQ2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,6 +104,15 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gạch nền";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(560, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 29);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "m²";
             // 
             // label6
             // 
@@ -166,45 +176,6 @@
             this.panel1.Size = new System.Drawing.Size(1312, 681);
             this.panel1.TabIndex = 4;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1073, 415);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 29);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Kết Quả";
-            // 
-            // txtKQ1
-            // 
-            this.txtKQ1.Enabled = false;
-            this.txtKQ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKQ1.Location = new System.Drawing.Point(972, 80);
-            this.txtKQ1.Name = "txtKQ1";
-            this.txtKQ1.Size = new System.Drawing.Size(307, 34);
-            this.txtKQ1.TabIndex = 8;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtMetToi);
-            this.groupBox2.Controls.Add(this.btndoi2);
-            this.groupBox2.Controls.Add(this.txtNhapSoLop);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtNhapMetToi);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 263);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(915, 322);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Gach tường";
-            // 
             // btnLamMoiDV
             // 
             this.btnLamMoiDV.BackColor = System.Drawing.Color.Gainsboro;
@@ -226,6 +197,64 @@
             this.btnLamMoiDV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoiDV.UseVisualStyleBackColor = false;
             this.btnLamMoiDV.Click += new System.EventHandler(this.btnLamMoiDV_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1073, 415);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 29);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Kết Quả";
+            // 
+            // txtKQ1
+            // 
+            this.txtKQ1.Enabled = false;
+            this.txtKQ1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKQ1.Location = new System.Drawing.Point(972, 80);
+            this.txtKQ1.Name = "txtKQ1";
+            this.txtKQ1.Size = new System.Drawing.Size(307, 34);
+            this.txtKQ1.TabIndex = 8;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtMetToi);
+            this.groupBox2.Controls.Add(this.btndoi2);
+            this.groupBox2.Controls.Add(this.txtNhapSoLop);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtNhapMetToi);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 263);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(915, 322);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gach tường";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(544, 173);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 29);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "m";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(544, 114);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 29);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "m²";
             // 
             // label8
             // 
@@ -270,9 +299,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 170);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(154, 29);
+            this.label7.Size = new System.Drawing.Size(194, 29);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Nhập số lớp";
+            this.label7.Text = "Nhập chiều cao";
             // 
             // txtNhapMetToi
             // 
@@ -288,9 +317,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 29);
+            this.label5.Size = new System.Drawing.Size(202, 29);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Nhập mét tới";
+            this.label5.Text = "Nhập mét vuông";
             // 
             // comboBox2
             // 
@@ -323,28 +352,11 @@
             this.txtKQ2.Size = new System.Drawing.Size(307, 34);
             this.txtKQ2.TabIndex = 6;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(560, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 29);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "m²";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(544, 114);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 29);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "m²";
-            // 
             // FrmDoiDonVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1312, 681);
             this.Controls.Add(this.panel1);
             this.Name = "FrmDoiDonVi";
@@ -387,5 +399,6 @@
         private System.Windows.Forms.TextBox txtKQ1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

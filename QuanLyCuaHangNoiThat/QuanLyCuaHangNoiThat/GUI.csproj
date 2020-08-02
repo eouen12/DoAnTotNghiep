@@ -169,12 +169,6 @@
     <Compile Include="Forms\frmReportCN.Designer.cs">
       <DependentUpon>frmReportCN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmReportHD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmReportHD.Designer.cs">
-      <DependentUpon>frmReportHD.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +187,12 @@
     <Compile Include="Forms\frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportDT.Designer.cs">
+      <DependentUpon>frmReportDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyCuaHangNoiThatDataSet.cs">
@@ -207,6 +207,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCuaHangNoiThatDataSetCN.cs">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
     </Compile>
     <Compile Include="QuanLyCuaHangNoiThatDataSetCN.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,9 +262,6 @@
     <EmbeddedResource Include="Forms\frmReportCN.resx">
       <DependentUpon>frmReportCN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmReportHD.resx">
-      <DependentUpon>frmReportHD.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,7 +271,9 @@
     <EmbeddedResource Include="Forms\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="frmReportDT.resx">
+      <DependentUpon>frmReportDT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -284,6 +286,7 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="ReportCN.rdlc" />
+    <EmbeddedResource Include="ReportDT.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

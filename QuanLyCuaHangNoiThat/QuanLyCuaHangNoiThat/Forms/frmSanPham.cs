@@ -48,7 +48,7 @@ namespace QuanLyCuaHangNoiThat
 
             LoadDataDSLoaiSP();
 
-            this.txtMaSp.Text = AutoTaoMaSP();
+            //this.txtMaSp.Text = AutoTaoMaSP();
         }
         void FormatDataGridView()
         {
@@ -72,6 +72,7 @@ namespace QuanLyCuaHangNoiThat
                          sp.TENSP,
                          sp.SL_TON,
                          sp.GIABAN,
+                         sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP
                      };
@@ -127,6 +128,7 @@ namespace QuanLyCuaHangNoiThat
                          sp.TENSP,
                          sp.SL_TON,
                          sp.GIABAN,
+                         sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP
                      };
@@ -173,6 +175,7 @@ namespace QuanLyCuaHangNoiThat
                          sp.TENSP,
                          sp.SL_TON,
                          sp.GIABAN,
+                         sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP,
                          //anhMH.TENANHMINHHOA
@@ -202,6 +205,7 @@ namespace QuanLyCuaHangNoiThat
                          sp.TENSP,
                          sp.SL_TON,
                          sp.GIABAN,
+                         sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP,
                          anhMH.TENANHMINHHOA
@@ -244,11 +248,13 @@ namespace QuanLyCuaHangNoiThat
             this.btnSuaSP.Enabled = true;
             this.btnXoaSP.Enabled = true;
             this.btnThemSP.Enabled = false;
+            this.txtMaSp.Enabled = false;
             this.dangThayDoiDL = true;
             this.txtMaSp.Text = this.dgvQLSanPham.CurrentRow.Cells["MASPQL"].Value.ToString();
             this.txtTenSP.Text = this.dgvQLSanPham.CurrentRow.Cells["TENSPQL"].Value.ToString();
             this.txtGiaBanSp.Text = this.dgvQLSanPham.CurrentRow.Cells["GIABANQL"].Value.ToString();
             this.txtSLTonSp.Text = this.dgvQLSanPham.CurrentRow.Cells["SLTONQL"].Value.ToString();
+            this.txtDVT.Text = this.dgvQLSanPham.CurrentRow.Cells["DVTQL"].Value.ToString();
 
             string tenLoai = this.dgvQLSanPham.CurrentRow.Cells["TENLOAIQL"].Value.ToString();
             string tenNPP = this.dgvQLSanPham.CurrentRow.Cells["TENNPPQL"].Value.ToString();
@@ -289,9 +295,11 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnModeThem_Click(object sender, EventArgs e)
         {
-            if (this.txtTenSP.Text == string.Empty
+            if (this.txtMaSp.Text == string.Empty
+                || this.txtTenSP.Text == string.Empty
                 || this.txtGiaBanSp.Text == string.Empty
                 || this.txtSLTonSp.Text == string.Empty
+                || this.txtDVT.Text == string.Empty
                 || this.txtLoaiSanPham.Text == string.Empty
                 || this.txtNhaPhanPhoi.Text == string.Empty
                 || this.imgSanPham.Image == null)
@@ -304,6 +312,7 @@ namespace QuanLyCuaHangNoiThat
             sanpham.TENSP = this.txtTenSP.Text;
             sanpham.GIABAN = Convert.ToInt32(this.txtGiaBanSp.Text);
             sanpham.SL_TON = Convert.ToInt32(this.txtSLTonSp.Text);
+            sanpham.DVT = this.txtDVT.Text;
             sanpham.MALOAI = this.txtLoaiSanPham.Text;
             sanpham.MANPP = this.txtNhaPhanPhoi.Text;
             sanpham.TRANGTHAI = true;
@@ -344,9 +353,11 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnModeSua_Click(object sender, EventArgs e)
         {
-            if (this.txtTenSP.Text == string.Empty
+            if (this.txtMaSp.Text == string.Empty
+                || this.txtTenSP.Text == string.Empty
                 || this.txtGiaBanSp.Text == string.Empty
                 || this.txtSLTonSp.Text == string.Empty
+                || this.txtDVT.Text == string.Empty
                 || this.txtLoaiSanPham.Text == string.Empty
                 || this.txtNhaPhanPhoi.Text == string.Empty
                 || this.imgSanPham.Image == null)
@@ -369,6 +380,7 @@ namespace QuanLyCuaHangNoiThat
             sanpham.TENSP = this.txtTenSP.Text;
             sanpham.GIABAN = Convert.ToInt32(this.txtGiaBanSp.Text);
             sanpham.SL_TON = Convert.ToInt32(this.txtSLTonSp.Text);
+            sanpham.DVT = this.txtDVT.Text;
             sanpham.MALOAI = this.txtLoaiSanPham.Text;
             sanpham.MANPP = this.txtNhaPhanPhoi.Text;
 
@@ -454,13 +466,14 @@ namespace QuanLyCuaHangNoiThat
         void Reset()
         {
             this.imgSanPham.Image = null;
-            this.txtMaSp.Text = AutoTaoMaSP();
+            this.txtMaSp.Clear();
             this.txtTenSP.Clear();
             this.txtGiaBanSp.Clear();
             this.txtSLTonSp.Clear();
             this.txtLoaiSanPham.Clear();
             this.txtNhaPhanPhoi.Clear();
             this.btnThemSP.Enabled = true;
+            this.txtMaSp.Enabled = true;
             this.btnSuaSP.Enabled = false;
             this.btnXoaSP.Enabled = false;
             this.dangThayDoiDL = false;
@@ -472,31 +485,31 @@ namespace QuanLyCuaHangNoiThat
                 e.Handled = true;
         }
 
-        string AutoTaoMaSP()
-        {
-            List<SANPHAM> lstMaSP = SanPhamBUS.LayDanhSachSP();
-            string ma = string.Empty;
-            if (lstMaSP.Count == 0)
-            {
-                ma = "SP1";
-                return ma;
-            }
-            else
-            {
-                ma = lstMaSP.Select(p => p.MASP).LastOrDefault();
-                int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-                ma = "SP" + automa;
-                for (int i = 0; i < lstMaSP.Count(); i++)
-                {
-                    if (ma == lstMaSP[i].MASP)
-                    {
-                        automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
-                        ma = "SP" + automa;
-                    }
-                }
-                return ma;
-            }
-        }
+        //string AutoTaoMaSP()
+        //{
+        //    List<SANPHAM> lstMaSP = SanPhamBUS.LayDanhSachSP();
+        //    string ma = string.Empty;
+        //    if (lstMaSP.Count == 0)
+        //    {
+        //        ma = "SP1";
+        //        return ma;
+        //    }
+        //    else
+        //    {
+        //        ma = lstMaSP.Select(p => p.MASP).LastOrDefault();
+        //        int automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+        //        ma = "SP" + automa;
+        //        for (int i = 0; i < lstMaSP.Count(); i++)
+        //        {
+        //            if (ma == lstMaSP[i].MASP)
+        //            {
+        //                automa = Convert.ToInt32(ma.Remove(0, 2)) + 1;
+        //                ma = "SP" + automa;
+        //            }
+        //        }
+        //        return ma;
+        //    }
+        //}
 
         void AutoCompleteMaLoai()
         {
@@ -565,9 +578,6 @@ namespace QuanLyCuaHangNoiThat
                 }
             }
         }
-
-
-
 
         private void btnThemLoaiSP_Click(object sender, EventArgs e)
         {
@@ -718,6 +728,15 @@ namespace QuanLyCuaHangNoiThat
                     this.txtMaLoai.Focus();
                 }
             }
+        }
+
+        private void txtMaSp_Validated(object sender, EventArgs e)
+        {
+            if(SanPhamBUS.KiemTraMaSPTonTai(this.txtMaSp.Text))
+            {
+                MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtMaSp.Focus();
+            }    
         }
     }
 }

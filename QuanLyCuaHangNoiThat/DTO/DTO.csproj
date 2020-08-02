@@ -65,9 +65,6 @@
     <Compile Include="CTHOADONBANHANG.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
-    <Compile Include="CTNHAPHANGTUNPP.cs">
-      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
-    </Compile>
     <Compile Include="DOIDONVINEN.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
@@ -75,9 +72,6 @@
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
     <Compile Include="HOADONBANHANG.cs">
-      <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HOADONNHAPHANG.cs">
       <DependentUpon>ModelQLCHNoiThat.tt</DependentUpon>
     </Compile>
     <Compile Include="KHACHHANG.cs">

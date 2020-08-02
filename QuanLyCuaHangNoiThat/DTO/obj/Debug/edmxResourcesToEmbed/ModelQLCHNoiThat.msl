@@ -11,19 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CHITIETNHAPHANG">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG">
-        <MappingFragment StoreEntitySet="CHITIETNHAPHANG">
-          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="NGAYNHAPHANG" ColumnName="NGAYNHAPHANG" />
-          <ScalarProperty Name="TONGGIATRI" ColumnName="TONGGIATRI" />
-          <ScalarProperty Name="SL_NHAPHANG" ColumnName="SL_NHAPHANG" />
-          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
-          <ScalarProperty Name="MANPP" ColumnName="MANPP" />
-          <ScalarProperty Name="MASP" ColumnName="MASP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CONGNO">
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CONGNO">
         <MappingFragment StoreEntitySet="CONGNO">
@@ -43,6 +30,7 @@
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CTHOADONBANHANG">
         <MappingFragment StoreEntitySet="CTHOADONBANHANG">
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
           <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="MASP" ColumnName="MASP" />
@@ -50,13 +38,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CTNHAPHANGTUNPP">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CTNHAPHANGTUNPP">
-        <MappingFragment StoreEntitySet="CTNHAPHANGTUNPP">
+    <EntitySetMapping Name="CHITIETNHAPHANG">
+      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.CHITIETNHAPHANG">
+        <MappingFragment StoreEntitySet="CHITIETNHAPHANG">
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="NGAYNHAPHANG" ColumnName="NGAYNHAPHANG" />
           <ScalarProperty Name="TONGGIATRI" ColumnName="TONGGIATRI" />
+          <ScalarProperty Name="SL_NHAPHANG" ColumnName="SL_NHAPHANG" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
           <ScalarProperty Name="MANPP" ColumnName="MANPP" />
-          <ScalarProperty Name="MAHDNH" ColumnName="MAHDNH" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -90,16 +81,6 @@
           <ScalarProperty Name="NV_LAP_HD" ColumnName="NV_LAP_HD" />
           <ScalarProperty Name="MAKH" ColumnName="MAKH" />
           <ScalarProperty Name="MAHD" ColumnName="MAHD" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HOADONNHAPHANG">
-      <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.HOADONNHAPHANG">
-        <MappingFragment StoreEntitySet="HOADONNHAPHANG">
-          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="NV_NHANHANG" ColumnName="NV_NHANHANG" />
-          <ScalarProperty Name="NGAY_NHAPHANG" ColumnName="NGAY_NHAPHANG" />
-          <ScalarProperty Name="MAHDNH" ColumnName="MAHDNH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -191,6 +172,7 @@
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
           <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
           <ScalarProperty Name="MANPP" ColumnName="MANPP" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
           <ScalarProperty Name="SL_TON" ColumnName="SL_TON" />
           <ScalarProperty Name="GIABAN" ColumnName="GIABAN" />
           <ScalarProperty Name="TENSP" ColumnName="TENSP" />

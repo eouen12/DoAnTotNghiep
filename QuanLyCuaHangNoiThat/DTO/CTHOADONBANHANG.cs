@@ -18,6 +18,7 @@ namespace DTO
         public string MASP { get; set; }
         public Nullable<int> SOLUONG { get; set; }
         public Nullable<int> DONGIA { get; set; }
+        public string DVT { get; set; }
         public bool TRANGTHAI { get; set; }
     
         public virtual HOADONBANHANG HOADONBANHANG { get; set; }
