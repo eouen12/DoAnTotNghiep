@@ -21,4 +21,3 @@ C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DTO\obj\Debug\DTO.cspro
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DTO\obj\Debug\DTO.pdb
-C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\DTO\obj\Debug\DTO.csprojAssemblyReference.cache

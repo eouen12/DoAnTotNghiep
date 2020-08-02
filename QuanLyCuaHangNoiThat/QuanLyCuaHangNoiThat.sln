@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1062
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "QuanLyCuaHangNoiThat\GUI.csproj", "{01397EE9-2417-4F97-ADDF-0A8148ED3979}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{91C17BC8-2CDB-4537-994A-3E52830A2F12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{78E1ED09-446E-47BA-BDB6-4F7F7D118D38}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PMQL_MinhDungSetup", "..\PMQL_MinhDungSetup\PMQL_MinhDungSetup.vdproj", "{6CB3E910-E0A2-4F0C-9123-F37DD4EED6EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{78E1ED09-446E-47BA-BDB6-4F7F7D118D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E1ED09-446E-47BA-BDB6-4F7F7D118D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E1ED09-446E-47BA-BDB6-4F7F7D118D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB3E910-E0A2-4F0C-9123-F37DD4EED6EE}.Debug|Any CPU.ActiveCfg = Debug
+		{6CB3E910-E0A2-4F0C-9123-F37DD4EED6EE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

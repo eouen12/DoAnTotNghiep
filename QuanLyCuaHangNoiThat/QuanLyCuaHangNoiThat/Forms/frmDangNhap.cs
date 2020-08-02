@@ -16,7 +16,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmDangNhap : Form
     {
         public static NHANVIEN nv = new NHANVIEN();
-        private string patch = @"..\..\..\..\logodn.jpg";
+        //private string patch = @"..\..\..\..\logodn.jpg";
+        private string patch = @"logodn.jpg";
         public frmDangNhap()
         {
             InitializeComponent();

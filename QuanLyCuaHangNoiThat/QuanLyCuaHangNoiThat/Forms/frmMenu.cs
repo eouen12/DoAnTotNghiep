@@ -21,8 +21,10 @@ namespace QuanLyCuaHangNoiThat
         private Form currentfrmDesktop;
         private NHANVIEN nhanvien = new NHANVIEN();
         private List<LICHSUHETHONG> lsht = new List<LICHSUHETHONG>();
-        private string patch = @"..\..\..\..\Anh_NhanVien\";
-        private string patchLogo = @"..\..\..\..\logo3.jpg";
+       // private string patch = @"..\..\..\..\Anh_NhanVien\";
+       // private string patchLogo = @"..\..\..\..\logo3.jpg";
+        private string patch = @"Anh_NhanVien\";
+        private string patchLogo = @"logo3.jpg";
         public frmMenu(NHANVIEN nv)
         {
             
@@ -182,12 +184,25 @@ namespace QuanLyCuaHangNoiThat
                 btnMenuNhanVien.Enabled = true;
                 this.dgvLSHeThong.Visible= true;
                 btnfrmLSHT.Enabled = true;
+                btnTKCN.Enabled = true;
+                btnTKDT.Enabled = true;
             }
             else
             {
                 btnMenuNhanVien.Enabled = false;
-                this.dgvLSHeThong.Visible = true;
-                btnfrmLSHT.Enabled = true;
+                this.dgvLSHeThong.Visible = false;
+                btnfrmLSHT.Enabled = false;
+                btnTKCN.Enabled = false;
+                btnTKDT.Enabled = false;
+
+                Label lbl = new Label();
+                lbl.Name = "lblBottom";
+                lbl.AutoSize = false;
+                lbl.Size = new System.Drawing.Size(692, 210);
+                lbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+                lbl.Location = new System.Drawing.Point(0, 0);
+                lbl.Margin = new System.Windows.Forms.Padding(4);
+                this.panel6.Controls.Add(lbl);
             }
 
         }

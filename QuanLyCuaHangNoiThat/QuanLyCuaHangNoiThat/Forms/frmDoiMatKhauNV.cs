@@ -16,7 +16,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmDoiMatKhauNV : Form
     {
         private NHANVIEN nv = new NHANVIEN();
-        private string patch = @"..\..\..\..\Anh_NhanVien\";
+        //private string patch = @"..\..\..\..\Anh_NhanVien\";
+        private string patch = @"Anh_NhanVien\";
         public frmDoiMatKhauNV(NHANVIEN nhanvien)
         {
             InitializeComponent();
@@ -58,9 +59,9 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Mật khẩu cũ không chính xác !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
-            if(this.txtMatKhauCu.Text != this.txtMatKhauMoi.Text)
+            if(this.txtMatKhauCu.Text == this.txtMatKhauMoi.Text)
             {
-                MessageBox.Show("Mật khẩu mới không trùng khớp !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Mật khẩu mới không được trùng mật khẩu cũ !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
 

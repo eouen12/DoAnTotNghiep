@@ -16,7 +16,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmSanPham : Form
     {
         private string tenAnhMinhHoa;
-        private string patch = @"..\..\..\..\Hinh_SanPham\";
+        //private string patch = @"..\..\..\..\Hinh_SanPham\";
+        private string patch = @"Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
         private List<LOAISANPHAM> lstLoaiSp = new List<LOAISANPHAM>();
