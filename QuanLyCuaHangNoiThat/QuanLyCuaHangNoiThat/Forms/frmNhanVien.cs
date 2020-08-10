@@ -18,8 +18,8 @@ namespace QuanLyCuaHangNoiThat
     {
         private List<NHANVIEN> lstAllNV = new List<NHANVIEN>();
         private List<NHANVIEN> lstNV = new List<NHANVIEN>();
-       // private string patch = @"..\..\..\..\Anh_NhanVien\";
-        private string patch = @"Anh_NhanVien\";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
+        //private string patch = @"Anh_NhanVien\";
         private string tenAnhDaiDien = "";
         private string manv;
         private string autoManv;
@@ -158,7 +158,6 @@ namespace QuanLyCuaHangNoiThat
                     LoadDsNhanVien();
                     Reset();
                     string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã cập nhật thông tin nhân viên " + nv.MANV;
-                    LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG { GHICHU = lsth });
                     LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
                     {
                         NGAYTAO = DateTime.Now.Date,
@@ -254,6 +253,7 @@ namespace QuanLyCuaHangNoiThat
             lstNV = NhanVienBUS.LayDanhSachNV();
             this.dgvDSNhanVien.AutoGenerateColumns = false;
             this.dgvDSNhanVien.DataSource = lstAllNV;
+            this.dgvDSNhanVien.Columns["LUONGCB"].DefaultCellStyle.Format = "#,##0";
             this.txtMaNV.Text = AutoTaoMaNV();
         }
 
@@ -312,7 +312,7 @@ namespace QuanLyCuaHangNoiThat
         {
             if (!isValidEmail(this.txtEmail.Text))
             {
-                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi");
+                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 this.txtEmail.Focus();
             }
         }
@@ -402,7 +402,7 @@ namespace QuanLyCuaHangNoiThat
         }
         bool KiemtraDinhDangCMND(string cmnd)
         {
-            Regex re = new Regex("^[0-9]{10,12}$");
+            Regex re = new Regex("^[0-9]{9,12}$");
             if (re.IsMatch(cmnd))
                 return (true);
             else

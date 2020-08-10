@@ -88,7 +88,6 @@
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.KHACHHANG">
         <MappingFragment StoreEntitySet="KHACHHANG">
           <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
-          <ScalarProperty Name="CMND" ColumnName="CMND" />
           <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="TENKH" ColumnName="TENKH" />
@@ -99,6 +98,7 @@
     <EntitySetMapping Name="LICHSUHETHONG">
       <EntityTypeMapping TypeName="QuanLyCuaHangNoiThatModel.LICHSUHETHONG">
         <MappingFragment StoreEntitySet="LICHSUHETHONG">
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
           <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
           <ScalarProperty Name="VITRI_THAOTAC" ColumnName="VITRI_THAOTAC" />
           <ScalarProperty Name="NV_THAOTAC" ColumnName="NV_THAOTAC" />

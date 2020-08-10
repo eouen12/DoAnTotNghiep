@@ -19,6 +19,7 @@ namespace DTO
         {
             this.CONGNO = new HashSet<CONGNO>();
             this.HOADONBANHANG = new HashSet<HOADONBANHANG>();
+            this.LICHSUHETHONG = new HashSet<LICHSUHETHONG>();
         }
     
         public string MANV { get; set; }
@@ -28,7 +29,7 @@ namespace DTO
         public string CMND { get; set; }
         public string EMAIL { get; set; }
         public string DIACHI { get; set; }
-        public Nullable<int> LUONGCB { get; set; }
+        public Nullable<decimal> LUONGCB { get; set; }
         public string CHUCVU { get; set; }
         public string ANHDAIDIEN { get; set; }
         public bool TRANGTHAI { get; set; }
@@ -37,6 +38,8 @@ namespace DTO
         public virtual ICollection<CONGNO> CONGNO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADONBANHANG> HOADONBANHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICHSUHETHONG> LICHSUHETHONG { get; set; }
         public virtual QUYENHAN QUYENHAN { get; set; }
     }
 }

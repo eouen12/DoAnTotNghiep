@@ -59,9 +59,9 @@
             this.groupBox1.Controls.Add(this.dtNgayTao);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1240, 209);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -78,7 +78,7 @@
             this.btnLamMoi.IconColor = System.Drawing.Color.Black;
             this.btnLamMoi.IconSize = 40;
             this.btnLamMoi.Location = new System.Drawing.Point(1047, 42);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Rotation = 0D;
             this.btnLamMoi.Size = new System.Drawing.Size(165, 64);
@@ -102,7 +102,7 @@
             this.btnTimAll.IconSize = 32;
             this.btnTimAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimAll.Location = new System.Drawing.Point(440, 132);
-            this.btnTimAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimAll.Name = "btnTimAll";
             this.btnTimAll.Rotation = 0D;
             this.btnTimAll.Size = new System.Drawing.Size(124, 52);
@@ -116,7 +116,7 @@
             // 
             this.ckTimTheoAllDK.AutoSize = true;
             this.ckTimTheoAllDK.Location = new System.Drawing.Point(53, 148);
-            this.ckTimTheoAllDK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ckTimTheoAllDK.Margin = new System.Windows.Forms.Padding(4);
             this.ckTimTheoAllDK.Name = "ckTimTheoAllDK";
             this.ckTimTheoAllDK.Size = new System.Drawing.Size(379, 36);
             this.ckTimTheoAllDK.TabIndex = 6;
@@ -164,9 +164,11 @@
             "Khách hàng",
             "Lập hóa đơn",
             "Nhân viên",
-            "Nhà phân phối"});
+            "Nhà phân phối",
+            "Nhập hàng",
+            "Loại sản phẩm"});
             this.cbViTriThaoTac.Location = new System.Drawing.Point(752, 65);
-            this.cbViTriThaoTac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbViTriThaoTac.Margin = new System.Windows.Forms.Padding(4);
             this.cbViTriThaoTac.Name = "cbViTriThaoTac";
             this.cbViTriThaoTac.Size = new System.Drawing.Size(239, 39);
             this.cbViTriThaoTac.TabIndex = 2;
@@ -176,7 +178,7 @@
             // 
             this.cbNVThaoTac.FormattingEnabled = true;
             this.cbNVThaoTac.Location = new System.Drawing.Point(389, 65);
-            this.cbNVThaoTac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbNVThaoTac.Margin = new System.Windows.Forms.Padding(4);
             this.cbNVThaoTac.Name = "cbNVThaoTac";
             this.cbNVThaoTac.Size = new System.Drawing.Size(228, 39);
             this.cbNVThaoTac.TabIndex = 1;
@@ -187,7 +189,7 @@
             this.dtNgayTao.CustomFormat = "dd/MM/yyy";
             this.dtNgayTao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayTao.Location = new System.Drawing.Point(53, 68);
-            this.dtNgayTao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtNgayTao.Margin = new System.Windows.Forms.Padding(4);
             this.dtNgayTao.Name = "dtNgayTao";
             this.dtNgayTao.Size = new System.Drawing.Size(200, 38);
             this.dtNgayTao.TabIndex = 0;
@@ -210,7 +212,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLSHeThong.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLSHeThong.Location = new System.Drawing.Point(16, 220);
-            this.dgvLSHeThong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLSHeThong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLSHeThong.Name = "dgvLSHeThong";
             this.dgvLSHeThong.ReadOnly = true;
             this.dgvLSHeThong.RowHeadersVisible = false;
@@ -236,7 +238,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 694);
             this.Controls.Add(this.dgvLSHeThong);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLSHeThong";
             this.Text = "frmLSHeThong";
             this.Load += new System.EventHandler(this.frmLSHeThong_Load);

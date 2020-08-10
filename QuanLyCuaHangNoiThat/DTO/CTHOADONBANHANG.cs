@@ -17,7 +17,7 @@ namespace DTO
         public string MAHD { get; set; }
         public string MASP { get; set; }
         public Nullable<int> SOLUONG { get; set; }
-        public Nullable<int> DONGIA { get; set; }
+        public Nullable<decimal> DONGIA { get; set; }
         public string DVT { get; set; }
         public bool TRANGTHAI { get; set; }
     

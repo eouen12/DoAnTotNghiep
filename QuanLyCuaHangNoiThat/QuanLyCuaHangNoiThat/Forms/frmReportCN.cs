@@ -27,7 +27,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         private void btnTK_Click(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyCuaHangNoiThatDataSetCN.DataTable1' table. You can move, or remove it, as needed.
-            this.dataTable1TableAdapter.Fill(this.quanLyCuaHangNoiThatDataSetCN.DataTable1,dateTimePicker1.Value,dateTimePicker2.Value);
+            this.dataTable1TableAdapter.Fill(this.quanLyCuaHangNoiThatDataSetCongNo.DataTable1,dateTimePicker1.Value,dateTimePicker2.Value);
             this.reportViewer1.RefreshReport();
         }
     }

@@ -24,7 +24,7 @@ namespace DTO
     
         public string MASP { get; set; }
         public string TENSP { get; set; }
-        public Nullable<int> GIABAN { get; set; }
+        public Nullable<decimal> GIABAN { get; set; }
         public Nullable<int> SL_TON { get; set; }
         public string DVT { get; set; }
         public string MANPP { get; set; }

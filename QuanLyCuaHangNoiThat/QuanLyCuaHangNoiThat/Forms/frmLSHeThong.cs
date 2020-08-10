@@ -87,8 +87,8 @@ namespace QuanLyCuaHangNoiThat.Forms
         void TimKiem(string chuoi)
         {
             var kq = from ls in lstLSHT
-                     where ls.NV_THAOTAC.Contains(chuoi)
-                            || ls.VITRI_THAOTAC.Contains(chuoi)
+                     where ls.NV_THAOTAC == chuoi
+                            || ls.VITRI_THAOTAC == chuoi
                      select new { ls.GHICHU };
             this.dgvLSHeThong.AutoGenerateColumns = false;
             this.dgvLSHeThong.DataSource = kq.ToList();
@@ -96,7 +96,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         void TimKiem(DateTime dt)
         {
             var kq = from ls in lstLSHT
-                     where ls.NGAYTAO.Value == dt.Date
+                     where ls.NGAYTAO == dt.Date
                      select new { ls.GHICHU };
             this.dgvLSHeThong.AutoGenerateColumns = false;
             this.dgvLSHeThong.DataSource = kq.ToList();
@@ -106,8 +106,8 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             var kq = from ls in lstLSHT
                      where ls.NGAYTAO.Value == dt.Date
-                            && ls.NV_THAOTAC.Contains(nv)
-                            && ls.VITRI_THAOTAC.Contains(vitri)
+                            && ls.NV_THAOTAC == nv
+                            && ls.VITRI_THAOTAC == vitri
                      select new { ls.GHICHU };
             this.dgvLSHeThong.AutoGenerateColumns = false;
             this.dgvLSHeThong.DataSource = kq.ToList();

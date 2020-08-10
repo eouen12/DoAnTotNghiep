@@ -16,7 +16,7 @@
     <Property Name="MACONGNO" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MAHD" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="NV_LAPCN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NV_LAPCN" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NGAYLAP" Type="datetime" />
     <Property Name="TONGTIEN" Type="money" />
     <Property Name="TIENCONNO" Type="money" />
@@ -31,7 +31,7 @@
     <Property Name="MAHD" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="SOLUONG" Type="int" />
-    <Property Name="DONGIA" Type="int" />
+    <Property Name="DONGIA" Type="money" />
     <Property Name="DVT" Type="nvarchar(max)" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
@@ -42,9 +42,9 @@
     </Key>
     <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MANPP" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="DONGIA" Type="int" />
+    <Property Name="DONGIA" Type="money" />
     <Property Name="SL_NHAPHANG" Type="int" />
-    <Property Name="TONGGIATRI" Type="int" />
+    <Property Name="TONGGIATRI" Type="money" />
     <Property Name="NGAYNHAPHANG" Type="datetime" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
@@ -72,9 +72,9 @@
     </Key>
     <Property Name="MAHD" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MAKH" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="NV_LAP_HD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NV_LAP_HD" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NGAYLAP" Type="datetime" />
-    <Property Name="TONGTIEN" Type="int" />
+    <Property Name="TONGTIEN" Type="money" />
     <Property Name="NGAYGIAO" Type="datetime" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
@@ -86,7 +86,6 @@
     <Property Name="TENKH" Type="nvarchar(max)" />
     <Property Name="SDT" Type="varchar" MaxLength="10" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
-    <Property Name="CMND" Type="varchar" MaxLength="12" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="LICHSUHETHONG">
@@ -95,9 +94,10 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NGAYTAO" Type="datetime" />
-    <Property Name="NV_THAOTAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="NV_THAOTAC" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="VITRI_THAOTAC" Type="nvarchar(max)" />
     <Property Name="GHICHU" Type="nvarchar(max)" />
+    <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="LICHSUTRANO">
     <Key>
@@ -121,14 +121,14 @@
     <Key>
       <PropertyRef Name="MANV" />
     </Key>
-    <Property Name="MANV" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="MATKHAU" Type="varchar" MaxLength="50" />
+    <Property Name="MANV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MATKHAU" Type="varchar(max)" />
     <Property Name="TENNV" Type="nvarchar(max)" />
     <Property Name="SDT" Type="varchar" MaxLength="10" />
     <Property Name="CMND" Type="varchar" MaxLength="12" />
     <Property Name="EMAIL" Type="varchar(max)" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
-    <Property Name="LUONGCB" Type="int" />
+    <Property Name="LUONGCB" Type="money" />
     <Property Name="CHUCVU" Type="varchar" MaxLength="3" />
     <Property Name="ANHDAIDIEN" Type="nvarchar(max)" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
@@ -159,14 +159,14 @@
     </Key>
     <Property Name="MASP" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TENSP" Type="nvarchar(max)" />
-    <Property Name="GIABAN" Type="int" />
+    <Property Name="GIABAN" Type="money" />
     <Property Name="SL_TON" Type="int" />
     <Property Name="DVT" Type="nvarchar(max)" />
     <Property Name="MANPP" Type="varchar" MaxLength="10" />
     <Property Name="MALOAI" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TRANGTHAI" Type="bit" Nullable="false" />
   </EntityType>
-  <Association Name="FK__ANHMINHHOA__MASP__440B1D61">
+  <Association Name="FK__ANHMINHHOA__MASP__44FF419A">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="ANHMINHHOASP" Type="Self.ANHMINHHOASP" Multiplicity="*" />
     <ReferentialConstraint>
@@ -178,7 +178,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CONGNO__MAHD__398D8EEE">
+  <Association Name="FK__CONGNO__MAHD__3A81B327">
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="1" />
     <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -190,7 +190,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CONGNO__MAKH__38996AB5">
+  <Association Name="FK__CONGNO__MAKH__398D8EEE">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -202,7 +202,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CONGNO__NV_LAPCN__3A81B327">
+  <Association Name="FK__CONGNO__NV_LAPCN__3B75D760">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -214,7 +214,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTHOADONBA__MAHD__3D5E1FD2">
+  <Association Name="FK__CTHOADONBA__MAHD__3E52440B">
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="1" />
     <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -226,7 +226,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTHOADONBA__MASP__3E52440B">
+  <Association Name="FK__CTHOADONBA__MASP__3F466844">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CTHOADONBANHANG" Type="Self.CTHOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -238,7 +238,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETNH__MANPP__3F466844">
+  <Association Name="FK__CHITIETNH__MANPP__403A8C7D">
     <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="1" />
     <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -250,7 +250,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETNHA__MASP__403A8C7D">
+  <Association Name="FK__CHITIETNHA__MASP__412EB0B6">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CHITIETNHAPHANG" Type="Self.CHITIETNHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -262,7 +262,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADONBAN__NV_LA__3C69FB99">
+  <Association Name="FK__HOADONBAN__NV_LA__3D5E1FD2">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -274,7 +274,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADONBANH__MAKH__3B75D760">
+  <Association Name="FK__HOADONBANH__MAKH__3C69FB99">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="HOADONBANHANG" Type="Self.HOADONBANHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -286,7 +286,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LICHSUTRA__MACON__37A5467C">
+  <Association Name="FK__LICHSUHET__NV_TH__45F365D3">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="LICHSUHETHONG" Type="Self.LICHSUHETHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="LICHSUHETHONG">
+        <PropertyRef Name="NV_THAOTAC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LICHSUTRA__MACON__38996AB5">
     <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="1" />
     <End Role="LICHSUTRANO" Type="Self.LICHSUTRANO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -298,7 +310,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NHANVIEN__CHUCVU__412EB0B6">
+  <Association Name="FK__NHANVIEN__CHUCVU__4222D4EF">
     <End Role="QUYENHAN" Type="Self.QUYENHAN" Multiplicity="0..1" />
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -310,7 +322,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MALOAI__4222D4EF">
+  <Association Name="FK__SANPHAM__MALOAI__4316F928">
     <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -322,7 +334,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MANPP__4316F928">
+  <Association Name="FK__SANPHAM__MANPP__440B1D61">
     <End Role="NHAPHANPHOI" Type="Self.NHAPHANPHOI" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -350,59 +362,63 @@
     <EntitySet Name="NHAPHANPHOI" EntityType="Self.NHAPHANPHOI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUYENHAN" EntityType="Self.QUYENHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ANHMINHHOA__MASP__440B1D61" Association="Self.FK__ANHMINHHOA__MASP__440B1D61">
+    <AssociationSet Name="FK__ANHMINHHOA__MASP__44FF419A" Association="Self.FK__ANHMINHHOA__MASP__44FF419A">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="ANHMINHHOASP" EntitySet="ANHMINHHOASP" />
     </AssociationSet>
-    <AssociationSet Name="FK__CONGNO__MAHD__398D8EEE" Association="Self.FK__CONGNO__MAHD__398D8EEE">
+    <AssociationSet Name="FK__CONGNO__MAHD__3A81B327" Association="Self.FK__CONGNO__MAHD__3A81B327">
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
       <End Role="CONGNO" EntitySet="CONGNO" />
     </AssociationSet>
-    <AssociationSet Name="FK__CONGNO__MAKH__38996AB5" Association="Self.FK__CONGNO__MAKH__38996AB5">
+    <AssociationSet Name="FK__CONGNO__MAKH__398D8EEE" Association="Self.FK__CONGNO__MAKH__398D8EEE">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="CONGNO" EntitySet="CONGNO" />
     </AssociationSet>
-    <AssociationSet Name="FK__CONGNO__NV_LAPCN__3A81B327" Association="Self.FK__CONGNO__NV_LAPCN__3A81B327">
+    <AssociationSet Name="FK__CONGNO__NV_LAPCN__3B75D760" Association="Self.FK__CONGNO__NV_LAPCN__3B75D760">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="CONGNO" EntitySet="CONGNO" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTHOADONBA__MAHD__3D5E1FD2" Association="Self.FK__CTHOADONBA__MAHD__3D5E1FD2">
+    <AssociationSet Name="FK__CTHOADONBA__MAHD__3E52440B" Association="Self.FK__CTHOADONBA__MAHD__3E52440B">
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
       <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTHOADONBA__MASP__3E52440B" Association="Self.FK__CTHOADONBA__MASP__3E52440B">
+    <AssociationSet Name="FK__CTHOADONBA__MASP__3F466844" Association="Self.FK__CTHOADONBA__MASP__3F466844">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CTHOADONBANHANG" EntitySet="CTHOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETNH__MANPP__3F466844" Association="Self.FK__CHITIETNH__MANPP__3F466844">
+    <AssociationSet Name="FK__CHITIETNH__MANPP__403A8C7D" Association="Self.FK__CHITIETNH__MANPP__403A8C7D">
       <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
       <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETNHA__MASP__403A8C7D" Association="Self.FK__CHITIETNHA__MASP__403A8C7D">
+    <AssociationSet Name="FK__CHITIETNHA__MASP__412EB0B6" Association="Self.FK__CHITIETNHA__MASP__412EB0B6">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CHITIETNHAPHANG" EntitySet="CHITIETNHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADONBAN__NV_LA__3C69FB99" Association="Self.FK__HOADONBAN__NV_LA__3C69FB99">
+    <AssociationSet Name="FK__HOADONBAN__NV_LA__3D5E1FD2" Association="Self.FK__HOADONBAN__NV_LA__3D5E1FD2">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADONBANH__MAKH__3B75D760" Association="Self.FK__HOADONBANH__MAKH__3B75D760">
+    <AssociationSet Name="FK__HOADONBANH__MAKH__3C69FB99" Association="Self.FK__HOADONBANH__MAKH__3C69FB99">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="HOADONBANHANG" EntitySet="HOADONBANHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__LICHSUTRA__MACON__37A5467C" Association="Self.FK__LICHSUTRA__MACON__37A5467C">
+    <AssociationSet Name="FK__LICHSUHET__NV_TH__45F365D3" Association="Self.FK__LICHSUHET__NV_TH__45F365D3">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="LICHSUHETHONG" EntitySet="LICHSUHETHONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LICHSUTRA__MACON__38996AB5" Association="Self.FK__LICHSUTRA__MACON__38996AB5">
       <End Role="CONGNO" EntitySet="CONGNO" />
       <End Role="LICHSUTRANO" EntitySet="LICHSUTRANO" />
     </AssociationSet>
-    <AssociationSet Name="FK__NHANVIEN__CHUCVU__412EB0B6" Association="Self.FK__NHANVIEN__CHUCVU__412EB0B6">
+    <AssociationSet Name="FK__NHANVIEN__CHUCVU__4222D4EF" Association="Self.FK__NHANVIEN__CHUCVU__4222D4EF">
       <End Role="QUYENHAN" EntitySet="QUYENHAN" />
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MALOAI__4222D4EF" Association="Self.FK__SANPHAM__MALOAI__4222D4EF">
+    <AssociationSet Name="FK__SANPHAM__MALOAI__4316F928" Association="Self.FK__SANPHAM__MALOAI__4316F928">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MANPP__4316F928" Association="Self.FK__SANPHAM__MANPP__4316F928">
+    <AssociationSet Name="FK__SANPHAM__MANPP__440B1D61" Association="Self.FK__SANPHAM__MANPP__440B1D61">
       <End Role="NHAPHANPHOI" EntitySet="NHAPHANPHOI" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>

@@ -38,6 +38,13 @@ namespace QuanLyCuaHangNoiThat.Forms
             }
             try
             {
+
+                if (this.chkTraGop.Checked && this.txtSoTienTraTrc.Text == string.Empty)
+                {
+                    MessageBox.Show("Tiền cọc không được bỏ trống !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtSoTienTraTrc.Focus();
+                    return;
+                }
                 TaoHoaDon(this.makh, this.manv);
 
                 TaoCTHoaDon();

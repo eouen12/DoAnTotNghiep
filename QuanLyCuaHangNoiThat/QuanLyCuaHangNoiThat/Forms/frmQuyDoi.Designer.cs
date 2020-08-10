@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangNoiThat.Forms
 {
-    partial class FrmDoiDonVi
+    partial class frmQuyDoi
     {
         /// <summary>
         /// Required designer variable.

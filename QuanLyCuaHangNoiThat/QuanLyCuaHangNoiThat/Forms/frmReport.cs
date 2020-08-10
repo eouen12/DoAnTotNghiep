@@ -22,7 +22,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         private void frmReport_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyCuaHangNoiThatDataSet.DataTable1' table. You can move, or remove it, as needed.
-            this.dataTable1TableAdapter.Fill(this.quanLyCuaHangNoiThatDataSet.DataTable1,mahd);
+            this.dataTable1TableAdapter.Fill(this.quanLyCuaHangNoiThatDataSetHD.DataTable1,mahd);
 
             this.reportViewer1.RefreshReport();
         }

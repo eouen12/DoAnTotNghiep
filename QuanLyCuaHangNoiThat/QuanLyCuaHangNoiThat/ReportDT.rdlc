@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>MAHD</Value>
+                              <Value>Mã hóa đơn</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -66,7 +66,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>MAKH</Value>
+                              <Value>Mã khách hàng</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -101,7 +101,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TONGTIEN</Value>
+                              <Value>Tổng tiền</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -136,7 +136,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>NGAYLAP</Value>
+                              <Value>Ngày lập</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -328,7 +328,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.18392cm</Top>
-        <Left>2.67645cm</Left>
+        <Left>1.73968cm</Left>
         <Height>1.2cm</Height>
         <Width>13.41722cm</Width>
         <Style>
@@ -356,7 +356,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>3.63925cm</Top>
-        <Left>4.445cm</Left>
+        <Left>3.50823cm</Left>
         <Height>0.95983cm</Height>
         <Width>5.12467cm</Width>
         <ZIndex>1</ZIndex>
@@ -390,7 +390,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>3.63925cm</Top>
-        <Left>9.71078cm</Left>
+        <Left>8.77401cm</Left>
         <Height>0.95983cm</Height>
         <Width>3.88289cm</Width>
         <ZIndex>2</ZIndex>
@@ -405,26 +405,73 @@
           <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=" Ngày lập : "&amp; Today()</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>0.17639cm</Top>
+        <Left>6.05764cm</Left>
+        <Height>0.64233cm</Height>
+        <Width>5.06117cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.95in</Height>
+    <Height>2.54167in</Height>
     <Style />
   </Body>
-  <Width>7.73333in</Width>
+  <Width>7in</Width>
   <Page>
     <PageHeader>
-      <Height>3.27378cm</Height>
+      <Height>5.17878cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox27">
+        <Textbox Name="Textbox12">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>THỐNG KÊ DOANH THU</Value>
+                  <Value>VẬT LIỆU XÂY DỰNG - TRANG TÍ NỘI THẤT</Value>
                   <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>MINH DŨNG</Value>
+                  <Style>
+                    <FontFamily>ARial</FontFamily>
                     <FontSize>20pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -434,12 +481,50 @@
                 <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>320 Nguyễn Thông, Ấp 3, Bình Tâm, TP.Tân An, LA</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> SĐT : 0918976811 - 0946535276</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>0272355016</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>2.22222cm</Top>
-          <Left>4.93753cm</Left>
-          <Height>0.87517cm</Height>
-          <Width>8.12322cm</Width>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Top>0.31581cm</Top>
+          <Height>3.0765cm</Height>
+          <Width>10.36317cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -450,48 +535,104 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox12">
+        <Textbox Name="Textbox43">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value xml:space="preserve">                     </Value>
+                  <Value>THỐNG KÊ DOANH THU</Value>
                   <Style>
-                    <FontSize>12pt</FontSize>
+                    <FontSize>22pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>  VLXD-TTNT MINH DŨNG</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>4 Nguyễn Thông , Ấp 3, Xã Bình Tâm, Tp.Tân An, Long An</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>                SĐT : 0918976811 - 0946535276</Value>
-                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Height>1.72183cm</Height>
-          <Width>9.56967cm</Width>
+          <rd:DefaultName>Textbox43</rd:DefaultName>
+          <Top>3.77331cm</Top>
+          <Left>4.37136cm</Left>
+          <Height>1.22908cm</Height>
+          <Width>9.5485cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Chuyên kinh doanh :</Value>
+                  <Style>
+                    <FontStyle>Italic</FontStyle>
+                    <FontFamily>Cambria</FontFamily>
+                    <FontSize>13pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-CÁT, ĐÁ, XI MĂNG</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-GẠCH, TÔN, SẮT, GẠCH MEN</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-THIẾT BỊ VỆ SINH, SƠN NƯỚC</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Top>0.31581cm</Top>
+          <Left>10.469cm</Left>
+          <Height>2.251cm</Height>
+          <Width>6.50994cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -509,6 +650,16 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>

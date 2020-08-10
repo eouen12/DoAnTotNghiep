@@ -783,6 +783,7 @@
             this.txtTimKiemQLNPP.Name = "txtTimKiemQLNPP";
             this.txtTimKiemQLNPP.Size = new System.Drawing.Size(313, 38);
             this.txtTimKiemQLNPP.TabIndex = 11;
+            this.txtTimKiemQLNPP.TextChanged += new System.EventHandler(this.txtTimKiemQLNPP_TextChanged);
             // 
             // label14
             // 

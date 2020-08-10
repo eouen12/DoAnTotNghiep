@@ -42,7 +42,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtCMND.Text == string.Empty || txtTenKH.Text == string.Empty || txtCMND.Text == string.Empty || txtDiaChi.Text == string.Empty)
+            if ( txtTenKH.Text == string.Empty || txtSDT.Text == string.Empty || txtDiaChi.Text == string.Empty)
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -50,7 +50,6 @@ namespace QuanLyCuaHangNoiThat
 
             KHACHHANG KH = new KHACHHANG();
             KH.MAKH = this.txtMakh.Text;
-            KH.CMND = this.txtCMND.Text.Trim();
             KH.DIACHI = this.txtDiaChi.Text;
             KH.SDT = this.txtSDT.Text.Trim();
             KH.TENKH = this.txtTenKH.Text;
@@ -72,7 +71,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtCMND.Text == string.Empty || txtTenKH.Text == string.Empty || txtSDT.Text == string.Empty || txtDiaChi.Text == string.Empty)
+            if (txtTenKH.Text == string.Empty || txtSDT.Text == string.Empty || txtDiaChi.Text == string.Empty)
             {
                 MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -80,7 +79,6 @@ namespace QuanLyCuaHangNoiThat
              
             KHACHHANG KH = new KHACHHANG();
             KH.MAKH = this.txtMakh.Text;
-            KH.CMND = txtCMND.Text;
             KH.DIACHI = txtDiaChi.Text;
             KH.SDT = txtSDT.Text;
             KH.TENKH = txtTenKH.Text;
@@ -100,19 +98,22 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnHuybo_Click(object sender, EventArgs e)
         {
-            string IDKH = this.txtMakh.Text;
-            KhachHangBUS.Delete(IDKH);
-            MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            Loading();
-            Reset();
-            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin khách hàng " + this.txtMakh.Text;
-            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            if (MessageBox.Show("Bạn có chắc chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                NGAYTAO = DateTime.Now.Date,
-                NV_THAOTAC = this.manv,
-                VITRI_THAOTAC = this.vitrithaotac,
-                GHICHU = lsth
-            });
+                string IDKH = this.txtMakh.Text;
+                KhachHangBUS.Delete(IDKH);
+                MessageBox.Show("Xóa thông tin khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Loading();
+                Reset();
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa thông tin khách hàng " + this.txtMakh.Text;
+                LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+                {
+                    NGAYTAO = DateTime.Now.Date,
+                    NV_THAOTAC = this.manv,
+                    VITRI_THAOTAC = this.vitrithaotac,
+                    GHICHU = lsth
+                });
+            }
         }
 
         private void dgvDSKH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,7 +124,6 @@ namespace QuanLyCuaHangNoiThat
             this.btnThem.Enabled = false;
             this.dangThayDoiDL = true;
             txtMakh.Text = dgvDSKH.CurrentRow.Cells["MaKHang"].Value.ToString();
-            txtCMND.Text = dgvDSKH.CurrentRow.Cells["CMNDKHang"].Value.ToString();
             txtDiaChi.Text = dgvDSKH.CurrentRow.Cells["DIACHIKHang"].Value.ToString();
             txtSDT.Text = dgvDSKH.CurrentRow.Cells["SDTKHang"].Value.ToString();
             txtTenKH.Text = dgvDSKH.CurrentRow.Cells["TenKHang"].Value.ToString();
@@ -166,19 +166,6 @@ namespace QuanLyCuaHangNoiThat
             }
         }
 
-        private void txtCMND_Validated(object sender, EventArgs e)
-        {
-            if (this.txtCMND.Text == string.Empty)
-            {
-                return;
-            }
-            if (!KiemtraDinhDangCMND(this.txtCMND.Text))
-            {
-                MessageBox.Show("Số CMND không đúng định dạng !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtCMND.Focus();
-            }
-        }
-
         void Loading()
         {
             lstKhachHang = KhachHangBUS.LayDanhSachKhachHang();
@@ -190,7 +177,7 @@ namespace QuanLyCuaHangNoiThat
         void TimKiemKhachHang(string chuoi)
         {
             var kq = from sc in lstKhachHang
-                     where sc.SDT.Contains(chuoi) || sc.TENKH.Contains(chuoi) || sc.CMND.Contains(chuoi)
+                     where sc.SDT.Contains(chuoi) || sc.TENKH.Contains(chuoi) || sc.MAKH.Contains(chuoi)
                      select sc;
             this.dgvDSKH.AutoGenerateColumns = false;
             this.dgvDSKH.DataSource = kq.ToList();
@@ -231,7 +218,6 @@ namespace QuanLyCuaHangNoiThat
             this.dangThayDoiDL = false;
 
             this.txtMakh.Text = AutoMaKh();
-            this.txtCMND.Clear();
             this.txtDiaChi.Clear();
             this.txtSDT.Clear();
             this.txtTenKH.Clear();
@@ -275,11 +261,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnLamMoiKH_Click(object sender, EventArgs e)
         {
-            txtMakh.Text = AutoMaKh();
-            txtDiaChi.Clear();
-            txtCMND.Clear();
-            txtSDT.Clear();
-            txtTenKH.Clear();
+            Reset();
         }
     }
 }

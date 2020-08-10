@@ -16,8 +16,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmSanPham : Form
     {
         private string tenAnhMinhHoa;
-        //private string patch = @"..\..\..\..\Hinh_SanPham\";
-        private string patch = @"Hinh_SanPham\";
+        private string patch = @"..\..\..\..\Hinh_SanPham\";
+        //private string patch = @"Hinh_SanPham\";
         private List<SANPHAM> lstSanPham = new List<SANPHAM>();
         private List<ANHMINHHOASP> lstAnhMinhHoa = new List<ANHMINHHOASP>();
         private List<LOAISANPHAM> lstLoaiSp = new List<LOAISANPHAM>();
@@ -26,6 +26,7 @@ namespace QuanLyCuaHangNoiThat
         private bool dangThayDoiDL = false;
         private string manv;
         private string vitrithaotac = "Sản phẩm";
+        private string vitrithaotacLoaiSP = "Loại sản phẩm";
 
         public frmSanPham(string manv)
         {
@@ -54,7 +55,7 @@ namespace QuanLyCuaHangNoiThat
         void FormatDataGridView()
         {
             DataGridViewCellStyle styleTien = new DataGridViewCellStyle();
-            styleTien.Format = "#,###";
+            styleTien.Format = "#,##0";
             this.dgvDSSanPham.Columns["GIABAN"].DefaultCellStyle = styleTien;
             this.dgvQLSanPham.Columns["GIABANQL"].DefaultCellStyle = styleTien;
         }
@@ -190,8 +191,6 @@ namespace QuanLyCuaHangNoiThat
         void TimKiemQLSP(string chuoi)
         {
             var kq = from sp in lstSanPham
-                     join anhMH in lstAnhMinhHoa
-                     on sp.MASP equals anhMH.MASP
                      where sp.TENSP.Contains(chuoi)
                      || sp.MASP.Contains(chuoi)
                      || sp.MALOAI == chuoi
@@ -209,7 +208,6 @@ namespace QuanLyCuaHangNoiThat
                          sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
                          sp.NHAPHANPHOI.TENNPP,
-                         anhMH.TENANHMINHHOA
                      };
             this.dgvDSSanPham.AutoGenerateColumns = false;
             this.dgvQLSanPham.DataSource = kq.ToList();
@@ -253,7 +251,7 @@ namespace QuanLyCuaHangNoiThat
             this.dangThayDoiDL = true;
             this.txtMaSp.Text = this.dgvQLSanPham.CurrentRow.Cells["MASPQL"].Value.ToString();
             this.txtTenSP.Text = this.dgvQLSanPham.CurrentRow.Cells["TENSPQL"].Value.ToString();
-            this.txtGiaBanSp.Text = this.dgvQLSanPham.CurrentRow.Cells["GIABANQL"].Value.ToString();
+            this.txtGiaBanSp.Text = Convert.ToDecimal(this.dgvQLSanPham.CurrentRow.Cells["GIABANQL"].Value).ToString("#,##");
             this.txtSLTonSp.Text = this.dgvQLSanPham.CurrentRow.Cells["SLTONQL"].Value.ToString();
             this.txtDVT.Text = this.dgvQLSanPham.CurrentRow.Cells["DVTQL"].Value.ToString();
 
@@ -379,7 +377,7 @@ namespace QuanLyCuaHangNoiThat
             SANPHAM sanpham = new SANPHAM();
             sanpham.MASP = this.txtMaSp.Text;
             sanpham.TENSP = this.txtTenSP.Text;
-            sanpham.GIABAN = Convert.ToInt32(this.txtGiaBanSp.Text);
+            sanpham.GIABAN = Convert.ToDecimal(this.txtGiaBanSp.Text);
             sanpham.SL_TON = Convert.ToInt32(this.txtSLTonSp.Text);
             sanpham.DVT = this.txtDVT.Text;
             sanpham.MALOAI = this.txtLoaiSanPham.Text;
@@ -473,6 +471,7 @@ namespace QuanLyCuaHangNoiThat
             this.txtSLTonSp.Clear();
             this.txtLoaiSanPham.Clear();
             this.txtNhaPhanPhoi.Clear();
+            this.txtDVT.Clear();
             this.btnThemSP.Enabled = true;
             this.txtMaSp.Enabled = true;
             this.btnSuaSP.Enabled = false;
@@ -601,7 +600,7 @@ namespace QuanLyCuaHangNoiThat
                 {
                     NGAYTAO = DateTime.Now.Date,
                     NV_THAOTAC = this.manv,
-                    VITRI_THAOTAC = this.vitrithaotac,
+                    VITRI_THAOTAC = this.vitrithaotacLoaiSP,
                     GHICHU = lsth
                 });
             }
@@ -633,7 +632,7 @@ namespace QuanLyCuaHangNoiThat
                 {
                     NGAYTAO = DateTime.Now.Date,
                     NV_THAOTAC = this.manv,
-                    VITRI_THAOTAC = this.vitrithaotac,
+                    VITRI_THAOTAC = this.vitrithaotacLoaiSP,
                     GHICHU = lsth
                 });
             }
@@ -658,7 +657,7 @@ namespace QuanLyCuaHangNoiThat
                 {
                     NGAYTAO = DateTime.Now.Date,
                     NV_THAOTAC = this.manv,
-                    VITRI_THAOTAC = this.vitrithaotac,
+                    VITRI_THAOTAC = this.vitrithaotacLoaiSP,
                     GHICHU = lsth
                 });
             }

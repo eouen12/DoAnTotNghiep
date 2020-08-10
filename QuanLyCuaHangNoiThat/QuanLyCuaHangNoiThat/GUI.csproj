@@ -103,11 +103,11 @@
     <Compile Include="Forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmDoiDonVi.cs">
+    <Compile Include="Forms\frmQuyDoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmDoiDonVi.Designer.cs">
-      <DependentUpon>FrmDoiDonVi.cs</DependentUpon>
+    <Compile Include="Forms\frmQuyDoi.Designer.cs">
+      <DependentUpon>frmQuyDoi.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmHoaDon.cs">
       <SubType>Form</SubType>
@@ -187,34 +187,28 @@
     <Compile Include="Forms\frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportDT.cs">
+    <Compile Include="Forms\frmReportDT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportDT.Designer.cs">
+    <Compile Include="Forms\frmReportDT.Designer.cs">
       <DependentUpon>frmReportDT.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyCuaHangNoiThatDataSet.cs">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyCuaHangNoiThatDataSet.Designer.cs">
+    <Compile Include="QuanLyCuaHangNoiThatDataSetDT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetDT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyCuaHangNoiThatDataSet11.Designer.cs">
+    <Compile Include="QuanLyCuaHangNoiThatDataSetCongNo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCongNo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyCuaHangNoiThatDataSetCN.cs">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyCuaHangNoiThatDataSetCN.Designer.cs">
+    <Compile Include="QuanLyCuaHangNoiThatDataSetHD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetHD.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Forms\frmChinhSuaCTHoaDon.resx">
@@ -229,8 +223,8 @@
     <EmbeddedResource Include="Forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDoiDonVi.resx">
-      <DependentUpon>FrmDoiDonVi.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmQuyDoi.resx">
+      <DependentUpon>frmQuyDoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
@@ -271,7 +265,7 @@
     <EmbeddedResource Include="Forms\frmTrangChu.resx">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportDT.resx">
+    <EmbeddedResource Include="Forms\frmReportDT.resx">
       <DependentUpon>frmReportDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -284,9 +278,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="ReportCN.rdlc" />
+    <EmbeddedResource Include="ReportCongNo.rdlc" />
     <EmbeddedResource Include="ReportDT.rdlc" />
+    <EmbeddedResource Include="ReportHoaDon.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -297,38 +291,38 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QuanLyCuaHangNoiThatDataSet.xsc">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetDT.xsc">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetDT.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSet.xsd">
+    <None Include="QuanLyCuaHangNoiThatDataSetDT.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyCuaHangNoiThatDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyCuaHangNoiThatDataSetDT.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSet.xss">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetDT.xss">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetDT.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSet11.xsc">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetCongNo.xsc">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCongNo.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSet11.xsd">
+    <None Include="QuanLyCuaHangNoiThatDataSetCongNo.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyCuaHangNoiThatDataSet11.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyCuaHangNoiThatDataSetCongNo.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSet11.xss">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSet11.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetCongNo.xss">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetCongNo.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSetCN.xsc">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetHD.xsc">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetHD.xsd</DependentUpon>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSetCN.xsd">
+    <None Include="QuanLyCuaHangNoiThatDataSetHD.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyCuaHangNoiThatDataSetCN.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLyCuaHangNoiThatDataSetHD.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QuanLyCuaHangNoiThatDataSetCN.xss">
-      <DependentUpon>QuanLyCuaHangNoiThatDataSetCN.xsd</DependentUpon>
+    <None Include="QuanLyCuaHangNoiThatDataSetHD.xss">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetHD.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

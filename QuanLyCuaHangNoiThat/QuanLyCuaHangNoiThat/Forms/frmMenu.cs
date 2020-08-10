@@ -21,10 +21,10 @@ namespace QuanLyCuaHangNoiThat
         private Form currentfrmDesktop;
         private NHANVIEN nhanvien = new NHANVIEN();
         private List<LICHSUHETHONG> lsht = new List<LICHSUHETHONG>();
-       // private string patch = @"..\..\..\..\Anh_NhanVien\";
-       // private string patchLogo = @"..\..\..\..\logo3.jpg";
-        private string patch = @"Anh_NhanVien\";
-        private string patchLogo = @"logo3.jpg";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
+        private string patchLogo = @"..\..\..\..\logo3.jpg";
+        //private string patch = @"Anh_NhanVien\";
+        //private string patchLogo = @"logo3.jpg";
         public frmMenu(NHANVIEN nv)
         {
             
@@ -88,7 +88,7 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnMenuDoiDonVi_Click(object sender, EventArgs e)
         {
-            MofrmDesktop(new FrmDoiDonVi(nhanvien.MANV), sender, e);
+            MofrmDesktop(new frmQuyDoi(nhanvien.MANV), sender, e);
         }
 
         private void btnfrmLSHT_Click(object sender, EventArgs e)

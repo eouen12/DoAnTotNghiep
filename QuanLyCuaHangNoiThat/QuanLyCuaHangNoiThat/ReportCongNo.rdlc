@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.246cm</Width>
+              <Width>2.60583cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.87841cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.5121cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.79633cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.11389cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -26,11 +26,11 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.87517cm</Height>
+              <Height>0.6635cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox21">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -39,6 +39,7 @@
                             <TextRun>
                               <Value>Mã công nợ</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -48,7 +49,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -64,15 +65,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Mã khách hàng</Value>
+                              <Value>Mã khách</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -82,7 +84,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -98,15 +100,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tên khách hàng</Value>
+                              <Value>Tên khách</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -116,7 +119,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -132,7 +135,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -141,6 +144,7 @@
                             <TextRun>
                               <Value>Tổng tiền</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -150,7 +154,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -166,7 +170,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -175,6 +179,7 @@
                             <TextRun>
                               <Value>Tiền còn nợ</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -184,7 +189,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -200,7 +205,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -209,6 +214,7 @@
                             <TextRun>
                               <Value>Ngày trả</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -218,7 +224,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -235,7 +241,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.68467cm</Height>
+              <Height>0.64233cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -465,37 +471,84 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>0.54187cm</Top>
-        <Left>0.54328cm</Left>
-        <Height>1.55984cm</Height>
-        <Width>15.65622cm</Width>
+        <DataSetName>DataSetCongNo</DataSetName>
+        <Top>1.54912cm</Top>
+        <Left>0.18627cm</Left>
+        <Height>1.30583cm</Height>
+        <Width>16.79267cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=" Ngày lập : "&amp; Today()</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>0.3652cm</Top>
+        <Left>6.36744cm</Left>
+        <Height>0.64233cm</Height>
+        <Width>5.06117cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.01667in</Height>
+    <Height>2.2in</Height>
     <Style />
   </Body>
-  <Width>6.56329in</Width>
+  <Width>6.79295in</Width>
   <Page>
     <PageHeader>
-      <Height>3.27378cm</Height>
+      <Height>4.79778cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox27">
+        <Textbox Name="Textbox12">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>THỐNG KÊ CÔNG NỢ</Value>
+                  <Value>VẬT LIỆU XÂY DỰNG - TRANG TÍ NỘI THẤT</Value>
                   <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>MINH DŨNG</Value>
+                  <Style>
+                    <FontFamily>ARial</FontFamily>
                     <FontSize>20pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -505,12 +558,49 @@
                 <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>320 Nguyễn Thông, Ấp 3, Bình Tâm, TP.Tân An, LA</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> SĐT : 0918976811 - 0946535276</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>0272355016</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>2.29278cm</Top>
-          <Left>4.4107cm</Left>
-          <Height>0.87517cm</Height>
-          <Width>8.12322cm</Width>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Height>3.0765cm</Height>
+          <Width>10.36317cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -521,48 +611,103 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox12">
+        <Textbox Name="Textbox43">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value xml:space="preserve">                       </Value>
+                  <Value>THỐNG KÊ CÔNG NỢ</Value>
                   <Style>
-                    <FontSize>12pt</FontSize>
+                    <FontSize>22pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>VLXD-TTNT MINH DŨNG</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>4 Nguyễn Thông , Ấp 3, Xã Bình Tâm, Tp.Tân An, Long An</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>                SĐT : 0918976811 - 0946535276</Value>
-                  <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Height>1.72183cm</Height>
-          <Width>11.1995cm</Width>
+          <rd:DefaultName>Textbox43</rd:DefaultName>
+          <Top>3.5687cm</Top>
+          <Left>4.58467cm</Left>
+          <Height>1.22908cm</Height>
+          <Width>8.49017cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Chuyên kinh doanh :</Value>
+                  <Style>
+                    <FontStyle>Italic</FontStyle>
+                    <FontFamily>Cambria</FontFamily>
+                    <FontSize>13pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-CÁT, ĐÁ, XI MĂNG</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-GẠCH, TÔN, SẮT, GẠCH MEN</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>-THIẾT BỊ VỆ SINH, SƠN NƯỚC</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Left>10.469cm</Left>
+          <Height>2.251cm</Height>
+          <Width>6.50994cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -580,6 +725,16 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>3.70417cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -591,18 +746,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="QuanLyCuaHangNoiThatDataSetCN">
+    <DataSource Name="QuanLyCuaHangNoiThatDataSetCongNo">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>c650a3f7-9c2c-4957-b768-f016c28a3759</rd:DataSourceID>
+      <rd:DataSourceID>b99fb657-7eac-4a0f-a77b-08ee46d2b2bb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSetCongNo">
       <Query>
-        <DataSourceName>QuanLyCuaHangNoiThatDataSetCN</DataSourceName>
+        <DataSourceName>QuanLyCuaHangNoiThatDataSetCongNo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -612,6 +767,10 @@
         </Field>
         <Field Name="MAKH">
           <DataField>MAKH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MAHD">
+          <DataField>MAHD</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NV_LAPCN">
@@ -638,22 +797,18 @@
           <DataField>TENKH</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SDT">
-          <DataField>SDT</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="DIACHI">
           <DataField>DIACHI</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CMND">
-          <DataField>CMND</DataField>
+        <Field Name="SDT">
+          <DataField>SDT</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>QuanLyCuaHangNoiThatDataSetCN</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThatDataSetCN.xsd</rd:SchemaPath>
+        <rd:DataSetName>QuanLyCuaHangNoiThatDataSetCongNo</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\ACER\Desktop\DoAnTotNghiep\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThat\QuanLyCuaHangNoiThatDataSetCongNo.xsd</rd:SchemaPath>
         <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -662,5 +817,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>94802d65-e76f-48ac-93c8-6b4b93295588</rd:ReportID>
+  <rd:ReportID>e965079b-d912-4452-9275-50421fcf4157</rd:ReportID>
 </Report>

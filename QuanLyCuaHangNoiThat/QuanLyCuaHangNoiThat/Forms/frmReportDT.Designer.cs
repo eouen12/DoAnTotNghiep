@@ -29,20 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.HOADONBANHANG1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyCuaHangNoiThatDataSet1 = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSet1();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTK = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataTable1TableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetCNTableAdapters.DataTable1TableAdapter();
-            this.QuanLyCuaHangNoiThatDataSet1 = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSet1();
-            this.HOADONBANHANG1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.HOADONBANHANG1TableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSet1TableAdapters.HOADONBANHANG1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HOADONBANHANG1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // HOADONBANHANG1BindingSource
+            // 
+            this.HOADONBANHANG1BindingSource.DataMember = "HOADONBANHANG1";
+            this.HOADONBANHANG1BindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet1;
+            // 
+            // QuanLyCuaHangNoiThatDataSet1
+            // 
+            this.QuanLyCuaHangNoiThatDataSet1.DataSetName = "QuanLyCuaHangNoiThatDataSet1";
+            this.QuanLyCuaHangNoiThatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -90,16 +99,16 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(174, 34);
             this.dateTimePicker2.TabIndex = 15;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.HOADONBANHANG1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.HOADONBANHANG1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangNoiThat.ReportDT.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(7, 73);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -119,21 +128,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 34);
             this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
-            // 
-            // dataTable1TableAdapter
-            // 
-            this.dataTable1TableAdapter.ClearBeforeFill = true;
-            // 
-            // QuanLyCuaHangNoiThatDataSet1
-            // 
-            this.QuanLyCuaHangNoiThatDataSet1.DataSetName = "QuanLyCuaHangNoiThatDataSet1";
-            this.QuanLyCuaHangNoiThatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // HOADONBANHANG1BindingSource
-            // 
-            this.HOADONBANHANG1BindingSource.DataMember = "HOADONBANHANG1";
-            this.HOADONBANHANG1BindingSource.DataSource = this.QuanLyCuaHangNoiThatDataSet1;
+            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 10, 22, 8, 59, 0);
             // 
             // HOADONBANHANG1TableAdapter
             // 
@@ -151,10 +146,10 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "frmReportDT";
-            this.Text = "frmReportDT";
+            this.Text = "Thống kê doanh thu";
             this.Load += new System.EventHandler(this.frmReportDT_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HOADONBANHANG1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyCuaHangNoiThatDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +165,6 @@
         private System.Windows.Forms.BindingSource HOADONBANHANG1BindingSource;
         private QuanLyCuaHangNoiThatDataSet1 QuanLyCuaHangNoiThatDataSet1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private QuanLyCuaHangNoiThatDataSetCNTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
         private QuanLyCuaHangNoiThatDataSet1TableAdapters.HOADONBANHANG1TableAdapter HOADONBANHANG1TableAdapter;
     }
 }

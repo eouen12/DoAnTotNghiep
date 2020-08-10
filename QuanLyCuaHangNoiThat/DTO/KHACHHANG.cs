@@ -25,7 +25,6 @@ namespace DTO
         public string TENKH { get; set; }
         public string SDT { get; set; }
         public string DIACHI { get; set; }
-        public string CMND { get; set; }
         public bool TRANGTHAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -25,7 +25,7 @@ namespace DTO
         public string MAKH { get; set; }
         public string NV_LAP_HD { get; set; }
         public Nullable<System.DateTime> NGAYLAP { get; set; }
-        public Nullable<int> TONGTIEN { get; set; }
+        public Nullable<decimal> TONGTIEN { get; set; }
         public Nullable<System.DateTime> NGAYGIAO { get; set; }
         public bool TRANGTHAI { get; set; }
     

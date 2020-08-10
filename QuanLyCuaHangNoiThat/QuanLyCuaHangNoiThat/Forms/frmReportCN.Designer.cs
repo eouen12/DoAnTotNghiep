@@ -30,42 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyCuaHangNoiThatDataSetCNBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyCuaHangNoiThatDataSetCN = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetCN();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyCuaHangNoiThatDataSetCongNo = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetCongNo();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTK = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataTable1TableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetCNTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCNBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCN)).BeginInit();
+            this.dataTable1TableAdapter = new QuanLyCuaHangNoiThat.QuanLyCuaHangNoiThatDataSetCongNoTableAdapters.DataTable1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCongNo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataTable1BindingSource1
-            // 
-            this.dataTable1BindingSource1.DataMember = "DataTable1";
-            this.dataTable1BindingSource1.DataSource = this.quanLyCuaHangNoiThatDataSetCNBindingSource;
-            // 
-            // quanLyCuaHangNoiThatDataSetCNBindingSource
-            // 
-            this.quanLyCuaHangNoiThatDataSetCNBindingSource.DataSource = this.quanLyCuaHangNoiThatDataSetCN;
-            this.quanLyCuaHangNoiThatDataSetCNBindingSource.Position = 0;
-            // 
-            // quanLyCuaHangNoiThatDataSetCN
-            // 
-            this.quanLyCuaHangNoiThatDataSetCN.DataSetName = "QuanLyCuaHangNoiThatDataSetCN";
-            this.quanLyCuaHangNoiThatDataSetCN.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataTable1BindingSource
             // 
             this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.quanLyCuaHangNoiThatDataSetCNBindingSource;
+            this.dataTable1BindingSource.DataSource = this.quanLyCuaHangNoiThatDataSetCongNo;
+            // 
+            // quanLyCuaHangNoiThatDataSetCongNo
+            // 
+            this.quanLyCuaHangNoiThatDataSetCongNo.DataSetName = "QuanLyCuaHangNoiThatDataSetCongNo";
+            this.quanLyCuaHangNoiThatDataSetCongNo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -113,17 +99,17 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(174, 34);
             this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.dataTable1BindingSource1;
+            reportDataSource1.Name = "DataSetCongNo";
+            reportDataSource1.Value = this.dataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangNoiThat.ReportCN.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangNoiThat.ReportCongNo.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 84);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.reportViewer1.Name = "reportViewer1";
@@ -142,7 +128,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 34);
             this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
             // 
             // dataTable1TableAdapter
             // 
@@ -162,10 +148,8 @@
             this.Name = "frmReportCN";
             this.Text = "Thống kê công nợ";
             this.Load += new System.EventHandler(this.frmReportCN_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCNBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyCuaHangNoiThatDataSetCongNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,9 +164,7 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.BindingSource dataTable1BindingSource;
-        private System.Windows.Forms.BindingSource quanLyCuaHangNoiThatDataSetCNBindingSource;
-        private QuanLyCuaHangNoiThatDataSetCN quanLyCuaHangNoiThatDataSetCN;
-        private QuanLyCuaHangNoiThatDataSetCNTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
-        private System.Windows.Forms.BindingSource dataTable1BindingSource1;
+        private QuanLyCuaHangNoiThatDataSetCongNo quanLyCuaHangNoiThatDataSetCongNo;
+        private QuanLyCuaHangNoiThatDataSetCongNoTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
     }
 }

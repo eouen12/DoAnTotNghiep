@@ -16,9 +16,9 @@ namespace DTO
     {
         public string MASP { get; set; }
         public string MANPP { get; set; }
-        public Nullable<int> DONGIA { get; set; }
+        public Nullable<decimal> DONGIA { get; set; }
         public Nullable<int> SL_NHAPHANG { get; set; }
-        public Nullable<int> TONGGIATRI { get; set; }
+        public Nullable<decimal> TONGGIATRI { get; set; }
         public Nullable<System.DateTime> NGAYNHAPHANG { get; set; }
         public bool TRANGTHAI { get; set; }
     

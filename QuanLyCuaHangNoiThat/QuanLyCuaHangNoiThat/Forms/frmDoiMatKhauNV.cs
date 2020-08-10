@@ -16,8 +16,8 @@ namespace QuanLyCuaHangNoiThat
     public partial class frmDoiMatKhauNV : Form
     {
         private NHANVIEN nv = new NHANVIEN();
-        //private string patch = @"..\..\..\..\Anh_NhanVien\";
-        private string patch = @"Anh_NhanVien\";
+        private string patch = @"..\..\..\..\Anh_NhanVien\";
+        //private string patch = @"Anh_NhanVien\";
         public frmDoiMatKhauNV(NHANVIEN nhanvien)
         {
             InitializeComponent();

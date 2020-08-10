@@ -54,6 +54,7 @@
             this.txtMasp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -98,7 +99,7 @@
             this.btnLuu.Rotation = 0D;
             this.btnLuu.Size = new System.Drawing.Size(352, 84);
             this.btnLuu.TabIndex = 2;
-            this.btnLuu.Text = "Cập nhật";
+            this.btnLuu.Text = "Cập nhật ngày giao";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -263,6 +264,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.dgvCTHD);
             this.groupBox2.Controls.Add(this.btnSua);
@@ -365,7 +367,7 @@
             this.txtMasp.Location = new System.Drawing.Point(251, 37);
             this.txtMasp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMasp.Name = "txtMasp";
-            this.txtMasp.Size = new System.Drawing.Size(183, 38);
+            this.txtMasp.Size = new System.Drawing.Size(145, 38);
             this.txtMasp.TabIndex = 2;
             // 
             // label11
@@ -385,6 +387,27 @@
             this.label10.Size = new System.Drawing.Size(205, 32);
             this.label10.TabIndex = 0;
             this.label10.Text = "Mã sản phẩm:";
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnLamMoi.FlatAppearance.BorderSize = 2;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.btnLamMoi.IconColor = System.Drawing.Color.Black;
+            this.btnLamMoi.IconSize = 40;
+            this.btnLamMoi.Location = new System.Drawing.Point(473, 31);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Rotation = 0D;
+            this.btnLamMoi.Size = new System.Drawing.Size(56, 52);
+            this.btnLamMoi.TabIndex = 25;
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // frmChinhSuaCTHoaDon
             // 
@@ -437,5 +460,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
+        private FontAwesome.Sharp.IconButton btnLamMoi;
     }
 }

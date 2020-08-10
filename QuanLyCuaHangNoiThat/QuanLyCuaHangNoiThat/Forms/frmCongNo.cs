@@ -82,7 +82,6 @@ namespace QuanLyCuaHangNoiThat
                 cn = lstCongNo.Where(p => p.MACONGNO == this.dgvCongNo.CurrentRow.Cells["MACONGNO"].Value.ToString()).FirstOrDefault();
 
                 KHACHHANG kh = KhachHangBUS.LayThongTin(this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString());
-                this.lblCMND.Text = kh.CMND;
                 this.lblTenkh.Text = kh.TENKH;
                 this.lblDiaChi.Text = kh.DIACHI;
                 this.lblSDT.Text = kh.SDT;
@@ -110,7 +109,8 @@ namespace QuanLyCuaHangNoiThat
                 TIENCONNO = cn.TIENCONNO,
                 NGAYTRA = this.dateTimePickerNgayTra.Value.Date,
                 NV_LAPCN = cn.NV_LAPCN,
-                NGAYLAP = cn.NGAYLAP.Value.Date
+                NGAYLAP = cn.NGAYLAP.Value.Date,
+                TRANGTHAI = cn.TRANGTHAI
             });
             MessageBox.Show("Cập nhật hạn trả nợ thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadDSCN();
@@ -189,7 +189,6 @@ namespace QuanLyCuaHangNoiThat
             this.txtSoTienTraHomNay.Enabled = false;
             this.dateTimePickerNgayTra.Enabled = false;
             this.btnCapNhatHanTraNo.Enabled = false;
-            this.lblCMND.Text = string.Empty;
             this.lblTenkh.Text = string.Empty;
             this.lblDiaChi.Text = string.Empty;
             this.lblSDT.Text = string.Empty;

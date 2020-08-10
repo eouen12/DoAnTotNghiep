@@ -13,12 +13,12 @@ using DTO;
 
 namespace QuanLyCuaHangNoiThat.Forms
 {
-    public partial class FrmDoiDonVi : Form
+    public partial class frmQuyDoi : Form
     {
         private string manv;
         private List<DOIDONVINEN> lstDDVNEN = new List<DOIDONVINEN>();
         private List<DOIDONVITUONG> lstDDVTUONG = new List<DOIDONVITUONG>();
-        public FrmDoiDonVi(string manv)
+        public frmQuyDoi(string manv)
         {
             InitializeComponent();
             this.manv = manv;

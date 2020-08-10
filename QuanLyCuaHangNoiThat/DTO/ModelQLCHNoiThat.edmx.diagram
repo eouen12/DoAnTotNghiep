@@ -13,27 +13,28 @@
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.DOIDONVITUONG" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONBANHANG" Width="1.5" PointX="6" PointY="11.125" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="9.125" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="6" PointY="15" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="10.5" PointY="11.625" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="12.5" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="12.25" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHAPHANPHOI" Width="1.5" PointX="0.75" PointY="4.25" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.QUYENHAN" Width="1.5" PointX="1.5" PointY="13.375" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.SANPHAM" Width="1.5" PointX="6" PointY="3.875" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__ANHMINHHOA__MASP__440B1D61" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAHD__398D8EEE" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__38996AB5" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__NV_LAPCN__3A81B327" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__37A5467C" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__3D5E1FD2" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__3E52440B" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__3F466844" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__403A8C7D" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__3C69FB99" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__3B75D760" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__4222D4EF" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__412EB0B6" />
-        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__4316F928" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__ANHMINHHOA__MASP__44FF419A" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAHD__3A81B327" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAKH__398D8EEE" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__NV_LAPCN__3B75D760" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUTRA__MACON__38996AB5" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MAHD__3E52440B" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CTHOADONBA__MASP__3F466844" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNH__MANPP__403A8C7D" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CHITIETNHA__MASP__412EB0B6" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBAN__NV_LA__3D5E1FD2" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__HOADONBANH__MAKH__3C69FB99" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__LICHSUHET__NV_TH__45F365D3" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MALOAI__4316F928" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__NHANVIEN__CHUCVU__4222D4EF" />
+        <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__SANPHAM__MANPP__440B1D61" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

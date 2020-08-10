@@ -45,7 +45,6 @@ namespace DAO
             kh.TENKH = entity.TENKH;
             kh.SDT = entity.SDT;
             kh.DIACHI = entity.DIACHI;
-            kh.CMND = entity.CMND;
             db.SaveChanges();
             return true ;
         }

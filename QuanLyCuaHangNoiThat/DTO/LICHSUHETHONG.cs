@@ -19,5 +19,8 @@ namespace DTO
         public string NV_THAOTAC { get; set; }
         public string VITRI_THAOTAC { get; set; }
         public string GHICHU { get; set; }
+        public bool TRANGTHAI { get; set; }
+    
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
