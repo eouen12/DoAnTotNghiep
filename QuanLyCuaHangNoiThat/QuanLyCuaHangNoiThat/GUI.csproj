@@ -205,6 +205,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyCuaHangNoiThatDataSetCongNo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyCuaHangNoiThatDataSetHD.cs">
+      <DependentUpon>QuanLyCuaHangNoiThatDataSetHD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyCuaHangNoiThatDataSetHD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

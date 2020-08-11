@@ -12,7 +12,7 @@ namespace DAO
         private static QuanLyCuaHangNoiThatEntities db = new QuanLyCuaHangNoiThatEntities();
         public static List<CONGNO> LayDanhSachCongNo()
         {
-            return db.CONGNO.Where(p => p.TRANGTHAI == true).ToList();
+            return db.CONGNO.ToList();
         }
         public static bool CapNhatCongNo(CONGNO congno)
         {

@@ -55,11 +55,9 @@
     <Compile Include="CongNoBUS.cs" />
     <Compile Include="CTHoaDonBanHangBUS.cs" />
     <Compile Include="CTNhapHangBUS.cs" />
-    <Compile Include="CTNhapHangTuNPPBUS.cs" />
     <Compile Include="DoiDonViNenBUS.cs" />
     <Compile Include="DoiDonViTuongBUS.cs" />
     <Compile Include="HoaDonBanHangBUS.cs" />
-    <Compile Include="HoaDonNhapHangBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LichSuHeThongBUS.cs" />
     <Compile Include="LichSuTraNoBUS.cs" />

@@ -41,7 +41,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         void LoadDSCNTheoThang(DateTime dt)
         {
             lstKhachhang = KhachHangBUS.LayDanhSachKhachHang();
-            lstCongNo = CongNoBUS.LayDanhSachCongNo();
+            lstCongNo = CongNoBUS.LayDanhSachCongNo().Where(p=>p.TRANGTHAI == true).ToList();
             var kq = from cn in lstCongNo
                      join kh in lstKhachhang
                      on cn.MAKH equals kh.MAKH

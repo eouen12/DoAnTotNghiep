@@ -51,9 +51,14 @@ namespace QuanLyCuaHangNoiThat.Forms
 
                 CapNhatSoLuongSanPham();
 
-                if(this.chkTraGop.Checked)
+                if(this.chkTraGop.Checked 
+                    && (Convert.ToDecimal(this.lblTongTien.Text) - Convert.ToDecimal(this.txtSoTienTraTrc.Text)) != 0)
                 {
                     TaoCongNo();
+                }   
+                else
+                {
+                    TaoCongNoKTraGop();
                 }    
                 MessageBox.Show("Lập hóa đơn thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 dangThaoTac = false;
@@ -403,6 +408,52 @@ namespace QuanLyCuaHangNoiThat.Forms
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        void TaoCongNoKTraGop()
+        {
+            List<CONGNO> lstcongno = CongNoBUS.LayDanhSachCongNo();
+            string macn;
+            if (lstcongno.Count == 0)
+            {
+                macn = "CN1";
+            }
+            else
+            {
+                macn = lstcongno.Select(p => p.MACONGNO).LastOrDefault();
+                int somacn = Convert.ToInt32(macn.Remove(0, 2)) + 1;
+                macn = "CN" + somacn;
+                for (int i = 0; i < lstcongno.Count(); i++)
+                {
+                    if (macn == lstcongno[i].MACONGNO)
+                    {
+                        somacn = Convert.ToInt32(macn.Remove(0, 2)) + 1;
+                        macn = "CN" + somacn;
+                    }
+                }
+            }
+            CongNoBUS.ThemCongNo(new CONGNO
+            {
+                MACONGNO = macn,
+                MAHD = mahd,
+                MAKH = makh,
+                NV_LAPCN = this.manv,
+                NGAYLAP = DateTime.Now.Date,
+                TONGTIEN = Convert.ToDecimal(this.lblTongTien.Text),
+                TIENCONNO = 0M,
+                NGAYTRA = null,
+                TRANGTHAI = false
+            });
+
+            string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập công nợ " + macn;
+            LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
+            {
+                NGAYTAO = DateTime.Now.Date,
+                NV_THAOTAC = this.manv,
+                VITRI_THAOTAC = this.vitrithaotac,
+                GHICHU = lsth
+            });
+
         }
     }
 }

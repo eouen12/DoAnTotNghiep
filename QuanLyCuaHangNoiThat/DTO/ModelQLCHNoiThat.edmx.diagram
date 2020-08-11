@@ -12,13 +12,13 @@
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.DOIDONVINEN" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.DOIDONVITUONG" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.HOADONBANHANG" Width="1.5" PointX="6" PointY="11.125" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="9.125" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="6" PointY="15" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="13.75" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUHETHONG" Width="1.5" PointX="6" PointY="15.875" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LICHSUTRANO" Width="1.5" PointX="10.5" PointY="11.625" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="12.25" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="9.125" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.NHAPHANPHOI" Width="1.5" PointX="0.75" PointY="4.25" />
-        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.QUYENHAN" Width="1.5" PointX="1.5" PointY="13.375" />
+        <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.QUYENHAN" Width="1.5" PointX="1.5" PointY="10.25" />
         <EntityTypeShape EntityType="QuanLyCuaHangNoiThatModel.SANPHAM" Width="1.5" PointX="6" PointY="3.875" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__ANHMINHHOA__MASP__44FF419A" />
         <AssociationConnector Association="QuanLyCuaHangNoiThatModel.FK__CONGNO__MAHD__3A81B327" />

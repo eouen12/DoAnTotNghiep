@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>8.50195cm</Height>
+              <Height>11.31004cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -182,7 +182,7 @@
                                 <TextRun>
                                   <Value>Tổng Cộng :</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -224,8 +224,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Top>7.8513cm</Top>
-                          <Left>11.85901cm</Left>
+                          <Top>10.66771cm</Top>
+                          <Left>11.98803cm</Left>
                           <Height>0.64233cm</Height>
                           <Width>2.43889cm</Width>
                           <ZIndex>6</ZIndex>
@@ -404,8 +404,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox15</rd:DefaultName>
-                          <Top>7.8513cm</Top>
-                          <Left>14.33318cm</Left>
+                          <Top>10.66771cm</Top>
+                          <Left>14.4622cm</Left>
                           <Height>0.63401cm</Height>
                           <Width>2.01829cm</Width>
                           <ZIndex>12</ZIndex>
@@ -878,7 +878,7 @@
                           <Top>4.59881cm</Top>
                           <Left>0.27633cm</Left>
                           <Height>1.2cm</Height>
-                          <Width>15.99593cm</Width>
+                          <Width>15.99592cm</Width>
                           <ZIndex>13</ZIndex>
                           <Style>
                             <Border>
@@ -895,7 +895,7 @@
                                 <TextRun>
                                   <Value>=Fields!TONGTIEN.Value</Value>
                                   <Style>
-                                    <FontSize>16pt</FontSize>
+                                    <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0'₫';(#,0'₫')</Format>
                                   </Style>
@@ -919,6 +919,142 @@
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                             <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="TIENCONNO">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!TIENCONNO.Value</Value>
+                                  <Style>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0'₫';(#,0'₫')</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>TIENCONNO</rd:DefaultName>
+                          <Top>8.53411cm</Top>
+                          <Left>10.18113cm</Left>
+                          <Height>0.87516cm</Height>
+                          <Width>3.50293cm</Width>
+                          <ZIndex>15</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=(Fields!TONGTIEN.Value)-(Fields!TIENCONNO.Value)</Value>
+                                  <Style>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>#,0'₫';(#,0'₫')</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Top>7.56722cm</Top>
+                          <Left>10.18113cm</Left>
+                          <Height>0.87516cm</Height>
+                          <Width>3.62184cm</Width>
+                          <ZIndex>16</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Đã trả :</Value>
+                                  <Style>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Top>7.56722cm</Top>
+                          <Left>6.2253cm</Left>
+                          <Height>0.87516cm</Height>
+                          <Width>3.85cm</Width>
+                          <ZIndex>17</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Còn lại :</Value>
+                                  <Style>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Top>8.53411cm</Top>
+                          <Left>6.2253cm</Left>
+                          <Height>0.87516cm</Height>
+                          <Width>3.85cm</Width>
+                          <ZIndex>18</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </ReportItems>
@@ -954,7 +1090,7 @@
         <DataSetName>DataSetHoaDon</DataSetName>
         <Top>0.07056cm</Top>
         <Left>0.28787cm</Left>
-        <Height>8.50195cm</Height>
+        <Height>11.31004cm</Height>
         <Width>17.81783cm</Width>
         <Style>
           <Border>
@@ -963,7 +1099,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.45833in</Height>
+    <Height>4.55in</Height>
     <Style />
   </Body>
   <Width>7.23333in</Width>
@@ -1188,7 +1324,7 @@
                 <TextRun>
                   <Value>Người lập phiếu</Value>
                   <Style>
-                    <FontSize>13pt</FontSize>
+                    <FontSize>14pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1199,7 +1335,7 @@
                 <TextRun>
                   <Value>  (Ký , họ tên)</Value>
                   <Style>
-                    <FontSize>13pt</FontSize>
+                    <FontSize>14pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1228,7 +1364,7 @@
                 <TextRun>
                   <Value>   Khách hàng</Value>
                   <Style>
-                    <FontSize>13pt</FontSize>
+                    <FontSize>14pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1239,7 +1375,7 @@
                 <TextRun>
                   <Value>  (Ký , họ tên)</Value>
                   <Style>
-                    <FontSize>13pt</FontSize>
+                    <FontSize>14pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1352,6 +1488,10 @@
         <Field Name="DVT">
           <DataField>DVT</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TIENCONNO">
+          <DataField>TIENCONNO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

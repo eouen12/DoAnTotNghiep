@@ -42,7 +42,7 @@ namespace QuanLyCuaHangNoiThat
         void LoadDSCN()
         {
             lstKhachhang = KhachHangBUS.LayDanhSachKhachHang();
-            lstCongNo = CongNoBUS.LayDanhSachCongNo();
+            lstCongNo = CongNoBUS.LayDanhSachCongNo().Where(p=>p.TRANGTHAI ==true).ToList();
             var kq = from cn in lstCongNo
                         join kh in lstKhachhang
                         on cn.MAKH equals kh.MAKH
@@ -79,7 +79,7 @@ namespace QuanLyCuaHangNoiThat
                 this.dateTimePickerNgayTra.Enabled = true;
                 this.btnCapNhatHanTraNo.Enabled = true;
 
-                cn = lstCongNo.Where(p => p.MACONGNO == this.dgvCongNo.CurrentRow.Cells["MACONGNO"].Value.ToString()).FirstOrDefault();
+                cn = lstCongNo.Where(p => p.MACONGNO == this.dgvCongNo.CurrentRow.Cells["MACONGNO"].Value.ToString() && p.TRANGTHAI == true).FirstOrDefault();
 
                 KHACHHANG kh = KhachHangBUS.LayThongTin(this.dgvCongNo.CurrentRow.Cells["MAKHCongNo"].Value.ToString());
                 this.lblTenkh.Text = kh.TENKH;

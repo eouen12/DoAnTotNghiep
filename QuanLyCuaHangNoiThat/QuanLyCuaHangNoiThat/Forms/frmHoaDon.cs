@@ -86,7 +86,7 @@ namespace QuanLyCuaHangNoiThat
             this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD.CurrentRow.Cells["TONGTIEN"].Value).ToString("#,##0") + " VND";
             this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYGIAO"].Value).ToString("dd/MM/yyyy");
             LoadDSCTHD(this.lblMaHD.Text);
-            hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
+            hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault(); 
         }
 
        
