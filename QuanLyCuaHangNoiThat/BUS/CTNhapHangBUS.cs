@@ -13,13 +13,13 @@ namespace BUS
         {
             return CTNhapHangDAO.LayDanhSachChiTietNhapHang();
         }
-        public static bool ThemCTNH(CHITIETNHAPHANG npp)
+        public static bool ThemCTNH(CHITIETNHAPHANG ctnh)
         {
-            return CTNhapHangDAO.ThemCTNH(npp);
+            return CTNhapHangDAO.ThemCTNH(ctnh);
         }
-        public static bool SuaCTNH(CHITIETNHAPHANG npp)
+        public static bool SuaCTNH(CHITIETNHAPHANG ctnh)
         {
-            return CTNhapHangDAO.SuaCTNH(npp);
+            return CTNhapHangDAO.SuaCTNH(ctnh);
         }
         public static bool XoaCTNH(string manpp, string masp)
         {

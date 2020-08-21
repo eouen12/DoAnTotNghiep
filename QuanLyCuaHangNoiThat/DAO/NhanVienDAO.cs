@@ -15,13 +15,18 @@ namespace DAO
             return db.NHANVIEN.Where(p => p.TRANGTHAI == true).Select(p => p.MANV).ToList();
         }
 
+        public static NHANVIEN LayNhanVien(string manv)
+        {
+            return db.NHANVIEN.FirstOrDefault(p => p.MANV == manv);
+        }
+
         public static List<NHANVIEN> LayDanhSachNV()
         {
-            return db.NHANVIEN.Where(p => p.TRANGTHAI == true && p.CHUCVU == "NV").ToList();
+            return db.NHANVIEN.Where(p => p.CHUCVU == "NV").ToList();
         }
         public static List<NHANVIEN> LayDanhSachAllNV()
         {
-            return db.NHANVIEN.Where(p => p.TRANGTHAI).ToList();
+            return db.NHANVIEN.ToList();
         }
 
         public static List<NHANVIEN> LayThongTinCuaNV(string manv)

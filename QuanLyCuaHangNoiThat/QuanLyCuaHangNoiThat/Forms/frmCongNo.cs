@@ -127,6 +127,11 @@ namespace QuanLyCuaHangNoiThat
 
         void CapNhatCongNo()
         {
+            if(this.txtSoTienTraHomNay.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập tiền trả nợ !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             if (Convert.ToDecimal(this.txtSoTienTraHomNay.Text) > cn.TIENCONNO)
             {
                 MessageBox.Show("Số tiền trả đang lớn hơn số tiền còn nợ trong hóa đơn !!!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -242,10 +247,24 @@ namespace QuanLyCuaHangNoiThat
         void TimKiem(string chuoi)
         {
             var kq = from cn in lstCongNo
+                     join kh in lstKhachhang
+                     on cn.MAKH equals kh.MAKH
                      where cn.MACONGNO.Contains(chuoi) 
                      || cn.MAKH.Contains(chuoi) 
-                     || cn.KHACHHANG.TENKH.Contains(chuoi)
-                     select cn;
+                     || cn.MAHD.Contains(chuoi)
+                     || kh.TENKH.Contains(chuoi)
+                     select new
+                     {
+                         cn.MACONGNO,
+                         cn.MAKH,
+                         cn.MAHD,
+                         kh.TENKH,
+                         cn.TONGTIEN,
+                         cn.TIENCONNO,
+                         cn.NGAYTRA,
+                         cn.NV_LAPCN,
+                         cn.NGAYLAP
+                     };
             this.dgvCongNo.AutoGenerateColumns = false;
             this.dgvCongNo.DataSource = kq.ToList();
         }

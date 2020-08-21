@@ -80,13 +80,18 @@ namespace QuanLyCuaHangNoiThat
         private void dgvDanhSachHD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.lblMaHD.Text = this.dgvDanhSachHD.CurrentRow.Cells["MAHD"].Value.ToString();
+            hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault();
+            if (hd.TRANGTHAI == false)
+            {
+                this.btnSuaHD.Enabled = false;
+                this.btnChotDon.Enabled = false;
+            }  
             this.lblTenKH.Text = this.dgvDanhSachHD.CurrentRow.Cells["TENKH"].Value.ToString();
             this.lblTenNhanVien.Text = this.dgvDanhSachHD.CurrentRow.Cells["NVLAPHD"].Value.ToString();
             this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYLAP"].Value).ToString("dd/MM/yyyy");
             this.lblTongTien.Text = Convert.ToInt32(this.dgvDanhSachHD.CurrentRow.Cells["TONGTIEN"].Value).ToString("#,##0") + " VND";
             this.lblNgayGiaoHang.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYGIAO"].Value).ToString("dd/MM/yyyy");
             LoadDSCTHD(this.lblMaHD.Text);
-            hd = lstHD.Where(p => p.MAHD == this.lblMaHD.Text).FirstOrDefault(); 
         }
 
        
@@ -129,7 +134,8 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadDSHoaDon()
         {
-            lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            // lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            lstHD = HoaDonBanHangBUS.LayDSHoaDon();
             lstDSKH = KhachHangBUS.LayDanhSachKhachHang();
             var kq = from hd in lstHD
                      join kh in lstDSKH
@@ -171,6 +177,8 @@ namespace QuanLyCuaHangNoiThat
 
         void Reset()
         {
+            this.btnChotDon.Enabled = true;
+            this.btnSuaHD.Enabled = true;
             this.txtTimKiem.Clear();
             this.lblMaHD.Text = string.Empty;
             this.lblTenKH.Text = string.Empty;
@@ -195,9 +203,16 @@ namespace QuanLyCuaHangNoiThat
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lstHD = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            lstHD = HoaDonBanHangBUS.LayDSHoaDon();
             lstCTHD = CTHoaDonBanHangBUS.LayDSCTHD();
             lstDSSP = SanPhamBUS.LayDanhSachSP();
+        }
+
+        private void btnChotDon_Click(object sender, EventArgs e)
+        {
+            hd.TRANGTHAI = false;
+            HoaDonBanHangBUS.CapNhatHoaDon(hd);
+            Reset();
         }
     }
 }

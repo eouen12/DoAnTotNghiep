@@ -38,6 +38,11 @@ namespace QuanLyCuaHangNoiThat
 
         private void btnLuuDoiMK_Click(object sender, EventArgs e)
         {
+            if(this.txtMatKhauCu.Text == string.Empty || this.txtMatKhauMoi.Text == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             if(this.txtMatKhauCu.Text == nv.MANV)
             {
                 string mk = MD5(this.txtMatKhauMoi.Text);

@@ -65,7 +65,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(238, 35);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(330, 37);
+            this.comboBox1.Size = new System.Drawing.Size(357, 37);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -117,7 +117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(708, 35);
+            this.label6.Location = new System.Drawing.Point(735, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 29);
             this.label6.TabIndex = 6;
@@ -125,19 +125,23 @@
             // 
             // btndoi1
             // 
+            this.btndoi1.BackColor = System.Drawing.Color.Gainsboro;
             this.btndoi1.Enabled = false;
+            this.btndoi1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btndoi1.FlatAppearance.BorderSize = 2;
+            this.btndoi1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndoi1.Location = new System.Drawing.Point(198, 174);
             this.btndoi1.Name = "btndoi1";
             this.btndoi1.Size = new System.Drawing.Size(162, 56);
             this.btndoi1.TabIndex = 5;
             this.btndoi1.Text = "Đổi";
-            this.btndoi1.UseVisualStyleBackColor = true;
+            this.btndoi1.UseVisualStyleBackColor = false;
             this.btndoi1.Click += new System.EventHandler(this.btndoi1_Click);
             // 
             // txtMet
             // 
             this.txtMet.Enabled = false;
-            this.txtMet.Location = new System.Drawing.Point(574, 35);
+            this.txtMet.Location = new System.Drawing.Point(601, 35);
             this.txtMet.Name = "txtMet";
             this.txtMet.Size = new System.Drawing.Size(128, 34);
             this.txtMet.TabIndex = 4;
@@ -259,7 +263,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(692, 60);
+            this.label8.Location = new System.Drawing.Point(735, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 29);
             this.label8.TabIndex = 7;
@@ -268,20 +272,24 @@
             // txtMetToi
             // 
             this.txtMetToi.Enabled = false;
-            this.txtMetToi.Location = new System.Drawing.Point(558, 60);
+            this.txtMetToi.Location = new System.Drawing.Point(601, 60);
             this.txtMetToi.Name = "txtMetToi";
             this.txtMetToi.Size = new System.Drawing.Size(128, 34);
             this.txtMetToi.TabIndex = 6;
             // 
             // btndoi2
             // 
+            this.btndoi2.BackColor = System.Drawing.Color.Gainsboro;
             this.btndoi2.Enabled = false;
-            this.btndoi2.Location = new System.Drawing.Point(198, 232);
+            this.btndoi2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btndoi2.FlatAppearance.BorderSize = 2;
+            this.btndoi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndoi2.Location = new System.Drawing.Point(213, 231);
             this.btndoi2.Name = "btndoi2";
             this.btndoi2.Size = new System.Drawing.Size(162, 56);
             this.btndoi2.TabIndex = 6;
             this.btndoi2.Text = "Đổi";
-            this.btndoi2.UseVisualStyleBackColor = true;
+            this.btndoi2.UseVisualStyleBackColor = false;
             this.btndoi2.Click += new System.EventHandler(this.btndoi2_Click);
             // 
             // txtNhapSoLop
@@ -331,7 +339,7 @@
             "60"});
             this.comboBox2.Location = new System.Drawing.Point(222, 60);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(330, 37);
+            this.comboBox2.Size = new System.Drawing.Size(373, 37);
             this.comboBox2.TabIndex = 4;
             // 
             // label4
@@ -352,14 +360,14 @@
             this.txtKQ2.Size = new System.Drawing.Size(307, 34);
             this.txtKQ2.TabIndex = 6;
             // 
-            // FrmDoiDonVi
+            // frmQuyDoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1312, 681);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmDoiDonVi";
+            this.Name = "frmQuyDoi";
             this.Text = "FrmDoiDonVi";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

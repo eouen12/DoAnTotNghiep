@@ -46,9 +46,13 @@ namespace QuanLyCuaHangNoiThat
 
         private void txtEmailNPP_Validated(object sender, EventArgs e)
         {
+            if(this.txtEmailNPP.Text == string.Empty)
+            {
+                return;
+            }    
             if (!isValidEmail(this.txtEmailNPP.Text))
             {
-                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi");
+                MessageBox.Show("Email không đúng định dạng !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtEmailNPP.Focus();
             }
         }
@@ -124,19 +128,20 @@ namespace QuanLyCuaHangNoiThat
         string AutoMaNPP()
         {
             string manpp = string.Empty;
-            if (lstNPP.Count == 0)
+            var lstnpp = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
+            if (lstnpp.Count == 0)
             {
                 manpp = "NPP1";
                 return manpp;
             }
             else
             {
-                manpp = lstNPP[lstNPP.Count - 1].MANPP.ToString();
+                manpp = lstnpp[lstnpp.Count - 1].MANPP.ToString();
                 int somanpp = Convert.ToInt32(manpp.Remove(0, 3)) + 1;
                 manpp = "NPP" + somanpp;
-                for (int i = 0; i < lstNPP.Count(); i++)
+                for (int i = 0; i < lstnpp.Count(); i++)
                 {
-                    if (manpp == lstNPP[i].MANPP)
+                    if (manpp == lstnpp[i].MANPP)
                     {
                         somanpp = Convert.ToInt32(manpp.Remove(0, 3)) + 1;
                         manpp = "NPP" + somanpp;
@@ -147,7 +152,7 @@ namespace QuanLyCuaHangNoiThat
         }
         void LoadDataDSNPP()
         {
-            lstNPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
+            lstNPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi().Where(p=>p.TRANGTHAI == true).ToList();
             this.dgvDSNhaPhanPhoi.AutoGenerateColumns = false;
             this.dgvDSNhaPhanPhoi.DataSource = lstNPP;
             this.txtMaNPP.Text = AutoMaNPP();
@@ -264,7 +269,11 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Bạn chưa điền đầy đủ thông tin !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
-
+            if(lstCTNH.Any(p=>p.MANPP == this.txtMaNPPNhapHang.Text && p.MASP == this.txtMaSPNhapHang.Text))
+            {
+                MessageBox.Show("Thêm chi tiết nhập hàng thất bại !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG { 
                 MANPP = this.txtMaNPPNhapHang.Text,
                 MASP = this.txtMaSPNhapHang.Text,
@@ -307,8 +316,8 @@ namespace QuanLyCuaHangNoiThat
             CHITIETNHAPHANG ctnh = new CHITIETNHAPHANG();
             ctnh.MANPP = this.txtMaNPPNhapHang.Text;
             ctnh.MASP = this.txtMaSPNhapHang.Text;
-            ctnh.DONGIA = int.Parse(this.txtDonGiaNhapHang.Text);
-            ctnh.SL_NHAPHANG = int.Parse(this.txtSLNhapHang.Text);
+            ctnh.DONGIA = Convert.ToInt32(this.txtDonGiaNhapHang.Text);
+            ctnh.SL_NHAPHANG = Convert.ToInt32(this.txtSLNhapHang.Text);
             ctnh.TONGGIATRI = Convert.ToInt32(this.txtDonGiaNhapHang.Text) * Convert.ToInt32(this.txtSLNhapHang.Text);
             ctnh.NGAYNHAPHANG = this.dateTimePickerNhapHang.Value;
 
@@ -356,11 +365,13 @@ namespace QuanLyCuaHangNoiThat
             this.btnThemDLNhapHang.Enabled = false;
             this.btnSuaDLNhapHang.Enabled = true;
             this.btnXoaDLNhapHang.Enabled = true;
+            this.txtMaNPPNhapHang.Enabled = false;
+            this.txtMaSPNhapHang.Enabled = false;
             this.dangThayDoiDL = true;
             this.txtMaNPPNhapHang.Text = this.dgvDsChiTietNhapHang.CurrentRow.Cells["MANPPNH"].Value.ToString();
             this.txtMaSPNhapHang.Text = this.dgvDsChiTietNhapHang.CurrentRow.Cells["MASPNH"].Value.ToString();
             this.txtSLNhapHang.Text = this.dgvDsChiTietNhapHang.CurrentRow.Cells["SL_NHAPHANG"].Value.ToString();
-            this.txtDonGiaNhapHang.Text = Convert.ToInt32(this.dgvDsChiTietNhapHang.CurrentRow.Cells["DONGIA"].Value).ToString("#,##0");
+            this.txtDonGiaNhapHang.Text = Convert.ToInt32(this.dgvDsChiTietNhapHang.CurrentRow.Cells["DONGIA"].Value).ToString();
             this.txtTongGtriNhapHang.Text = Convert.ToInt32(this.dgvDsChiTietNhapHang.CurrentRow.Cells["TONGGIATRI"].Value).ToString("#,##0");
             this.dateTimePickerNhapHang.Text = this.dgvDsChiTietNhapHang.CurrentRow.Cells["NGAYNHAPHANG"].Value.ToString();
         }
@@ -398,7 +409,7 @@ namespace QuanLyCuaHangNoiThat
 
         bool isValidEmail(string inputEmail)
         {
-            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,3}$");
+            Regex re = new Regex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
             if (re.IsMatch(inputEmail))
                 return (true);
             else
@@ -483,7 +494,7 @@ namespace QuanLyCuaHangNoiThat
 
         bool KiemtraDinhDangSDT(string sdt)
         {
-            Regex re = new Regex("^[0-9]{10,10}$");
+            Regex re = new Regex("^[0-9]{10,11}$");
             if (re.IsMatch(sdt))
                 return (true);
             else

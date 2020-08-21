@@ -13,6 +13,10 @@ namespace BUS
         {
             return HoaDonBanHangDAO.LayDanhSachHonDon();
         }
+        public static List<HOADONBANHANG> LayDSHoaDon()
+        {
+            return HoaDonBanHangDAO.LayDSHonDon();
+        }
 
         public static List<HOADONBANHANG> LayDanhSachHoaDonTN(string ngaylap)
         {

@@ -71,14 +71,18 @@ namespace QuanLyCuaHangNoiThat.Forms
                     MASP = this.txtMasp.Text,
                     SOLUONG = Convert.ToInt32(this.txtSoLuong.Text.Trim()),
                     DONGIA = TinhDonGia(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text)),
+                    DVT = sp.Where(p => p.MASP == this.txtMasp.Text).FirstOrDefault().DVT,
                     TRANGTHAI = true
-                });
+                }) ;
                 MessageBox.Show("Thêm sản phẩm thành công", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 loadDSCTHD(hd.MAHD);
                 CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 0);
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
-                CapNhatThongTienCongNo();
+                if (CongNoBUS.LayDanhSachCongNo().Where(p => p.MAKH == this.lblMaKH.Text && p.MAHD == hd.MAHD && p.TRANGTHAI == true).FirstOrDefault() != null)
+                {
+                    CapNhatThongTienCongNo();
+                }
                 this.dangThayDoiCTHD = false;
                 loadThongTinHD(hd.MAHD);
                 Reset();
@@ -116,7 +120,8 @@ namespace QuanLyCuaHangNoiThat.Forms
                 MAHD = hd.MAHD,
                 MASP = this.txtMasp.Text,
                 SOLUONG = Convert.ToInt32(this.txtSoLuong.Text.Trim()),
-                DONGIA = TinhDonGia(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text))
+                DONGIA = TinhDonGia(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text)),
+                DVT = sp.Where(p => p.MASP == this.txtMasp.Text).FirstOrDefault().DVT
             };
 
 
@@ -127,7 +132,10 @@ namespace QuanLyCuaHangNoiThat.Forms
                 CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 1);
                 hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                 HoaDonBanHangBUS.CapNhatHoaDon(hd);
-                CapNhatThongTienCongNo();
+                if (CongNoBUS.LayDanhSachCongNo().Where(p => p.MAKH == this.lblMaKH.Text && p.MAHD == hd.MAHD && p.TRANGTHAI == true).FirstOrDefault() != null)
+                {
+                    CapNhatThongTienCongNo();
+                }
                 this.dangThayDoiCTHD = false;
                 loadThongTinHD(hd.MAHD);
                 Reset();
@@ -162,7 +170,10 @@ namespace QuanLyCuaHangNoiThat.Forms
                     CapNhatSoLuongSanPham(this.txtMasp.Text, Convert.ToInt32(this.txtSoLuong.Text), 2);
                     hd.TONGTIEN = lstcthd.Sum(p => p.DONGIA);
                     HoaDonBanHangBUS.CapNhatHoaDon(hd);
-                    CapNhatThongTienCongNo();
+                    if (CongNoBUS.LayDanhSachCongNo().Where(p => p.MAKH == this.lblMaKH.Text && p.MAHD == hd.MAHD && p.TRANGTHAI == true).FirstOrDefault() != null)
+                    {
+                        CapNhatThongTienCongNo();
+                    }
                     this.dangThayDoiCTHD = false;
                     loadThongTinHD(hd.MAHD);
                     Reset();
@@ -295,7 +306,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         bool KiemTraSLMasp(string masp, int sl)
         {
             var kq = sp.Where(p => p.MASP == masp).FirstOrDefault();
-            if (sl > kq.SL_TON)
+            if (sl > kq.SL_TON || sl == 0)
             {
                 MessageBox.Show("Số lượng nhập không thể vượt mức số lượng tồn của sản phẩm !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

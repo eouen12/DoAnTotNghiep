@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using BUS;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace QuanLyCuaHangNoiThat
 {
@@ -66,8 +67,22 @@ namespace QuanLyCuaHangNoiThat
         void LoadDataTabDSSP()
         {
             lstSanPham = SanPhamBUS.LayDanhSachSanPham();
+            lstNhaPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
             lstAnhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa();
+            //var kq = from sp in lstSanPham
+            //         select new
+            //         {
+            //             sp.MASP,
+            //             sp.TENSP,
+            //             sp.SL_TON,
+            //             sp.GIABAN,
+            //             sp.DVT,
+            //             sp.LOAISANPHAM.TENLOAI,
+            //             sp.NHAPHANPHOI.TENNPP
+            //         };
             var kq = from sp in lstSanPham
+                     join npp in lstNhaPP
+                     on sp.MANPP equals npp.MANPP
                      select new
                      {
                          sp.MASP,
@@ -76,7 +91,7 @@ namespace QuanLyCuaHangNoiThat
                          sp.GIABAN,
                          sp.DVT,
                          sp.LOAISANPHAM.TENLOAI,
-                         sp.NHAPHANPHOI.TENNPP
+                         npp.TENNPP
                      };
             this.dgvDSSanPham.DataSource = kq.ToList();
             this.dgvDSSanPham.AutoGenerateColumns = false;
@@ -167,10 +182,28 @@ namespace QuanLyCuaHangNoiThat
         {
 
             lstSanPham = SanPhamBUS.LayDanhSachSanPham();
+            lstNhaPP = NhaPhanPhoiBUS.LayDanhSachNhaPhanPhoi();
+            lstLoaiSp = LoaiSanPhamBUS.LayDanhSachLoaiSanPham();
             lstAnhMinhHoa = AnhMinhHoaSPBUS.LayDanhSachAnhMinhHoa();
+            //var kq = from sp in lstSanPham
+            //         //join anhMH in lstAnhMinhHoa
+            //         //on sp.MASP equals anhMH.MASP 
+            //         select new
+            //         {
+            //             sp.MASP,
+            //             sp.TENSP,
+            //             sp.SL_TON,
+            //             sp.GIABAN,
+            //             sp.DVT,
+            //             sp.LOAISANPHAM.TENLOAI,
+            //             sp.NHAPHANPHOI.TENNPP,
+            //             //anhMH.TENANHMINHHOA
+            //         };
+
             var kq = from sp in lstSanPham
-                     //join anhMH in lstAnhMinhHoa
-                     //on sp.MASP equals anhMH.MASP 
+                     join npp in lstNhaPP on sp.MANPP equals npp.MANPP
+                     join lsp in lstLoaiSp on sp.MALOAI equals lsp.MALOAI
+                
                      select new
                      {
                          sp.MASP,
@@ -178,9 +211,8 @@ namespace QuanLyCuaHangNoiThat
                          sp.SL_TON,
                          sp.GIABAN,
                          sp.DVT,
-                         sp.LOAISANPHAM.TENLOAI,
-                         sp.NHAPHANPHOI.TENNPP,
-                         //anhMH.TENANHMINHHOA
+                         lsp.TENLOAI,
+                         npp.TENNPP
                      };
             this.dgvDSSanPham.AutoGenerateColumns = false;
             this.dgvQLSanPham.DataSource = kq.ToList();
@@ -726,6 +758,23 @@ namespace QuanLyCuaHangNoiThat
                 {
                     MessageBox.Show("Mã loại đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.txtMaLoai.Focus();
+                    return;
+                }
+                if (this.txtMaLoai.Text == string.Empty)
+                {
+                    return;
+                }
+                if(this.txtMaLoai.Text.Length >10)
+                {
+                    MessageBox.Show("Mã loại không được vượt quá 10 kí tự !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtMaLoai.Focus();
+                    return;
+                }    
+                if (!KiemtraDinhDangMALOAI(this.txtMaLoai.Text))
+                {
+                    MessageBox.Show("Mã loại không đúng định dạng !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtMaLoai.Focus();
+                    return;
                 }
             }
         }
@@ -736,7 +785,41 @@ namespace QuanLyCuaHangNoiThat
             {
                 MessageBox.Show("Mã sản phẩm đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtMaSp.Focus();
+                return;
+            }
+            if (this.txtMaSp.Text == string.Empty)
+            {
+                return;
+            }
+            if(this.txtMaSp.Text.Length > 10)
+            {
+                MessageBox.Show("Mã sản phẩm không được vượt quá 10 kí tự !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtMaSp.Focus();
+                return;
             }    
+            if (!KiemtraDinhDangMASP(this.txtMaSp.Text))
+            {
+                MessageBox.Show("Mã sản phẩm không đúng định dạng !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtMaSp.Focus();
+                return;
+            }
+        }
+
+        bool KiemtraDinhDangMASP(string masp)
+        {
+            Regex re = new Regex("^[a-zA-Z0-9]{2,10}$");
+            if (re.IsMatch(masp))
+                return (true);
+            else
+                return (false);
+        }
+        bool KiemtraDinhDangMALOAI(string maloai)
+        {
+            Regex re = new Regex("^[a-zA-Z0-9]{2,10}$");
+            if (re.IsMatch(maloai))
+                return (true);
+            else
+                return (false);
         }
     }
 }

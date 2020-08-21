@@ -48,8 +48,8 @@ namespace DAO
         {
             try
             {
-                var npp = db.CHITIETNHAPHANG.Find(manpp, masp);
-                npp.TRANGTHAI = false;
+                var ctnh = db.CHITIETNHAPHANG.Find(masp, manpp);
+                ctnh.TRANGTHAI = false;
                 db.SaveChanges();
                 return true;
             }

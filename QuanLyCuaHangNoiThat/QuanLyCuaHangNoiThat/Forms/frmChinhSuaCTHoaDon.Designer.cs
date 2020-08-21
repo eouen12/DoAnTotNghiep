@@ -47,6 +47,7 @@
             this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
@@ -54,7 +55,6 @@
             this.txtMasp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnLamMoi = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -283,6 +283,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn";
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnLamMoi.FlatAppearance.BorderSize = 2;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.btnLamMoi.IconColor = System.Drawing.Color.Black;
+            this.btnLamMoi.IconSize = 40;
+            this.btnLamMoi.Location = new System.Drawing.Point(473, 31);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Rotation = 0D;
+            this.btnLamMoi.Size = new System.Drawing.Size(56, 52);
+            this.btnLamMoi.TabIndex = 25;
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.White;
@@ -387,27 +408,6 @@
             this.label10.Size = new System.Drawing.Size(205, 32);
             this.label10.TabIndex = 0;
             this.label10.Text = "Mã sản phẩm:";
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
-            this.btnLamMoi.FlatAppearance.BorderSize = 2;
-            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoi.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.IconChar = FontAwesome.Sharp.IconChar.Undo;
-            this.btnLamMoi.IconColor = System.Drawing.Color.Black;
-            this.btnLamMoi.IconSize = 40;
-            this.btnLamMoi.Location = new System.Drawing.Point(473, 31);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Rotation = 0D;
-            this.btnLamMoi.Size = new System.Drawing.Size(56, 52);
-            this.btnLamMoi.TabIndex = 25;
-            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // frmChinhSuaCTHoaDon
             // 

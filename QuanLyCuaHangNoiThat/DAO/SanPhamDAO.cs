@@ -14,12 +14,10 @@ namespace DAO
         public static List<SANPHAM> LayDanhSachSanPham()
         {
             return db.SANPHAM.Where(x => x.TRANGTHAI == true).ToList();
-
         }
         public static List<SANPHAM> LayDanhSachSP()
         {
             return db.SANPHAM.ToList();
-
         }
 
         public static bool KiemTraMaSPTonTai(string masp)

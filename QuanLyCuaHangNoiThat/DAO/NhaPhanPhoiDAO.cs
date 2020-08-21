@@ -12,7 +12,7 @@ namespace DAO
         
         public static List<NHAPHANPHOI> LayDanhSachNhaPhanPhoi()
         {
-            return db.NHAPHANPHOI.Where(p => p.TRANGTHAI == true).ToList();
+            return db.NHAPHANPHOI.ToList();
         }
 
         public static bool KiemTraMaNPPTonTai(string manpp)

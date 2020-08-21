@@ -32,6 +32,11 @@ namespace QuanLyCuaHangNoiThat
                     MessageBox.Show("Bạn chưa điền đủ thông tin !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                if(NhanVienBUS.LayDanhSachAllNV().FirstOrDefault(p=>p.MANV == this.txtTenDangNhap.Text) == null)
+                {
+                    MessageBox.Show("Tài khoản không đúng !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }    
                 if(NhanVienBUS.KiemTraDangNhap(txtTenDangNhap.Text,MD5(txtMatKhau.Text)))
                 {
                     nv = NhanVienBUS.LayThongTinCuaNV(this.txtTenDangNhap.Text).FirstOrDefault();

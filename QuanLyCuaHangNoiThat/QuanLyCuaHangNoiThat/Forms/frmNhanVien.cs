@@ -61,6 +61,10 @@ namespace QuanLyCuaHangNoiThat
             this.txtEmail.Text = this.dgvDSNhanVien.CurrentRow.Cells["EMAIL"].Value.ToString();
             this.imgNhanVien.ImageLocation = patch + this.dgvDSNhanVien.CurrentRow.Cells["ANHDAIDIEN"].Value.ToString();
             this.tenAnhDaiDien = this.dgvDSNhanVien.CurrentRow.Cells["ANHDAIDIEN"].Value.ToString();
+            if(NhanVienBUS.ChucVuNhanVien(this.dgvDSNhanVien.CurrentRow.Cells["MANV"].Value.ToString()).Equals("QL"))
+            {
+                this.btnXoaNV.Enabled = false;
+            }    
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace QuanLyCuaHangNoiThat
                 try
                 {
                     string[] chuoiXuLiTenAnh = this.tenAnhDaiDien.Split('.');
-                    tenAnhDaiDien = this.txtMaNV.Text + "_" + DateTime.Now.ToString("dd-MM-yyyy") + "." + chuoiXuLiTenAnh[1];
+                    tenAnhDaiDien = this.txtMaNV.Text + "_" + DateTime.Now.ToString("ddMMyyyyhms") + "." + chuoiXuLiTenAnh[1];
                 }
                 catch(Exception ex)
                 {
@@ -135,7 +139,7 @@ namespace QuanLyCuaHangNoiThat
                 if (this.tenAnhDaiDien != this.dgvDSNhanVien.CurrentRow.Cells["ANHDAIDIEN"].Value.ToString())
                 {
                     string[] chuoiXuLiTenAnh = this.tenAnhDaiDien.Split('.');
-                    tenAnhDaiDien = this.txtMaNV.Text + "_(" + DateTime.Now.ToString("dd-MM-yyyy") + ")." + chuoiXuLiTenAnh[1];
+                    tenAnhDaiDien = this.txtMaNV.Text + "_" + DateTime.Now.ToString("ddMMyyyyhms") + "." + chuoiXuLiTenAnh[1];
                 }
                 NHANVIEN nv = new NHANVIEN
                 {
@@ -185,7 +189,7 @@ namespace QuanLyCuaHangNoiThat
                 MessageBox.Show("Xóa nhân viên thành công thành công !!!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 Reset();
                 LoadDsNhanVien();
-                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã thêm mới nhân viên " + this.txtMaNV.Text;
+                string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã xóa nhân viên " + this.txtMaNV.Text;
                 LichSuHeThongBUS.ThemLSHT(new LICHSUHETHONG
                 {
                     NGAYTAO = DateTime.Now.Date,
@@ -249,8 +253,8 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadDsNhanVien()
         {
-            lstAllNV = NhanVienBUS.LayDanhSachAllNV();
-            lstNV = NhanVienBUS.LayDanhSachNV();
+            lstAllNV = NhanVienBUS.LayDanhSachAllNV().Where(p => p.TRANGTHAI == true).ToList();
+            lstNV = NhanVienBUS.LayDanhSachNV().Where(p=>p.TRANGTHAI == true).ToList();
             this.dgvDSNhanVien.AutoGenerateColumns = false;
             this.dgvDSNhanVien.DataSource = lstAllNV;
             this.dgvDSNhanVien.Columns["LUONGCB"].DefaultCellStyle.Format = "#,##0";
@@ -310,6 +314,10 @@ namespace QuanLyCuaHangNoiThat
 
         private void txtEmail_Validated(object sender, EventArgs e)
         {
+            if(txtEmail.Text == string.Empty)
+            {
+                return;
+            }    
             if (!isValidEmail(this.txtEmail.Text))
             {
                 MessageBox.Show("Email không đúng định dạng !!!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -337,18 +345,19 @@ namespace QuanLyCuaHangNoiThat
 
         string AutoTaoMaNV()
         {
-            if (lstNV.Count == 0)
+            var lstnv = NhanVienBUS.LayDanhSachNV();
+            if (lstnv.Count == 0)
             {
                 autoManv = "NV1";
             }
             else
             {
-                autoManv = lstNV.Select(p => p.MANV).LastOrDefault();
+                autoManv = lstnv.Select(p => p.MANV).LastOrDefault();
                 int soma = Convert.ToInt32(autoManv.Remove(0, 2)) + 1;
                 autoManv = "NV" + soma;
-                for (int i = 0; i < lstNV.Count(); i++)
+                for (int i = 0; i < lstnv.Count(); i++)
                 {
-                    if (autoManv == lstNV[i].MANV)
+                    if (autoManv == lstnv[i].MANV)
                     {
                         soma = Convert.ToInt32(autoManv.Remove(0, 2)) + 1;
                         autoManv = "HD" + soma;
@@ -359,7 +368,7 @@ namespace QuanLyCuaHangNoiThat
         }
         bool isValidEmail(string inputEmail)
         {
-            Regex re = new Regex("^[a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,10}.[a-zA-Z]{2,5}$");
+            Regex re = new Regex(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
             if (re.IsMatch(inputEmail))
                 return (true);
             else
@@ -394,7 +403,7 @@ namespace QuanLyCuaHangNoiThat
 
         bool KiemtraDinhDangSDT(string sdt)
         {
-            Regex re = new Regex("^[0-9]{10,10}$");
+            Regex re = new Regex("^[0-9]{10,11}$");
             if (re.IsMatch(sdt))
                 return (true);
             else

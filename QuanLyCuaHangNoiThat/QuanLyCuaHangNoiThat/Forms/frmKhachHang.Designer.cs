@@ -47,11 +47,11 @@
             this.btnLamMoiKH = new FontAwesome.Sharp.IconButton();
             this.txtMakh = new System.Windows.Forms.TextBox();
             this.dgvDSKH = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
             this.MaKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDTKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHIKHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).BeginInit();
@@ -233,6 +233,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnThem.IconColor = System.Drawing.Color.Lime;
             this.btnThem.IconSize = 40;
@@ -339,17 +340,6 @@
             this.dgvDSKH.TabIndex = 23;
             this.dgvDSKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKH_CellClick);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(748, 33);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 29);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Mã khách hàng:";
-            // 
             // MaKHang
             // 
             this.MaKHang.DataPropertyName = "MAKH";
@@ -385,6 +375,17 @@
             this.DIACHIKHang.Name = "DIACHIKHang";
             this.DIACHIKHang.ReadOnly = true;
             this.DIACHIKHang.Width = 91;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(748, 33);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(194, 29);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Mã khách hàng:";
             // 
             // frmKhachHang
             // 

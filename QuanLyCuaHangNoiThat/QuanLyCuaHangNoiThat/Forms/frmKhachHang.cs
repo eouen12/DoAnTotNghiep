@@ -226,7 +226,7 @@ namespace QuanLyCuaHangNoiThat
 
         bool KiemtraDinhDangSDT(string sdt)
         {
-            Regex re = new Regex("^[0-9]{10,10}$");
+            Regex re = new Regex("^[0-9]{10,11}$");
             if (re.IsMatch(sdt))
                 return (true);
             else

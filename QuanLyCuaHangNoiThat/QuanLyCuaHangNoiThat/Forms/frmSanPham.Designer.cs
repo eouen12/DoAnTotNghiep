@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlSanPham = new System.Windows.Forms.TabControl();
             this.tabPageDsSanPham = new System.Windows.Forms.TabPage();
             this.dgvDSSanPham = new System.Windows.Forms.DataGridView();
@@ -155,6 +161,14 @@
             this.dgvDSSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDSSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDSSanPham.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASP,
@@ -164,6 +178,14 @@
             this.DVT,
             this.TENLOAISP,
             this.TENNPP});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSSanPham.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSSanPham.Location = new System.Drawing.Point(4, 125);
             this.dgvDSSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -185,7 +207,7 @@
             this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
-            this.MASP.Width = 187;
+            this.MASP.Width = 205;
             // 
             // TENSP
             // 
@@ -196,7 +218,7 @@
             this.TENSP.MinimumWidth = 6;
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 196;
+            this.TENSP.Width = 215;
             // 
             // GIABAN
             // 
@@ -207,7 +229,7 @@
             this.GIABAN.MinimumWidth = 6;
             this.GIABAN.Name = "GIABAN";
             this.GIABAN.ReadOnly = true;
-            this.GIABAN.Width = 200;
+            this.GIABAN.Width = 219;
             // 
             // SLTON
             // 
@@ -218,7 +240,7 @@
             this.SLTON.MinimumWidth = 6;
             this.SLTON.Name = "SLTON";
             this.SLTON.ReadOnly = true;
-            this.SLTON.Width = 177;
+            this.SLTON.Width = 197;
             // 
             // DVT
             // 
@@ -227,7 +249,7 @@
             this.DVT.MinimumWidth = 6;
             this.DVT.Name = "DVT";
             this.DVT.ReadOnly = true;
-            this.DVT.Width = 98;
+            this.DVT.Width = 103;
             // 
             // TENLOAISP
             // 
@@ -238,7 +260,7 @@
             this.TENLOAISP.MinimumWidth = 6;
             this.TENLOAISP.Name = "TENLOAISP";
             this.TENLOAISP.ReadOnly = true;
-            this.TENLOAISP.Width = 199;
+            this.TENLOAISP.Width = 221;
             // 
             // TENNPP
             // 
@@ -249,7 +271,7 @@
             this.TENNPP.MinimumWidth = 6;
             this.TENNPP.Name = "TENNPP";
             this.TENNPP.ReadOnly = true;
-            this.TENNPP.Width = 199;
+            this.TENNPP.Width = 220;
             // 
             // groupBox1
             // 
@@ -374,6 +396,14 @@
             // 
             this.dgvQLSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvQLSanPham.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASPQL,
@@ -383,6 +413,14 @@
             this.GIABANQL,
             this.TENLOAIQL,
             this.TENNPPQL});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLSanPham.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvQLSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvQLSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvQLSanPham.Margin = new System.Windows.Forms.Padding(0);
@@ -403,7 +441,7 @@
             this.MASPQL.MinimumWidth = 6;
             this.MASPQL.Name = "MASPQL";
             this.MASPQL.ReadOnly = true;
-            this.MASPQL.Width = 187;
+            this.MASPQL.Width = 205;
             // 
             // TENSPQL
             // 
@@ -413,7 +451,7 @@
             this.TENSPQL.MinimumWidth = 6;
             this.TENSPQL.Name = "TENSPQL";
             this.TENSPQL.ReadOnly = true;
-            this.TENSPQL.Width = 196;
+            this.TENSPQL.Width = 215;
             // 
             // SLTONQL
             // 
@@ -423,7 +461,7 @@
             this.SLTONQL.MinimumWidth = 6;
             this.SLTONQL.Name = "SLTONQL";
             this.SLTONQL.ReadOnly = true;
-            this.SLTONQL.Width = 177;
+            this.SLTONQL.Width = 197;
             // 
             // DVTQL
             // 
@@ -442,7 +480,7 @@
             this.GIABANQL.MinimumWidth = 6;
             this.GIABANQL.Name = "GIABANQL";
             this.GIABANQL.ReadOnly = true;
-            this.GIABANQL.Width = 200;
+            this.GIABANQL.Width = 219;
             // 
             // TENLOAIQL
             // 
@@ -452,7 +490,7 @@
             this.TENLOAIQL.MinimumWidth = 6;
             this.TENLOAIQL.Name = "TENLOAIQL";
             this.TENLOAIQL.ReadOnly = true;
-            this.TENLOAIQL.Width = 199;
+            this.TENLOAIQL.Width = 221;
             // 
             // TENNPPQL
             // 
@@ -462,7 +500,7 @@
             this.TENNPPQL.MinimumWidth = 6;
             this.TENNPPQL.Name = "TENNPPQL";
             this.TENNPPQL.ReadOnly = true;
-            this.TENNPPQL.Width = 199;
+            this.TENNPPQL.Width = 220;
             // 
             // panel3
             // 
@@ -865,10 +903,26 @@
             this.dgvDsLoaiSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDsLoaiSP.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDsLoaiSP.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDsLoaiSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDsLoaiSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDsLoaiSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MALOAI,
             this.TENLOAI});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDsLoaiSP.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDsLoaiSP.Location = new System.Drawing.Point(20, 70);
             this.dgvDsLoaiSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDsLoaiSP.Name = "dgvDsLoaiSP";

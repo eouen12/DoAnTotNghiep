@@ -118,6 +118,11 @@ namespace QuanLyCuaHangNoiThat.Forms
                 this.dgvDSSanPham.AutoSize = true;
                 this.dgvDSSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
+            else
+            {
+                LoadDSSP();
+                FormatDataGridView();
+            }    
         }
 
         private void frmLapHoaDon_Load(object sender, EventArgs e)
@@ -167,7 +172,7 @@ namespace QuanLyCuaHangNoiThat.Forms
         void LoadDSSP()
         {
             lstSanPham = SanPhamBUS.LayDanhSachSanPham();
-            lstHoaDon = HoaDonBanHangBUS.LayDanhSachHoaDon();
+            lstHoaDon = HoaDonBanHangBUS.LayDSHoaDon();
             var kq = from sp in lstSanPham
                      select sp;
             this.dgvDSSanPham.AutoGenerateColumns = false;
@@ -302,6 +307,14 @@ namespace QuanLyCuaHangNoiThat.Forms
                 TIENCONNO = Convert.ToDecimal(this.lblTongTien.Text) - Convert.ToDecimal(this.txtSoTienTraTrc.Text),
                 NGAYTRA = this.dateHanTra.Value.Date,
                 TRANGTHAI = true
+            });
+
+            LichSuTraNoBUS.TaoLichSuTraNo(new LICHSUTRANO
+            {
+                MACONGNO = macn,
+                NGAYTRA_THEODOI = DateTime.Now.Date,
+                TIENTRA_THEODOI = Convert.ToDecimal(this.txtSoTienTraTrc.Text),
+                TRANGTHAI = true,
             });
 
             string lsth = "[" + DateTime.Now.ToString("dd/MM/yyyy-h:m:s") + "] " + this.manv + " đã lập công nợ " + macn;
@@ -441,7 +454,7 @@ namespace QuanLyCuaHangNoiThat.Forms
                 NGAYLAP = DateTime.Now.Date,
                 TONGTIEN = Convert.ToDecimal(this.lblTongTien.Text),
                 TIENCONNO = 0M,
-                NGAYTRA = null,
+                NGAYTRA = DateTime.Now.Date,
                 TRANGTHAI = false
             });
 

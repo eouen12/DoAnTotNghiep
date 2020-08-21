@@ -101,6 +101,7 @@ namespace QuanLyCuaHangNoiThat.Forms
             txtNhapSoLop.Clear();
             txtNhapMetToi.Clear();
             txtKQ2.Clear();
+            txtKQ1.Clear();
             Load1();
             Load2();
             btndoi1.Enabled = false;

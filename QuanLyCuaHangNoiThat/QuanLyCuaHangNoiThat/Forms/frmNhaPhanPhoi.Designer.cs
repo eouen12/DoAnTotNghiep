@@ -461,7 +461,7 @@
             this.tabPageQLNhapHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPageQLNhapHang.Size = new System.Drawing.Size(1264, 646);
             this.tabPageQLNhapHang.TabIndex = 1;
-            this.tabPageQLNhapHang.Text = "Quản lí nhập hàng";
+            this.tabPageQLNhapHang.Text = "Quản lý nhập hàng";
             this.tabPageQLNhapHang.UseVisualStyleBackColor = true;
             // 
             // dgvDsChiTietNhapHang
@@ -491,63 +491,57 @@
             // 
             // MANPPNH
             // 
-            this.MANPPNH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MANPPNH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MANPPNH.DataPropertyName = "MANPP";
             this.MANPPNH.HeaderText = "Mã NPP";
             this.MANPPNH.MinimumWidth = 6;
             this.MANPPNH.Name = "MANPPNH";
             this.MANPPNH.ReadOnly = true;
-            this.MANPPNH.Width = 154;
             // 
             // MASPNH
             // 
-            this.MASPNH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MASPNH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MASPNH.DataPropertyName = "MASP";
             this.MASPNH.HeaderText = "Mã SP";
             this.MASPNH.MinimumWidth = 6;
             this.MASPNH.Name = "MASPNH";
             this.MASPNH.ReadOnly = true;
-            this.MASPNH.Width = 133;
             // 
             // SL_NHAPHANG
             // 
-            this.SL_NHAPHANG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SL_NHAPHANG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SL_NHAPHANG.DataPropertyName = "SL_NHAPHANG";
             this.SL_NHAPHANG.HeaderText = "Số Lượng";
             this.SL_NHAPHANG.MinimumWidth = 6;
             this.SL_NHAPHANG.Name = "SL_NHAPHANG";
             this.SL_NHAPHANG.ReadOnly = true;
-            this.SL_NHAPHANG.Width = 174;
             // 
             // DONGIA
             // 
-            this.DONGIA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DONGIA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DONGIA.DataPropertyName = "DONGIA";
             this.DONGIA.HeaderText = "Đơn giá";
             this.DONGIA.MinimumWidth = 6;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.ReadOnly = true;
-            this.DONGIA.Width = 149;
             // 
             // TONGGIATRI
             // 
-            this.TONGGIATRI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TONGGIATRI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TONGGIATRI.DataPropertyName = "TONGGIATRI";
             this.TONGGIATRI.HeaderText = "Tổng giá trị";
             this.TONGGIATRI.MinimumWidth = 6;
             this.TONGGIATRI.Name = "TONGGIATRI";
             this.TONGGIATRI.ReadOnly = true;
-            this.TONGGIATRI.Width = 198;
             // 
             // NGAYNHAPHANG
             // 
-            this.NGAYNHAPHANG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NGAYNHAPHANG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NGAYNHAPHANG.DataPropertyName = "NGAYNHAPHANG";
             this.NGAYNHAPHANG.HeaderText = "Ngày nhập";
             this.NGAYNHAPHANG.MinimumWidth = 6;
             this.NGAYNHAPHANG.Name = "NGAYNHAPHANG";
             this.NGAYNHAPHANG.ReadOnly = true;
-            this.NGAYNHAPHANG.Width = 190;
             // 
             // groupBox2
             // 
@@ -601,6 +595,7 @@
             // btnSuaDLNhapHang
             // 
             this.btnSuaDLNhapHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSuaDLNhapHang.Enabled = false;
             this.btnSuaDLNhapHang.FlatAppearance.BorderSize = 2;
             this.btnSuaDLNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaDLNhapHang.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -623,6 +618,7 @@
             // btnXoaDLNhapHang
             // 
             this.btnXoaDLNhapHang.BackColor = System.Drawing.Color.Red;
+            this.btnXoaDLNhapHang.Enabled = false;
             this.btnXoaDLNhapHang.FlatAppearance.BorderSize = 2;
             this.btnXoaDLNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaDLNhapHang.Flip = FontAwesome.Sharp.FlipOrientation.Normal;

@@ -164,11 +164,11 @@ namespace QuanLyCuaHangNoiThat
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTimer.Text = System.DateTime.Now.ToString("dd/MM/yyyy") + " " + System.DateTime.Now.ToLongTimeString();
+            LoadAnhDaiDien();
             if(lsht.Count != LichSuHeThongBUS.LayDanhSachLSHT().Count)
             {
                 LoadLSHeThong();
             }
-            //LoadAnhDaiDien();
         }
 
         private void lblTenNhanVien_Click(object sender, EventArgs e)
@@ -209,7 +209,7 @@ namespace QuanLyCuaHangNoiThat
 
         void LoadAnhDaiDien()
         {
-            this.imgAnhNhanVien.ImageLocation = patch + nhanvien.ANHDAIDIEN;
+            this.imgAnhNhanVien.ImageLocation = patch + NhanVienBUS.LayNhanVien(nhanvien.MANV).ANHDAIDIEN;
         }
 
         void LoadLSHeThong()

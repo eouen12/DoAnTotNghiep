@@ -14,6 +14,10 @@ namespace DAO
         {
             return db.HOADONBANHANG.Where(p => p.TRANGTHAI == true).ToList();
         }
+        public static List<HOADONBANHANG> LayDSHonDon()
+        {
+            return db.HOADONBANHANG.ToList();
+        }
         public static List<HOADONBANHANG> LayDanhSachHoaDonTN(string ngaylap)
         {
             return db.HOADONBANHANG.Where(p => p.TRANGTHAI == true ).ToList();
@@ -44,6 +48,7 @@ namespace DAO
                 var kq = db.HOADONBANHANG.Find(hd.MAHD);
                 kq.NGAYGIAO = hd.NGAYGIAO;
                 kq.TONGTIEN = hd.TONGTIEN;
+                kq.TRANGTHAI = hd.TRANGTHAI;
                 db.SaveChanges();
                 return true;
             }

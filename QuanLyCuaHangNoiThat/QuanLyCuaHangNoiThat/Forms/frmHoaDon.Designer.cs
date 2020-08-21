@@ -48,6 +48,7 @@
             this.NVLAPHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnChotDon = new FontAwesome.Sharp.IconButton();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnXuatHD = new FontAwesome.Sharp.IconButton();
             this.lblNgayGiaoHang = new System.Windows.Forms.Label();
@@ -292,6 +293,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnChotDon);
             this.groupBox2.Controls.Add(this.btnSuaHD);
             this.groupBox2.Controls.Add(this.btnXuatHD);
             this.groupBox2.Controls.Add(this.lblNgayGiaoHang);
@@ -316,6 +318,28 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn";
+            // 
+            // btnChotDon
+            // 
+            this.btnChotDon.BackColor = System.Drawing.Color.White;
+            this.btnChotDon.FlatAppearance.BorderSize = 2;
+            this.btnChotDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChotDon.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnChotDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChotDon.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            this.btnChotDon.IconColor = System.Drawing.Color.Black;
+            this.btnChotDon.IconSize = 32;
+            this.btnChotDon.Location = new System.Drawing.Point(447, 19);
+            this.btnChotDon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChotDon.Name = "btnChotDon";
+            this.btnChotDon.Rotation = 0D;
+            this.btnChotDon.Size = new System.Drawing.Size(162, 59);
+            this.btnChotDon.TabIndex = 16;
+            this.btnChotDon.Text = "Chốt đơn";
+            this.btnChotDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChotDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChotDon.UseVisualStyleBackColor = false;
+            this.btnChotDon.Click += new System.EventHandler(this.btnChotDon_Click);
             // 
             // btnSuaHD
             // 
@@ -634,5 +658,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn DVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
+        private FontAwesome.Sharp.IconButton btnChotDon;
     }
 }

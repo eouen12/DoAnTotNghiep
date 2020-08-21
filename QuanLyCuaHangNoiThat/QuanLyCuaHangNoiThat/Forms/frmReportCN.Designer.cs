@@ -99,7 +99,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(174, 34);
             this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
             // 
             // reportViewer1
             // 
@@ -128,7 +128,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 34);
             this.dateTimePicker1.TabIndex = 7;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
             // 
             // dataTable1TableAdapter
             // 
