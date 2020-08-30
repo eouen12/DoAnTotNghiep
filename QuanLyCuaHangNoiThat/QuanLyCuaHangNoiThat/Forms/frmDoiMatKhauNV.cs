@@ -52,6 +52,7 @@ namespace QuanLyCuaHangNoiThat
                     this.txtMatKhauCu.Clear();
                     this.txtMatKhauMoi.Clear();
                     this.Close();
+                    return;
                 }
                 else
                 {

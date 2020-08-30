@@ -395,6 +395,8 @@ namespace QuanLyCuaHangNoiThat
             this.btnSuaDLNhapHang.Enabled = false;
             this.btnXoaDLNhapHang.Enabled = false;
             this.dangThayDoiDL = false;
+            this.txtMaNPPNhapHang.Enabled = true;
+            this.txtMaSPNhapHang.Enabled = true;
         }
 
         private void btnHuyNhapHang_Click(object sender, EventArgs e)

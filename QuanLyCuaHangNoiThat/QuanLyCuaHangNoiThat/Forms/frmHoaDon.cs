@@ -85,7 +85,14 @@ namespace QuanLyCuaHangNoiThat
             {
                 this.btnSuaHD.Enabled = false;
                 this.btnChotDon.Enabled = false;
-            }  
+            }
+            else
+            {
+                this.btnSuaHD.Enabled = true;
+                this.btnChotDon.Enabled = true;
+            }    
+
+
             this.lblTenKH.Text = this.dgvDanhSachHD.CurrentRow.Cells["TENKH"].Value.ToString();
             this.lblTenNhanVien.Text = this.dgvDanhSachHD.CurrentRow.Cells["NVLAPHD"].Value.ToString();
             this.lblNgayLapHD.Text = Convert.ToDateTime(this.dgvDanhSachHD.CurrentRow.Cells["NGAYLAP"].Value).ToString("dd/MM/yyyy");
